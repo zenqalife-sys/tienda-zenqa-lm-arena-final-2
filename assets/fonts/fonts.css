@@ -1,0 +1,9 @@
+/* Tipografia: Switzer (Fontshare) — sustituta libre estandar de HK Modular (Klim Type Foundry, de pago).
+   Si compras HK Modular: copia sus .woff2 aqui y cambia 'Switzer' por 'HK Modular' en esta hoja. */
+@font-face{font-family:'Switzer';font-style:normal;font-weight:300;font-display:swap;src:url('../fonts/switzer-300.woff2') format('woff2');}
+@font-face{font-family:'Switzer';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/switzer-400.woff2') format('woff2');}
+@font-face{font-family:'Switzer';font-style:normal;font-weight:500;font-display:swap;src:url('../fonts/switzer-500.woff2') format('woff2');}
+@font-face{font-family:'Switzer';font-style:normal;font-weight:600;font-display:swap;src:url('../fonts/switzer-600.woff2') format('woff2');}
+@font-face{font-family:'Switzer';font-style:normal;font-weight:700;font-display:swap;src:url('../fonts/switzer-700.woff2') format('woff2');}
+@font-face{font-family:'Switzer';font-style:normal;font-weight:800;font-display:swap;src:url('../fonts/switzer-800.woff2') format('woff2');}
+@font-face{font-family:'Switzer';font-style:normal;font-weight:900;font-display:swap;src:url('../fonts/switzer-900.woff2') format('woff2');}

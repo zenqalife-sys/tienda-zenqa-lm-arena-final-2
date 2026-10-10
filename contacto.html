@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contacto, envíos y devoluciones · ZENQA LIFE</title>
+<meta name="description" content="Escríbenos por WhatsApp, email o formulario: contestamos en menos de 24 h laborables. Envíos 24-48 h gratis desde 35 €, 30 días de devolución y preguntas frecuentes.">
+<meta name="theme-color" content="#ff6ebc">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="assets/css/zenqa.css">
+</head>
+<body data-page="contacto">
+<main id="MainContent">
+
+  <section class="phead">
+    <div class="wrap">
+      <p class="crumb"><a href="index.html">Inicio</a> / Contacto</p>
+      <h1>Hablamos<br>en 24 h</h1>
+      <p class="lede">Pedidos, envíos, tallas o si tu matcha salió raro: cuéntanos y lo arreglamos. Sin tickets eternos.</p>
+      <p class="note" style="color:rgba(255,255,255,.72)">Lun-vie 9:00-18:00 (CET) · <b>hola@zenqa.life</b></p>
+    </div>
+  </section>
+
+  <section class="sec tight">
+    <div class="wrap split--text split">
+      <form class="col" data-form="contact" novalidate style="display:grid;gap:12px;background:var(--paper);border:var(--edge);border-radius:var(--r);padding:16px">
+        <div class="two">
+          <div class="field"><label for="cn">Nombre</label><input id="cn" name="name" required placeholder="Laura Medina"><p class="err" data-err hidden>¿Cómo te llamas?</p></div>
+          <div class="field"><label for="ce">Email</label><input id="ce" name="email" type="email" required placeholder="tu@email.com"><p class="err" data-err hidden>Revisa el email</p></div>
+        </div>
+        <div class="field"><label for="cs">Sobre qué es</label>
+          <select id="cs" name="asunto"><option>Mi pedido</option><option>Envíos y plazos</option><option>Devolución o cambio de talla</option><option>Qué matcha me conviene</option><option>Prensa o colaboración</option></select></div>
+        <div class="field"><label for="cm">Mensaje</label><textarea id="cm" name="mensaje" required placeholder="Cuéntanos qué pasa (nº de pedido si lo tienes)"></textarea><p class="err" data-err hidden>Faltan dos líneas</p></div>
+        <label class="consent"><input type="checkbox" name="consent" required> Acepto la <a class="link" href="legal.html#privacidad">política de privacidad</a>.</label>
+        <button class="btn btn--buy btn--lg" type="submit">Enviar mensaje<span class="arw">→</span></button>
+      </form>
+      <div class="chan">
+        <a href="https://wa.me/34600000000" target="_blank" rel="noopener"><span aria-hidden="true" style="font-size:1.4rem">💬</span><span><b>WhatsApp</b><span>600 00 00 00 · respuesta media 12 min</span></span></a>
+        <a href="mailto:hola@zenqa.life"><span aria-hidden="true" style="font-size:1.4rem">✉️</span><span><b>Email</b><span>hola@zenqa.life · menos de 24 h laborables</span></span></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener"><span aria-hidden="true" style="font-size:1.4rem">📸</span><span><b>@zenqa.life</b><span>DM y Stories, también resolvemos</span></span></a>
+        <a href="tienda.html"><span aria-hidden="true" style="font-size:1.4rem">🛒</span><span><b>Mejor, mira la tienda</b><span>el 80 % de las dudas están en la ficha del producto</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--mint tight" id="envios">
+    <div class="wrap">
+      <div class="col" style="margin-bottom:12px"><span class="kicker kicker--sage">Lo que más nos preguntáis</span><h2 class="d d-3">Envíos y devoluciones</h2></div>
+      <div class="split">
+        <ul class="kit__list">
+          <li><b>Península</b><span>24-48 h laborables · gratis desde 35 €, si no 3,95 €</span></li>
+          <li><b>Baleares</b><span>48 h · gratis desde 45 €</span></li>
+          <li><b>Canarias / Ceuta / Melilla</b><span>3-5 días · tasas aparte, te avisamos antes de enviar</span></li>
+          <li><b>Europa</b><span>3-6 días · 7,95 € · gratis desde 80 €</span></li>
+        </ul>
+        <ul class="kit__list" id="devoluciones">
+          <li><b>30 días</b><span>Y con el bote abierto: si no te gusta el sabor, se devuelve</span></li>
+          <li><b>Cómo</b><span>Respondemos al email y te mandamos la etiqueta; lo recoge el mensajero</span></li>
+          <li><b>Ropa</b><span>Cambio de talla gratis una vez, dentro de los 30 días</span></li>
+          <li><b>Rotos</b><span>Cuenco o cristal dañado: te lo enviamos otra vez sin devolver el roto</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tight" id="ayuda">
+    <div class="wrap">
+      <div class="col" style="margin-bottom:12px"><span class="kicker">Preguntas frecuentes</span><h2 class="d d-3">Antes de escribir</h2></div>
+      <div id="faqList"></div>
+      <div class="row" style="margin-top:14px"><a class="btn btn--buy btn--auto" href="tienda.html">Ya está todo claro, quiero comprar<span class="arw">→</span></a></div>
+    </div>
+  </section>
+
+</main>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

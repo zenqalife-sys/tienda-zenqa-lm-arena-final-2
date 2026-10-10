@@ -1,0 +1,60 @@
+/* Enlazado completo: recorre las 8 páginas y comprueba que TODO lo local resuelve.
+   ids dinámicos (productos, categorías, recetas, legal) se validan contra data.js. */
+import fs from "fs";
+import path from "path";
+import vm from "node:vm";
+
+const ROOT = path.resolve(import.meta.dirname, "..");
+const PAGES = ["index.html", "tienda.html", "ritual.html", "recetas.html", "nosotros.html", "contacto.html", "legal.html", "prepararlo.html"];
+const sb = { window: {} }; vm.createContext(sb);
+vm.runInContext(fs.readFileSync(path.join(ROOT, "assets/js/data.js"), "utf8"), sb);
+const { products, categories, recipes } = sb.window.ZENQA;
+if (!products || products.length !== 16) { console.log("FAIL: data.js no expone 16 productos"); process.exit(1); }
+
+const dynIds = new Set([
+  ...products.map((p) => p.id), ...categories.map((c) => c.id), ...recipes.map((r) => r.id),
+  "MainContent", "menu", "cart", "search", "leadModal", "qv", "toast", "grid", "grid-home", "grid-nos", "grid-reviews", "grid-recipes", "grid-r", "recipeDetail", "faqList", "count", "count-r", "sort", "leadHome",
+]);
+
+let bad = 0, checked = 0;
+const staticIds = {};
+for (const f of PAGES) {
+  const html = fs.readFileSync(path.join(ROOT, f), "utf8");
+  staticIds[f] = new Set([...html.matchAll(/id="([^"]+)"/g)].map((m) => m[1]));
+}
+for (const f of PAGES) {
+  const html = fs.readFileSync(path.join(ROOT, f), "utf8");
+  const errs = [];
+  const app = fs.readFileSync(path.join(ROOT, "assets/js/app.js"), "utf8");
+  const refs = [...html.matchAll(/(?:href|src)="([^"]+)"/g)].map((m) => m[1])
+    .concat([...app.matchAll(/href=\\"([^"\\]+)/g)].map((m) => m[1]))
+    .concat([...app.matchAll(/href="([^"]+)"/g)].map((m) => m[1]))
+    .concat(products.map((p) => "assets/img/" + p.img))
+    .concat(recipes.map((r) => "assets/img/" + r.img))
+    .concat(["assets/downloads/guia-matcha-zenqa.pdf", "assets/img/logo-2x.png", "assets/img/favicon.png"]);
+  for (let r of refs) {
+    r = String(r).trim();
+    if (!r || /['"+$%()\\]/.test(r)) continue;             // restos de plantilla JS
+    if (/^(https?:|mailto:|tel:|data:)/.test(r) || r.includes("${") || r === "#") continue;
+    checked++;
+    const [file, hash] = r.replace(/^https?:\/\/[^/]+/, "").split("#");
+    if (/^\/\//.test(r)) { errs.push("absurdo: " + r); continue; }
+    if (file && !file.endsWith(".html") && file !== "") {
+      const p = path.join(ROOT, decodeURI(file.split("?")[0]));
+      if (!fs.existsSync(p)) errs.push("archivo ausente: " + file);
+      continue;
+    }
+    if (file.endsWith(".html") && !PAGES.includes(path.basename(file))) errs.push("página inexistente: " + file);
+    if (hash && file && PAGES.includes(path.basename(file))) {
+      const ids = staticIds[path.basename(file)];
+      if (!ids.has(hash) && !dynIds.has(hash)) errs.push("ancla rota: " + r);
+    }
+  }
+  console.log((errs.length ? "✗ " : "✓ ") + f.padEnd(15) + (errs.length ? "\n    " + [...new Set(errs)].join("\n    ") : ""));
+  if (errs.length) bad++;
+}
+/* los productos citados en la home existen */
+const home = fs.readFileSync(path.join(ROOT, "index.html"), "utf8") + fs.readFileSync(path.join(ROOT, "assets/js/app.js"), "utf8");
+for (const m of home.matchAll(/data-id="([a-z0-9-]+)"/g)) if (!products.some((p) => p.id === m[1])) { console.log("✗ data-id desconocido:", m[1]); bad++; }
+console.log(`\n${checked} referencias comprobadas · ${bad ? bad + " problema(s)" : "todo resuelve"}`);
+process.exit(bad ? 1 : 0);
