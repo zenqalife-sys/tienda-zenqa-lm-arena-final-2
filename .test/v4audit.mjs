@@ -12,8 +12,9 @@ fs.mkdirSync("shots", { recursive: true });
 
 const { execSync } = await import("node:child_process");
 let V3WORDS = "?";
+const V3REF = process.env.V3REF || "d611ca2"; // el último commit de la v3 (8 páginas, home con 1140 palabras)
 try {
-  const html = execSync("git show HEAD:index.html", { encoding: "utf8" }).replace(/<script[\s\S]*?<\/script>/g, "").replace(/<[^>]+>/g, " ");
+  const html = execSync("git show V3REF:index.html", { encoding: "utf8" }).replace(/<script[\s\S]*?<\/script>/g, "").replace(/<[^>]+>/g, " ");
   V3WORDS = (html.match(/[\wÁ-Úá-úÀ-Öà-ö0-9]+/g) || []).length;
 } catch (e) {}
 const browser = await puppeteer.launch({ executablePath: EXE, args: ["--no-sandbox", "--disable-dev-shm-usage", "--hide-scrollbars", "--force-device-scale-factor=1"] });
