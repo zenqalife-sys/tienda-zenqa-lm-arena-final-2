@@ -6,8 +6,21 @@ Demo de e-commerce de té matcha hecha a mano (HTML + CSS + JS, sin build) para 
 páginas y se ha movido a la ficha de producto (la capa que se abre al pulsar «Ver ficha»). Lo que
 se ve es foto, precio y botón.
 
-**Ver online:** https://zenqalife-sys.github.io/tienda-zenqa-lm-arena-final-2/
-· repositorio `zenqalife-sys/tienda-zenqa-lm-arena-final-2`, rama `main`, Pages en `main/(root)`.
+**Ver online:** https://zenqalife-sys.github.io/zenqa-life-final-finalisima/
+· repositorio `zenqalife-sys/zenqa-life-final-finalisima`, rama `main`, Pages en `main/(root)`.
+· la maqueta anterior (v3, 8 páginas) sigue publicada en
+  `https://zenqalife-sys.github.io/tienda-zenqa-lm-arena-final-2/`.
+
+Para subirla a un repo nuevo hace falta un PAT **clásico con el scope `repo`** (los
+fine-grained no pueden crear repositorios) y:
+
+```bash
+GITHUB_TOKEN=ghp_xxx REPO=zenqa-life-final-finalisima bash .test/deploy.sh
+```
+
+El script crea el repositorio si no existe, empuja `main`, activa Pages, espera el build,
+comprueba recurso a recurso y pasa la suite funcional contra la URL publicada. El token solo
+se usa en memoria; el `origin` local queda con la URL limpia.
 
 ---
 
@@ -78,7 +91,7 @@ node .test/serve.mjs 8080 &            # servidor estático sin dependencias
 node .test/smoke.mjs                   # jsdom: 19 comprobaciones de datos + contrato de las 5 páginas
                                        #   + carrito, capas, ficha, buscador, flyout, leads y newsletter
 node .test/final.mjs                   # 554 referencias (href, src, anclas, ids) en las 10 páginas
-BASE=https://zenqalife-sys.github.io/tienda-zenqa-lm-arena-final-2/ node .test/smoke.mjs   # contra lo publicado
+BASE=https://zenqalife-sys.github.io/zenqa-life-final-finalisima/ node .test/smoke.mjs   # contra lo publicado
 node .test/v4audit.mjs                 # Chrome: 0 px de desborde horizontal en 390 y 1440, franja fina
                                        #   sin huecos, menú pegajoso, rejilla de 3, tipografía cargada
 node .test/stack.mjs                   # que ningún bloque pise al siguiente (lazy-load mediante)

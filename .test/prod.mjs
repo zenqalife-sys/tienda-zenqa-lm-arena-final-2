@@ -2,7 +2,7 @@
 import puppeteer from "puppeteer";
 process.env.LD_LIBRARY_PATH = "/home/user/.local/chromelibs/usr/lib/x86_64-linux-gnu:" + (process.env.LD_LIBRARY_PATH || "");
 const EXE = "/home/user/.cache/puppeteer/chrome/linux-148.0.7778.97/chrome-linux64/chrome";
-const B = "https://zenqalife-sys.github.io/tienda-zenqa-lm-arena-final-2/";
+const B = "https://zenqalife-sys.github.io/zenqa-life-final-finalisima/";
 const b = await puppeteer.launch({ executablePath: EXE, args: ["--no-sandbox", "--disable-dev-shm-usage", "--hide-scrollbars"] });
 let bad = 0;
 for (const [w, h, pages] of [[390, 844, ["index.html", "tienda.html", "ritual.html", "nosotros.html", "contacto.html", "recetas.html", "legal.html"]], [1440, 900, ["index.html", "tienda.html"]]]) {
