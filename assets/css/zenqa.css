@@ -19,6 +19,7 @@
   --ink-70: rgba(18, 22, 15, 0.7);
   --ink-45: rgba(18, 22, 15, 0.45);
   --line: rgba(18, 22, 15, 0.14);
+  --muted: var(--ink-45);
   --edge: 1.5px solid var(--ink);
   --f: "Switzer", "Helvetica Neue", Arial, sans-serif;
   --nav-h: 56px;
@@ -278,9 +279,9 @@ body.ov .scrim { opacity: 1; pointer-events: auto; }
 .card__qb { position: absolute; right: 7px; bottom: 7px; background: var(--forest); color: #fff; border-radius: 999px; padding: 6px 10px; font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0; transform: translateY(6px); transition: 0.2s var(--ease); }
 .card__bd { padding: 10px 11px 11px; display: grid; gap: 5px; flex: 1; }
 .card__kt { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-45); }
-.card__t { font-size: 0.9rem; font-weight: 700; line-height: 1.16; letter-spacing: -0.015em; }
+.card__t { font-size: 0.92rem; font-weight: 800; line-height: 1.16; letter-spacing: -0.02em; }
 .card__r { display: flex; align-items: center; gap: 6px; font-size: 0.7rem; color: var(--ink-70); font-weight: 600; }
-.card__r .st { color: var(--sage); letter-spacing: 0; }
+.card__r .st { color: var(--forest); letter-spacing: 0; }
 .card__buy { margin-top: auto; display: grid; gap: 8px; padding-top: 6px; }
 .card__p, .card__pp { display: flex; align-items: baseline; justify-content: space-between; gap: 6px; flex-wrap: nowrap; }
 .card__pp .price { white-space: nowrap; flex: none; }
@@ -326,7 +327,7 @@ body.ov .scrim { opacity: 1; pointer-events: auto; }
 .rail { display: grid; grid-auto-flow: column; grid-auto-columns: 82%; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: calc(var(--pad) * -1); padding-inline: var(--pad); scroll-padding-inline: var(--pad); }
 .rail > * { scroll-snap-align: center; }
 .quote { background: var(--paper); border: var(--edge); border-radius: var(--r); padding: 13px; display: grid; gap: 8px; align-content: start; }
-.quote .st { color: var(--sage); font-size: 0.86rem; letter-spacing: 0; }
+.quote .st { color: var(--forest); font-size: 0.86rem; letter-spacing: 0; }
 .quote p { font-size: 0.9rem; line-height: 1.45; }
 .quote footer { display: flex; align-items: center; gap: 8px; font-size: 0.72rem; color: var(--ink-70); font-weight: 600; margin-top: auto; }
 .quote .av { width: 28px; height: 28px; border-radius: 50%; background: var(--pink); display: grid; place-items: center; font-weight: 800; font-size: 0.76rem; flex: none; }
@@ -514,3 +515,228 @@ body.ov .scrim { opacity: 1; pointer-events: auto; }
 .leadin__hd { display: grid; gap: 6px; }
 .msheet__cats { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 16px 13px; }
 .msheet__cats .chip { background: var(--paper); min-height: 36px; padding: 6px 11px; font-size: 0.72rem; }
+
+/* ==================================================================
+   v3 · bloques de contenido (copy de marca + prueba, sin perder tienda)
+   ================================================================== */
+.sec-head { display: grid; gap: 10px; margin-bottom: 16px; max-width: 62ch; }
+.sec-head--split { display: grid; gap: 14px; align-items: end; margin-bottom: 16px; }
+@media (min-width: 900px) { .sec-head--split { grid-template-columns: 1fr auto; } }
+.lede--big { font-size: clamp(1rem, 2.6vw, 1.16rem); line-height: 1.55; color: var(--ink-70); max-width: 62ch; }
+.sec--forest .lede--big { color: rgba(255,255,255,.8); }
+.clamp2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.clamp3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* fichas: hook + chips de beneficio */
+.card__hook { font-size: 0.82rem; line-height: 1.4; color: var(--ink-70); }
+.bchips { display: flex; flex-wrap: wrap; gap: 4px; }
+.bchips span {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.02em; padding: 3px 7px; border-radius: 999px;
+  background: var(--mint); border: 1px solid var(--line); color: var(--forest); white-space: nowrap;
+}
+.bchips--dark span { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); color: #fff; }
+.bchips--pink span { background: var(--pink-soft); border-color: transparent; color: var(--ink); }
+
+/* prueba social: tres números grandes */
+.stats { display: grid; gap: 10px; }
+.stats__i { border: var(--edge); border-radius: var(--r); background: var(--paper); padding: 14px; display: grid; gap: 4px; align-content: start; }
+.stats__n { font-size: clamp(1.9rem, 7vw, 2.6rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--pink-deep); }
+.stats__t { font-size: 0.86rem; color: var(--ink-70); line-height: 1.4; }
+.src { font-size: 0.72rem; color: var(--ink-45); max-width: 70ch; }
+
+/* grados explicados */
+.grades { display: grid; gap: 10px; }
+.grade { border: var(--edge); border-radius: var(--r); background: var(--paper); overflow: hidden; display: flex; flex-direction: column; }
+.grade__m { aspect-ratio: 16/9; overflow: hidden; background: var(--mint); }
+.grade__m img { width: 100%; height: 100%; object-fit: cover; }
+.grade__b { padding: 12px 13px 14px; display: grid; gap: 7px; flex: 1; }
+.grade h3 { font-size: 1.02rem; font-weight: 800; letter-spacing: -0.02em; }
+.grade p { font-size: 0.86rem; color: var(--ink-70); line-height: 1.5; }
+.grade__use { font-size: 0.76rem; color: var(--forest); font-weight: 600; }
+.grade__foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 6px; }
+@media (min-width: 700px) { .grades { grid-template-columns: repeat(3, 1fr); } }
+
+/* comparativa con símbolos */
+/* Comparativa v3: tabla real en escritorio, tarjetas deslizables en móvil.
+   Ojo: vive dentro de .sec--forest, así que el color del texto se fija a mano. */
+.cmpwrap { background: var(--paper); border-radius: var(--r); overflow: hidden }
+table.cmp { display: table; width: 100%; border-collapse: collapse; background: var(--paper); color: var(--ink) }
+table.cmp thead th { padding: 12px 14px; text-align: left; background: var(--forest); color: #fff; font-size: .68rem; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; border: 0 }
+table.cmp thead th.cmp__c--m { background: var(--pink-deep); color: #fff }
+table.cmp tbody th { padding: 12px 12px 12px 14px; text-align: left; vertical-align: top; width: 20%; background: var(--paper); border-top: 1px solid var(--sage-soft); color: var(--ink-45); font-size: .68rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase }
+table.cmp tbody td { padding: 12px 14px; vertical-align: top; border-top: 1px solid var(--sage-soft); color: var(--ink); font-size: .82rem; line-height: 1.45; background: var(--paper); font-weight: 500 }
+table.cmp tbody td.cmp__c--m { background: var(--mint); font-weight: 600 }
+table.cmp tbody tr:last-child > th, table.cmp tbody tr:last-child > td { padding-bottom: 16px }
+.cmp__mk { font-style: normal; font-weight: 900; margin-right: 6px }
+.cmp__mk.is-y { color: var(--forest) } .cmp__mk.is-n { color: var(--ink-45) } .cmp__mk.is-x { color: var(--pink-deep) }
+table.cmp .cmp__mk { font-size: .9rem }
+.cmpmob__c .cmp__mk { display: inline; font-style: normal; font-size: .82rem; font-weight: 900; text-transform: none; letter-spacing: 0; color: var(--forest); margin-right: 4px }
+.cmpmob__c .cmp__mk.is-x { color: var(--pink-deep) } .cmpmob__c .cmp__mk.is-n { color: var(--ink-45) }
+.cmpmob__c.is-hot .cmp__mk.is-y { color: var(--forest) }
+@media (min-width: 700px) {
+  table.cmp tbody td { font-size: .8rem }
+  table.cmp thead th:first-child { width: 20% }
+}
+}
+
+/* plazos de efecto */
+.tl { display: grid; gap: 10px; counter-reset: tl; }
+.tl__i { border: var(--edge); border-radius: var(--r); background: var(--paper); padding: 14px; display: grid; gap: 6px; position: relative; }
+.tl__k { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pink-deep); }
+.tl__i h3 { font-size: 1rem; font-weight: 800; letter-spacing: -0.02em; }
+.tl__i p { font-size: 0.88rem; color: var(--ink-70); line-height: 1.5; }
+@media (min-width: 700px) { .tl { grid-template-columns: repeat(3, 1fr); } }
+
+/* receta: paso con explicación */
+.rsteps { display: grid; gap: 8px; }
+.rsteps__i { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; }
+.rsteps__n { width: 26px; height: 26px; border-radius: 50%; background: var(--pink); color: var(--ink); display: grid; place-items: center; font-size: 0.76rem; font-weight: 800; }
+.rsteps b { display: block; font-size: 0.92rem; }
+.rsteps span { font-size: 0.85rem; color: var(--ink-70); line-height: 1.45; }
+
+/* reseña larga */
+.quote--lg { padding: 15px; gap: 10px; }
+.quote--lg p { font-size: 0.94rem; line-height: 1.55; color: var(--ink); }
+
+/* bloque editorial a dos columnas con foto */
+.edit { display: grid; gap: 16px; align-items: center; }
+@media (min-width: 900px) { .edit { grid-template-columns: 0.9fr 1.1fr; gap: clamp(24px, 4vw, 56px); } }
+.edit__m { border: var(--edge); border-radius: var(--r); overflow: hidden; background: var(--paper); }
+.edit__m img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+@media (min-width: 900px) { .edit__m img { aspect-ratio: 4/5; } }
+.edit__t { display: grid; gap: 12px; }
+.edit__t p { font-size: 0.95rem; line-height: 1.62; color: var(--ink-70); }
+.edit__t p b, .edit__t p strong { color: var(--ink); }
+@media (min-width: 900px) { .edit--rev .edit__m { order: 2; } }
+
+/* barra de producto dentro de un bloque de texto */
+.inlinebuy { border: var(--edge); border-radius: var(--r); background: var(--paper); padding: 12px; display: grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: center; }
+.inlinebuy img { width: 64px; height: 64px; object-fit: cover; border-radius: var(--r-s); border: var(--edge); }
+.inlinebuy b { display: block; font-size: 0.9rem; }
+.inlinebuy .row { margin-top: 6px; }
+@media (min-width: 700px) { .inlinebuy { grid-template-columns: 72px 1fr auto; } }
+
+/* pie: texto de marca bajo el logo */
+.foot__claim { font-size: 0.86rem; color: rgba(255,255,255,.72); line-height: 1.5; max-width: 34ch; }
+/* ficha rápida enriquecida */
+.card__more { width: 100%; text-align: center; font-size: 0.72rem; font-weight: 700; color: var(--forest); text-decoration: underline; text-decoration-color: var(--sage); text-underline-offset: 3px; padding: 2px 0 0; }
+.card__more:hover { color: var(--pink-deep); }
+#qv .modal__box { max-width: 760px; }
+.qv { display: grid; gap: 14px; }
+.note--hook { font-size: 0.95rem; color: var(--ink); font-weight: 600; line-height: 1.45; }
+.qv__pitch { font-size: 0.94rem; line-height: 1.6; color: var(--ink-70); }
+.qv__block { display: grid; gap: 8px; }
+.qv__block h3 { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); }
+.notes { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: var(--edge); border-radius: var(--r); overflow: hidden; }
+.notes > div { background: var(--mint); padding: 9px 11px; }
+.notes dt { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--forest); }
+.notes dd { font-size: 0.84rem; margin: 2px 0 0; line-height: 1.35; }
+.qv__rev { background: var(--paper); }
+.qv__buy { display: grid; gap: 10px; border: var(--edge); border-radius: var(--r); background: var(--paper); padding: 13px; align-items: center; }
+.qv__rel { display: grid; gap: 8px; }
+.qv__rel h3 { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-45); }
+.qv__relrow { display: grid; gap: 6px; }
+.qv__relrow button { display: grid; grid-template-columns: 42px 1fr auto; gap: 10px; align-items: center; text-align: left; border: var(--edge); border-radius: var(--r); background: var(--cream); padding: 7px; }
+.qv__relrow img { width: 42px; height: 42px; object-fit: cover; border-radius: var(--r-s); }
+.qv__relrow span { font-size: 0.84rem; font-weight: 600; line-height: 1.25; }
+.qv__relrow b { font-size: 0.84rem; }
+@media (min-width: 700px) {
+  #qv .modal__box { max-width: 900px; }
+  .qv { grid-template-columns: 1fr 1fr; align-items: start; }
+  .qv__img, .qv__buy, .qv__rel, .qv__rev, .qv > .note { grid-column: 1 / -1; }
+  .qv__buy { grid-template-columns: 1fr auto; }
+  .qv__relrow { grid-template-columns: repeat(3, 1fr); }
+}
+/* fichas de receta con explicación */
+.rcard p.clamp3 { -webkit-line-clamp: 3; }
+
+/* ============ v3 · ajustes de altura en móvil (la home no puede ser un tocho) ============ */
+.cmpmob { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 6px; margin-top: 14px }
+.cmpmob > .cmpmob__c { scroll-snap-align: start; flex: 0 0 82%; border: var(--edge); border-radius: 14px; padding: 14px; background: var(--paper) }
+.cmpmob__c.is-hot { background: var(--pink-soft) }
+.cmpmob__c > b { display: block; font-size: .92rem; font-weight: 900; margin-bottom: 8px }
+.cmpmob__c div { padding: 7px 0; border-top: 1px dashed rgba(18,22,15,.2) }
+.cmpmob__c i { display: block; font-style: normal; font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; color: var(--muted) }
+.cmpmob__c span { display: block; font-size: .8rem; line-height: 1.42; margin-top: 2px }
+.cmpmob__hint { font-size: .72rem; font-weight: 700; color: var(--muted); margin: 6px 0 0 }
+@media (min-width: 700px) { .cmpmob, .cmpmob__hint { display: none } }
+@media (max-width: 699.98px) {
+  table.cmp { display: none }
+  .grade__img { display: none }
+  .grade__body { -webkit-line-clamp: 4; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden }
+  .grade__foot .note { -webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden }
+  .edit__t > p { -webkit-line-clamp: 4; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden }
+  .edit--rev .edit__t > p { -webkit-line-clamp: 6 }
+  #kit .edit__t > p { -webkit-line-clamp: 5 }
+  .rsteps { gap: 12px }
+  .rsteps__i { grid-template-columns: 26px 1fr; gap: 10px }
+  .quote { padding: 14px }
+  .quote__txt { font-size: .82rem; -webkit-line-clamp: 4; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden }
+  .stats { padding: 12px }
+}
+/* recetas: en móvil pasan a horizontal para no hacer 3 bloques de 500px */
+@media (max-width: 699.98px) {
+  .rcard { display: grid; grid-template-columns: 104px 1fr; gap: 12px; align-items: stretch }
+  .rcard__m { height: 100%; min-height: 92px }
+  .rcard__m img { height: 100%; min-height: 92px }
+  .rcard__b { padding: 10px 12px 12px }
+  .rcard__b .btn { width: auto }
+}
+
+/* grados en carrusel en móvil (tres tarjetas apiladas ocupaban media pantalla cada una) */
+@media (max-width: 699.98px) {
+  .grades { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 6px; margin: 0 calc(-1 * var(--pad)); padding-left: var(--pad); padding-right: var(--pad) }
+  .grades > .grade { flex: 0 0 84%; scroll-snap-align: center; min-height: 0 }
+  .grades > .grade .grade__img { display: none }
+  .edit__t > p { -webkit-line-clamp: 3 }
+  #grados::after { content: "Desliza para ver los tres"; display: block; font-size: .72rem; font-weight: 700; color: var(--muted); margin-top: 4px }
+}
+
+/* ============ ficha: nota y precio en una línea, sin partirse ============ */
+.card__rate { display: inline-flex; align-items: baseline; gap: 4px; min-width: 0; flex: 1 1 auto }
+.card__rate b { font-weight: 900 }
+.card__rate .muted { color: var(--ink-45); font-weight: 600 }
+.card__r { flex-wrap: wrap; row-gap: 2px }
+.card__rate { white-space: nowrap }
+.card__urg { flex: none; padding: 1px 6px; border-radius: 999px; background: var(--pink-soft); font-size: .64rem; letter-spacing: .02em }
+.card__pp { display: flex; align-items: baseline; gap: 8px; justify-content: flex-start }
+.card__unit { font-size: .64rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-45); white-space: nowrap }
+.grade__foot { flex-wrap: wrap }
+.grade__foot .price { white-space: nowrap; font-size: 1rem }
+@media (max-width: 699.98px) {
+  .grade__foot { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 8px }
+  .grade__foot .note { grid-column: 1 / -1; order: -1 }
+  .grade__foot .btn { justify-self: end }
+  .card__r { font-size: .66rem }
+}
+
+/* ============ v3 · tarjetas claras dentro de secciones verdes ============ */
+/* En .sec--forest el texto hereda blanco: cualquiera de estas tarjetas es de fondo claro,
+   así que el color se fija a mano o desaparece el copy. */
+.sec--forest .cmpwrap, .sec--forest .cmpmob__c, .sec--forest .tl__i, .sec--forest .stats,
+.sec--forest .quote, .sec--forest .grade, .sec--forest .rsteps__i, .sec--forest .acc__i { color: var(--ink) }
+.sec--forest .tl__i h3, .sec--forest .cmpmob__c b { color: var(--ink) }
+.sec--forest .tl__i p { color: var(--ink-70) }
+.sec--forest .cmpmob__c .note, .sec--forest .tl__i .note { color: var(--ink-45) }
+
+/* ============ v3 · las tarjetas claras nunca heredan el blanco de .sec--forest ============ */
+.card, .grade, .quote, .stats, .tl__i, .rsteps__i, .acc__i, .inlinebuy, .cmpmob__c, .cmpwrap,
+.specs > div, .chip, .bchips span, .note--hook, .modal__box, .why__i, .rcard, .kit__list li { color: var(--ink) }
+.specs dt { color: var(--ink-45) }
+.specs dd { color: var(--ink) }
+/* estrellas: el sage sobre blanco no se leía (ratio 2,2); verde oscuro y algo más separado */
+.st { color: var(--forest); letter-spacing: 1px; font-style: normal }
+.st .off { color: var(--forest);}
+.sec--forest .st, .phead .st, .foot .st { color: var(--sage-soft) }
+.hero .st, .hero__trust .st { color: var(--sage-soft) }
+
+/* el bloque de guía dentro de una sección verde es oscuro por dentro: si no, el titular
+   blanco sobre tarjeta blanca desaparece (y con él la conversión del lead magnet) */
+.sec--forest .lead-in, .sec--forest .leadin { background: rgba(255, 255, 255, .07); border-color: rgba(255, 255, 255, .3); color: #fff; box-shadow: none }
+.sec--forest .lead-in .kicker { color: var(--pink-soft) }
+.sec--forest .lead-in label, .sec--forest .lead-in .consent, .sec--forest .lead-in .note { color: rgba(255, 255, 255, .78) }
+.sec--forest .lead-in .field input, .sec--forest .lead-in textarea, .sec--forest .lead-in select { background: rgba(255, 255, 255, .1); border-color: rgba(255, 255, 255, .38); color: #fff }
+.sec--forest .lead-in input::placeholder, .sec--forest .lead-in textarea::placeholder { color: rgba(255, 255, 255, .5) }
+.sec--forest .lead-in a { color: var(--pink-soft) }
+.sec--forest .lead-in .leadin__ok { background: rgba(255, 255, 255, .12); border-color: rgba(255, 255, 255, .3) }
+.sec--forest .chip { background: rgba(255, 255, 255, .12); border-color: rgba(255, 255, 255, .34); color: #fff }

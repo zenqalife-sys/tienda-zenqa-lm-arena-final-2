@@ -9,6 +9,50 @@ Repositorio: `zenqalife-sys/tienda-zenqa-lm-arena-final-2` · rama `main` · 52 
 
 ---
 
+## v3 · el fondo: copy de marca que vende (no titulares sueltos)
+
+La v2 se quedó en esqueleto: precios y eslóganes, sin explicación. La v3 mantiene la
+estructura de tienda (móvil primero, producto arriba, una sola capa abierta, sin botones
+flotando) y añade el texto que hace que alguien pague 29,95 € por un bote.
+
+**Un solo banco de copy: `assets/js/data.js`.** Cada producto lleva `hook` (frase de venta
+en la ficha), `pitch` (párrafo de 300-400 caracteres con sabor, uso y objeto de la compra),
+`notes` (Sabor / Aroma / Textura / Final), `benefits` (chips de beneficio), `bullets`
+(tres argumentos con número: gramos, precio por taza, durabilidad), `specs`, rating, nº de
+reseñas y stock real. Las recetas llevan `why` + 4 pasos con `s` (qué hacer) y `d` (por qué).
+Encima: `manifesto` (con stats y la nota honesta de la encuesta a 412 clientes), `compare`
+(7 criterios matcha / café / energética, con marca ✓ ○ ✕ por celda), `grades`, `timeline`
+(semana 1 / mes 1 / mes 3), `reviews` (7 con contexto y producto comprado), `faq` (6).
+
+**Cómo se pinta:** `mountContent()` renderiza `#stats`, `#grades`… los anclajes que existan
+en la página (`#stats`, `#grades`, `#cmpTable`, `#timeline`, `#grid-reviews[data-long]`) y
+`mountHome/mountShop/mountRecipes/mountFaq` hacen lo mismo con las rejillas. Por eso se puede
+añadir un bloque a una página sin tocar el JS: si el contenedor existe, se llena.
+
+**Comparativa:** tabla real en escritorio; en móvil se convierte en un carrusel de tres
+tarjetas deslizables (`.cmpmob`) con la frase por criterio, porque una tabla de 21 celdas de
+prosa ocupaba media pantalla en un móvil de 390 px.
+
+**Altura controlada:** la home es larga a propósito (historia + prueba + producto) pero la
+rejilla de productos va la tercera, justo tras el hero y la franja de confianza. En móvil se
+ocultan las imágenes de los bloques que no venden (grados), se acoplan los párrafos con
+`-webkit-line-clamp` y las recetas pasan a horizontal.
+
+**Qué se verificó con `node .test/*`:** `smoke.mjs` (13 comprobaciones de sustancia sobre los
+datos: pitch > 180 caracteres, 3 argumentos con número por producto, 4 pasos explicados por
+receta, 7 filas de comparativa, 6 FAQ; y por página: ficha rápida con pitch/notas/reseña/3
+relacionados, carrito, buscador, menú, imán de leads, footer, y que ni la home ni la tienda
+tengan bloques flotantes), `contrast.mjs` (auditoría de contraste WCAG-lumi sobre *todos* los
+textos con su fondo real compuesto, en 390×844 y 1440×900 — cazó el texto blanco sobre
+tarjeta blanca dentro de las secciones verdes), `ov.mjs` (solapamientos y `overflow-x`),
+`final.mjs` (522 referencias: href, src, anclas, ids de producto/receta), `elem.mjs` y
+`shot.mjs` (capturas para revisar a ojo). Todo en verde antes de subir.
+
+**Dependencias del sandbox:** `npm i puppeteer jsdom` y, si Chrome no arranca por librerías
+del sistema, `node .test/fetch-chrome-libs.mjs` (baja los `.deb` de trixie a
+`~/.local/chromelibs`; `node /tmp/h.mjs`-style nothing: basta con relanzar los tests). Los
+`.test/*.mjs` usan un servidor estático en `http://127.0.0.1:8080/`.
+
 ## Qué hay dentro
 
 | Página | Qué hace |

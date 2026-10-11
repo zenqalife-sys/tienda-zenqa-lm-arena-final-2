@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Recetas y guías de matcha · ZENQA LIFE</title>
-<meta name="description" content="Iced matcha latte, strawberry cloud, yuzu tonic, pre-entreno y las guías que arreglan la espuma: temperatura, cantidad y conservación del bote.">
+<title>Recetas y guías de matcha con gramos y temperatura · ZENQA LIFE</title>
+<meta name="description" content="Iced matcha latte de avena, strawberry cloud, yuzu tonic, smoothie verde, pre-entreno y las guías que arreglan la espuma: agua a 70 °C, tamizado y conservación del bote.">
 <meta name="theme-color" content="#ff6ebc">
 <link rel="icon" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
@@ -17,15 +17,16 @@
     <div class="wrap">
       <p class="crumb"><a href="index.html">Inicio</a> / <a href="ritual.html">Ritual</a> / Recetas</p>
       <h1>Recetas<br>y guías</h1>
-      <p class="lede">Diez cosas que hacer con el bote además de la taza caliente. Todas con la medida exacta en gramos.</p>
-      <p class="note" style="color:rgba(255,255,255,.72)">Cada receta sale más barata que en cafetería: 1,11 € de media por vaso.</p>
+      <p class="lede">Diez formas de aprovechar un bote, con gramos, temperatura y el motivo de cada paso. Si te sabe a hierba, no es el té: está en las guías.</p>
+      <p class="note" style="color:rgba(255,255,255,.75)">Cada receta dice con qué grado queda bien, para que no gastes ceremonial en un batido.</p>
     </div>
   </section>
 
   <div class="shopbar">
-    <div class="wrap shopbar__in"><div class="shopbar__scroll"><button class="chip" data-kind="todo" aria-pressed="true">Todo</button>
-      <button class="chip" data-kind="receta" aria-pressed="false">Recetas</button>
-      <button class="chip" data-kind="guia" aria-pressed="false">Guías</button>
+    <div class="wrap shopbar__in"><div class="shopbar__scroll">
+      <button class="chip" data-kind="todo" aria-pressed="true">Todo <i class="c">10</i></button>
+      <button class="chip" data-kind="receta" aria-pressed="false">Recetas <i class="c">6</i></button>
+      <button class="chip" data-kind="guia" aria-pressed="false">Guías <i class="c">4</i></button>
       </div><div class="shopbar__end"><span class="note" id="count-r">10 guías</span></div>
     </div>
   </div>
@@ -37,16 +38,28 @@
   <section class="sec tight">
     <div class="wrap">
       <div class="rcards" id="grid-r"></div>
+      <div class="row row--wrap" style="margin-top:16px">
+        <button class="btn btn--buy btn--auto" data-act="add" data-id="te-culinario">Añadir el culinario para recetas · 19,95 €</button>
+        <button class="btn btn--ghost btn--auto" data-act="qv" data-id="kit-completo">El Kit Pro, con espumador</button>
+      </div>
     </div>
   </section>
 
-  <section class="sec sec--mint tight">
+  <section class="sec sec--mint">
     <div class="wrap">
-      <div class="split">
-        <div class="col"><span class="kicker kicker--sage">Para hacer cualquiera de estas</span><h2 class="d d-3">El bote que va<br>en todas</h2>
-          <p class="lede">Culinario de 100 g: 50 lattes por 0,40 € el vaso. Si lo quieres solo con espuma, el ceremonial.</p></div>
-        <div class="col"><button class="btn btn--buy btn--lg" data-act="add" data-id="te-culinario">Añadir culinario 100 g · 19,95 €</button>
-          <button class="btn btn--ghost btn--lg" data-act="qv" data-id="kit-completo">Ver el Kit Pro</button></div>
+      <div class="sec-head">
+        <span class="kicker kicker--sage">Lo que preguntáis antes de guardar esto en marcadores</span>
+        <h2 class="d d-3">Cuatro cosas que sí cambian el resultado</h2>
+      </div>
+      <div class="why">
+        <article class="why__i"><span class="why__n">1</span><div><h3>La leche vegetal que funciona</h3><p>Avena barista o coco. La de soja se corta con el matcha caliente y la de almendra es demasiado fina: se queda en agua verde con color.</p></div></article>
+        <article class="why__i"><span class="why__n">2</span><div><h3>Endulza en el concentrado</h3><p>El azúcar no se disuelve en frío. Si lo añades al final, te queda dulce arriba y amargo abajo. Con sirope o miel en el concentrado, todo igual.</p></div></article>
+        <article class="why__i"><span class="why__n">3</span><div><h3>Hielo hasta arriba, siempre</h3><p>Poco hielo = agua de más en dos minutos = verde apagado y capas que se mezclan. El vaso lleno de hielo enfría rápido y no aguúa si el concentrado es espeso.</p></div></article>
+        <article class="why__i"><span class="why__n">4</span><div><h3>No lo licúes con matcha ceremonial</h3><p>La batidora de alta velocidad rompe el aroma fino y lo oxida al instante. Para smoothies, culinario: más cuerpo, un tercio del precio por gramo.</p></div></article>
+      </div>
+      <div class="row row--wrap" style="margin-top:12px">
+        <a class="btn btn--auto" href="ritual.html#pasos">Volver a los cuatro pasos</a>
+        <a class="link" href="tienda.html">Comprar el bote que toque</a>
       </div>
     </div>
   </section>

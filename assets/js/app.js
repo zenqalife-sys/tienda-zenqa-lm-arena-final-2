@@ -137,7 +137,7 @@
       { t: "Tazas y vasos", s: "4", h: "tienda.html#vaso" }, { t: "Ropa y accesorios", s: "4", h: "tienda.html#ropa" },
       { t: "Ver todo", s: "16", h: "tienda.html" } ] },
     { k: "ritual", t: "Ritual", href: "ritual.html", kids: [
-      { t: "Cómo prepararlo", s: "60 seg", h: "ritual.html#pasos" }, { t: "Matcha vs café", s: "", h: "ritual.html#vs" },
+      { t: "Cómo prepararlo", s: "60 seg", h: "ritual.html#pasos" }, { t: "Matcha vs café", s: "", h: "index.html#energia" },
       { t: "Recetas y guías", s: "10", h: "recetas.html" }, { t: "Cómo guardar el bote", s: "", h: "recetas.html#conservacion" } ] },
     { k: "nosotros", t: "Nosotros", href: "nosotros.html", kids: [
       { t: "La marca", s: "", h: "nosotros.html" }, { t: "Contacto y envíos", s: "", h: "contacto.html" },
@@ -172,9 +172,15 @@
 
     const sheet = document.createElement("div");
     sheet.className = "msheet"; sheet.id = "menu"; sheet.setAttribute("role", "dialog"); sheet.setAttribute("aria-label", "Menú");
+    const cats = Z.categories.map((c) => '<a class="chip" href="tienda.html#' + c.id + '">' + c.name + ' <i class="c">' + Z.products.filter((x) => x.cat === c.id).length + "</i></a>").join("");
+    const chipsRitual = '<a class="chip" href="ritual.html#pasos">4 pasos</a><a class="chip" href="index.html#energia">vs café</a><a class="chip" href="recetas.html">' + Z.recipes.length + ' guías</a>';
+    const chipsOtros = '<a class="chip" href="contacto.html">Contacto</a><a class="chip" href="index.html#resenas">Opiniones</a>';
     sheet.innerHTML = '<div class="msheet__top"><span class="brand">' + LOGO + '<span class="brand__w">Zenqa Life</span></span>' +
       '<button class="x" data-act="close" aria-label="Cerrar el menú">' + ICON.x + "</button></div>" +
-      "<nav>" + NAV.map((n) => '<a href="' + n.href + '"' + (n.k === page ? ' aria-current="page"' : "") + ">" + n.t + "<i>" + (n.kids ? "+" : "→") + "</i></a>").join("") + "</nav>" +
+      "<nav>" + NAV.map((n) => '<a href="' + n.href + '"' + (n.k === page ? ' aria-current="page"' : "") + ">" + n.t + "<i>→</i></a>" +
+      (n.k === "shop" ? '<div class="msheet__cats">' + cats + "</div>" : "") +
+      (n.k === "ritual" ? '<div class="msheet__cats">' + chipsRitual + "</div>" : "") +
+      (n.k === "nosotros" ? '<div class="msheet__cats">' + chipsOtros + "</div>" : "")).join("") + "</nav>" +
       '<div class="msheet__cta"><a class="btn btn--buy" href="tienda.html">Comprar matcha<span class="arw">→</span></a>' +
       '<a class="btn btn--ghost" href="ritual.html">Aprender en 60 s</a></div>';
 
@@ -322,7 +328,7 @@
       '<p class="d d-3">Guía matcha<br>+ 10 %</p></div>' +
       '<div class="two"><div class="field"><label for="le' + where + '">Email</label>' +
       '<input id="le' + where + '" name="email" type="email" required placeholder="tu@email.com" data-autofocus><p class="err" data-err hidden>Escribe un email válido</p></div>' +
-      '<div class="field"><label for="na' + where + '">Cómo te llamas</label><input id="na' + where + '" name="name" required placeholder="Laura"></div></div>' +
+      '<div class="field"><label for="na' + where + '">Cómo te llamas</label><input id="na' + where + '" name="name" placeholder="Laura (opcional)"></div></div>' +
       '<label class="consent"><input type="checkbox" name="consent" required> Acepto recibir la guía y la política de privacidad.</label>' +
       '<button class="btn btn--buy btn--lg" type="submit">Descargar la guía<span class="arw">→</span></button></form>';
   }
@@ -337,23 +343,43 @@
   }
 
   /* ---------- ficha rápida de producto ---------- */
-  function quickView(id) {
+function quickView(id) {
     const p = Z.byId[id]; if (!p) return;
     const b = $("#qvBody"); if (!b) return;
     const cat = Z.categories.find((c) => c.id === p.cat);
-    b.innerHTML = '<div class="qv">' +
-      '<figure class="qv__img"><img src="assets/img/' + p.img + '" alt="' + p.name + '"></figure>' +
-      (p.badge ? '<span class="tag" style="justify-self:start">' + p.badge + "</span>" : "") +
-      '<p class="kicker">' + cat.name + "</p>" +
-      '<h2 class="d d-3" style="text-transform:none">' + p.name + "</h2>" +
-      '<p class="note">' + p.short + "</p>" +
-      '<div class="card__p"><b class="price price--lg">' + Z.money(p.price) + (p.compareAt ? '<s>' + Z.money(p.compareAt) + "</s>" : "") + "</b>" +
-      '<span class="card__r"><i class="st">' + Z.stars(p.rating) + "</i> " + p.rating + " · " + p.reviews + " reseñas</span></div>" +
-      '<ul class="bullets">' + p.bullets.map((x) => "<li>" + ICON.check + "<span>" + x + "</span></li>").join("") + "</ul>" +
-      '<dl class="specs">' + Object.keys(p.specs).map((k) => "<div><dt>" + k + "</dt><dd>" + p.specs[k] + "</dd></div>").join("") + "</dl>" +
-      '<p class="note">Quedan <b>' + p.stock + "</b> botes · Envío gratis desde 35 € · 30 días de prueba</p>" +
-      '<button class="btn btn--buy btn--lg" data-act="add" data-id="' + p.id + '">Añadir al carrito · ' + Z.money(p.price) + "</button>" +
-      '<a class="link" href="tienda.html#' + p.id + '" style="justify-self:center">Ver en la tienda</a></div>';
+    const rev = Z.reviews.find((r) => r.p === p.id) || Z.reviews.find((r) => Z.byId[r.p] && Z.byId[r.p].cat === p.cat) || Z.reviews[0];
+    const rel = Z.products.filter((x) => x.cat === p.cat && x.id !== p.id).slice(0, 3);
+    const q = (x) => x.replace(/"/g, "&quot;");
+    let h = "";
+    h += '<figure class="qv__img"><img src="assets/img/' + p.img + '" alt="' + q(p.name) + '"></figure>';
+    h += '<div class="row row--wrap" style="gap:6px">' + (p.badge ? '<span class="tag">' + p.badge + '</span>' : '') +
+         '<span class="tag tag--sage">' + cat.name + '</span></div>';
+    h += '<h2 class="d d-3" style="text-transform:none">' + p.name + '</h2>';
+    h += '<p class="card__r"><i class="st">' + Z.stars(p.rating) + '</i> ' + p.rating + ' \u00b7 ' + p.reviews +
+         ' rese\u00f1as verificadas \u00b7 la media de ' + cat.name.toLowerCase() + ' en Zenqa es 4,8</p>';
+    h += '<p class="note note--hook">' + p.hook + '</p>';
+    h += '<p class="qv__pitch">' + p.pitch + '</p>';
+    h += '<div class="bchips bchips--pink">' + p.benefits.map((x) => '<span>' + x + '</span>').join('') + '</div>';
+    h += '<div class="qv__block"><h3>' + (p.cat === 'matcha' ? 'C\u00f3mo sabe y c\u00f3mo se toma' : 'Ficha y cuidados') + '</h3>' +
+         '<dl class="notes">' + Object.keys(p.notes).map((k) => '<div><dt>' + k + '</dt><dd>' + p.notes[k] + '</dd></div>').join('') + '</dl></div>';
+    h += '<div class="qv__block"><h3>Por qu\u00e9 este y no otro</h3><ul class="bullets">' +
+         p.bullets.map((x) => '<li>' + ICON.check + '<span>' + x + '</span></li>').join('') + '</ul></div>';
+    h += '<div class="qv__block"><h3>Especificaciones</h3><dl class="specs">' +
+         Object.keys(p.specs).map((k) => '<div><dt>' + k + '</dt><dd>' + p.specs[k] + '</dd></div>').join('') + '</dl></div>';
+    if (rev) {
+      h += '<blockquote class="quote quote--lg qv__rev"><div class="st">' + Z.stars(rev.r) + '</div><p>\u00ab' + rev.txt + '\u00bb</p>' +
+           "<footer><span class='av'>" + rev.n[0] + "</span><span><b>" + rev.n + "</b> \u00b7 " + rev.c + " \u00b7 opinión verificada</span></footer></blockquote>";
+    }
+    h += '<div class="qv__buy"><div><p class="price price--lg">' + Z.money(p.price) +
+         (p.compareAt ? '<s>' + Z.money(p.compareAt) + '</s>' : '') + '</p>' +
+         '<p class="note">IVA incluido \u00b7 ' + (p.stock <= 20 ? 'quedan <b>' + p.stock + '</b> \u00b7 ' : '') +
+         'env\u00edo gratis desde 35 \u20ac \u00b7 30 d\u00edas de prueba</p></div>' +
+         '<button class="btn btn--buy btn--lg" data-act="add" data-id="' + p.id + '">A\u00f1adir al carrito</button></div>';
+    h += '<p class="note">\u00bfDudas entre grados? <a class="link" href="ritual.html#grados">Te lo explicamos en 30 segundos</a>.</p>';
+    h += '<div class="qv__rel"><h3>Tambi\u00e9n encaja con esto</h3><div class="qv__relrow">' +
+         rel.map((x) => '<button data-act="qv" data-id="' + x.id + '"><img src="assets/img/' + x.img + '" alt=""><span>' + x.name +
+         '</span><b>' + Z.money(x.price) + '</b></button>').join('') + '</div></div>';
+    b.innerHTML = '<div class="qv">' + h + '</div>';
     Panes.qv.el.setAttribute("aria-label", p.name);
     paneOpen("qv");
   }
@@ -435,25 +461,84 @@
      ================================================================== */
   function cardHTML(p) {
     const cat = Z.categories.find((c) => c.id === p.cat);
+    const off = p.compareAt ? Math.round((1 - p.price / p.compareAt) * 100) : 0;
     return '<article class="card" id="' + p.id + '">' +
       '<a class="card__img" href="tienda.html#' + p.id + '" data-act="qv" data-id="' + p.id + '">' +
       '<img src="assets/img/' + p.img + '" alt="' + p.name + '" loading="lazy">' +
       (p.badge ? '<span class="tag card__flag">' + p.badge + "</span>" : "") +
-      '<span class="card__qb only-desk">Ver ficha</span></a>' +
-      '<div class="card__bd"><p class="card__kt">' + cat.name + (p.compareAt ? ' · <span style="color:var(--pink-deep)">-' + Math.round((1 - p.price / p.compareAt) * 100) + " %</span>" : "") + "</p>" +
+      '<span class="card__qb only-desk">Ver la ficha completa</span></a>' +
+      '<div class="card__bd"><p class="card__kt">' + cat.name + (off ? ' · <span style="color:var(--pink-deep)">−' + off + " %</span>" : "") + "</p>" +
       '<h3 class="card__t">' + p.name + "</h3>" +
-      '<p class="card__r"><i class="st">' + Z.stars(p.rating) + "</i> " + p.rating + " (" + p.reviews + ")" +
-      (p.stock <= 20 ? ' · <b class="card__urg">quedan ' + p.stock + "</b>" : "") + "</p>" +
-      '<p class="note">' + p.short + "</p>" +
-      '<div class="card__buy"><p class="card__pp"><b class="price">' + Z.money(p.price) + (p.compareAt ? "<s>" + Z.money(p.compareAt) + "</s>" : "") + "</b>" +
-      "</p>" +
-      '<button class="card__add" data-act="add" data-id="' + p.id + '"><span class="plus" aria-hidden="true">+</span>Añadir al carrito</button></div></div></article>';
+      '<p class="card__r"><span class="card__rate"><i class="st">' + Z.stars(p.rating) + "</i><b>" + p.rating + '</b><span class="muted">(' + p.reviews + ")</span></span>" +
+      (p.stock <= 20 ? '<b class="card__urg">quedan ' + p.stock + " uds</b>" : "") + "</p>" +
+      '<p class="card__hook">' + p.hook + "</p>" +
+      '<div class="bchips">' + p.benefits.slice(0, 2).map((b) => "<span>" + b + "</span>").join("") + "</div>" +
+      '<div class="card__buy"><p class="card__pp"><b class="price">' + Z.money(p.price) +
+      (p.compareAt ? "<s>" + Z.money(p.compareAt) + "</s>" : "") + '</b><span class="card__unit">' +
+      (p.unit || p.specs.Contenido || p.specs.Capacidad || p.specs.Medidas || p.specs["Medida"] || "envío 24-48 h").split(" · ")[0] + "</span></p>" +
+      '<button class="card__add" data-act="add" data-id="' + p.id + '"><span class="plus" aria-hidden="true">+</span>Añadir al carrito</button>' +
+      '<button class="card__more" data-act="qv" data-id="' + p.id + '">Por qué este</button>' +
+      "</div></div></article>";
   }
   function recipeCard(r) {
     return '<a class="rcard" href="recetas.html#' + r.id + '"><div class="rcard__m"><img src="assets/img/' + r.img + '" alt="' + r.name + '" loading="lazy">' +
       '<span class="tag rcard__t">' + r.kind + "</span></div>" +
       '<div class="rcard__b"><h3>' + r.name + "</h3><p>" + r.short + "</p>" +
+      '<p class="note clamp3">' + r.why + "</p>" +
       '<div class="rcard__go">Ver receta<span>' + r.time + " · " + r.level + "</span></div></div></a>";
+  }
+
+  /* ---------- bloques de contenido de marca ---------- */
+  function mountContent() {
+    const st = $("#stats");
+    if (st) {
+      const cards = Z.manifesto.stats.map((x) =>
+        "<article class='stats__i'><p class='stats__n'>" + x.n + "</p><p class='stats__t'>" + x.t + "</p></article>").join("");
+      st.innerHTML = cards + "<p class='src'>" + Z.manifesto.note + "</p>";
+    }
+    const gr = $("#grades");
+    if (gr) {
+      gr.innerHTML = Z.grades.map((g) => {
+        const p = Z.byId[g.id];
+        return "<article class='grade'><div class='grade__m'><img src='assets/img/" + g.img + "' alt='" + g.name + "' loading='lazy'></div>" +
+          "<div class='grade__b'><span class='kicker'>" + g.tag + "</span><h3>" + g.name + "</h3><p>" + g.body + "</p>" +
+          "<p class='grade__use'>" + g.use + "</p>" +
+          "<div class='grade__foot'><b class='price'>" + Z.money(p.price) + "</b>" +
+          "<button class='btn btn--buy btn--sm btn--auto' data-act='add' data-id='" + p.id + "'>Añadir</button></div>" +
+          "<button class='card__more' data-act='qv' data-id='" + p.id + "'>Leer la ficha completa</button></div></article>";
+      }).join("");
+    }
+    const cmp = $("#cmpTable");
+    if (cmp) {
+      const mk = (m) => '<i class="cmp__mk ' + (m === "y" ? "is-y" : m === "n" ? "is-n" : "is-x") + '">' + (m === "y" ? "\u2713" : m === "n" ? "\u25CB" : "\u2715") + "</i>";
+      const first = (t) => { const a = t.split(/(?<=\.)\s/).map((x) => x.trim()); return (a[0].length >= 30 ? a[0] : a[0] + " " + (a[1] || "")).replace(/\s+/g, " ").trim(); };
+      const cols = [["m", "Matcha Zenqa", 1], ["cf", "Café de especialidad", 0], ["en", "Bebida energética", 0]];
+      const rail = cols.map(([k, label, hot]) => '<article class="cmpmob__c' + (hot ? " is-hot" : "") + '">' +
+        '<b>' + label + "</b>" +
+        Z.compare.rows.map((r) => "<div><i>" + r.c + "</i><span>" + mk(r.k[["m", "cf", "en"].indexOf(k)]) + first(r[k]) + "</span></div>").join("") + "</article>").join("");
+      const tab = '<table class="cmp"><thead><tr><th></th>' +
+        '<th class="cmp__c cmp__c--m">' + Z.compare.legend.m + "</th><th>" + Z.compare.legend.cf + "</th><th>" + Z.compare.legend.en + "</th></tr></thead><tbody>" +
+        Z.compare.rows.map((r) => '<tr class="cmp__r"><th scope="row">' + r.c + "</th>" +
+          '<td class="cmp__c cmp__c--m">' + mk(r.k[0]) + r.m + "</td>" +
+          "<td><span class=\"cmp__mk\">" + mk(r.cf) + "</span>" + r.cf + "</td>" +
+          "<td><span class=\"cmp__mk\">" + mk(r.en) + "</span>" + r.en + "</td></tr>").join("") + "</tbody></table>";
+      cmp.innerHTML = '<div class="cmpmob">' + rail + "</div><p class=\"cmpmob__hint\">Desliza las tarjetas para comparar los tres \u00b7 la columna verde es la nuestra</p>" + tab;
+    }
+    const tl = $("#timeline");
+    if (tl) {
+      tl.innerHTML = Z.timeline.map((x) =>
+        "<article class='tl__i'><p class='tl__k'>" + x.k + "</p><h3>" + x.t + "</h3><p>" + x.d + "</p></article>").join("");
+    }
+    const rv = $("#grid-reviews");
+    if (rv) {
+      const long = rv.hasAttribute("data-long");
+      rv.innerHTML = Z.reviews.map((v) => {
+        const p = Z.byId[v.p];
+        return "<article class='quote" + (long ? " quote--lg" : "") + "'><div class='st'>" + Z.stars(v.r) + "</div><p>\u00ab" + v.txt + "\u00bb</p>" +
+          "<footer><span class='av'>" + v.n[0] + "</span><span><b>" + v.n + "</b> \u00b7 " + v.c + " \u00b7 " + v.t + "</span></footer>" +
+          (p ? "<button class='card__more' data-act='qv' data-id='" + p.id + "'>Compr\u00f3 " + p.name + "</button>" : "") + "</article>";
+      }).join("");
+    }
   }
 
   /* ==================================================================
@@ -467,9 +552,6 @@
     }
     const k = $("#grid-kit");
     if (k) k.innerHTML = ["kit-basico", "kit-completo", "kit-regalo"].map((i) => cardHTML(Z.byId[i])).join("");
-    const r = $("#grid-reviews");
-    if (r) r.innerHTML = Z.reviews.map((v) => '<article class="quote"><div class="st">' + Z.stars(v.r) + "</div><p>«" + v.txt + "»</p>" +
-      '<footer><span class="av">' + v.n[0] + "</span><span><b>" + v.n + "</b> · " + v.c + " · " + v.t + "</span></footer></article>").join("");
     const ng = $("#grid-nos");
     if (ng) ng.innerHTML = ["te-ceremonial", "kit-basico"].map((i) => cardHTML(Z.byId[i])).join("");
     const rec = $("#grid-recipes");
@@ -524,12 +606,16 @@
       if (!host) return;
       if (!r) { host.hidden = true; return; }
       host.hidden = false;
-      host.innerHTML = '<div class="split"><figure class="kit__media"><img src="assets/img/' + r.img + '" alt="' + r.name + '"></figure>' +
-        '<div class="col"><span class="kicker">' + r.kind + " · " + r.time + " · " + r.level + "</span>" +
-        '<h2 class="d d-2">' + r.name + "</h2><p class=\"lede\">" + r.short + "</p>" +
-        '<ol class="steps" style="grid-template-columns:1fr">' + r.steps.map((s, i) => '<li><span class="n">PASO ' + (i + 1) + "</span><p>" + s + "</p></li>").join("") + "</ol>" +
-        '<div class="row"><a class="btn btn--buy btn--auto" href="tienda.html#te-ceremonial">Comprar el matcha para esta receta</a>' +
-        '<button class="btn btn--ghost btn--auto" data-act="closedet">Cerrar</button></div></div></div>';
+      const buy = Z.byId[r.product] || Z.byId["te-ceremonial"];
+      host.innerHTML = '<div class="edit"><figure class="edit__m"><img src="assets/img/' + r.img + '" alt="' + r.name + '"></figure>' +
+        '<div class="edit__t"><span class="kicker">' + r.kind + " · " + r.time + " · " + r.level + "</span>" +
+        '<h2 class="d d-2">' + r.name + "</h2>" +
+        '<p class="lede--big">' + r.short + "</p><p>" + r.why + "</p>" +
+        '<ol class="rsteps">' + r.steps.map((x, i) => '<li class="rsteps__i"><span class="rsteps__n">' + (i + 1) + "</span><span><b>" + x.s + "</b><span>" + x.d + "</span></span></li>").join("") + "</ol>" +
+        '<div class="inlinebuy"><img src="assets/img/' + buy.img + '" alt=""><div><b>' + buy.name + "</b>" +
+        '<p class="note">' + buy.hook + "</p></div>" +
+        '<div class="row"><button class="btn btn--buy btn--auto" data-act="add" data-id="' + buy.id + '">Añadir · ' + Z.money(buy.price) + "</button>" +
+        '<button class="btn btn--ghost btn--auto" data-act="closedet">Cerrar</button></div></div></div></div>';
       host.scrollIntoView({ block: "start" });
     }
     window.addEventListener("hashchange", detail); detail();
@@ -563,6 +649,7 @@
   buildHeader();
   buildFooter();
   buildOverlays();
+  mountContent();
   mountHome();
   if (page === "tienda") mountShop();
   if (page === "recetas") mountRecipes();
