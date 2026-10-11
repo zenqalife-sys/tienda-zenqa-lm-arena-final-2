@@ -3,7 +3,9 @@
 Demo de e-commerce de té matcha construida a mano (HTML + CSS + JS, sin build) para migrar después a Shopify.
 Versión 2: móvil de verdad, tienda por delante y textos que venden.
 
-**Ver online:** (URL de GitHub Pages al terminar el despliegue)
+**Ver online:** https://zenqalife-sys.github.io/tienda-zenqa-lm-arena-final-2/
+
+Repositorio: `zenqalife-sys/tienda-zenqa-lm-arena-final-2` · rama `main` · 52 archivos · Pages con `main/(root)`.
 
 ---
 
