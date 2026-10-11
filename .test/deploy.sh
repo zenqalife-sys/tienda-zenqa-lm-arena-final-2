@@ -6,8 +6,16 @@
 set -uo pipefail
 cd "$(dirname "$0")/.."
 
-: "${GITHUB_TOKEN:?falta GITHUB_TOKEN (PAT clásico con el scope «repo»: los fine-grained no pueden crear repos)}"
 REPO="${REPO:-zenqa-life-final-finalisima}"
+# El token puede venir por variable o por archivo. Por archivo es más seguro: el chat
+# enmascara las cadenas con forma de token, así que pegarlas en un comando no funciona.
+#   TOK=$(tr -d '[:space:]' < /home/user/.gh-token)  ->  GITHUB_TOKEN="$TOK" bash .test/deploy.sh
+# o directamente:  GITHUB_TOKEN_FILE=/home/user/.gh-token bash .test/deploy.sh
+if [ -n "${GITHUB_TOKEN_FILE:-}" ] && [ -r "$GITHUB_TOKEN_FILE" ]; then
+  GITHUB_TOKEN="$(tr -d '[:space:]' < "$GITHUB_TOKEN_FILE")"
+  export GITHUB_TOKEN
+fi
+: "${GITHUB_TOKEN:?falta GITHUB_TOKEN (PAT clásico con el scope «repo»: los fine-grained no pueden crear repos) o GITHUB_TOKEN_FILE}"
 
 who() { curl -s -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/user; }
 OWNER="$(who | sed -n 's/.*"login": "\([^"]*\)".*/\1/p' | head -1)"
