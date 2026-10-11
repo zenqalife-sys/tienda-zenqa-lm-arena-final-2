@@ -435,5 +435,122 @@ window.ZENQA = (function () {
   const recipeById = Object.fromEntries(recipes.map((r) => [r.id, r]));
   const stars = (r) => "★★★★★".slice(0, Math.round(r)) + "☆☆☆☆☆".slice(0, 5 - Math.round(r));
 
-  return { brand, manifesto, grades, timeline, compare, categories, products, recipes, reviews, faq, money, byId, recipeById, stars };
+  /* ================= v4 · estructura de 5 páginas =================
+     La web es una tienda: catálogo agrupado en bloques de tres, y el
+     detalle largo vive en la ficha (capa), no en la página. */
+  categories.length = 0;
+  categories.push(
+    { id: "matcha", name: "T\u00e9 matcha", note: "Culinario, ceremonial y el pack para no fallar con el grado" },
+    { id: "te", name: "M\u00e1s variedades de t\u00e9", note: "Tostados y hoja completa para la taza larga de la tarde" },
+    { id: "kit", name: "Kits de preparaci\u00f3n", note: "Cuenco, batidor, cuchara y tamizador en una caja" },
+    { id: "vaso", name: "Teteras, tazas, botellas y vasos", note: "Donde lo bates y donde te lo llevas" },
+    { id: "ropa", name: "Ropa y accesorios", note: "Camisetas, tote bags y esmalte con el verde puesto" }
+  );
+
+  products.push(
+    {
+      id: "te-hojicha", cat: "te", name: "Hojicha tostado de Kioto 60 g", price: 21.95, compareAt: 24.95,
+      rating: 4.7, reviews: 84, stock: 30, badge: "SIN CAFE\u00cdNA", img: "p-hojicha.jpg", unit: "60 g",
+      hook: "Tostado a 180 \u00b0C: la taza de despu\u00e9s de cenar, sin quitar el sue\u00f1o.",
+      pitch: "El hojicha no es t\u00e9 verde: la hoja se tuesta antes de molerse y ah\u00ed se le van los amargos y casi toda la cafe\u00edna. Queda un polvo color caramelo con aroma a pan tostado y un punto de cacao, dulce de por s\u00ed, que se puede tomar con leche a las diez de la noche. Es el que recomendamos a quien quiere el ritual del matcha \u2014tamizar, batir, sostener la taza\u2014 pero no quiere el aceler\u00f3n.",
+      notes: { "Sabor": "tostado, pan y caramelo", "Aroma": "humo dulce, cacao", "Textura": "ligera y limpia", "Final": "redondo, sin astringencia" },
+      benefits: ["10 mg de cafe\u00edna", "Se toma a cualquier hora", "Dulce sin leche ni az\u00facar"],
+      bullets: [
+        "60 g a 2 g por taza: 30 tazas por 21,95 \u20ac, 0,73 \u20ac la taza.",
+        "Cafe\u00edna ≈10 mg frente a los 68 mg del matcha: es la taza de la noche.",
+        "Tostado el mismo d\u00eda del envasado: el aroma aguanta 3 meses abierto, no 2 a\u00f1os.",
+      ],
+      specs: { "Contenido": "60 g", "Origen": "\ud83c\uddef\ud83c\uddf5 Kagoshima", "Tueste": "180 \u00b0C \u00b7 12 min", "Agua": "90 \u00b0C \u00b7 100 ml" },
+    },
+    {
+      id: "te-sencha", cat: "te", name: "Sencha de primavera \u00b7 hoja entera 50 g", price: 19.95, compareAt: 0,
+      rating: 4.6, reviews: 51, stock: 44, badge: "", img: "p-sencha.jpg", unit: "50 g",
+      hook: "La primera recogida en hoja entera, para la tetera grande de la tarde.",
+      pitch: "Donde el matcha se bebe de golpe, el sencha se queda en la mesa: hoja entera que se abre en el agua y aguanta tres vertidos. Traemos la primera recogida de primavera, la que tiene m\u00e1s amino\u00e1cidos y menos amargor, y el truco est\u00e1 en el agua: a 60 \u00b0C sale dulce y con cuerpo; a 100 \u00b0C, astringente. Si te gusta el t\u00e9 de taza larga, este es el bote que se acaba antes.",
+      notes: { "Sabor": "herbal fresco con c\u00edtrico", "Aroma": "hierba y algas suaves", "Textura": "ligera", "Final": "umami corto y limpio" },
+      benefits: ["3 vertidos por hoja", "Agua a 60 \u00b0C", "Taza larga de tarde"],
+      bullets: [
+        "2,5 g por 200 ml: 20 sesiones por 19,95 \u20ac.",
+        "Resiste tres vertidos si bajas a 60 \u00b0C; con agua hirviendo solo aguanta uno.",
+        "40 mg de cafe\u00edna por taza: la mitad que el matcha, m\u00e1s que un t\u00e9 negro.",
+      ],
+      specs: { "Contenido": "50 g", "Hoja": "sencha ichibancha", "Agua": "60 \u00b0C \u00b7 90 s", "Vertidos": "2-3" },
+    },
+    {
+      id: "botella-ice", cat: "vaso", name: "Botella Matcha On-the-Go 600 ml", price: 21.95, compareAt: 25.95,
+      rating: 4.8, reviews: 63, stock: 38, badge: "PARA LLEVAR", img: "p-bottle.jpg", unit: "600 ml",
+      hook: "Se bate dentro: polvo, agua, tres hielos y agitar 15 segundos.",
+      pitch: "Para el iced latte que se acaba en el coche o en el gimnasio: la botella lleva un batidor de var\u00edlla desmontable en la tapa, as\u00ed que disuelve el polvo sin grumos y sin necesitar un chasen. Trit\u00e1n de 600 ml, boca ancha para meter hielo, junta de silicona que no gotea en la mochila y una marca interior a los 200 ml para no pasarte de leche.",
+      notes: { "Capacidad": "600 ml", "Boca": "ancha, entra el hielo", "Batidor": "var\u00edlla extra\u00edble", "Fr\u00edo": "12 h en nevera" },
+      benefits: ["Sin grumos en 15 s", "No gotea", "Apta lavavajillas"],
+      bullets: [
+        "600 ml y marca a los 200 ml: la proporci\u00f3n justa de concentrado y leche.",
+        "Trit\u00e1n sin BPA: pesa 160 g y aguanta el hielo sin agrietarse.",
+        "Se desmonta en 3 piezas y todas caben en el lavavajillas.",
+      ],
+      specs: { "Capacidad": "600 ml", "Material": "Trit\u00e1n sin BPA", "Incluye": "Batidor + junta", "Cuidado": "Lavavajillas" },
+    },
+  );
+
+  products.forEach((p) => (byId[p.id] = p));
+  byId["te-guante"].cat = "te";
+  byId["taza-esmaltada"].cat = "vaso";
+  const ord = ["te-culinario", "te-ceremonial", "pack-descubrimiento", "te-guante", "te-hojicha", "te-sencha",
+    "kit-basico", "kit-completo", "kit-regalo", "recambio-chasen", "chawan-negro", "taza-zenqa", "vaso-latte",
+    "termico", "botella-ice", "taza-esmaltada", "sudadera", "camiseta", "tote"];
+  products.sort((a, b) => ord.indexOf(a.id) - ord.indexOf(b.id));
+  byId["kit-completo"].unit = "6 piezas";
+  byId["kit-basico"].unit = "3 piezas";
+  byId["kit-regalo"].unit = "caja regalo";
+
+  const bandTop = ["Env\u00edos gratis a partir de 35 \u20ac \u00b7 Pen\u00ednsula 24-48 h", "Env\u00edos gratis a partir de 35 \u20ac \u00b7 Pen\u00ednsula 24-48 h"];
+  const bandMid = ["Env\u00edos gratis a partir de 35 \u20ac", "Descarga nuestra gu\u00eda gratuita", "\u00danete al movimiento Zenqa Life"];
+  const kitIncluye = [
+    ["Chawan de gres", "320 ml, borde ancho para batir sin salpicar"],
+    ["Chasen de bamb\u00fa", "80 p\u00faas talladas de una sola pieza"],
+    ["Chashaku + tamizador", "la curva que mide 1 g y el colador que quita los grumos"],
+    ["Bote de 54 g", "el ceremonial de Uji dentro, no de muestra"],
+  ];
+
+  const ways = [
+    { t: "Usucha solo", s: "1 g \u00b7 70 ml \u00b7 70 \u00b0C" },
+    { t: "Latte caliente", s: "2 g \u00b7 200 ml de avena" },
+    { t: "Iced latte", s: "2 g \u00b7 hielo \u00b7 250 ml" },
+    { t: "Smoothie verde", s: "1 g culinario \u00b7 pl\u00e1tano" },
+    { t: "Yuzu tonic", s: "1,5 g \u00b7 t\u00f3nica \u00b7 lima" },
+    { t: "De noche", s: "2.\u00aa infusi\u00f3n \u00b7 65 \u00b0C" },
+  ];
+
+  const ritual4 = [
+    { t: "Tamiza 1 g", d: "Dos chashaku colmados por la malla fina. El batidor empuja el grumo, no lo deshace." },
+    { t: "Agua a 70 \u00b0C", d: "Hierve y espera cuatro minutos: a 100 \u00b0C arrastras amargor y quemas dulzor." },
+    { t: "Bate en \u00abW\u00bb", d: "De mu\u00f1eca, 15 segundos, sin apretar contra el fondo. Microespuma, no espuma de fregar." },
+    { t: "B\u00e9belo en tres tragos", d: "El matcha caliente pierde aroma en dos minutos. Es un momento corto a propósito." },
+  ];
+
+  const vsMatcha = {
+    a: {
+      id: "te-culinario", who: "Para quien lo mezcla: leche, hielo, fruta o bizcocho.",
+      list: [["Grado", "de latte, molido m\u00e1s grueso para que aguante la leche"], ["Sabor", "intenso y vegetal: no se pierde al a\u00f1adir nada"], ["Rendimiento", "100 g = 50 lattes fr\u00edos, 0,40 \u20ac por vaso"], ["Se toma", "en vaso grande, con sirope o sin \u00e9l, fr\u00edo o templado"]],
+    },
+    b: {
+      id: "te-ceremonial", who: "Para quien lo bebe con agua y quiere los sesenta segundos.",
+      list: [["Grado", "ceremonial primario, primera hoja de la primavera"], ["Sabor", "umami dulce, sin ese punto de heno"], ["Rendimiento", "54 g = 27 tazas de 1 g, 1,11 \u20ac por taza"], ["Se toma", "solo, a 70 \u00b0C, en cuenco de borde ancho"]],
+    },
+  };
+
+  const energy = [
+    { k: "C\u00f3mo sube", m: "En 20-40 min y se mantiene 3-5 h", c: "Pico r\u00e1pido y baj\u00f3n seg\u00fan dosis" },
+    { k: "Cafe\u00edna", m: "68 mg por taza de 1 g", c: "\u2248120 mg en un solo de barra" },
+    { k: "C\u00f3mo te deja", m: "Concentraci\u00f3n tranquila, sin temblor", c: "Alerta\u2026 y a veces taquicardia" },
+    { k: "A media tarde", m: "Se puede tomar sin fastidiar el sue\u00f1o", c: "Despu\u00e9s de las 16 h ya es loter\u00eda" },
+  ];
+
+  const quality = [
+    ["Origen", "Una finca de Uji (Kioto)"], ["Cosecha", "Primavera \u00b7 primera recogida"], ["Sombra", "20 d\u00edas antes del corte"],
+    ["Hoja", "tencha sin tallos ni venas"], ["Molienda", "piedra, 40 g/hora"], ["Grano", "6-8 \u00b5m"],
+    ["Envasado", "en origen, con n\u00f3itrogeno"], ["Anal\u00edtica", "pesticidas: no detectado"],
+  ];
+
+  return { brand, manifesto, grades, timeline, compare, categories, products, recipes, reviews, faq, money, byId, recipeById, stars, bandTop, bandMid, kitIncluye, ways, ritual4, vsMatcha, energy, quality };
 })();

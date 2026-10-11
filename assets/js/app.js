@@ -1,662 +1,588 @@
-/* ZENQA LIFE · app.js (v2)
-   Header/footer compartidos + gestor de overlays (un solo panel a la vez) + carrito real
-   con localStorage + ficha rápida + buscador + lead magnet con validación. */
+/* ============================================================
+   ZENQA LIFE · v4 — motor de la tienda
+   Cabecera con franja en bucle + nav pegajosa, pie común en todas
+   las páginas, carrito real, ficha rápida, recetas en capa, buscador,
+   imán de leads y formularios. Las secciones de texto no existen:
+   se monta lo que la página pide por data-* y nada más.
+   ============================================================ */
 (function () {
   "use strict";
   const Z = window.ZENQA;
-  const page = document.body.dataset.page || "home";
   const $ = (s, r) => (r || document).querySelector(s);
-  const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
-  const mq = (m) => (window.matchMedia ? window.matchMedia("(min-width: " + m + "px)").matches : window.innerWidth >= m);
-  const LS = {
-    get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } },
-    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
-  };
+  const $$ = (s, r) => Array.prototype.slice.call((r || document).querySelectorAll(s));
+  const page = document.body.dataset.page || "";
+  const LS_CART = "zenqa_cart";
+  const LS_LEAD = "zenqa_lead";
+  const mq = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+  const reduce = !!(mq && mq.matches);
+
   const ICON = {
-    cart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5h2l2.2 10.2h10L20 8H6.2"/><circle cx="9.5" cy="19.5" r="1.5"/><circle cx="17.5" cy="19.5" r="1.5"/></svg>',
-    search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>',
-    burger: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
-    x: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>',
-    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m4 12.5 5 5L20 6.5"/></svg>',
-    truck: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 6h11v10H2zM13 9h4l3 3v4h-7z"/><circle cx="6" cy="18" r="1.7"/><circle cx="17" cy="18" r="1.7"/></svg>',
-    leaf: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 4c-9 0-15 4-15 10a6 6 0 0 0 6 6c6 0 9-6 9-16z"/><path d="M6 20C9 15 13 11 18 8"/></svg>',
-    bolt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2 5 14h6l-1 8 8-12h-6l1-8z"/></svg>',
-    return: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 9h12a5 5 0 1 1 0 10H8"/><path d="m8 5-4 4 4 4"/></svg>',
-    bag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>',
+    cart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.4A2 2 0 0 0 9.4 16h8.2a2 2 0 0 0 2-1.6L21 7H6"/><circle cx="10" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>',
+    search: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>',
+    menu: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7h17M3.5 12h17M3.5 17h11"/></svg>',
+    x: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+    bag: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9.5 8V6.5a2.5 2.5 0 0 1 5 0V8"/></svg>',
   };
-
-  /* ==================================================================
-     1. Gestor de overlays — un único panel abierto a la vez.
-        Nada de dos × solapados ni de "cierro uno y se abre el otro".
-     ================================================================== */
-  const Panes = {
-    cart: { el: null, kind: "drawer" },
-    search: { el: null, kind: "panel" },
-    menu: { el: null, kind: "sheet" },
-    lead: { el: null, kind: "modal" },
-    qv: { el: null, kind: "modal" },
-  };
-  let openName = null;
-  function paneOpen(name) {
-    if (!Panes[name] || !Panes[name].el) return;
-    if (openName === name) return paneClose(name);
-    if (openName) hardClose(openName);
-    openName = name;
-    Panes[name].el.dataset.open = "true";
-    document.body.classList.add("ov", "lock");
-    document.documentElement.style.setProperty("--scroll-lock", window.scrollY + "px");
-    const f = Panes[name].el.querySelector("[data-autofocus]");
-    if (f) setTimeout(() => f.focus({ preventScroll: true }), 60);
-    Panes[name].el.dispatchEvent(new CustomEvent("pane:open", { bubbles: true }));
-  }
-  function hardClose(name) {
-    if (!name || !Panes[name] || !Panes[name].el) return;
-    Panes[name].el.dataset.open = "false";
-  }
-  function paneClose(name) {
-    if (name && openName !== name) return;
-    hardClose(openName);
-    openName = null;
-    document.body.classList.remove("ov", "lock");
-    document.documentElement.style.removeProperty("--scroll-lock");
-  }
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") { if (openName) { paneClose(); return; } closeAllDrops(); }
-  });
-  document.addEventListener("click", (e) => {
-    if (e.target.classList && e.target.classList.contains("scrim")) paneClose();
-    if (!e.target.closest(".nav__cell") && !e.target.closest(".msheet")) closeAllDrops();
-  });
-  function closeAllDrops() { $$(".nav__cell.open").forEach((c) => { c.classList.remove("open"); const b = $(".nav__a", c); if (b) b.setAttribute("aria-expanded", "false"); }); }
-
-  /* ==================================================================
-     2. Carrito
-     ================================================================== */
-  const CK = "zenqa_cart";
-  let cart = LS.get(CK, []);
-  const save = () => LS.set(CK, cart);
-  const lines = () => cart.reduce((a, l) => a + l.q, 0);
-  const subtotal = () => cart.reduce((a, l) => a + (Z.byId[l.id] ? Z.byId[l.id].price * l.q : 0), 0);
-  function addToCart(id, qty, from) {
-    const p = Z.byId[id]; if (!p) return;
-    qty = qty || 1;
-    const i = cart.findIndex((l) => l.id === id);
-    if (i >= 0) cart[i].q = Math.min(20, cart[i].q + qty); else cart.push({ id, q: qty });
-    save(); renderCart();
-    toast((from || "Añadido") + " · " + p.name, "cart");
-  }
-  function setQty(id, d) {
-    const i = cart.findIndex((l) => l.id === id); if (i < 0) return;
-    cart[i].q += d;
-    if (cart[i].q <= 0) cart.splice(i, 1);
-    save(); renderCart();
-  }
-  function renderCart() {
-    const badge = $("[data-cart-count]");
-    if (badge) { badge.textContent = lines(); badge.hidden = lines() === 0; }
-    const bd = $("#cartItems"), foot = $("#cartFoot");
-    if (!bd) return;
-    if (!cart.length) {
-      bd.innerHTML = '<div class="empty">' + ICON.bag + "<p>Tu carrito está vacío. El matcha ceremonial es lo que más sale hoy.</p>" +
-        '<button class="btn btn--buy" data-act="go-shop">Ver la tienda<span class="arw">→</span></button></div>';
-      if (foot) foot.hidden = true; return;
-    }
-    bd.innerHTML = cart.map((l) => {
-      const p = Z.byId[l.id]; if (!p) return "";
-      return '<article class="citem"><img src="assets/img/' + p.img + '" alt="' + p.name + '">' +
-        '<div><h3>' + p.name + '</h3><p class="note">' + Z.money(p.price) + "</p>" +
-        '<div class="qty"><button data-act="minus" data-id="' + p.id + '" aria-label="Quitar una unidad">−</button><b>' + l.q +
-        '</b><button data-act="plus" data-id="' + p.id + '" aria-label="Añadir una unidad">+</button></div></div>' +
-        '<div class="citem__end"><b class="price">' + Z.money(p.price * l.q) + '</b><button data-act="del" data-id="' + p.id + '" class="note">Eliminar</button></div></article>';
-    }).join("");
-    if (foot) {
-      const sub = subtotal(), left = Math.max(0, Z.brand.freeShip - sub), pct = Math.min(100, (sub / Z.brand.freeShip) * 100);
-      foot.hidden = false;
-      $("#shipMsg").innerHTML = left > 0 ? "Te faltan <b>" + Z.money(left) + "</b> para el envío gratis" : "✔ <b>Envío gratis</b> conseguido";
-      $("#shipFill").style.width = pct + "%";
-      $("#cartTotal").textContent = Z.money(sub);
-    }
-  }
-  function toast(msg, kind) {
-    if (openName) return;                     // con un panel abierto, el propio panel es la confirmación
-    let t = $("#toast");
-    if (!t) { t = document.createElement("div"); t.id = "toast"; t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
-    t.innerHTML = '<span class="k"></span><span>' + msg + "</span>";
-    t.classList.add("on");
-    clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove("on"), 2600);
-    if (kind === "cart") { const b = $("[data-cart-count]"); if (b && b.animate) b.animate([{ transform: "scale(1)" }, { transform: "scale(1.4)" }, { transform: "scale(1)" }], { duration: 420 }); }
-  }
-
-  /* ==================================================================
-     3. Header / footer compartidos
-     ================================================================== */
+  const LOGO = '<img src="assets/img/logo-2x.png" alt="" width="30" height="30" loading="eager">';
   const NAV = [
-    { k: "home", t: "Inicio", href: "index.html" },
-    { k: "shop", t: "Tienda", href: "tienda.html", kids: [
-      { t: "Matcha", s: "4", h: "tienda.html#matcha" }, { t: "Kits", s: "4", h: "tienda.html#kit" },
-      { t: "Tazas y vasos", s: "4", h: "tienda.html#vaso" }, { t: "Ropa y accesorios", s: "4", h: "tienda.html#ropa" },
-      { t: "Ver todo", s: "16", h: "tienda.html" } ] },
-    { k: "ritual", t: "Ritual", href: "ritual.html", kids: [
-      { t: "Cómo prepararlo", s: "60 seg", h: "ritual.html#pasos" }, { t: "Matcha vs café", s: "", h: "index.html#energia" },
-      { t: "Recetas y guías", s: "10", h: "recetas.html" }, { t: "Cómo guardar el bote", s: "", h: "recetas.html#conservacion" } ] },
-    { k: "nosotros", t: "Nosotros", href: "nosotros.html", kids: [
-      { t: "La marca", s: "", h: "nosotros.html" }, { t: "Contacto y envíos", s: "", h: "contacto.html" },
-      { t: "Opiniones", s: "1,2k", h: "index.html#resenas" } ] },
+    { k: "matcha", t: "Matcha", href: "matcha.html" },
+    { k: "productos", t: "Productos", href: "productos.html" },
+    { k: "recetas", t: "Recetas y guías", href: "recetas.html" },
+    { k: "nosotros", t: "Nosotros", href: "nosotros.html" },
   ];
-  const LOGO = '<img src="assets/img/logo-2x.png" width="34" height="34" alt="Zenqa Life" loading="eager">';
+  const TRI_HOME = [
+    { img: "m-hoodie.jpg", t: "Ropa", s: "Sudadera, camiseta y tote bag", h: "productos.html#ropa" },
+    { img: "m-glass.jpg", t: "Tazas y vasos", s: "Chawan, cristal y térmicos", h: "productos.html#vaso" },
+    { img: "p-ceremonial.jpg", t: "Matcha y tés", s: "Ceremonial, culinario, hojicha", h: "productos.html#matcha" },
+  ];
+  const TRI_TES = [
+    { img: "p-hojicha.jpg", t: "Hojicha", s: "Tostado, casi sin cafeína", h: "productos.html#te" },
+    { img: "p-sencha.jpg", t: "Sencha", s: "Hoja entera, tres vertidos", h: "productos.html#te" },
+    { img: "p-pack3.jpg", t: "Pack 3 botes", s: "Prueba los tres grados", h: "productos.html#matcha" },
+  ];
 
-  function buildHeader() {
-    const promo = document.createElement("div");
-    promo.className = "promo";
-    const grp = '<div class="promo__grp">' + ICON.truck.replace("<svg", '<svg class="promo__i"') +
-      '<span class="promo__t">Envíos gratis a partir de 35&nbsp;€</span></div>';
-    promo.innerHTML = '<div class="promo__track">' + grp + grp + "</div>";
-    promo.setAttribute("aria-hidden", "false");
-
-    const nav = document.createElement("header");
-    nav.className = "nav";
-    nav.innerHTML = '<div class="wrap nav__in">' +
-      '<a class="brand" href="index.html">' + LOGO + '<span class="brand__w">Zenqa Life</span></a>' +
-      '<nav class="nav__menu" aria-label="Principal">' + NAV.map((n) => {
-        const cur = n.k === page ? ' aria-current="page"' : "";
-        if (!n.kids) return '<a class="nav__a" href="' + n.href + '"' + cur + ">" + n.t + "</a>";
-        return '<div class="nav__cell"><a class="nav__a" href="' + n.href + '"' + cur + ' aria-expanded="false" aria-haspopup="true" data-drop>' +
-          n.t + '<i class="car" aria-hidden="true"></i></a>' +
-          '<div class="nav__drop"><ul>' + n.kids.map((k) => '<li><a href="' + k.h + '"><span>' + k.t + "</span>" + (k.s ? "<b>" + k.s + "</b>" : "") + "</a></li>").join("") + "</ul></div></div>";
-      }).join("") + "</nav>" +
-      '<div class="nav__tools">' +
-      '<button class="ib" data-act="search" aria-label="Buscar productos">' + ICON.search + "</button>" +
-      '<button class="ib" data-act="cart" aria-label="Ver carrito">' + ICON.cart + '<span class="dot" data-cart-count hidden>0</span></button>' +
-      '<button class="ib burger" data-act="menu" aria-label="Abrir el menú" aria-expanded="false">' + ICON.burger + "</button>" +
-      "</div></div>";
-
-    const sheet = document.createElement("div");
-    sheet.className = "msheet"; sheet.id = "menu"; sheet.setAttribute("role", "dialog"); sheet.setAttribute("aria-label", "Menú");
-    const cats = Z.categories.map((c) => '<a class="chip" href="tienda.html#' + c.id + '">' + c.name + ' <i class="c">' + Z.products.filter((x) => x.cat === c.id).length + "</i></a>").join("");
-    const chipsRitual = '<a class="chip" href="ritual.html#pasos">4 pasos</a><a class="chip" href="index.html#energia">vs café</a><a class="chip" href="recetas.html">' + Z.recipes.length + ' guías</a>';
-    const chipsOtros = '<a class="chip" href="contacto.html">Contacto</a><a class="chip" href="index.html#resenas">Opiniones</a>';
-    sheet.innerHTML = '<div class="msheet__top"><span class="brand">' + LOGO + '<span class="brand__w">Zenqa Life</span></span>' +
-      '<button class="x" data-act="close" aria-label="Cerrar el menú">' + ICON.x + "</button></div>" +
-      "<nav>" + NAV.map((n) => '<a href="' + n.href + '"' + (n.k === page ? ' aria-current="page"' : "") + ">" + n.t + "<i>→</i></a>" +
-      (n.k === "shop" ? '<div class="msheet__cats">' + cats + "</div>" : "") +
-      (n.k === "ritual" ? '<div class="msheet__cats">' + chipsRitual + "</div>" : "") +
-      (n.k === "nosotros" ? '<div class="msheet__cats">' + chipsOtros + "</div>" : "")).join("") + "</nav>" +
-      '<div class="msheet__cta"><a class="btn btn--buy" href="tienda.html">Comprar matcha<span class="arw">→</span></a>' +
-      '<a class="btn btn--ghost" href="ritual.html">Aprender en 60 s</a></div>';
-
-    document.body.prepend(sheet);
-    document.body.prepend(nav);
-    document.body.prepend(promo);
-    nav.classList.add("nav");
-
-    // flyout: clic/tecla abre, hover mantiene (con puente de 8 px ya en CSS), fuera cierra
-    $$(".nav__cell").forEach((cell) => {
-      const btn = $("[data-drop]", cell);
-      btn.addEventListener("click", (e) => {
-        if (!mq(900)) return;                 // en móvil el toque navega a la sección
-        e.preventDefault();
-        const on = cell.classList.contains("open");
-        closeAllDrops();
-        if (!on) { cell.classList.add("open"); btn.setAttribute("aria-expanded", "true"); }
-      });
-      cell.addEventListener("mouseenter", () => { if (mq(900)) cell.classList.add("open"); });
-      cell.addEventListener("mouseleave", () => { if (mq(900)) cell.classList.remove("open"); });
-      cell.addEventListener("focusout", (e) => { if (!cell.contains(e.relatedTarget)) cell.classList.remove("open"); });
-      cell.addEventListener("keydown", (e) => { if (e.key === "ArrowDown") { const a = $(".nav__drop a", cell); if (a) a.focus(); } });
+  /* ---------------- franjas rosas en bucle (sin huecos: dos grupos, -50 %) ---------------- */
+  function bandGroup(items) {
+    return '<div class="band__g">' + items.map((t) => '<span class="band__i">' + t + "</span>").join("") + "</div>";
+  }
+  function mountBands() {
+    $$("[data-band]").forEach((el) => {
+      const which = el.dataset.band;
+      const items = which === "mid"
+        ? Z.bandMid.map((t) => t.toUpperCase())
+        : Z.bandTop.map((t) => t.toUpperCase());
+      el.innerHTML = bandGroup(items) + bandGroup(items);
     });
-    // estado pegado
-    const onScroll = () => nav.classList.toggle("stuck", window.scrollY > 8);
-    onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
   }
 
+  /* ---------------- cabecera: franja + nav pegajosa (la home solo por el logo) ---------------- */
+  function buildHeader() {
+    const links = NAV.map((n) => '<a href="' + n.href + '"' + (n.k === page ? ' aria-current="page"' : "") + ">" + n.t + "</a>").join("");
+    const band = '<div class="band"><div class="band__track" data-band="top"></div></div>';
+    const head = '<header class="nav"><div class="wrap nav__in">' +
+      '<a class="brand" href="index.html" aria-label="ZENQA LIFE · ir al inicio">' + LOGO + '<span class="brand__w">Zenqa Life</span></a>' +
+      '<nav class="nav__ul" aria-label="Principal">' + links + "</nav>" +
+      '<div class="nav__sp"></div>' +
+      '<div class="nav__tools">' +
+      '<button class="iconbtn" data-act="search" aria-label="Buscar productos">' + ICON.search + "</button>" +
+      '<button class="iconbtn" data-act="cart" aria-label="Ver el carrito">' + ICON.cart + '<b data-cart-count hidden>0</b></button>' +
+      '<button class="iconbtn nav__burger" data-act="menu" aria-label="Abrir el menú">' + ICON.menu + "</button>" +
+      "</div></div></header>";
+    document.body.insertAdjacentHTML("afterbegin", band + head);
+  }
+
+  /* ---------------- pie idéntico en las 5 páginas, sin lead magnet ni newsletter ---------------- */
   function buildFooter() {
-    const f = document.createElement("footer");
-    f.className = "foot";
-    f.innerHTML = '<div class="wrap"><div class="foot__top">' +
-      '<div class="col">' +
-      '<a class="brand" href="index.html">' + LOGO.replace('width="34" height="34"', 'width="46" height="46"') + '<span class="brand__w">Zenqa Life</span></a>' +
-      '<p class="lede" style="color:rgba(255,255,255,.76)">Matcha ceremonial de Uji para tener foco toda la tarde sin el bajón del café.</p>' +
-      '<div class="row row--wrap foot__soc">' + Z.brand.social.map((s) => '<a class="btn btn--lineLight btn--sm" href="' + s.u + '" target="_blank" rel="noopener">' + s.k + "</a>").join("") + "</div>" +
-      "</div>" +
-      '<div class="foot__nav">' +
-      '<div><h3>Tienda</h3><ul>' + Z.categories.map((c) => '<li><a href="tienda.html#' + c.id + '">' + c.name + "</a></li>").join("") +
-      '<li><a href="tienda.html">Todo el catálogo</a></li></ul></div>' +
-      '<div><h3>Ayuda</h3><ul>' +
-      '<li><a href="ritual.html">Cómo prepararlo</a></li><li><a href="recetas.html">Recetas y guías</a></li>' +
-      '<li><a href="contacto.html">Contacto</a></li><li><a href="contacto.html#envios">Envíos y devoluciones</a></li>' +
-      '<li><a href="index.html#resenas">Opiniones</a></li></ul></div>' +
-      "</div>" +
-      '<form class="foot__news" data-form="news" novalidate>' +
-      '<p style="font-weight:800;text-transform:uppercase;letter-spacing:-.01em">Guía + 10&nbsp;% de descuento</p>' +
-      '<p class="note" style="color:rgba(255,255,255,.7)">Te enviamos la guía en PDF y un cupón para tu primer bote.</p>' +
-      '<div class="field"><label class="sr" for="fmail">Tu email</label><input id="fmail" name="email" type="email" required placeholder="tu@email.com" data-autofocus><p class="err" data-err hidden>Revisa el email</p></div>' +
-      '<label class="consent" style="color:rgba(255,255,255,.7)"><input type="checkbox" name="consent" required> Acepto la política de privacidad.</label>' +
-      '<button class="btn btn--buy" type="submit">Quiero la guía<span class="arw">→</span></button>' +
-      "</form></div>" +
-      '<div class="pays">' + ["VISA", "MASTERCARD", "BIZUM", "PAYPAL", "APPLE PAY", "KLARNA"].map((p) => '<span class="pay">' + p + "</span>").join("") + "</div>" +
-      '<div class="foot__word"><svg viewBox="0 0 1000 116" preserveAspectRatio="none" role="img" aria-label="Te matcha vibes">' +
-      '<text x="500" y="86" text-anchor="middle" font-family="Switzer, Helvetica, Arial" font-size="104" font-weight="800" letter-spacing="-4" fill="none" stroke="#FF6EBC" stroke-width="3">TE MATCHA VIBES</text></svg></div>' +
-      '<div class="foot__leg"><nav>' +
-      '<a href="legal.html#aviso">Aviso legal</a><a href="legal.html#condiciones">Condiciones</a><a href="legal.html#envios">Envíos</a>' +
-      '<a href="legal.html#devoluciones">Devoluciones</a><a href="legal.html#privacidad">Privacidad</a><a href="legal.html#cookies">Cookies</a>' +
-      "</nav>" +
-      '<a href="#guia" data-act="lead" style="color:var(--pink);font-size:0.74rem;font-weight:700;text-decoration:underline">Guía gratis + 10 % de dto.</a>' +
-      '<p class="foot__cp">© ' + new Date().getFullYear() + ' Zenqa Life · Precio con IVA incluido · Demo de tienda para migrar a Shopify.</p></div></div>';
-    document.body.appendChild(f);
+    const cols = '<div class="foot__cols">' +
+      "<div><h3>Tienda</h3>" + NAV.map((n) => '<p><a class="foot__leg" href="' + n.href + '">' + n.t + "</a></p>").join("") + "</div>" +
+      '<div><h3>Ayuda</h3><p><a class="foot__leg" href="nosotros.html#contacto">Contacto</a></p>' +
+      '<p><a class="foot__leg" href="matcha.html#ritual">Cómo prepararlo</a></p>' +
+      '<p><a class="foot__leg" href="legal.html#envios">Envíos y devoluciones</a></p>' +
+      '<p><a class="foot__leg" href="index.html#opiniones">Opiniones</a></p></div></div>';
+    const socials = Z.brand.social.map((s) => '<a href="' + s.u + '" target="_blank" rel="noopener" aria-label="' + s.k + '"><span>' + s.k + "</span></a>").join("");
+    const pay = ["VISA", "MASTERCARD", "BIZUM", "PAYPAL", "APPLE PAY", "KLARNA"].map((p) => "<span>" + p + "</span>").join("");
+    const word = '<svg class="foot__word" viewBox="0 0 640 64" role="img" aria-label="Te matcha vibes">' +
+      '<text x="0" y="46" font-size="46" font-weight="900" letter-spacing="-1.5" fill="none" stroke="#ff6ebc" stroke-width="1.6" textLength="640" lengthAdjust="spacingAndGlyphs">TE MATCHA VIBES</text></svg>';
+    const legal = '<a class="link" href="legal.html#aviso">Aviso legal</a><a class="link" href="legal.html#condiciones">Condiciones</a>' +
+      '<a class="link" href="legal.html#envios">Envíos</a><a class="link" href="legal.html#devoluciones">Devoluciones</a>' +
+      '<a class="link" href="legal.html#privacidad">Privacidad</a><a class="link" href="legal.html#cookies">Cookies</a>';
+    document.body.insertAdjacentHTML("beforeend",
+      '<footer class="foot"><div class="wrap">' + word +
+      '<div class="foot__grid"><div class="col" style="gap:12px">' +
+      '<span class="brand">' + LOGO + '<span class="brand__w" style="color:#fff">Zenqa Life</span></span>' +
+      '<p class="note" style="color:rgba(255,255,255,.78);max-width:34ch">' + Z.brand.claim + "</p>" +
+      '<div class="socials" style="margin-top:2px">' + socials + "</div>" +
+      '<div class="pay">' + pay + "</div></div>" + cols + "</div>" +
+      '<div class="foot__claim"><span>© 2026 Zenqa Life · tienda de demostración (destino: Shopify)</span><span>' + legal + "</span></div>" +
+      "</div></footer>");
   }
 
-  /* ==================================================================
-     4. Overlays: carrito, búsqueda, lead magnet, ficha rápida
-     ================================================================== */
-  function buildOverlays() {
-    const scrim = document.createElement("div"); scrim.className = "scrim"; document.body.appendChild(scrim);
-
-    // carrito
-    const drawer = document.createElement("aside");
-    drawer.className = "drawer"; drawer.id = "cart"; drawer.dataset.open = "false";
-    drawer.setAttribute("role", "dialog"); drawer.setAttribute("aria-label", "Carrito de la compra"); drawer.setAttribute("aria-modal", "true");
-    drawer.innerHTML = '<div class="drawer__hd"><h2>Tu carrito <span data-cart-count hidden>0</span></h2>' +
-      '<button class="x" data-act="close" aria-label="Cerrar el carrito">' + ICON.x + "</button></div>" +
-      '<div class="drawer__bd" id="cartItems"></div>' +
-      '<div class="drawer__ft" id="cartFoot" hidden><div class="ship"><div class="bar"><div class="fill" id="shipFill" style="width:0%"></div></div><p id="shipMsg"></p></div>' +
-      '<div class="row row--between"><span class="note">Subtotal</span><b class="price price--lg" id="cartTotal">0,00 €</b></div>' +
-      '<button class="btn btn--buy btn--lg" data-act="checkout">Finalizar compra<span class="arw">→</span></button>' +
-      '<p class="note center">Impuestos incluidos · Pago simulado en esta demo</p></div>';
-    document.body.appendChild(drawer);
-
-    // buscador
-    const sr = document.createElement("div");
-    sr.className = "search"; sr.id = "search"; sr.dataset.open = "false";
-    sr.setAttribute("role", "dialog"); sr.setAttribute("aria-label", "Buscar"); sr.setAttribute("aria-modal", "true");
-    sr.innerHTML = '<div class="wrap search__hd"><span aria-hidden="true">' + ICON.search.replace("<svg", '<svg style="width:22px;height:22px"') + "</span>" +
-      '<input id="q" type="search" placeholder="Buscar matcha, kit, taza…" data-autofocus autocomplete="off">' +
-      '<button class="x" data-act="close" aria-label="Cerrar el buscador">' + ICON.x + "</button></div>" +
-      '<div class="wrap search__bd" id="sres"></div>';
-    document.body.appendChild(sr);
-
-    // lead magnet (modal)
-    const lead = document.createElement("div");
-    lead.className = "modal"; lead.id = "leadModal"; lead.dataset.open = "false";
-    lead.setAttribute("role", "dialog"); lead.setAttribute("aria-modal", "true"); lead.setAttribute("aria-label", "Guía gratuita");
-    lead.innerHTML = '<div class="modal__box"><button class="x modal__x" data-act="close" aria-label="Cerrar">' + ICON.x + "</button>" +
-      '<div class="modal__aside"><span class="kicker kicker--light">Gratis · PDF de 4 páginas</span>' +
-      '<p class="d d-3" style="color:#fff">La guía que te<br>da la textura<br>perfecta</p>' +
-      '<p class="note" style="color:rgba(255,255,255,.78)">Cuatro pasos, temperaturas y cómo guardar el bote para que no pierda aroma.</p></div>' +
-      '<div class="modal__in"><div data-lead-form></div>' +
-      '<p class="note center">Sin spam. Un email al mes con recetas y ofertas reales.</p></div></div>';
-    document.body.appendChild(lead);
-
-    // ficha rápida
-    const qv = document.createElement("div");
-    qv.className = "modal"; qv.id = "qv"; qv.dataset.open = "false";
-    qv.setAttribute("role", "dialog"); qv.setAttribute("aria-modal", "true"); qv.setAttribute("aria-label", "Ficha de producto");
-    qv.innerHTML = '<div class="modal__box"><button class="x modal__x" data-act="close" aria-label="Cerrar">' + ICON.x + "</button>" +
-      '<div class="modal__in" id="qvBody"></div></div>';
-    document.body.appendChild(qv);
-
-    Panes.cart.el = drawer; Panes.search.el = sr; Panes.lead.el = lead; Panes.qv.el = qv; Panes.menu.el = $("#menu");
-
-    // lead form reutilizable
-    renderLeadForm($("[data-lead-form]", lead), "modal");
-
-    sr.addEventListener("input", () => search($("#q", sr).value));
-    renderCart();
+  /* ---------------- únete (la misma sección en todas las páginas) ---------------- */
+  function mountJoin() {
+    $$("[data-join]").forEach((host) => {
+      const socials = Z.brand.social.map((s) => '<a href="' + s.u + '" target="_blank" rel="noopener">' + s.k + " <i>" + s.h + "</i></a>").join("");
+      host.outerHTML = '<section class="join" id="unete"><div class="wrap join__in">' +
+        '<div class="col" style="gap:12px"><span class="kicker">Redes sociales</span>' +
+        '<h2 class="d d-2">Únete al <span class="hl">universo</span> Zenqa</h2>' +
+        '<p class="note" style="color:rgba(18,22,15,.72);max-width:42ch">Recetas, lanzamientos y ofertas antes que nadie. Y un montón de vídeos de espuma verde a cámara lenta.</p>' +
+        '<div class="socials">' + socials + "</div></div>" +
+        '<div class="join__card"><h3 class="d d-4">Newsletter Zenqa</h3>' +
+        '<p class="note">Cada dos semanas: una receta, un consejo de preparación y una oferta solo para suscriptores.</p>' +
+        '<form data-form="news" novalidate>' +
+        '<div class="subscribe"><input type="email" name="email" placeholder="tu@email.com" aria-label="Tu email" required>' +
+        '<button class="btn btn--pink" type="submit">Suscribirme</button></div>' +
+        '<label class="consent"><input type="checkbox" name="priv" required> Acepto la <a class="link" href="legal.html#privacidad">política de privacidad</a>.</label>' +
+        '<p class="err" data-err hidden>Necesitamos un email válido y tu consentimiento.</p>' +
+        "</form></div></div></section>";
+    });
   }
 
-  function search(q) {
-    q = (q || "").trim().toLowerCase();
-    const box = $("#sres"); if (!box) return;
-    if (!q) {
-      box.innerHTML = '<p class="note">Lo más buscado</p><div class="row row--wrap" style="gap:8px">' +
-        ["Ceremonial", "Kit", "Vaso térmico", "Iced latte", "Sudadera"].map((t) => '<button class="chip" data-act="sq" data-q="' + t + '">' + t + "</button>").join("") + "</div>";
-      return;
-    }
-    const hit = Z.products.filter((p) => (p.name + " " + p.short + " " + p.cat).toLowerCase().includes(q)).slice(0, 8);
-    box.innerHTML = hit.length ? '<div class="sres">' + hit.map((p) => '<a href="tienda.html#' + p.id + '" data-act="qv" data-id="' + p.id + '"><img src="assets/img/' + p.img + '" alt="">' +
-      "<span><b>" + p.name + "</b><i>" + Z.categories.find((c) => c.id === p.cat).name + "</i></span><em>" + Z.money(p.price) + "</em></a>").join("") + "</div>"
-      : '<p class="note">Nada para «' + q + "». Prueba con <b>matcha</b>, <b>kit</b> o <b>vaso</b>.</p>";
+  /* ---------------- fichas ---------------- */
+  function catOf(p) { const c = Z.categories.find((x) => x.id === p.cat); return c ? c.name : "Zenqa"; }
+  function rateLine(p) {
+    return '<p class="card__r"><span class="card__rate"><i class="st">' + Z.stars(p.rating) + "</i><b>" + p.rating + '</b><span class="muted">(' + p.reviews + ")</span></span>" +
+      (p.stock <= 20 ? '<b class="card__urg">quedan ' + p.stock + " uds</b>" : "") + "</p>";
+  }
+  function cardHTML(p) {
+    const off = p.compareAt ? Math.round((1 - p.price / p.compareAt) * 100) : 0;
+    return '<article class="card" id="' + p.id + '">' +
+      '<a class="card__img" href="#' + p.id + '" data-act="qv" data-id="' + p.id + '">' +
+      '<img src="assets/img/' + p.img + '" alt="' + p.name + '" loading="lazy" width="600" height="750">' +
+      (p.badge ? '<span class="tag card__flag">' + p.badge + "</span>" : "") + "</a>" +
+      '<p class="card__kt">' + catOf(p) + (off ? ' · <span style="color:var(--pink-deep)">−' + off + " %</span>" : "") + "</p>" +
+      '<h3 class="card__t"><a href="#' + p.id + '" data-act="qv" data-id="' + p.id + '">' + p.name + "</a></h3>" +
+      rateLine(p) +
+      '<div class="card__buy"><b class="price">' + Z.money(p.price) + (p.compareAt ? "<s>" + Z.money(p.compareAt) + "</s>" : "") + "</b>" +
+      '<div class="card__acts"><button class="btn btn--pink" data-act="add" data-id="' + p.id + '">Añadir</button>' +
+      '<button class="btn" data-act="qv" data-id="' + p.id + '">Ver ficha</button></div></div></article>';
   }
 
-  /* ---------- lead magnet: validación real + estado persistente ---------- */
-  function renderLeadForm(host, where) {
+  /* ---------------- hueco de producto: foto + nombre + precio + dos botones ---------------- */
+  function spotHTML(p) {
+    const off = p.compareAt ? Math.round((1 - p.price / p.compareAt) * 100) : 0;
+    return '<a class="frame" href="#' + p.id + '" data-act="qv" data-id="' + p.id + '" aria-label="Ver la ficha de ' + p.name + '">' +
+      '<img src="assets/img/' + p.img + '" alt="' + p.name + '" width="900" height="1100">' +
+      (p.badge ? '<span class="tag card__flag">' + p.badge + "</span>" : "") + "</a>" +
+      '<p class="card__kt" style="margin-top:10px">' + catOf(p).toUpperCase() + (off ? " \u00b7 \u2212" + off + " %" : "") + "</p>" +
+      '<h3 class="d d-4" style="letter-spacing:-.03em">' + p.name + "</h3>" +
+      '<p class="row" style="align-items:baseline;gap:10px"><b class="price price--lg">' + Z.money(p.price) + "</b>" +
+      (p.compareAt ? '<s class="note">' + Z.money(p.compareAt) + "</s>" : "") +
+      '<span class="note">' + (p.unit || (p.specs && p.specs.Contenido) || "unidad") + "</span></p>" +
+      '<div class="buy"><button class="btn btn--pink" data-act="add" data-id="' + p.id + '">A\u00f1adir al carrito</button>' +
+      '<button class="btn" data-act="qv" data-id="' + p.id + '">Ver ficha de producto</button></div>';
+  }
+  function mountSpots() {
+    $$("[data-spot]").forEach((el) => {
+      const p = Z.byId[el.dataset.spot];
+      if (!p) { el.remove(); return; }
+      el.innerHTML = spotHTML(p);
+    });
+  }
+  function mountInc() {
+    $$("[data-inc]").forEach((el) => {
+      const items = el.dataset.inc === "basico"
+        ? Z.kitIncluye.slice(0, 3)
+        : Z.kitIncluye;
+      el.innerHTML = '<ul class="inc">' + items.map((x) => "<li><span>" + x[0] + "</span><span>" + x[1] + "</span></li>").join("") + "</ul>";
+    });
+  }
+
+  /* ---------------- selecciones de producto y grados ---------------- */
+  function mountPicks() {
+    const host = $("#grid-picks");
     if (!host) return;
-    host.dataset.lead = where || "";
-    const done = LS.get("zenqa_lead", null);
-    if (done) { host.innerHTML = leadOk(done); return; }
-    host.innerHTML = '<form data-form="lead" novalidate>' +
-      '<div class="leadin__hd"><span class="kicker">' + (where === "modal" ? "Descarga + cupón" : "Regalo de bienvenida") + "</span>" +
-      '<p class="d d-3">Guía matcha<br>+ 10 %</p></div>' +
-      '<div class="two"><div class="field"><label for="le' + where + '">Email</label>' +
-      '<input id="le' + where + '" name="email" type="email" required placeholder="tu@email.com" data-autofocus><p class="err" data-err hidden>Escribe un email válido</p></div>' +
-      '<div class="field"><label for="na' + where + '">Cómo te llamas</label><input id="na' + where + '" name="name" placeholder="Laura (opcional)"></div></div>' +
-      '<label class="consent"><input type="checkbox" name="consent" required> Acepto recibir la guía y la política de privacidad.</label>' +
-      '<button class="btn btn--buy btn--lg" type="submit">Descargar la guía<span class="arw">→</span></button></form>';
+    const ids = (host.dataset.picks || "te-ceremonial,te-culinario,kit-basico,vaso-latte,botella-ice,pack-descubrimiento").split(",");
+    host.innerHTML = ids.map((i) => Z.byId[i.trim()]).filter(Boolean).map(cardHTML).join("");
   }
-  function leadOk(email) {
-    return '<div class="ok">' +
-      '<p class="d d-4" style="text-transform:none">Listo, dentro está el PDF.</p>' +
-      '<p class="note">Te hemos enviado <b>' + email + "</b> la guía «Matcha perfecto en 60 segundos» (4 páginas).</p>" +
-      '<a class="btn btn--buy" href="assets/downloads/guia-matcha-zenqa.pdf" download>Descargar el PDF</a>' +
-      '<div class="coupon">ZENQA10</div>' +
-      '<p class="note center">Cupón del 10 % válido en tu primer pedido (cópialo y pégalo en el carrito).</p>' +
-      '<button class="chip" data-act="copy-coupon" style="justify-self:center">Copiar cupón</button></div>';
+  function mountGrades() {
+    const host = $("#grades");
+    if (!host) return;
+    host.innerHTML = '<div class="tiles">' + Z.grades.map((g) => '<article class="tile"><img src="assets/img/' + g.img + '" alt="' + g.t + '" loading="lazy">' +
+      '<span class="tag' + (g.hot ? " tag--pink" : " tag--sage") + '">' + g.k + "</span>" +
+      '<h3 class="d d-4">' + g.t + "</h3><p class=\"note\">" + g.d + "</p>" +
+      '<p style="margin-top:2px">' + g.use + "</p></article>").join("") + "</div>";
+  }
+  /* ---------------- grupos de la página de productos ---------------- */
+  function mountGroups() {
+    const host = $("#groups");
+    if (!host) return;
+    host.innerHTML = Z.categories.map((c) => {
+      const items = Z.products.filter((p) => p.cat === c.id);
+      const z = Z.categories.indexOf(c);
+      return '<section class="sec sec--tight' + (z % 2 ? " sec--paper" : "") + '" id="' + c.id + '">' +
+        '<div class="wrap"><div class="sec__h"><div><span class="kicker kicker--sage">' + items.length + ' productos</span>' +
+        '<h2 class="d d-2">' + c.name + "</h2></div><p class=\"note\">" + c.note + "</p></div>" +
+        '<div class="pgrid">' + items.map(cardHTML).join("") + "</div></div></section>";
+    }).join("");
   }
 
-  /* ---------- ficha rápida de producto ---------- */
-function quickView(id) {
-    const p = Z.byId[id]; if (!p) return;
-    const b = $("#qvBody"); if (!b) return;
-    const cat = Z.categories.find((c) => c.id === p.cat);
+  /* ---------------- reseñas, recetas, triángulos, ways, matcha ---------------- */
+  function mountReviews() {
+    const host = $("#grid-reviews");
+    if (!host) return;
+    const n = +(host.dataset.n || 3);
+    host.innerHTML = Z.reviews.slice(0, n).map((v) => {
+      const p = Z.byId[v.p];
+      return '<article class="quote"><div class="st">' + Z.stars(v.r) + "</div>" +
+        '<p class="quote__txt">«' + v.txt + '»</p>' +
+        '<footer class="quote__f"><i>' + v.n[0] + "</i><span><b>" + v.n + "</b> · " + v.c + " · " + v.t +
+        (p ? '<br><a class="link" href="#' + p.id + '" data-act="qv" data-id="' + p.id + '">Compró ' + p.name + "</a>" : "") +
+        "</span></footer></article>";
+    }).join("");
+  }
+  function recipeCard(r) {
+    return '<a class="rcard" href="#' + r.id + '" data-act="recipe" data-id="' + r.id + '">' +
+      '<div class="rcard__m"><img src="assets/img/' + r.img + '" alt="' + r.name + '" loading="lazy"></div>' +
+      '<div class="rcard__b"><h3>' + r.name + "</h3><p>" + r.short + "</p>" +
+      '<p class="rcard__go">' + r.kind + " · " + r.time + "</p></div></a>";
+  }
+  function mountRecipes() {
+    const some = $("#grid-recipes");
+    if (some) some.innerHTML = [Z.recipes[1], Z.recipes[2], Z.recipes[5]].filter(Boolean).map(recipeCard).join("");
+    const all = $("#grid-recipes-all");
+    if (all) all.innerHTML = Z.recipes.map(recipeCard).join("");
+  }
+  function mountTri(id, data) {
+    const host = $(id);
+    if (!host) return;
+    host.innerHTML = data.map((t) => '<a class="tri__i" href="' + t.h + '"><img src="assets/img/' + t.img + '" alt="' + t.t + '" loading="lazy">' +
+      '<span class="tri__b"><b class="d">' + t.t + "</b><br><span>" + t.s + "</span></span></a>").join("");
+  }
+  function mountWays() {
+    const host = $("#ways");
+    if (!host) return;
+    host.innerHTML = Z.ways.map((w) => '<span class="chip">' + w.t + " <i>" + w.s + "</i></span>").join("");
+  }
+  function mountVs() {
+    const host = $("#vsTable");
+    if (!host) return;
+    const col = (side, cls) => {
+      const p = Z.byId[side.id];
+      return '<article class="vs__c' + cls + '"><p class="who">' + side.who + "</p>" +
+        "<h3>" + p.name + "</h3>" +
+        '<ul>' + side.list.map((x) => "<li><b>" + x[0] + "</b><span>" + x[1] + "</span></li>").join("") + "</ul>" +
+        '<div class="row row--wrap" style="margin-top:4px"><button class="btn btn--pink btn--auto" data-act="add" data-id="' + p.id + '">Añadir · ' + Z.money(p.price) + "</button>" +
+        '<button class="btn btn--auto" data-act="qv" data-id="' + p.id + '">Ver ficha</button></div></article>';
+    };
+    host.innerHTML = col(Z.vsMatcha.a, "") + col(Z.vsMatcha.b, " vs__c--pink");
+  }
+  function mountQuality() {
+    const host = $("#quality");
+    if (!host) return;
+    host.innerHTML = '<dl class="specs">' + Z.quality.map((x) => "<div><dt>" + x[0] + "</dt><dd>" + x[1] + "</dd></div>").join("") + "</dl>";
+  }
+  function mountRitual() {
+    const host = $("#ritual4");
+    if (!host) return;
+    host.innerHTML = '<div class="steps">' + Z.ritual4.map((s, i) => '<article class="step"><span class="step__n">' + (i + 1) + "</span>" +
+      "<h3>" + s.t + "</h3><p>" + s.d + "</p></article>").join("") + "</div>";
+  }
+  function mountEnergy() {
+    const host = $("#energy");
+    if (!host) return;
+    host.innerHTML = '<div class="vs"><article class="vs__c"><h3>Matcha Zenqa</h3><ul>' +
+      Z.energy.map((r) => "<li><b>" + r.k + "</b><span>" + r.m + "</span></li>").join("") + "</ul></article>" +
+      '<article class="vs__c"><h3>Lo que tomas ahora</h3><ul>' +
+      Z.energy.map((r) => "<li><b>" + r.k + "</b><span>" + r.c + "</span></li>").join("") + "</ul>" +
+      '<p class="note" style="margin-top:6px">El café no es el enemigo: si te sienta bien, bébelo por la mañana. Esto solo explica por qué la tarde cambia.</p></article></div>';
+  }
+
+  /* ---------------- capas: una abierta cada vez ---------------- */
+  const PANES = ["cart", "menu", "search", "qv", "lead", "recipe"];
+  let openPane = null;
+  function paneOpen(name) {
+    if (openPane && openPane !== name) paneClose();
+    const el = document.getElementById(name);
+    if (!el) return;
+    el.dataset.open = "true";
+    openPane = name;
+    document.body.classList.add("lock");
+    const f = el.querySelector("[data-autofocus]");
+    if (f) setTimeout(() => { try { f.focus(); } catch (e) {} }, 60);
+  }
+  function paneClose() {
+    if (!openPane) return;
+    const el = document.getElementById(openPane);
+    if (el) el.dataset.open = "false";
+    openPane = null;
+    document.body.classList.remove("lock");
+  }
+  function buildPanes() {
+    document.body.insertAdjacentHTML("beforeend",
+      '<div class="ov" id="cart" data-open="false" role="dialog" aria-modal="true" aria-label="Carrito">' +
+      '<div class="ov__scrim" data-act="close"></div><div class="drawer">' +
+      '<div class="ov__h"><span class="d">Tu carrito</span><button class="x" data-act="close" aria-label="Cerrar">' + ICON.x + "</button></div>" +
+      '<div class="ov__b" id="cartItems"></div>' +
+      '<div class="ov__f"><div class="ship" id="shipBox"><div class="ship__bar"><b id="shipBar" style="width:0"></b></div><span id="shipMsg"></span></div>' +
+      '<div class="row" style="justify-content:space-between;align-items:baseline"><b class="note">Total</b><b class="price price--lg" id="cartTotal">0,00 €</b></div>' +
+      '<button class="btn btn--pink" data-act="checkout" style="width:100%">Finalizar compra</button></div></div></div>' +
+
+      '<div class="ov" id="menu" data-open="false" role="dialog" aria-modal="true" aria-label="Menú">' +
+      '<div class="ov__scrim" data-act="close"></div><div class="drawer drawer--left msheet" style="background:var(--cream)">' +
+      '<div class="msheet__top"><span class="brand">' + LOGO + '<span class="brand__w">Zenqa Life</span></span>' +
+      '<button class="x" data-act="close" aria-label="Cerrar el menú" style="margin-left:auto">' + ICON.x + "</button></div>" +
+      '<div class="ov__b"><nav>' + NAV.map((n) => '<a href="' + n.href + '"' + (n.k === page ? ' aria-current="page"' : "") + ">" + n.t + "<i>→</i></a>").join("") + "</nav>" +
+      '<div class="msheet__cats">' + Z.categories.map((c) => '<a class="chip" href="productos.html#' + c.id + '">' + c.name + " <i>" + Z.products.filter((p) => p.cat === c.id).length + "</i></a>").join("") +
+      '<a class="chip" href="nosotros.html#contacto">Contacto</a><a class="chip" href="matcha.html#ritual">Cómo prepararlo</a></div></div></div></div>' +
+
+      '<div class="ov" id="search" data-open="false" role="dialog" aria-modal="true" aria-label="Buscar">' +
+      '<div class="ov__scrim" data-act="close"></div><div class="search"><div class="wrap">' +
+      '<input id="q" type="search" placeholder="Buscar matcha, vaso, kit…" data-autofocus aria-label="Buscar" autocomplete="off">' +
+      '<div class="sres" id="sres"></div></div></div></div>' +
+
+      '<div class="ov" id="qv" data-open="false" role="dialog" aria-modal="true" aria-label="Ficha de producto">' +
+      '<div class="ov__scrim" data-act="close"></div><div class="modal"><div class="ov__h"><span class="d">Ficha de producto</span>' +
+      '<button class="x" data-act="close" aria-label="Cerrar">' + ICON.x + "</button></div><div class=\"ov__b\"><div class=\"qv\" id=\"qvBody\"></div></div></div></div>" +
+
+      '<div class="ov" id="recipe" data-open="false" role="dialog" aria-modal="true" aria-label="Receta">' +
+      '<div class="ov__scrim" data-act="close"></div><div class="modal"><div class="ov__h"><span class="d">Receta y guía</span>' +
+      '<button class="x" data-act="close" aria-label="Cerrar">' + ICON.x + "</button></div><div class=\"ov__b\"><div class=\"qv\" id=\"recipeBody\"></div></div></div></div>" +
+
+      '<div class="ov" id="lead" data-open="false" role="dialog" aria-modal="true" aria-label="Guía gratuita">' +
+      '<div class="ov__scrim" data-act="close"></div><div class="modal"><div class="ov__h"><span class="d">La guía gratis</span>' +
+      '<button class="x" data-act="close" aria-label="Cerrar">' + ICON.x + "</button></div><div class=\"ov__b\"><div class=\"lead\" id=\"leadBody\" style=\"box-shadow:none\"></div></div></div></div>");
+  }
+
+  /* ---------------- ficha rápida ---------------- */
+  function quickView(id) {
+    const p = Z.byId[id];
+    if (!p) return;
     const rev = Z.reviews.find((r) => r.p === p.id) || Z.reviews.find((r) => Z.byId[r.p] && Z.byId[r.p].cat === p.cat) || Z.reviews[0];
     const rel = Z.products.filter((x) => x.cat === p.cat && x.id !== p.id).slice(0, 3);
-    const q = (x) => x.replace(/"/g, "&quot;");
-    let h = "";
-    h += '<figure class="qv__img"><img src="assets/img/' + p.img + '" alt="' + q(p.name) + '"></figure>';
-    h += '<div class="row row--wrap" style="gap:6px">' + (p.badge ? '<span class="tag">' + p.badge + '</span>' : '') +
-         '<span class="tag tag--sage">' + cat.name + '</span></div>';
-    h += '<h2 class="d d-3" style="text-transform:none">' + p.name + '</h2>';
-    h += '<p class="card__r"><i class="st">' + Z.stars(p.rating) + '</i> ' + p.rating + ' \u00b7 ' + p.reviews +
-         ' rese\u00f1as verificadas \u00b7 la media de ' + cat.name.toLowerCase() + ' en Zenqa es 4,8</p>';
-    h += '<p class="note note--hook">' + p.hook + '</p>';
-    h += '<p class="qv__pitch">' + p.pitch + '</p>';
-    h += '<div class="bchips bchips--pink">' + p.benefits.map((x) => '<span>' + x + '</span>').join('') + '</div>';
-    h += '<div class="qv__block"><h3>' + (p.cat === 'matcha' ? 'C\u00f3mo sabe y c\u00f3mo se toma' : 'Ficha y cuidados') + '</h3>' +
-         '<dl class="notes">' + Object.keys(p.notes).map((k) => '<div><dt>' + k + '</dt><dd>' + p.notes[k] + '</dd></div>').join('') + '</dl></div>';
-    h += '<div class="qv__block"><h3>Por qu\u00e9 este y no otro</h3><ul class="bullets">' +
-         p.bullets.map((x) => '<li>' + ICON.check + '<span>' + x + '</span></li>').join('') + '</ul></div>';
-    h += '<div class="qv__block"><h3>Especificaciones</h3><dl class="specs">' +
-         Object.keys(p.specs).map((k) => '<div><dt>' + k + '</dt><dd>' + p.specs[k] + '</dd></div>').join('') + '</dl></div>';
-    if (rev) {
-      h += '<blockquote class="quote quote--lg qv__rev"><div class="st">' + Z.stars(rev.r) + '</div><p>\u00ab' + rev.txt + '\u00bb</p>' +
-           "<footer><span class='av'>" + rev.n[0] + "</span><span><b>" + rev.n + "</b> \u00b7 " + rev.c + " \u00b7 opinión verificada</span></footer></blockquote>";
-    }
-    h += '<div class="qv__buy"><div><p class="price price--lg">' + Z.money(p.price) +
-         (p.compareAt ? '<s>' + Z.money(p.compareAt) + '</s>' : '') + '</p>' +
-         '<p class="note">IVA incluido \u00b7 ' + (p.stock <= 20 ? 'quedan <b>' + p.stock + '</b> \u00b7 ' : '') +
-         'env\u00edo gratis desde 35 \u20ac \u00b7 30 d\u00edas de prueba</p></div>' +
-         '<button class="btn btn--buy btn--lg" data-act="add" data-id="' + p.id + '">A\u00f1adir al carrito</button></div>';
-    h += '<p class="note">\u00bfDudas entre grados? <a class="link" href="ritual.html#grados">Te lo explicamos en 30 segundos</a>.</p>';
-    h += '<div class="qv__rel"><h3>Tambi\u00e9n encaja con esto</h3><div class="qv__relrow">' +
-         rel.map((x) => '<button data-act="qv" data-id="' + x.id + '"><img src="assets/img/' + x.img + '" alt=""><span>' + x.name +
-         '</span><b>' + Z.money(x.price) + '</b></button>').join('') + '</div></div>';
-    b.innerHTML = '<div class="qv">' + h + '</div>';
-    Panes.qv.el.setAttribute("aria-label", p.name);
+    $("#qvBody").innerHTML =
+      '<div class="qv__m"><img src="assets/img/' + p.img + '" alt="' + p.name + '"></div>' +
+      '<div class="qv__kt">' + (p.badge ? '<span class="tag">' + p.badge + "</span>" : "") + '<span class="tag tag--sage">' + catOf(p) + "</span></div>" +
+      "<h2>" + p.name + "</h2>" + rateLine(p) +
+      '<p class="qv__hook">' + p.hook + "</p>" +
+      '<p class="qv__pitch">' + p.pitch + "</p>" +
+      (p.notes ? '<dl class="qv__notes">' + Object.keys(p.notes).slice(0, 4).map((k) => "<div><dt>" + k + "</dt><dd>" + p.notes[k] + "</dd></div>").join("") + "</dl>" : "") +
+      '<ul class="qv__bullets">' + p.bullets.slice(0, 3).map((b) => "<li>" + b + "</li>").join("") + "</ul>" +
+      (rev ? '<blockquote class="quote"><div class="st">' + Z.stars(rev.r) + "</div><p class=\"quote__txt\">«" + rev.txt + '»</p><footer class="quote__f"><i>' + rev.n[0] + "</i><span><b>" + rev.n + "</b> · " + rev.c + "</span></footer></blockquote>" : "") +
+      '<div class="qv__buy"><b class="price price--lg">' + Z.money(p.price) + (p.compareAt ? "<s>" + Z.money(p.compareAt) + "</s>" : "") + "</b>" +
+      '<button class="btn btn--pink" data-act="add" data-id="' + p.id + '" data-close="true">Añadir al carrito</button>' +
+      '<a class="btn" href="productos.html#' + p.id + '">Ver en la tienda</a></div>' +
+      (rel.length ? '<p class="kicker kicker--sage" style="margin-top:6px">Va bien con</p><div class="qv__rel">' +
+        rel.map((x) => '<button data-act="qv" data-id="' + x.id + '"><img src="assets/img/' + x.img + '" alt=""><span>' + x.name + "</span><b class=\"note\">" + Z.money(x.price) + "</b></button>").join("") + "</div>" : "");
     paneOpen("qv");
   }
 
-  /* ==================================================================
-     5. Acciones globales (delegación)
-     ================================================================== */
-  document.addEventListener("click", (e) => {
-    const t = e.target.closest("[data-act]");
-    if (!t) return;
-    const a = t.dataset.act, id = t.dataset.id;
-    if (["cart", "menu", "search", "lead", "qv-open"].includes(a) || a === "close") e.preventDefault();
-    switch (a) {
-      case "cart": paneOpen("cart"); break;
-      case "search": paneOpen("search"); break;
-      case "menu":
-        paneOpen("menu");
-        t.setAttribute("aria-expanded", openName === "menu" ? "true" : "false");
-        break;
-      case "lead": renderLeadForm($("#leadModal [data-lead-form]"), "modal"); wire($("#leadModal")); paneOpen("lead"); break;
-      case "close": paneClose(); break;
-      case "go-shop": paneClose(); location.href = "tienda.html"; break;
-      case "add": addToCart(id, 1, "Al carrito"); break;
-      case "qv": e.preventDefault(); paneClose("search"); quickView(id); break;
-      case "plus": setQty(id, 1); break;
-      case "minus": setQty(id, -1); break;
-      case "del": cart = cart.filter((l) => l.id !== id); save(); renderCart(); break;
-      case "sq": $("#q").value = t.dataset.q; search(t.dataset.q); $("#q").focus(); break;
-      case "checkout": toast("Demo: aquí Shopify te lleva a /checkout seguro"); break;
-      case "copy-coupon":
-        navigator.clipboard && navigator.clipboard.writeText("ZENQA10").then(() => toast("Cupón ZENQA10 copiado"));
-        t.textContent = "Copiado ✔"; break;
-      case "closedet":
-        history.replaceState("", "", location.pathname); const rd = $("#recipeDetail"); if (rd) rd.hidden = true; break;
-      case "faq": {
-        const it = t.closest(".acc__i"); it.classList.toggle("open");
-        t.setAttribute("aria-expanded", it.classList.contains("open") ? "true" : "false"); break;
+  function recipeView(id) {
+    const r = Z.recipeById[id];
+    if (!r) return;
+    const p = Z.byId[r.product] || Z.byId["te-ceremonial"];
+    $("#recipeBody").innerHTML =
+      '<div class="qv__m"><img src="assets/img/' + r.img + '" alt="' + r.name + '"></div>' +
+      '<div class="rd__meta"><span>' + r.kind + "</span><span>" + r.time + "</span><span>" + r.level + "</span></div>" +
+      "<h2>" + r.name + "</h2><p class=\"qv__hook\">" + r.short + "</p>" +
+      '<p class="qv__pitch">' + r.why + "</p>" +
+      '<ol class="rd__steps">' + r.steps.map((s, i) => "<li><b>" + (i + 1) + "</b><span><b>" + s.s + "</b><br>" + s.d + "</span></li>").join("") + "</ol>" +
+      '<div class="qv__buy"><img src="assets/img/' + p.img + '" alt="" style="width:52px;height:52px;object-fit:cover;border-radius:8px;border:var(--edge)">' +
+      '<span style="flex:1 1 120px"><b>' + p.name + "</b><br><span class=\"note\">el que mejor queda aquí</span></span>" +
+      '<button class="btn btn--pink" data-act="add" data-id="' + p.id + '" data-close="true">' + Z.money(p.price) + "</button></div>";
+    paneOpen("recipe");
+  }
+
+  /* ---------------- carrito ---------------- */
+  const readCart = () => { try { return JSON.parse(localStorage.getItem(LS_CART)) || []; } catch (e) { return []; } };
+  const writeCart = (c) => { localStorage.setItem(LS_CART, JSON.stringify(c)); paintCart(); };
+  function addToCart(id, qty) {
+    const c = readCart();
+    const l = c.find((x) => x.id === id);
+    if (l) l.q = Math.min(l.q + (qty || 1), 20); else c.push({ id, q: qty || 1 });
+    writeCart(c);
+    const p = Z.byId[id];
+    toast(p ? p.name + " en el carrito" : "Añadido al carrito");
+  }
+  function paintCart() {
+    const c = readCart();
+    const n = c.reduce((a, x) => a + x.q, 0);
+    const total = c.reduce((a, x) => a + (Z.byId[x.id] ? Z.byId[x.id].price * x.q : 0), 0);
+    $$("[data-cart-count]").forEach((el) => { el.textContent = n; el.hidden = n === 0; });
+    const box = $("#cartItems");
+    if (box) {
+      if (!c.length) {
+        box.innerHTML = '<div class="empty">' + ICON.bag + "<p><b>El carrito está vacío</b></p>" +
+          '<p class="note">Empieza por el bote con el que no se falla: ceremonial de Uji, 54 g para 27 tazas.</p>' +
+          '<div class="row row--wrap" style="justify-content:center"><button class="btn btn--pink" data-act="add" data-id="te-ceremonial">Añadir · 29,95 €</button>' +
+          '<a class="btn" href="productos.html">Ver la tienda</a></div></div>';
+      } else {
+        box.innerHTML = c.map((l) => {
+          const p = Z.byId[l.id];
+          if (!p) return "";
+          return '<div class="citem"><img src="assets/img/' + p.img + '" alt="">' +
+            "<div><h4>" + p.name + '</h4><p class="note">' + Z.money(p.price) + " / unidad</p>" +
+            '<span class="qty"><button data-act="minus" data-id="' + p.id + '" aria-label="Quitar uno">–</button><b>' + l.q + "</b>" +
+            '<button data-act="plus" data-id="' + p.id + '" aria-label="Sumar uno">+</button></span></div>' +
+            '<div><b class="p">' + Z.money(p.price * l.q) + '</b><br><button class="del" data-act="del" data-id="' + p.id + '">Quitar</button></div></div>';
+        }).join("");
       }
     }
-  });
+    const t = $("#cartTotal");
+    if (t) t.textContent = Z.money(total);
+    const bar = $("#shipBar");
+    const msg = $("#shipMsg");
+    if (bar && msg) {
+      const need = Z.brand.freeShip;
+      const pc = Math.min(100, Math.round((total / need) * 100));
+      bar.style.width = pc + "%";
+      msg.innerHTML = total >= need
+        ? "✓ <b>Envío gratis</b> aplicado · te llega en 24-48 h"
+        : "Te faltan <b>" + Z.money(need - total) + "</b> para el envío gratis";
+    }
+  }
 
-  /* ---------- formularios ---------- */
-  const okMail = (v) => /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test((v || "").trim());
-  function wire(root) {
-    $$("form", root || document).forEach((f) => {
-      if (f.dataset.wired) return; f.dataset.wired = "1";
-      f.addEventListener("submit", (e) => {
-        e.preventDefault();
-        let bad = null;
-        $$("input, textarea, select", f).forEach((i) => {
-          const err = i.parentElement.querySelector("[data-err]") || (i.closest(".field") && $(".err", i.closest(".field")));
-          let wrong = false;
-          if (i.type === "checkbox") wrong = i.required && !i.checked;
-          else if (i.type === "email") wrong = !okMail(i.value);
-          else wrong = i.required && i.value.trim().length < 2;
+  /* ---------------- buscador ---------------- */
+  function search(q) {
+    const t = q.trim().toLowerCase();
+    const host = $("#sres");
+    if (!host) return;
+    if (t.length < 2) {
+      host.innerHTML = '<p class="note">Escribe dos letras: <b>kit</b>, <b>vaso</b>, <b>hielo</b>, <b>sin cafeína</b>…</p>' +
+        '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">' + ["ceremonial", "culinario", "kit", "vaso", "helado", "sudadera"].map((k) => '<button class="chip" data-act="sug" data-q="' + k + '">' + k + "</button>").join("") + "</div>";
+      return;
+    }
+    const hit = (s) => s.toLowerCase().indexOf(t) >= 0;
+    const ps = Z.products.filter((p) => hit(p.name) || hit(p.hook) || hit(p.benefits.join(" ")) || hit(p.pitch) || hit(catOf(p))).slice(0, 6);
+    const rs = Z.recipes.filter((r) => hit(r.name) || hit(r.short) || hit(r.why)).slice(0, 3);
+    host.innerHTML =
+      (ps.length ? ps.map((p) => '<a href="#' + p.id + '" data-act="qv" data-id="' + p.id + '"><img src="assets/img/' + p.img + '" alt=""><span><b>' + p.name + "</b><span>" + p.hook.slice(0, 62) + "…</span></span><b class=\"price\">" + Z.money(p.price) + "</b></a>").join("") : "") +
+      (rs.length ? rs.map((r) => '<a href="#' + r.id + '" data-act="recipe" data-id="' + r.id + '"><img src="assets/img/' + r.img + '" alt=""><span><b>' + r.name + "</b><span>" + r.kind + " · " + r.time + "</span></span></a>").join("") : "") +
+      (!ps.length && !rs.length ? '<p class="note">No encontramos nada con <b>' + q + "</b>. Prueba con «matcha», «kit» o «vaso», o escríbenos por WhatsApp y te lo buscamos.</p>" : "");
+  }
+
+  /* ---------------- formularios: guía (con PDF y cupón) y newsletter ---------------- */
+  const okMail = (v) => /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v);
+  function leadForm(inline) {
+    return '<form data-form="lead" novalidate>' +
+      '<div class="lead__t"><span class="kicker kicker--' + (inline ? "sage" : "light") + '">Gratis · PDF de 4 páginas</span>' +
+      '<h3 class="d d-4">Guía matcha<br>+ 10 % de dto.</h3>' +
+      '<p class="note">Los cuatro pasos, temperaturas, qué hacer si amarga y cómo guardar el bote. Y dentro el cupón para el primer pedido.</p></div>' +
+      '<div class="field"><label class="sr" for="le-' + (inline ? "i" : "m") + '">Tu email</label>' +
+      '<input id="le-' + (inline ? "i" : "m") + '" type="email" name="email" placeholder="tu@email.com" required></div>' +
+      '<label class="consent"><input type="checkbox" name="priv" required> Acepto recibir la guía y la <a class="link" href="legal.html#privacidad">política de privacidad</a>.</label>' +
+      '<p class="err" data-err hidden>Necesitamos un email válido y tu consentimiento.</p>' +
+      '<button class="btn btn--pink" type="submit" style="width:100%">Descargar la guía</button></form>';
+  }
+  function leadOk(mail) {
+    return '<div class="ok"><p class="kicker kicker--sage">Listo</p>' +
+      "<p><b>Te hemos enviado la guía a " + mail + "</b><br><span class=\"note\">y sí, el cupón está en el primer correo. Revisa spam si no aparece en un minuto.</span></p>" +
+      '<div class="row"><a class="btn btn--forest" href="assets/downloads/guia-matcha-zenqa.pdf" download>Descargar el PDF</a>' +
+      '<span class="coupon">ZENQA10</span></div>' +
+      '<p class="note">Envíos gratis desde 35 € · Península 24-48 h · 30 días de prueba con el bote abierto.</p></div>';
+  }
+  function mountLead() {
+    $$("[data-lead]").forEach((host) => { host.innerHTML = leadForm(host.dataset.lead === "inline"); });
+  }
+  function wireForms() {
+    $$("form[data-form]").forEach((f) => {
+      if (f.dataset.wired) return;
+      f.dataset.wired = "1";
+      f.addEventListener("submit", (ev) => {
+        ev.preventDefault();
+        const mail = f.querySelector('input[type="email"]');
+        const priv = f.querySelector('input[name="priv"]');
+        const err = f.querySelector("[data-err]");
+        let bad = false;
+        [mail, priv].forEach((i) => {
+          if (!i) return;
+          const wrong = i.type === "checkbox" ? !i.checked : !okMail(i.value.trim());
           i.setAttribute("aria-invalid", wrong ? "true" : "false");
-          if (err) err.hidden = !wrong;
-          if (wrong && !bad) bad = i;
+          if (wrong) bad = true;
         });
-        if (bad) { bad.focus(); return; }
-        const kind = f.dataset.form;
-        if (kind === "lead" || kind === "news") {
-          const em = $("input[type=email]", f).value.trim();
-          LS.set("zenqa_lead", em);
-          const host = f.closest("[data-lead-form]") || (kind === "news" ? f.parentElement : null);
-          if (host) host.innerHTML = leadOk(em);
-          const m = $("#leadModal [data-lead-form]"); if (m && host !== m) m.innerHTML = leadOk(em);
-          toast("Guía enviada · revisa tu bandeja");
-        } else if (kind === "contact") {
-          f.innerHTML = '<div class="ok"><p class="d d-4" style="text-transform:none">Mensaje enviado</p><p class="note">Te contestamos por email en menos de 24 h laborables. Si es urgente, escríbenos por WhatsApp.</p></div>';
-          toast("Gracias, 'hoy' te contestamos");
-        } else toast("Recibido ✔");
+        if (err) err.hidden = !bad;
+        if (bad) { if (mail && !okMail(mail.value)) mail.focus(); return; }
+        const host = f.parentElement;
+        if (f.dataset.form === "lead") {
+          try { localStorage.setItem(LS_LEAD, mail.value.trim()); } catch (e) {}
+          host.innerHTML = leadOk(mail.value.trim());
+          toast("Guía enviada · cupón ZENQA10 activo");
+        } else if (f.dataset.form === "contact") {
+          const need = ["name", "email", "msg"].map((n) => f.querySelector('[name="' + n + '"]')).filter(Boolean);
+          const bad2 = need.some((i) => (i.type === "email" ? !okMail(i.value.trim()) : i.value.trim().length < 4));
+          const e2 = f.querySelector("[data-err]");
+          if (e2) e2.hidden = !bad2;
+          if (bad2) { need[0].focus(); return; }
+          host.innerHTML = '<div class="ok"><p class="kicker kicker--sage">Recibido</p>' +
+            '<p><b>Gracias, ' + (f.querySelector('[name="name"]').value.trim().split(" ")[0] || "hola") + '.</b><br>' +
+            '<span class="note">Te contestamos a ' + f.querySelector('[name="email"]').value.trim() + " en menos de 24 h laborables. Si es sobre un pedido, ten el número a mano: suele ir más rápido por WhatsApp.</span></p>" +
+            '<p class="note">Horario de atención: L-V 9:00-18:00 CET · +34 600 00 00 00 (demo).</p></div>';
+          toast("Mensaje enviado (demo)");
+        } else {
+          host.innerHTML = '<div class="ok"><p class="kicker kicker--sage">Dentro</p><p><b>Ya estás en la lista.</b><br><span class="note">Cada dos semanas: una receta, un consejo y una oferta. Baja cuando quieras, sin dramas.</span></p></div>';
+          toast("Suscripción confirmada");
+        }
       });
     });
   }
 
-  /* ==================================================================
-     6. Cards de producto
-     ================================================================== */
-  function cardHTML(p) {
-    const cat = Z.categories.find((c) => c.id === p.cat);
-    const off = p.compareAt ? Math.round((1 - p.price / p.compareAt) * 100) : 0;
-    return '<article class="card" id="' + p.id + '">' +
-      '<a class="card__img" href="tienda.html#' + p.id + '" data-act="qv" data-id="' + p.id + '">' +
-      '<img src="assets/img/' + p.img + '" alt="' + p.name + '" loading="lazy">' +
-      (p.badge ? '<span class="tag card__flag">' + p.badge + "</span>" : "") +
-      '<span class="card__qb only-desk">Ver la ficha completa</span></a>' +
-      '<div class="card__bd"><p class="card__kt">' + cat.name + (off ? ' · <span style="color:var(--pink-deep)">−' + off + " %</span>" : "") + "</p>" +
-      '<h3 class="card__t">' + p.name + "</h3>" +
-      '<p class="card__r"><span class="card__rate"><i class="st">' + Z.stars(p.rating) + "</i><b>" + p.rating + '</b><span class="muted">(' + p.reviews + ")</span></span>" +
-      (p.stock <= 20 ? '<b class="card__urg">quedan ' + p.stock + " uds</b>" : "") + "</p>" +
-      '<p class="card__hook">' + p.hook + "</p>" +
-      '<div class="bchips">' + p.benefits.slice(0, 2).map((b) => "<span>" + b + "</span>").join("") + "</div>" +
-      '<div class="card__buy"><p class="card__pp"><b class="price">' + Z.money(p.price) +
-      (p.compareAt ? "<s>" + Z.money(p.compareAt) + "</s>" : "") + '</b><span class="card__unit">' +
-      (p.unit || p.specs.Contenido || p.specs.Capacidad || p.specs.Medidas || p.specs["Medida"] || "envío 24-48 h").split(" · ")[0] + "</span></p>" +
-      '<button class="card__add" data-act="add" data-id="' + p.id + '"><span class="plus" aria-hidden="true">+</span>Añadir al carrito</button>' +
-      '<button class="card__more" data-act="qv" data-id="' + p.id + '">Por qué este</button>' +
-      "</div></div></article>";
+  /* ---------------- extras ---------------- */
+  let tId = null;
+  function toast(msg) {
+    if (openPane) return;
+    let el = $("#toast");
+    if (!el) { document.body.insertAdjacentHTML("beforeend", '<div class="toast" id="toast" role="status" aria-live="polite"></div>'); el = $("#toast"); }
+    el.textContent = msg;
+    el.classList.add("on");
+    clearTimeout(tId);
+    tId = setTimeout(() => el.classList.remove("on"), 2600);
   }
-  function recipeCard(r) {
-    return '<a class="rcard" href="recetas.html#' + r.id + '"><div class="rcard__m"><img src="assets/img/' + r.img + '" alt="' + r.name + '" loading="lazy">' +
-      '<span class="tag rcard__t">' + r.kind + "</span></div>" +
-      '<div class="rcard__b"><h3>' + r.name + "</h3><p>" + r.short + "</p>" +
-      '<p class="note clamp3">' + r.why + "</p>" +
-      '<div class="rcard__go">Ver receta<span>' + r.time + " · " + r.level + "</span></div></div></a>";
-  }
-
-  /* ---------- bloques de contenido de marca ---------- */
-  function mountContent() {
-    const st = $("#stats");
-    if (st) {
-      const cards = Z.manifesto.stats.map((x) =>
-        "<article class='stats__i'><p class='stats__n'>" + x.n + "</p><p class='stats__t'>" + x.t + "</p></article>").join("");
-      st.innerHTML = cards + "<p class='src'>" + Z.manifesto.note + "</p>";
-    }
-    const gr = $("#grades");
-    if (gr) {
-      gr.innerHTML = Z.grades.map((g) => {
-        const p = Z.byId[g.id];
-        return "<article class='grade'><div class='grade__m'><img src='assets/img/" + g.img + "' alt='" + g.name + "' loading='lazy'></div>" +
-          "<div class='grade__b'><span class='kicker'>" + g.tag + "</span><h3>" + g.name + "</h3><p>" + g.body + "</p>" +
-          "<p class='grade__use'>" + g.use + "</p>" +
-          "<div class='grade__foot'><b class='price'>" + Z.money(p.price) + "</b>" +
-          "<button class='btn btn--buy btn--sm btn--auto' data-act='add' data-id='" + p.id + "'>Añadir</button></div>" +
-          "<button class='card__more' data-act='qv' data-id='" + p.id + "'>Leer la ficha completa</button></div></article>";
-      }).join("");
-    }
-    const cmp = $("#cmpTable");
-    if (cmp) {
-      const mk = (m) => '<i class="cmp__mk ' + (m === "y" ? "is-y" : m === "n" ? "is-n" : "is-x") + '">' + (m === "y" ? "\u2713" : m === "n" ? "\u25CB" : "\u2715") + "</i>";
-      const first = (t) => { const a = t.split(/(?<=\.)\s/).map((x) => x.trim()); return (a[0].length >= 30 ? a[0] : a[0] + " " + (a[1] || "")).replace(/\s+/g, " ").trim(); };
-      const cols = [["m", "Matcha Zenqa", 1], ["cf", "Café de especialidad", 0], ["en", "Bebida energética", 0]];
-      const rail = cols.map(([k, label, hot]) => '<article class="cmpmob__c' + (hot ? " is-hot" : "") + '">' +
-        '<b>' + label + "</b>" +
-        Z.compare.rows.map((r) => "<div><i>" + r.c + "</i><span>" + mk(r.k[["m", "cf", "en"].indexOf(k)]) + first(r[k]) + "</span></div>").join("") + "</article>").join("");
-      const tab = '<table class="cmp"><thead><tr><th></th>' +
-        '<th class="cmp__c cmp__c--m">' + Z.compare.legend.m + "</th><th>" + Z.compare.legend.cf + "</th><th>" + Z.compare.legend.en + "</th></tr></thead><tbody>" +
-        Z.compare.rows.map((r) => '<tr class="cmp__r"><th scope="row">' + r.c + "</th>" +
-          '<td class="cmp__c cmp__c--m">' + mk(r.k[0]) + r.m + "</td>" +
-          "<td><span class=\"cmp__mk\">" + mk(r.cf) + "</span>" + r.cf + "</td>" +
-          "<td><span class=\"cmp__mk\">" + mk(r.en) + "</span>" + r.en + "</td></tr>").join("") + "</tbody></table>";
-      cmp.innerHTML = '<div class="cmpmob">' + rail + "</div><p class=\"cmpmob__hint\">Desliza las tarjetas para comparar los tres \u00b7 la columna verde es la nuestra</p>" + tab;
-    }
-    const tl = $("#timeline");
-    if (tl) {
-      tl.innerHTML = Z.timeline.map((x) =>
-        "<article class='tl__i'><p class='tl__k'>" + x.k + "</p><h3>" + x.t + "</h3><p>" + x.d + "</p></article>").join("");
-    }
-    const rv = $("#grid-reviews");
-    if (rv) {
-      const long = rv.hasAttribute("data-long");
-      rv.innerHTML = Z.reviews.map((v) => {
-        const p = Z.byId[v.p];
-        return "<article class='quote" + (long ? " quote--lg" : "") + "'><div class='st'>" + Z.stars(v.r) + "</div><p>\u00ab" + v.txt + "\u00bb</p>" +
-          "<footer><span class='av'>" + v.n[0] + "</span><span><b>" + v.n + "</b> \u00b7 " + v.c + " \u00b7 " + v.t + "</span></footer>" +
-          (p ? "<button class='card__more' data-act='qv' data-id='" + p.id + "'>Compr\u00f3 " + p.name + "</button>" : "") + "</article>";
-      }).join("");
-    }
-  }
-
-  /* ==================================================================
-     7. Montaje por página
-     ================================================================== */
-  function mountHome() {
-    const g = $("#grid-home");
-    if (g) {
-      const ids = ["te-ceremonial", "kit-completo", "vaso-latte", "pack-descubrimiento", "termico", "sudadera"];
-      g.innerHTML = ids.map((i) => cardHTML(Z.byId[i])).join("");
-    }
-    const k = $("#grid-kit");
-    if (k) k.innerHTML = ["kit-basico", "kit-completo", "kit-regalo"].map((i) => cardHTML(Z.byId[i])).join("");
-    const ng = $("#grid-nos");
-    if (ng) ng.innerHTML = ["te-ceremonial", "kit-basico"].map((i) => cardHTML(Z.byId[i])).join("");
-    const rec = $("#grid-recipes");
-    if (rec) rec.innerHTML = [Z.recipes[1], Z.recipes[2], Z.recipes[5]].map(recipeCard).join("");
-  }
-  function mountFaq() {
-    const host = $("#faqList"); if (!host) return;
-    host.innerHTML = '<div class="acc">' + Z.faq.map((f) => '<div class="acc__i"><button class="acc__b" data-act="faq" aria-expanded="false">' +
-      f.q + '<span class="pm" aria-hidden="true">+</span></button><div class="acc__p"><div><p>' + f.a + "</p></div></div></div>").join("") + "</div>";
-  }
-  function mountShop() {
-    const grid = $("#grid"); if (!grid) return;
-    const state = LS.get("zenqa_shop", { cat: "todo", sort: "pop" });
-    const h = location.hash.slice(1);
-    if (h && Z.categories.some((c) => c.id === h)) state.cat = h;
-    const chips = $$(".chip[data-cat]");
-    function paint() {
-      let list = Z.products.slice();
-      if (state.cat !== "todo") list = list.filter((p) => p.cat === state.cat);
-      const s = state.sort;
-      if (s === "asc") list.sort((a, b) => a.price - b.price);
-      if (s === "desc") list.sort((a, b) => b.price - a.price);
-      if (s === "rate") list.sort((a, b) => b.rating - a.rating || b.reviews - a.reviews);
-      if (s === "pop") list.sort((a, b) => b.reviews - a.reviews);
-      chips.forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.cat === state.cat)));
-      $("#count").textContent = list.length + (list.length === 1 ? " producto" : " productos");
-      grid.innerHTML = list.map(cardHTML).join("");
-      LS.set("zenqa_shop", state);
-      if (location.hash) {
-        const el = $(location.hash); if (el && el.scrollIntoView) { el.scrollIntoView({ block: "center" }); if (el.animate) el.animate([{ boxShadow: "0 0 0 3px #FF6EBC" }, { boxShadow: "0 0 0 0 rgba(255,110,188,0)" }], { duration: 1400 }); }
-      }
-    }
-    chips.forEach((c) => c.addEventListener("click", () => { state.cat = c.dataset.cat; paint(); }));
-    const sel = $("#sort"); if (sel) { sel.value = state.sort; sel.addEventListener("change", () => { state.sort = sel.value; paint(); }); }
-    paint();
-  }
-  function mountRecipes() {
-    const grid = $("#grid-r"); if (!grid) return;
-    const tabs = $$(".chip[data-kind]");
-    let kind = "todo";
-    function paint() {
-      const list = kind === "todo" ? Z.recipes : Z.recipes.filter((r) => r.kind === kind);
-      tabs.forEach((t) => t.setAttribute("aria-pressed", String(t.dataset.kind === kind)));
-      $("#count-r").textContent = list.length + " guías";
-      grid.innerHTML = list.map(recipeCard).join("");
-    }
-    tabs.forEach((t) => t.addEventListener("click", () => { kind = t.dataset.kind; paint(); }));
-    paint();
-    const host = $("#recipeDetail");
-    function detail() {
-      const id = location.hash.slice(1); const r = Z.recipeById[id];
-      if (!host) return;
-      if (!r) { host.hidden = true; return; }
-      host.hidden = false;
-      const buy = Z.byId[r.product] || Z.byId["te-ceremonial"];
-      host.innerHTML = '<div class="edit"><figure class="edit__m"><img src="assets/img/' + r.img + '" alt="' + r.name + '"></figure>' +
-        '<div class="edit__t"><span class="kicker">' + r.kind + " · " + r.time + " · " + r.level + "</span>" +
-        '<h2 class="d d-2">' + r.name + "</h2>" +
-        '<p class="lede--big">' + r.short + "</p><p>" + r.why + "</p>" +
-        '<ol class="rsteps">' + r.steps.map((x, i) => '<li class="rsteps__i"><span class="rsteps__n">' + (i + 1) + "</span><span><b>" + x.s + "</b><span>" + x.d + "</span></span></li>").join("") + "</ol>" +
-        '<div class="inlinebuy"><img src="assets/img/' + buy.img + '" alt=""><div><b>' + buy.name + "</b>" +
-        '<p class="note">' + buy.hook + "</p></div>" +
-        '<div class="row"><button class="btn btn--buy btn--auto" data-act="add" data-id="' + buy.id + '">Añadir · ' + Z.money(buy.price) + "</button>" +
-        '<button class="btn btn--ghost btn--auto" data-act="closedet">Cerrar</button></div></div></div></div>';
-      host.scrollIntoView({ block: "start" });
-    }
-    window.addEventListener("hashchange", detail); detail();
-  }
-
-  /* ---------- lead magnet automático: educado, nunca encima de otro panel ---------- */
-  function autoLead() {
-    if (page !== "home" || LS.get("zenqa_lead", null) || sessionStorage.getItem("zenqa_pop")) return;
-    setTimeout(() => {
-      if (openName || sessionStorage.getItem("zenqa_pop")) return;
-      if (window.scrollY < window.innerHeight * 0.9) return;
-      sessionStorage.setItem("zenqa_pop", "1");
-      renderLeadForm($("#leadModal [data-lead-form]"), "modal");
-      paneOpen("lead");
-    }, 40000);
-  }
-
-  /* ---------- reveal suave ---------- */
   function reveal() {
-    if (!("IntersectionObserver" in window)) return;
-    const io = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.style.opacity = 1; en.target.style.transform = "none"; io.unobserve(en.target); } }), { rootMargin: "0px 0px -8% 0px" });
-    $$(".card, .quote, .rcard, .why__i, .steps li, .sec-head").forEach((el) => {
-      el.style.opacity = 0; el.style.transform = "translateY(14px)"; el.style.transition = "opacity .5s var(--ease), transform .5s var(--ease)";
-      io.observe(el);
-    });
+    const els = $$(".rv");
+    if (!els.length) return;
+    if (reduce || !("IntersectionObserver" in window)) { els.forEach((e) => e.classList.add("is-in")); return; }
+    const io = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } }), { rootMargin: "0px 0px -8%" });
+    els.forEach((e) => io.observe(e));
   }
 
-  /* ==================================================================
-     init
-     ================================================================== */
+  /* ---------------- un solo sitio para todos los clics ---------------- */
+  function wire() {
+    document.addEventListener("click", (ev) => {
+      const a = ev.target.closest("[data-act]");
+      if (!a) return;
+      const act = a.dataset.act;
+      const id = a.dataset.id;
+      if (act !== "add") ev.preventDefault();
+      switch (act) {
+        case "add": {
+          addToCart(id, 1);
+          const label = a.innerHTML;
+          a.innerHTML = "Añadido \u2713";
+          a.classList.add("is-done");
+          setTimeout(() => { a.innerHTML = label; a.classList.remove("is-done"); }, 1300);
+          if (a.dataset.close) setTimeout(paneClose, 260);
+          break;
+        }
+        case "qv": quickView(id); break;
+        case "recipe": recipeView(id); break;
+        case "cart": paintCart(); paneOpen("cart"); break;
+        case "menu": paneOpen("menu"); break;
+        case "search": paneOpen("search"); setTimeout(() => { const q = $("#q"); if (q) search(q.value); }, 80); break;
+        case "lead": { const b = $("#leadBody"); if (b && !b.dataset.filled) { b.innerHTML = leadForm(false); b.dataset.filled = "1"; wireForms(); } paneOpen("lead"); break; }
+        case "close": paneClose(); break;
+        case "plus": case "minus": case "del": {
+          const c = readCart();
+          const l = c.find((x) => x.id === id);
+          if (l) {
+            if (act === "plus") l.q = Math.min(20, l.q + 1);
+            else if (act === "minus") { l.q -= 1; if (l.q < 1) c.splice(c.indexOf(l), 1); }
+            else c.splice(c.indexOf(l), 1);
+          }
+          writeCart(c);
+          break;
+        }
+        case "sug": { const q = $("#q"); if (q) { q.value = a.dataset.q; search(q.value); q.focus(); } break; }
+        case "checkout": toast("El checkout se activa al conectar Shopify · el carrito ya funciona"); break;
+      }
+    });
+    document.addEventListener("keydown", (ev) => { if (ev.key === "Escape") paneClose(); });
+    const q = $("#q");
+    if (q) q.addEventListener("input", () => search(q.value));
+  }
+
+  /* ---------------- arranque ---------------- */
   buildHeader();
   buildFooter();
-  buildOverlays();
-  mountContent();
-  mountHome();
-  if (page === "tienda") mountShop();
-  if (page === "recetas") mountRecipes();
-  if (page === "contacto") mountFaq();
-  $$("[data-lead-form]").forEach((host, i) => renderLeadForm(host, host.closest("#leadModal") ? "modal" : (i ? "foot" : "home")));
+  buildPanes();
+  mountBands();
+  mountJoin();
+  mountSpots();
+  mountInc();
+  mountPicks();
+  mountGrades();
+  mountGroups();
+  mountReviews();
+  mountRecipes();
+  mountTri("#grid-tri", TRI_HOME);
+  mountTri("#grid-tes", TRI_TES);
+  mountWays();
+  mountVs();
+  mountQuality();
+  mountRitual();
+  mountEnergy();
+  mountLead();
   wire();
-  autoLead();
+  wireForms();
+  paintCart();
   reveal();
-  if (location.hash && page === "tienda") setTimeout(() => { const el = $(location.hash); if (el) el.scrollIntoView({ block: "center" }); }, 120);
+  document.addEventListener("zq:forms", wireForms);
 })();

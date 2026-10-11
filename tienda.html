@@ -1,124 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tienda de matcha, kits y tazas · ZENQA LIFE</title>
-<meta name="description" content="Dieciséis productos: matcha ceremonial de Uji y culinario de Nishio, kits con chawan y chasen de 80 púas, vasos térmicos y ropa orgánica. Filtros, ficha completa con notas de sabor y añadir al carrito en un toque.">
-<meta name="theme-color" content="#ff6ebc">
-<link rel="icon" href="assets/img/favicon.png">
-<link rel="stylesheet" href="assets/fonts/fonts.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tienda · ZENQA LIFE</title>
+<meta http-equiv="refresh" content="0; url=productos.html">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://zenqalife-sys.github.io/tienda-zenqa-lm-arena-final-2/tienda.html">
 <link rel="stylesheet" href="assets/css/zenqa.css">
 </head>
-<body data-page="tienda">
-<main id="MainContent">
-
-  <section class="phead">
-    <div class="wrap">
-      <p class="crumb"><a href="index.html">Inicio</a> / Tienda</p>
-      <h1>Tienda</h1>
-      <p class="lede">Dieciséis cosas y ninguna de relleno. Cada ficha te cuenta qué esperar: cómo sabe, con qué lo mezclas, qué lleva puesto y qué pasa si no te convence.</p>
-      <p class="note" style="color:rgba(255,255,255,.75)">Envío gratis desde 35 € · Península 24-48 h · 30 días de prueba con el bote abierto · Precio con IVA</p>
-      <div class="row row--wrap">
-        <a class="chip" href="#guia-grados">No sé qué grado elegir</a>
-        <a class="chip" href="#kit">Ver los kits</a>
-        <a class="chip" href="#envios">Cómo llegan</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- guía rápida antes de comprar -->
-  <section class="sec tight" id="guia-grados">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker kicker--sage">Treinta segundos que ahorran un bote mal comprado</span>
-        <h2 class="d d-3">Tres reglas para elegir</h2>
-      </div>
-      <div class="why">
-        <article class="why__i"><span class="why__n">1</span><div><h3>Si va a llevar leche, que no sea ceremonial</h3><p>Con 200 ml de avena, hielo y un sirope no vas a notar la delicadeza por la que pagas. El culinario (o el de vainilla) tiene más cuerpo y cuesta un tercio menos por gramo.</p></div></article>
-        <article class="why__i"><span class="why__n">2</span><div><h3>Si lo quieres solo con agua, ceremonial sin discusión</h3><p>Es el único que se bebe sin endulzar: dulce, umami, sin astringencia. Aquí es donde se nota de verdad la sombra, la primera hoja y la molienda lenta en piedra.</p></div></article>
-        <article class="why__i"><span class="why__n">3</span><div><h3>Si no lo has probado nunca, pack de tres</h3><p>24,95 € por 90 tazas de los tres grados con una tarjeta de cata. Compararlos el mismo día es la única forma honesta de saber cuál repetir; y si repites, tienes 10 %.</p></div></article>
-      </div>
-      <div class="row" style="margin-top:12px">
-        <button class="btn btn--buy btn--auto" data-act="add" data-id="pack-descubrimiento">Añadir el pack de prueba</button>
-        <a class="link" href="ritual.html#grados">Y si quieres la explicación larga</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- filtros pegados -->
-  <div class="shopbar">
-    <div class="wrap shopbar__in"><div class="shopbar__scroll">
-      <button class="chip" data-cat="todo" aria-pressed="true">Todo <i class="c">16</i></button>
-      <button class="chip" data-cat="matcha" aria-pressed="false">Matcha <i class="c">4</i></button>
-      <button class="chip" data-cat="kit" aria-pressed="false">Kits <i class="c">4</i></button>
-      <button class="chip" data-cat="vaso" aria-pressed="false">Tazas y vasos <i class="c">4</i></button>
-      <button class="chip" data-cat="ropa" aria-pressed="false">Ropa <i class="c">4</i></button>
-      </div><div class="shopbar__end">
-        <span class="note only-desk" id="count">16 productos</span>
-        <label class="sr" for="sort">Ordenar</label>
-        <select class="sel" id="sort">
-          <option value="pop">Más vendidos</option>
-          <option value="rate">Mejor valorados</option>
-          <option value="asc">Precio: bajo a alto</option>
-          <option value="desc">Precio: alto a bajo</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-  <section class="sec tight">
-    <div class="wrap">
-      <div class="pgrid pgrid--shop" id="grid"></div>
-      <p class="note center" style="margin-top:14px">¿No ves lo que buscas? Escríbenos <a class="link" href="contacto.html">qué quieres hacer con tu matcha</a> y te decimos si lo tenemos o si te sobra con el bote.</p>
-    </div>
-  </section>
-
-  <!-- kits, con su argumentario -->
-  <section class="sec sec--mint" id="kit">
-    <div class="wrap">
-      <div class="sec-head--split">
-        <div class="sec-head" style="margin-bottom:0">
-          <span class="kicker kicker--sage">Kits</span>
-          <h2 class="d d-3">Tres niveles, ninguno con relleno</h2>
-          <p class="lede">El básico tiene las tres piezas que se usan a diario. El Pro añade el tamizador, el espumador, el soporte del batidor y el bote de 54 g. Y el de regalo es el Pro en miniatura con caja dura, lazo y tarjeta escrita a mano.</p>
-        </div>
-        <a class="btn btn--ghost btn--auto" href="ritual.html#herramientas">Para qué sirve cada pieza</a>
-      </div>
-      <div class="pgrid" id="grid-kit"></div>
-    </div>
-  </section>
-
-  <!-- condiciones de compra, en texto normal -->
-  <section class="sec tight" id="envios">
-    <div class="wrap">
-      <div class="edit__t" style="gap:14px">
-        <span class="kicker">Antes de darle a pagar</span>
-        <h2 class="d d-3">Las condiciones, escritas para que se entiendan</h2>
-        <p><b>Envío.</b> Gratis a partir de 35 € en Península (3,95 € por debajo). Si el pedido entra antes de las 14:00, sale el mismo día y llega en 24-48 h laborables. Baleares 48 h. Canarias, Ceuta y Melilla 3-5 días con tasas aparte: te avisamos antes de enviar para que no te lleves la sorpresa en la puerta.</p>
-        <p><b>Devolución.</b> Tienes 30 días y puedes tener el bote abierto. Si el sabor no te convence, te devolvemos el importe por el mismo medio de pago en 7-14 días y no tenemos que saber por qué. Cambios de talla en ropa, gratis una vez.</p>
-        <p><b>Conservación.</b> Los botes viajan en caja rígida con relleno de papel; los cuencos y el cristal, con doble pared. Si algo llega roto, mándanos una foto y sale otro al día siguiente sin que devuelvas el roto.</p>
-        <div class="row row--wrap">
-          <a class="btn btn--auto" href="legal.html#envios">Leer el detalle legal</a>
-          <a class="link" href="contacto.html">Preguntar algo concreto</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec sec--forest" id="guia">
-    <div class="wrap lead-in" id="leadHome">
-      <div class="col">
-        <span class="kicker kicker--light">Para que el bote no te falle</span>
-        <p class="d d-3" style="color:#fff">Guía en PDF<br>+ 10&nbsp;% de dto.</p>
-        <p class="note" style="color:rgba(255,255,255,.75)">Cuatro páginas con los pasos, las temperaturas y el truco de guardar el bote. El cupón se pega en el carrito y sirve para tu primer pedido.</p>
-      </div>
-      <div data-lead-form></div>
-    </div>
-  </section>
-
-</main>
-<script src="assets/js/data.js"></script>
-<script src="assets/js/app.js"></script>
+<body style="background:var(--cream);color:var(--ink);font-family:system-ui;display:grid;place-items:center;min-height:100svh;margin:0">
+<p style="text-align:center;padding:24px">Esta página ahora es <b><a style="color:var(--pink-deep)" href="productos.html">la tienda de esta casa</a></b>. Te llevamos en un segundo.<br>
+<span style="opacity:.6">Si no cambia, pulsa el enlace.</span></p>
 </body>
 </html>

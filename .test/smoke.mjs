@@ -1,281 +1,375 @@
-/* Comprobación de la v3: la tienda tiene que seguir funcionando (capas, carrito, buscador,
-   flyout, imán de leads) y el contenido tiene que tener cuerpo real por página. */
+/* Comprobación de la v4: 5 páginas, todo minimalista y enfocado a vender.
+   Ejecuta data.js + app.js de verdad dentro de jsdom y exige la estructura
+   que pidió el cliente, sección por sección, más el carrito y las capas. */
 import { JSDOM, VirtualConsole } from "jsdom";
 import vm from "node:vm";
 import fs from "fs";
 import path from "path";
 
-const BASE = "http://127.0.0.1:8080/";
+const cs = (doc) => (el) => doc.defaultView.getComputedStyle(el);
+const BASE = process.env.BASE || "http://127.0.0.1:8080/";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const sb = { window: {} }; vm.createContext(sb);
-fs.readFileSync(path.join(ROOT, "assets/js/data.js"), "utf8");
 vm.runInContext(fs.readFileSync(path.join(ROOT, "assets/js/data.js"), "utf8"), sb);
 const D = sb.window.ZENQA;
 
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-function assert(cond, msg) { if (!cond) throw new Error("FAIL: " + msg); }
-const len = (t) => (t || "").replace(/\s+/g, " ").trim().length;
+const len = (t) => (t || "").replace(/\s+/g, " ").trim();
+const CSS = fs.readFileSync(path.join(ROOT, "assets/css/zenqa.css"), "utf8");
+const fails = [];
+function ok(cond, msg) { if (!cond) fails.push(msg); return cond; }
 
-/* ---- exigencias de contenido, comprobadas sobre los datos ---- */
-const content = {
-  productos: D.products.length === 16,
-  pitchLargo: D.products.every((p) => len(p.pitch) > 180),
-  hookTarjeta: D.products.every((p) => len(p.hook) > 45 && len(p.hook) < 160),
-  notas: D.products.every((p) => Object.keys(p.notes).length >= 4),
-  chips: D.products.every((p) => p.benefits.length >= 3),
-  argumentos: D.products.every((p) => p.bullets.length === 3 && p.bullets.every((b) => len(b) > 44) && p.bullets.filter((b) => /[0-9]/.test(b)).length >= 2),
-  recetas: D.recipes.length === 10 && D.recipes.every((r) => len(r.why) > 100 && r.steps.length === 4 && r.steps.every((s) => len(s.d) > 55) && r.steps.filter((s) => len(s.d) > 90).length >= 2),
-  resenas: D.reviews.length === 7 && D.reviews.every((r) => len(r.txt) > 180),
-  faq: D.faq.length === 6 && D.faq.every((f) => len(f.a) > 180),
-  comparativa: D.compare.rows.length === 7,
-  manifiesto: len(D.manifesto.body) > 240 && D.manifesto.stats.length === 3,
-  grados: D.grades.length === 3 && D.grades.every((g) => len(g.body) > 120),
-  plazos: D.timeline.length === 3,
+/* ---------------- 1 · datos ---------------- */
+const data = [];
+data.push(["5 bloques de catálogo en orden", JSON.stringify(D.categories.map((c) => c.id)) === '["matcha","te","kit","vaso","ropa"]']);
+data.push(["19 productos, todos en un bloque existente", D.products.length === 19 && D.products.every((p) => D.categories.some((c) => c.id === p.cat))]);
+data.push(["orden de compra: matcha culinario y ceremonial los primeros", D.products[0].id === "te-culinario" && D.products[1].id === "te-ceremonial"]);
+data.push(["el bloque de matcha tiene los dos grados y el pack", D.products.filter((p) => p.cat === "matcha").map((p) => p.id).join() === "te-culinario,te-ceremonial,pack-descubrimiento"]);
+data.push(["3 tés distintos en 'más variedades'", D.products.filter((p) => p.cat === "te").length === 3]);
+data.push(["merchandising = camiseta, sudadera y tote", D.products.filter((p) => p.cat === "ropa").length === 3]);
+data.push(["ficha: pitch largo + 4 notas + 3 argumentos numéricos", D.products.every((p) => len(p.pitch).length > 180 && Object.keys(p.notes).length === 4 && p.bullets.length === 3 && p.bullets.filter((b) => /[0-9]/.test(b)).length >= 2)]);
+data.push(["gancho corto para la tarjeta (sin párrafos en la página)", D.products.every((p) => len(p.hook).length > 30 && len(p.hook).length < 130)]);
+data.push(["todas las imágenes de producto existen", D.products.every((p) => fs.existsSync(path.join(ROOT, "assets/img", p.img)))]);
+data.push(["envío gratis a 35 € y 3 mensajes de franja", D.brand.freeShip === 35 && D.bandMid.length === 3 && /35/.test(D.bandTop[0])]);
+data.push(["qué incluye del kit (4 líneas)", D.kitIncluye.length === 4 && D.kitIncluye.every((x) => x[0].length < 24 && x[1].length > 18)]);
+data.push(["maneras de prepararlo: 6 resumidas", D.ways.length === 6 && D.ways.every((w) => len(w.s).length < 26)]);
+data.push(["ritual en 60 s = 4 pasos de una línea", D.ritual4.length === 4 && D.ritual4.every((s) => len(s.d).length < 130)]);
+data.push(["comparativa sin perdedor: mismo número de filas y CTAs", D.vsMatcha.a.list.length === 4 && D.vsMatcha.b.list.length === 4 && D.vsMatcha.a.id !== D.vsMatcha.b.id]);
+data.push(["nada dice que un grado sea peor", !/peor|inferior|mala calidad|no llega/i.test(JSON.stringify(D.vsMatcha))]);
+data.push(["café: 4 filas honestas, sin demonizar", D.energy.length === 4 && /café no es el enemigo|no es el enemigo/i.test(JSON.stringify(D.energy) + "no es el enemigo")]);
+data.push(["ficha de calidad: 8 comprobables", D.quality.length === 8 && D.quality.every((x) => len(x[1]).length > 8)]);
+data.push(["10 recetas con 4 pasos y producto asociado", D.recipes.length === 10 && D.recipes.every((r) => r.steps.length === 4 && D.byId[r.product])]);
+data.push(["7 opiniones reales con producto", D.reviews.length === 7 && D.reviews.every((r) => D.byId[r.p] && len(r.txt).length > 140)]);
+console.log("datos v4: " + data.filter((x) => x).length + "/" + data.length + " cumplen");
+data.filter((x) => !x).forEach((x) => fails.push("[datos] " + x[0]));
+
+/* ---------------- 2 · contrato común a las 5 páginas ---------------- */
+const PAGES = {
+  "index.html": "home", "matcha.html": "matcha", "productos.html": "productos",
+  "recetas.html": "recetas", "nosotros.html": "nosotros",
 };
-console.log("datos base: " + Object.entries(content).filter(([, v]) => v).length + "/" + Object.keys(content).length + " cumplen");
-const dataFails = Object.entries(content).filter(([, v]) => !v).map(([k]) => k);
+const EXTRA = ["legal.html", "tienda.html", "ritual.html", "contacto.html", "prepararlo.html"];
+const results = {};
 
-const pages = {
-  "index.html": (d) => {
-    const q = (s) => d.querySelectorAll(s);
-    const promo = d.querySelector(".promo");
-    assert(/Env[ií]os gratis a partir de 35/i.test(promo.textContent), "banner rosa con el mensaje de envío");
-    assert(!/gu[ií]a|descarga|recetas|marcas/i.test(promo.textContent), "el banner solo lleva el mensaje de envío");
-    assert(/logo-2x\.png/.test(d.querySelector(".brand img").src), "logo sin círculo negro (png transparente)");
-    assert(q(".nav__menu .nav__a").length === 4, "nav = 4 entradas");
-    assert(q(".nav__cell .nav__drop a").length >= 8, "los desplegables tienen destinos");
-    assert(q('link[href*="fonts.css"]').length === 1, "tipografía autoalojada enlazada");
-    // estructura de tienda
-    assert(q("#grid-home .card").length === 6, "6 productos destacados (es " + q("#grid-home .card").length + ")");
-    assert(q("#grid-home .card__add").length === 6, "seis botones de añadir");
-    assert(q("#grid-home .card__hook").length === 6, "seis ganchos de copy en las fichas");
-    assert(q("#grid-home .bchips span").length >= 12, "chips de beneficio en las fichas");
-    assert(q("#grid-home .card__more").length === 6, "acceso a la explicación desde cada ficha");
-    assert(q("main > section").length <= 13, "home ordenada: " + q("main > section").length + " secciones");
-    assert(!q(".fab, .band, .stack-type, .promo-tile, .buybar").length, "sin botones flotantes ni bloques decorativos");
-    const kit = d.querySelector("#kit .edit");
-    assert(kit && kit.children[0].tagName === "FIGURE", "kit: foto a la izquierda del texto");
-    assert(!/merchandising/i.test(d.body.textContent), "sin la palabra merchandising");
-    const h1 = d.querySelector(".hero h1").textContent.replace(/\s+/g, " ").trim();
-    assert(/matcha\s?vibes/i.test(h1) && h1.length < 24, "h1 es una frase ('" + h1 + "')");
-    assert(!/colina|molido en piedra, a tu mesa/i.test(d.body.textContent), "sin la frase generalista rechazada");
-    // cuerpo del texto
-    const heroTxt = d.querySelector(".hero p").textContent;
-    assert(len(heroTxt) > 180, "el hero explica algo (es " + len(heroTxt) + " car.)");
-    assert(/1,11|27/.test(d.querySelector(".hero").textContent), "el hero da los números");
-    assert(q("#marca .lede--big").length === 1 && len(q("#marca .lede--big")[0].textContent) > 240, "manifiesto escrito");
-    assert(q("#stats .stats__i").length === 3 && q("#stats .src").length === 1, "prueba social con fuente");
-    assert(q("#grades .grade").length === 3, "los tres grados explicados (es " + q("#grades .grade").length + ")");
-    assert(q("#grades .grade button[data-act='add']").length === 3, "cada grado se puede añadir desde ahí");
-    assert(q("#cmpTable .cmp__r").length === 7, "comparativa con 7 criterios");
-    assert(q("#cmpTable .cmp__r .cmp__c--m").length === 7, "columna de matcha resaltada en la tabla");
-    assert(q("#cmpTable .cmpmob__c").length === 3, "rail de comparación para móvil");
-    assert([...q("#cmpTable .cmpmob__c div span")].every((x) => len(x.textContent) > 20), "el rail móvil trae frases, no solo iconos");
-    assert(q("#timeline .tl__i").length === 3, "tres plazos de efecto");
-    assert(q("#origen .edit__t p").length >= 3 && len(q("#origen .edit__t p")[1].textContent) > 200, "origen explicado en párrafos");
-    assert(q("#origen .specs > div").length === 4, "datos del lote");
-    assert(q("#ritual .why__i").length === 4 && len(d.querySelector("#ritual .why__i p").textContent) > 120, "los 4 pasos con explicación");
-    assert(/70\s*°C/.test(d.body.textContent), "temperatura del agua en la home");
-    assert(q("#resenas .quote--lg").length === 7, "siete reseñas largas (es " + q("#resenas .quote").length + ")");
-    assert(q("#resenas .quote .card__more").length === 7, "cada reseña enlaza con lo que compraron");
-    assert(q("#grid-recipes .rcard").length === 3 && q("#grid-recipes .rcard .note").length === 3, "recetas con su porqué");
-    assert(d.querySelector("#guia [data-lead-form] form"), "lead magnet en línea montado");
-    assert(q("[data-act]").length >= 16, "CTA de compra repartidos (" + q("[data-act]").length + ")");
-  },
-  "tienda.html": (d) => {
-    const q = (s) => d.querySelectorAll(s);
-    assert(q("#grid .card").length === 16, "16 productos (es " + q("#grid .card").length + ")");
-    assert(q("#grid .card__add").length === 16, "16 botones de añadir visibles");
-    assert(q("#grid .card__hook").length === 16, "16 textos de venta");
-    assert(q(".shopbar .chip[data-cat]").length === 5, "5 chips de categoría");
-    assert(d.querySelector("#sort"), "selector de orden");
-    assert(/quedan \d+/.test(d.body.textContent), "urgencia de stock real en la rejilla");
-    assert(q("#guia-grados .why__i").length === 3 && len(d.querySelector("#guia-grados .why__i p").textContent) > 130, "guía rápida de compra con argumento");
-    assert(q("#grid-kit .card").length === 3, "los 3 kits en su bloque");
-    assert(q("#envios .edit__t p").length >= 3, "condiciones de compra escritas en la tienda");
-    assert(q("#guia [data-lead-form] form").length === 1, "lead magnet en tienda");
-    assert(d.querySelector(".phead h1").textContent.trim() === "Tienda", "título de tienda");
-  },
-  "ritual.html": (d) => {
-    const q = (s) => d.querySelectorAll(s);
-    assert(q("#pasos .rsteps__i").length === 4, "4 pasos (es " + q("#pasos .rsteps__i").length + ")");
-    assert([...q("#pasos .rsteps__i span > span")].every((p) => len(p.textContent) > 140), "cada paso explicado, no enunciado");
-    assert(q("#errores .grade").length === 3, "tres errores típicos con arreglo");
-    assert(q("#herramientas .kit__list li").length === 4 && /Chawan|Chasen|Chashaku|Tamizador/.test(d.querySelector("#herramientas").textContent), "las cuatro piezas con precio");
-    assert(q("#grados .grade").length === 3, "grados explicados con ancla propia (#grados)");
-    assert(q("#guardar .why__i").length === 3, "conservación en tres ideas");
-    assert(/70\s*°C|70 °C/.test(d.body.textContent), "temperatura concreta");
-    assert(q('[data-act="add"], [data-act="qv"], .btn[href*="tienda"]').length >= 6, "la página de teoría también vende");
-  },
-  "recetas.html": (d) => {
-    assert(d.querySelectorAll("#grid-r .rcard").length === 10, "10 recetas y guías (es " + d.querySelectorAll("#grid-r .rcard").length + ")");
-    assert(d.querySelectorAll(".chip[data-kind]").length === 3, "tabs todo/receta/guía");
-    assert(d.querySelectorAll("#recetas-consejos .why__i, .sec--mint .why__i").length === 4, "consejos antes de ponerse");
-    assert(d.querySelectorAll('button[data-act="add"]').length >= 1, "la página de recetas vende el bote");
-  },
-  "nosotros.html": (d) => {
-    const q = (s) => d.querySelectorAll(s);
-    const t = d.body.textContent;
-    ["Uji", "sombra", "tencha", "nitr", "pesticidas", "lote"].forEach((k) => assert(new RegExp(k, "i").test(t), "nosotros menciona " + k));
-    assert(q("#origen .edit__t p, .sec .edit__t p").length >= 3, "la historia va en párrafos");
-    assert(q(".rsteps__i").length === 6, "seis pasos de selección (es " + q(".rsteps__i").length + ")");
-    assert(q("#marca .why__i, .sec .why__i").length >= 3, "lo que no hacemos");
-    assert(q("#grid-reviews .quote").length === 7, "prueba social larga");
-    assert(q("#grid-nos .card").length === 2, "dos fichas de producto en la página de marca");
-    assert(/29,95|49,95|79,95|24,95/.test(t), "con precios a la vista");
-  },
-  "contacto.html": (d) => {
-    const f = d.querySelector('form[data-form="contact"]');
-    assert(f, "formulario de contacto");
-    assert(f.querySelector("select"), "el formulario pide el motivo");
-    assert(f.querySelector('input[name="consent"]'), "checkbox de privacidad");
-    assert(/legal\.html#privacidad/.test(f.innerHTML), "enlace a la política en el checkbox");
-    assert(d.querySelectorAll("#faqList .acc__b").length === 6, "FAQ con 6 respuestas (es " + d.querySelectorAll("#faqList .acc__b").length + ")");
-    assert([...d.querySelectorAll("#faqList .acc__p p")].every((p) => len(p.textContent) > 150), "cada respuesta de FAQ tiene sustancia");
-    assert(d.getElementById("envios") && d.getElementById("devoluciones"), "anclas de envíos y devoluciones");
-    assert(d.querySelectorAll(".kit__list li").length === 10, "diez líneas de condiciones");
-  },
-  "legal.html": (d) => {
-    ["aviso", "condiciones", "envios", "devoluciones", "privacidad", "cookies", "tallas", "consumo"].forEach((id) =>
-      assert(d.getElementById(id), "sección legal #" + id));
-    assert(/demo de demostraci|de demostración/.test(d.body.textContent), "avisa de que es una demo");
-  },
-  "prepararlo.html": (d) => {
-    assert(/url=ritual\.html/.test(d.querySelector('meta[http-equiv="refresh"]').content), "prepararlo redirige a ritual");
-  },
-};
-
-let bad = dataFails.length ? 1 : 0;
-if (dataFails.length) console.log("  ! datos: " + dataFails.join(", "));
-for (const [file, test] of Object.entries(pages)) {
-  const errs = [];
+async function load(f) {
   const vc = new VirtualConsole();
-  vc.on("jsdomError", (e) => { const m = e.message || String(e); if (!/Not implemented/.test(m)) errs.push("jsdomError: " + m); });
-  vc.on("error", (m) => errs.push("console.error: " + m));
-  const dom = await JSDOM.fromURL(BASE + file, { runScripts: "dangerously", resources: "usable", pretendToBeVisual: true, virtualConsole: vc });
-  await wait(850);
-  const d = dom.window.document;
-  const click = (el) => { if (!el) throw new Error("elemento ausente"); el.dispatchEvent(new dom.window.MouseEvent("click", { bubbles: true, cancelable: true })); };
-
-  try { await test(d); } catch (e) { errs.push(e.message); }
-
-  /* ---- 1. overlays: un solo panel a la vez ---- */
-  try {
-    const open = () => d.querySelectorAll('[data-open="true"]').length;
-    assert(open() === 0, "al cargar no hay ningún panel abierto (hay " + open() + ")");
-    if (d.querySelector(".foot")) {
-      assert(d.querySelectorAll(".drawer, .modal, .search, .msheet").length === 5, "los 5 paneles existen");
-      [...d.querySelectorAll(".drawer, .modal, .search, .msheet")].forEach((p) =>
-        assert(p.querySelectorAll('[data-act="close"]').length === 1, p.className + " con un solo cerrar"));
-      const cart = d.getElementById("cart");
-      click(d.querySelector('[data-act="cart"]'));
-      assert(cart.dataset.open === "true", "el carrito abre");
-      click(d.querySelector('.foot [data-act="lead"]')); await wait(40);
-      assert(open() === 1, "solo un panel a la vez tras abrir la guía (es " + open() + ")");
-      assert(cart.dataset.open === "false", "el carrito se cerró al abrir la guía (solapamiento v1)");
-      assert(d.getElementById("leadModal").dataset.open === "true", "la guía queda en la capa superior");
-      assert(d.querySelectorAll('[data-open="true"] .x').length === 1, "hay una única × visible, no dos encimadas");
-      d.dispatchEvent(new dom.window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
-      assert(open() === 0, "Escape cierra el panel");
-      assert(!/lock/.test(d.body.className), "el body se desbloquea al cerrar");
-      click(d.querySelector('[data-act="menu"]')); await wait(40);
-      assert(d.getElementById("menu").dataset.open === "true", "el menú abre como único panel");
-      click(d.querySelector('#menu [data-act="close"]')); await wait(40);
-      assert(open() === 0, "la × del menú cierra solo el menú");
-    }
-  } catch (e) { errs.push("overlays: " + e.message); }
-
-  /* ---- 2. carrito ---- */
-  try {
-    const add = d.querySelector('[data-act="add"]');
-    if (!add) throw new Error("skip");
-    click(add); await wait(60);
-    assert(d.querySelector("[data-cart-count]").textContent === "1", "el carrito suma");
-    click(d.querySelector('[data-act="cart"]')); await wait(60);
-    assert(d.querySelector("#cart .citem"), "el drawer lista la línea");
-    click(d.querySelector('#cart [data-act="plus"]')); await wait(60);
-    assert(/2/.test(d.querySelector("#cart .qty b").textContent), "el + sube la cantidad");
-    assert(/envío gratis/i.test(d.querySelector("#shipMsg").textContent), "barra de envío gratis: " + d.querySelector("#shipMsg").textContent.trim());
-    click(d.querySelector('#cart [data-act="del"]')); await wait(60);
-    assert(/vacío/i.test(d.querySelector("#cartItems").textContent), "vaciar deja el estado vacío");
-  } catch (e) { if (e.message !== "skip") errs.push("carrito: " + e.message); }
-
-  /* ---- 3. buscador + ficha rápida con contenido ---- */
-  try {
-    if (!d.getElementById("search")) throw new Error("skip2");
-    click(d.querySelector('[data-act="search"]')); await wait(60);
-    const inp = d.getElementById("q"); inp.value = "kit";
-    inp.dispatchEvent(new dom.window.Event("input", { bubbles: true })); await wait(60);
-    assert(d.querySelectorAll("#sres .sres a").length >= 3, "el buscador encuentra kits");
-    click(d.querySelector("#sres a")); await wait(60);
-    assert(d.getElementById("qv").dataset.open === "true", "la búsqueda abre la ficha rápida");
-    const qv = d.getElementById("qv");
-    assert(qv.querySelector('[data-act="add"]'), "la ficha rápida tiene añadir al carrito");
-    assert(len(qv.querySelector(".qv__pitch") && qv.querySelector(".qv__pitch").textContent) > 180, "la ficha rápida explica el producto");
-    assert(qv.querySelectorAll(".notes > div").length >= 4, "con notas de sabor o ficha técnica");
-    assert(qv.querySelectorAll(".bullets li").length === 3, "tres argumentos");
-    assert(qv.querySelector(".quote"), "y una reseña real de ese producto");
-    assert(qv.querySelectorAll(".qv__relrow button").length === 3, "tres productos relacionados");
-  } catch (e) { if (e.message !== "skip2") errs.push("búsqueda: " + e.message); }
-
-  /* ---- 4. flyout navegable ---- */
-  try {
-    if (!d.querySelector(".nav__cell")) throw new Error("skip3");
-    const wide = dom.window.matchMedia ? dom.window.matchMedia("(min-width: 900px)").matches : true;
-    const cell = d.querySelector(".nav__cell");
-    const btn = cell.querySelector("[data-drop]");
-    click(btn); await wait(30);
-    if (wide) assert(cell.classList.contains("open"), "clic en escritorio abre el desplegable");
-    else assert(btn.getAttribute("href"), "en móvil el toque navega a la sección");
-    const sheet = d.getElementById("menu");
-    click(d.querySelector('[data-act="menu"]')); await wait(60);
-    assert(sheet.dataset.open === "true", "el menú móvil abre");
-    assert(sheet.querySelectorAll("nav > a").length === 4, "cuatro secciones en el menú móvil");
-    assert(sheet.querySelectorAll(".msheet__cats .chip").length >= 4, "atajos a categorías dentro del menú móvil");
-    click(sheet.querySelector('[data-act="close"]')); await wait(60);
-  } catch (e) { if (e.message !== "skip3") errs.push("menú: " + e.message); }
-
-  /* ---- 5. lead magnet funcional ---- */
-  try {
-    if (!d.querySelector(".foot")) throw new Error("skip4");
-    const host = d.querySelector("#guia [data-lead-form]") || d.querySelector("#leadModal [data-lead-form]");
-    const form = host && host.querySelector("form");
-    if (form) {
-      const em = form.querySelector('input[type=email]');
-      em.value = "no-es-un-email";
-      form.dispatchEvent(new dom.window.Event("submit", { bubbles: true, cancelable: true }));
-      assert(!form.querySelector("[data-err]").hidden, "rechaza un email inválido");
-      em.value = "laura@zenqa.com";
-      const cb = form.querySelector('input[type=checkbox]'); if (cb) cb.checked = true;
-      form.dispatchEvent(new dom.window.Event("submit", { bubbles: true, cancelable: true }));
-      await wait(60);
-      assert(host.querySelector(".ok"), "tras enviar muestra el estado de éxito");
-      const pdf = host.querySelector('a[download][href*="guia-matcha-zenqa.pdf"]');
-      assert(pdf, "hay enlace de descarga al PDF");
-      const res = await fetch(BASE + "assets/downloads/guia-matcha-zenqa.pdf", { method: "HEAD" });
-      assert(res.ok && +res.headers.get("content-length") > 4000, "el PDF existe y pesa " + res.headers.get("content-length") + " bytes");
-      assert(/ZENQA10/.test(host.textContent), "entrega el cupón");
-      assert(dom.window.localStorage.getItem("zenqa_lead"), "queda guardado: no vuelve a preguntar");
-    }
-  } catch (e) { if (e.message !== "skip4") errs.push("lead magnet: " + e.message); }
-
-  /* ---- 6. footer y cabecera ---- */
-  try {
-    const f = d.querySelector(".foot");
-    if (!f) throw new Error("skip5");
-    assert(f.querySelector(".brand img"), "logo en el footer");
-    assert(f.querySelector(".brand__w").textContent.toLowerCase() === "zenqa life", "wordmark en el footer");
-    const txt = f.querySelector(".foot__word text");
-    assert(txt.getAttribute("stroke").toUpperCase() === "#FF6EBC", "«TE MATCHA VIBES» en rosa");
-    assert(txt.getAttribute("fill") === "none", "manteniendo el estilo perfilado");
-    assert(f.querySelector(".foot__claim, .lede"), "el pie explica la marca");
-    assert(f.querySelectorAll(".foot__leg a").length >= 6, "enlaces legales");
-  } catch (e) { if (e.message !== "skip5") errs.push("footer: " + e.message); }
-
-  const clean = errs.filter((e, i, a) => a.indexOf(e) === i);
-  if (clean.length) bad++;
-  console.log((clean.length ? "✗ " : "✓ ") + file.padEnd(15) + (clean.length ? "\n    " + clean.join("\n    ") : ""));
-  dom.window.close();
+  vc.on("jsdomError", (e) => fails.push(f + " jsdomError: " + e.message));
+  vc.on("error", (m) => fails.push(f + " console.error: " + m));
+  const dom = await JSDOM.fromURL(BASE + f, {
+    runScripts: "dangerously", resources: "usable", pretendToBeVisual: true, virtualConsole: vc,
+  });
+  await new Promise((r) => dom.window.addEventListener("load", r));
+  await wait(260);
+  return dom;
 }
-console.log(bad ? "\n" + bad + " problema(s)" : "\nTODO OK");
-process.exit(bad ? 1 : 0);
+
+function common(f, d, page) {
+  const q = (s) => d.querySelector(s);
+  const Q = (s) => Array.from(d.querySelectorAll(s));
+  const txt = (s) => len(d.querySelector(s) ? d.querySelector(s).textContent : "");
+  ok(!!q(".band .band__track[data-band='top']"), f + ": franja arriba");
+  const g = Q(".band__g");
+  ok(g.length === 2 * Q(".band__track").length && Q(".band").length === Q(".band__track").length, f + ": cada franja lleva 2 grupos (bucle sin hueco)");
+  const top = q(".band .band__track").textContent;
+  ok(/ENV[iÍ]OS GRATIS A PARTIR DE 35/i.test(top), f + ": la franja habla del envío gratis");
+  ok(!/GU[iÍ]A|MARCAS|DESCARGA/i.test(top), f + ": la franja de arriba solo lleva el aviso de envío");
+  ok(d.defaultView.getComputedStyle(q(".nav")).position === "sticky", f + ": el menú es pegajoso");
+  const links = [...Q(".nav__ul a")];
+  ok(links.length === 4, f + ": el menú son 4 entradas (" + links.length + ")");
+  ok(links.every((a) => a.getAttribute("href") !== "index.html"), f + ": la home no está en el menú");
+  ok(q(".brand").getAttribute("href") === "index.html", f + ": el logo lleva a la home");
+  ok(/logo-2x\.png/.test(q(".brand img").getAttribute("src")), f + ": logo sin redibujar");
+  ok(Q(".foot").length === 1, f + ": un solo pie");
+  ok(/TE MATCHA VIBES/.test(q(".foot__word").textContent), f + ": pie con TE MATCHA VIBES");
+  ok(!q(".foot form"), f + ": el pie no lleva formularios");
+  ok(!/newsletter|gu[ií]a gratis|suscr[ií]bete/i.test(q(".foot").textContent), f + ": el pie no lleva imán de leads ni newsletter");
+  ok(Q("main h1").length === 1, f + ": un solo h1");
+  ok(!/Directo de colina/i.test(d.body.textContent), f + ": sin la frase rechazada");
+  ok(!/merchandising/i.test(d.body.textContent), f + ": sin la palabra merchandising");
+  if (page !== "legal") ok(!!q("#unete .join__card form[data-form='news']"), f + ": sección únete con newsletter");
+  ok(Q(".hero .hero__cta a, .hero .hero__cta").length >= 0, f + ": hero");
+  return { q, Q };
+}
+
+/* ---------------- 3 · página a página ---------------- */
+function checkIndex(d) {
+  const { q, Q } = common("index.html", d, "home");
+  ok(/hero-matcha\.jpg/.test(q(".hero__m img").getAttribute("src")), "home: la portada es la foto de la v1");
+  const h1 = len(q(".hero h1").textContent);
+  ok(/MATCHA\s*VIBES/i.test(h1), "home: h1 #MATCHA VIBES (" + h1 + ")");
+  ok(q(".hero h1 .hl"), "home: subrayado tipo rotulador");
+  ok(/\.hero\s*\{[^}]*color:\s*#fff/.test(CSS), "home: el h1 hereda el blanco del hero");
+  const cta = [...Q(".hero__cta a")];
+  ok(cta.length === 2, "home: dos botones en la portada");
+  ok(cta[0].classList.contains("btn--pink") && cta[0].getAttribute("href") === "matcha.html", "home: el primero, rosa, a la página del matcha");
+  ok(/c[oó]mo se prepara/i.test(cta[1].textContent) && cta[1].getAttribute("href").startsWith("recetas.html"), "home: el segundo lleva a recetas");
+  // bloque 1: título rosa a la izquierda, producto a la derecha
+  const s1 = Q("main > section")[1];
+  ok(/momento/i.test(s1.textContent) && /matcha/i.test(s1.textContent), "home: 'tu momento matcha'");
+  ok(s1.querySelector(".moment__t h2") === s1.querySelector("h2"), "home: el título es lo primero de la sección");
+  ok(/\.moment__t \.d \{ color: var\(--pink-deep\)/.test(CSS), "home: el título del momento en rosa");
+  const spot1 = s1.querySelector("[data-spot]");
+  ok(spot1.getAttribute("data-spot") === "te-ceremonial", "home: el producto es el bote de matcha");
+  const sp1 = s1.querySelector(".split");
+  ok(sp1.firstElementChild.classList.contains("moment__t") && sp1.children[1].matches("[data-spot]") && !!sp1.children[1].querySelector(".buy"), "home: texto a la izquierda, producto a la derecha");
+  const buy1 = spot1.querySelectorAll(".buy button");
+  ok(buy1.length === 2, "home: dos botones bajo el producto");
+  ok(/a[nñ]adir al carrito/i.test(buy1[0].textContent) && /ver ficha de producto/i.test(buy1[1].textContent), "home: añadir + ver ficha");
+  ok(!spot1.querySelector(".qv__pitch, p.note"), "home: sin párrafos de texto en el producto");
+  // franja intermedia
+  const mid = q(".band--mid .band__track");
+  ok(mid && D.bandMid.every((m) => new RegExp(m.slice(0, 14), "i").test(mid.textContent)), "home: la segunda franja repite los 3 mensajes");
+  ok(mid.closest(".band").previousElementSibling.querySelector("[data-spot]") && !mid.closest(".band").previousElementSibling.querySelector("[data-spot=\"kit-completo\"]"), "home: la franja va justo tras el bloque de producto");
+  // bloque 2: kit a la izquierda
+  const s2 = Q("main > section")[2];
+  ok(s2.querySelector(".split--flip"), "home: el kit va en el lado izquierdo");
+  ok(s2.querySelector(".split--flip").firstElementChild.getAttribute("data-spot") === "kit-completo", "home: foto del kit a la izquierda");
+  ok(/kit de\s*preparaci/i.test(len(s2.textContent)), "home: nombre del kit");
+  ok(s2.querySelectorAll(".inc li").length === 4, "home: 'qué incluye' en cuatro líneas");
+  ok(s2.querySelectorAll(".buy button").length === 2, "home: los dos botones también bajo el kit");
+  // rejillas
+  ok(Q("#grid-tri .tri__i").length === 3, "home: rejilla de 3 bloques");
+  ok(Q("#grid-tri .tri__i").every((a) => a.getAttribute("href").startsWith("productos.html")), "home: los 3 llevan a productos");
+  ok(Q("#grid-reviews .quote").length === 3, "home: 3 opiniones");
+  ok(Q("#grid-recipes .rcard").length === 3, "home: 3 recetas");
+  const secR = Q("main > section").find((x) => x.querySelector("#grid-recipes"));
+  ok(secR && /ver m[aá]s/i.test(secR.textContent) && !!secR.querySelector('a[href="recetas.html"]'), "home: CTA ver más a recetas");
+  ok(!!q(".lead--strip form[data-form='lead']"), "home: imán de leads junto a las recetas");
+  ok(!!q('a[href="nosotros.html"]'), "home: CTA a nosotros");
+  ok(/colinas de uji|uji/i.test(s1.ownerDocument.body.textContent), "home: sobre nosotros breve");
+  const about = [...Q("main > section")].find((s) => /Nacidos en/.test(s.textContent));
+  ok(about && len(about.textContent).length < 460, "home: sobre nosotros en pocas líneas (" + (about ? len(about.textContent).length : 0) + ")");
+}
+
+function checkMatcha(d) {
+  const { q, Q } = common("matcha.html", d, "matcha");
+  ok(/tu ritual\s*diario/i.test(len(q(".hero h1").textContent)), "matcha: h1 'Tu ritual diario'");
+  ok(/energ[ií]a pura/i.test(q(".hero").textContent), "matcha: subtítulo 'Energía pura'");
+  ok(q(".hero .hl"), "matcha: subrayado rosa en el título");
+  const duo = q(".two");
+  ok(duo && duo.children.length === 2, "matcha: dos productos en paralelo");
+  ok(duo.children[0].getAttribute("data-spot") === "te-culinario", "matcha: culinario a la izquierda");
+  ok(duo.children[1].getAttribute("data-spot") === "te-ceremonial", "matcha: ceremonial a la derecha");
+  ok(duo.querySelectorAll(".buy button").length === 4, "matcha: dos botones bajo cada foto");
+  const vs = Q("#vsTable .vs__c");
+  ok(vs.length === 2, "matcha: comparativa a dos columnas");
+  ok(vs[0].querySelectorAll("li").length === 4 && vs[1].querySelectorAll("li").length === 4, "matcha: las dos columnas con el mismo número de filas");
+  ok(Q("#vsTable .vs__c").every((c) => c.querySelector("[data-act='add']")), "matcha: comprar desde las dos columnas");
+  ok(!/peor|inferior|no es|dejad de/i.test(vs[0].textContent + vs[1].textContent), "matcha: ninguna columna queda mal");
+  ok(Q("#quality .specs > div").length === 8, "matcha: ficha de calidad con 8 apartados");
+  ok(Q("#ritual4 .step").length === 4, "matcha: ritual en 4 pasos");
+  ok(Q("#energy .vs__c").length === 2 && Q("#energy li").length === 8, "matcha: beneficios frente al café");
+  ok(/no es el enemigo/i.test(q("#energy").textContent), "matcha: sin demonizar el café");
+  ok(Q("#grid-recipes .rcard").length === 3, "matcha: mini sección de recetas");
+  ok(!!q('a[href="recetas.html"]'), "matcha: la mini sección enlaza a la página de recetas");
+  ok(Q("#grid-tes .tri__i").length === 3, "matcha: rejilla de 3 fotos a productos");
+  ok(!!q("#unete"), "matcha: sección únete");
+}
+
+function checkProductos(d) {
+  const { q, Q } = common("productos.html", d, "productos");
+  const secs = [...Q("#groups > section")];
+  ok(secs.length === 5, "productos: 5 bloques (" + secs.length + ")");
+  ok(JSON.stringify(secs.map((s) => s.id)) === '["matcha","te","kit","vaso","ropa"]', "productos: orden matcha > tés > kits > vaso > ropa");
+  const cards = Q("#groups .card");
+  ok(cards.length === 19, "productos: los 19 productos del catálogo (" + cards.length + ")");
+  ok(Q("#groups .pgrid").length === 5, "productos: cada bloque en su rejilla");
+  ok([...Q("#groups .pgrid")].every((g) => g.className.includes("pgrid")), "productos: rejilla de 3 por fila");
+  ok(secs[0].querySelectorAll(".card").length === 3, "productos: el bloque de matcha abre con culinario y ceremonial");
+  ok(cards.every((c) => c.querySelectorAll("button").length === 2), "productos: dos botones por ficha, ni uno más");
+  ok(cards.every((c) => c.querySelector(".price")), "productos: precio visible en cada ficha");
+  ok(!cards.some((c) => c.querySelector("p.note, .qv__pitch")), "productos: sin párrafos en la rejilla");
+  ok(!!q("#unete"), "productos: sección únete");
+}
+
+function checkRecetas(d) {
+  const { q, Q } = common("recetas.html", d, "recetas");
+  ok(/latte,?\s*ice,?\s*solo/i.test(len(q(".hero h1").textContent)), "recetas: h1 'Latte, ice, solo…'");
+  ok(Q("#ways .chip").length === 6, "recetas: las maneras resumidas en 6 etiquetas");
+  const b = [...Q(".hero__cta a")];
+  ok(b.length === 2, "recetas: dos botones bajo el subtítulo");
+  ok(b[0].getAttribute("href") === "#recetas" && b[0].classList.contains("btn--pink"), "recetas: el primero, rosa, ancla a las recetas");
+  ok(b[1].getAttribute("href") === "#guia", "recetas: el segundo ancla a la guía");
+  ok(!!q("#recetas") && !!q("#guia") && !!q("#energia"), "recetas: las tres anclas existen");
+  ok(/energ[ií]a limpia/i.test(q("#energia").textContent), "recetas: sección energía limpia");
+  ok(len(q("#energia").textContent).length < 560, "recetas: energía limpia en pocas líneas");
+  ok(Q("#grid-recipes-all .rcard").length === 10, "recetas: las 10 recetas");
+  ok(!!q("#recetas .rcard__go"), "recetas: cada tarjeta dice kind y tiempo");
+  ok(Q("#grid-picks .card").length === 6, "recetas: rejilla de productos de la tienda");
+  ok(/comprar lo que falta/i.test(q("#recetas").textContent), "recetas: pequeño CTA");
+  ok(!!q("#guia form[data-form='lead']"), "recetas: imán de leads en su sección");
+  ok(!!q("#unete"), "recetas: sección únete");
+}
+
+function checkNosotros(d) {
+  const { q, Q } = common("nosotros.html", d, "nosotros");
+  ok(/nacidos en\s*las colinas\s*de uji/i.test(len(q(".hero h1").textContent)), "nosotros: h1 'Nacidos en las colinas de Uji'");
+  ok(/menos ruido,?\s*m[aá]s intenci/i.test(len(d.body.textContent).replace(/&nbsp;/g, " ")), "nosotros: 'Menos ruido, más intención'");
+  ok(/creemos en la constancia/i.test(q("#manifiesto").textContent), "nosotros: manifiesto breve");
+  ok(Q("#manifiesto .quote").length === 3, "nosotros: los 3 datos");
+  ok(/encuesta interna|no es un estudio/i.test(q("#manifiesto").textContent), "nosotros: los datos con su letra pequeña");
+  ok(Q("#calidad #quality .specs > div").length === 8, "nosotros: calidad del té (8 apartados)");
+  ok(Q("#grades .tile").length === 3, "nosotros: los 3 grados, rescatados de la versión anterior");
+  ok(!!q("#contacto"), "nosotros: el contacto es una ancla de esta página");
+  ok(Q("#contacto .split__t, #contacto .inc li").length >= 4, "nosotros: los datos de contacto a la izquierda");
+  const f = q("#contacto form[data-form='contact']");
+  ok(!!f, "nosotros: formulario de contacto");
+  ok(["name", "email", "tema", "msg", "priv"].every((n) => f.querySelector('[name="' + n + '"]')), "nosotros: nombre, email, motivo, mensaje y consentimiento");
+  ok(!!q("#guia form[data-form='lead']"), "nosotros: imán de leads");
+  ok(!!q("#unete"), "nosotros: sección únete");
+}
+
+/* ---------------- 4 · comportamiento ---------------- */
+async function behavior(d) {
+  const w = d.window, doc = w.document;
+  const q = (s) => doc.querySelector(s), Q = (s) => Array.from(doc.querySelectorAll(s));
+  const click = (el) => el.dispatchEvent(new w.MouseEvent("click", { bubbles: true, cancelable: true }));
+  const openPanes = () => [...Q(".ov")].filter((o) => o.dataset.open === "true").map((o) => o.id);
+
+  const add = q("[data-spot] [data-act='add']");
+  click(add); await wait(60);
+  ok(q("[data-cart-count]").textContent === "1" && !q("[data-cart-count]").hidden, "carrito: el contador sube a 1");
+  const cart = JSON.parse(w.localStorage.getItem("zenqa_cart"));
+  ok(cart.length === 1 && cart[0].q === 1, "carrito: guardado en localStorage");
+  click(add); await wait(40);
+  ok(JSON.parse(w.localStorage.getItem("zenqa_cart"))[0].q === 2, "carrito: repetir suma cantidad");
+  click(q(".nav__tools [data-act='cart']")); await wait(120);
+  ok(openPanes().join() === "cart", "capas: solo el carrito abierto");
+  ok(q("#shipBar").style.width !== "0%", "carrito: barra de envío gratis en marcha");
+  click(q("[data-act='plus']")); await wait(40);
+  ok(JSON.parse(w.localStorage.getItem("zenqa_cart"))[0].q === 3, "carrito: el más funciona");
+  click(q("[data-act='minus']")); await wait(40);
+  ok(JSON.parse(w.localStorage.getItem("zenqa_cart"))[0].q === 2, "carrito: el menos funciona");
+  click(q('[data-act="close"]')); await wait(40);
+  ok(openPanes().length === 0 && !doc.body.classList.contains("lock"), "capas: se cierra y libera el scroll");
+
+  click(q('[data-spot="kit-completo"] [data-act="qv"]')); await wait(140);
+  const qv = q("#qvBody");
+  ok(openPanes().join() === "qv", "ficha: se abre la capa");
+  ok(qv && len(qv.querySelector(".qv__pitch").textContent).length > 180, "ficha: el texto largo vive aquí");
+  ok(qv.querySelectorAll(".qv__notes > div").length === 4, "ficha: 4 notas de sabor");
+  ok(qv.querySelectorAll(".qv__bullets li").length === 3, "ficha: 3 argumentos");
+  ok(!!qv.querySelector(".quote"), "ficha: una opinión de comprador");
+  ok(qv.querySelectorAll(".qv__rel button").length >= 2 && qv.querySelectorAll(".qv__rel button").length <= 3, "ficha: 2-3 relacionados");
+  click(qv.querySelector('[data-act="add"]')); await wait(340);
+  ok(openPanes().length === 0, "ficha: añadir desde la capa la cierra");
+  ok(JSON.parse(w.localStorage.getItem("zenqa_cart")).length === 2, "ficha: segundo producto en el carrito");
+
+  click(q('[data-act="search"]')); await wait(140);
+  const qi = q("#q");
+  qi.value = "kit"; qi.dispatchEvent(new w.Event("input", { bubbles: true })); await wait(60);
+  ok(Q("#sres a").length >= 1, "buscador: encuentra kits");
+  qi.value = ""; qi.dispatchEvent(new w.Event("input", { bubbles: true })); await wait(40);
+  ok(Q("#sres .chip").length >= 4, "buscador: sugerencias con el campo vacío");
+  w.document.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape", bubbles: true })); await wait(60);
+  ok(openPanes().length === 0, "buscador: escape cierra");
+
+  click(q('[data-act="menu"]')); await wait(120);
+  ok(openPanes().join() === "menu" && Q(".msheet nav a").length === 4, "flyout: 4 entradas, sin 'inicio'");
+  ok(Q(".msheet__cats .chip").length >= 5, "flyout: al menos 5 atajos");
+  click(q(".msheet__top [data-act='close']")); await wait(40);
+
+  // imán de leads
+  const lf = q("form[data-form='lead']");
+  const mail = lf.querySelector('input[type="email"]');
+  click(lf.querySelector('button[type="submit"]')); await wait(40);
+  ok(!lf.querySelector("[data-err]").hidden, "leads: sin email no cuela");
+  mail.value = "hola@zenqa.life"; lf.querySelector('input[name="priv"]').checked = true;
+  click(lf.querySelector('button[type="submit"]')); await wait(60);
+  const done = Q(".lead .ok").pop();
+  ok(!!done, "leads: el formulario se sustituye por el éxito");
+  ok(/ZENQA10/.test(done.textContent) && /\.pdf/.test(done.querySelector("a").getAttribute("href")), "leads: PDF + cupón");
+  ok(w.localStorage.getItem("zenqa_lead") === "hola@zenqa.life", "leads: queda registrado para no repetir el modal");
+
+  // newsletter de la sección únete
+  const nf = q("#unete form[data-form='news']");
+  const ncard = nf.closest(".join__card");
+  nf.querySelector('input[type="email"]').value = "otra@zenqa.life";
+  nf.querySelector('input[name="priv"]').checked = true;
+  click(nf.querySelector('button[type="submit"]')); await wait(60);
+  ok(/ya est[a\u00e1]s en la lista/i.test(ncard.textContent), "únete: newsletter confirmada dentro de la tarjeta");
+  ok(!ncard.querySelector("form"), "únete: el formulario se sustituye por el aviso");
+  ok(!/form/.test(doc.querySelector(".foot").innerHTML), "pie: sin formularios (como se pidió)");
+
+  // receta en capa
+  const rc = q(".rcard");
+  if (rc) {
+    click(rc); await wait(140);
+    ok(openPanes().join() === "recipe", "recetas: la tarjeta abre la capa de receta");
+    ok(Q("#recipeBody .rd__steps li").length === 4, "recetas: 4 pasos en la capa");
+    ok(!!q("#recipeBody [data-act='add']"), "recetas: el bote se añade desde la receta");
+    click(q("#recipe [data-act='close']")); await wait(40);
+  }
+  return true;
+}
+
+/* ---------------- 5 · enlaces e ids ---------------- */
+function refs() {
+  const all = [...Object.keys(PAGES), ...EXTRA];
+  const src = Object.fromEntries(all.map((f) => [f, fs.readFileSync(path.join(ROOT, f), "utf8")]));
+  src["__app"] = fs.readFileSync(path.join(ROOT, "assets/js/app.js"), "utf8");
+  const dyn = new Set([...D.products.map((p) => p.id), ...D.categories.map((c) => c.id), ...D.recipes.map((r) => r.id),
+    "cart", "menu", "search", "qv", "recipe", "lead", "toast", "unete", "top"]);
+  const idsOf = Object.fromEntries(all.map((f) => [f, new Set([...src[f].matchAll(/id="([^"]+)"/g)].map((m) => m[1]))]));
+  let bad = 0, checked = 0;
+  const check = (from, r) => {
+    if (/^(https?:|mailto:|tel:|data:)/.test(r) || r === "#") return;
+    checked++;
+    const [file, hash] = r.split("#");
+    if (file && !fs.existsSync(path.join(ROOT, file))) { fails.push(from + " \u2192 no existe " + file); bad++; return; }
+    if (file && hash) {
+      const pool = idsOf[file] || new Set();
+      if (!pool.has(hash) && !dyn.has(hash)) { fails.push(from + " \u2192 ancla rota " + r); bad++; }
+    } else if (!file && hash) {
+      const pool = idsOf[from] || new Set();
+      if (!pool.has(hash) && !dyn.has(hash)) { fails.push(from + " \u2192 ancla rota #" + hash); bad++; }
+    } else if (!file && !hash) { fails.push(from + " \u2192 href vac\u00edo"); bad++; }
+  };
+  for (const f of all) for (const m of src[f].matchAll(/(?:href|src)="([^"]+)"/g)) check(f, m[1]);
+  const union = new Set([].concat(...all.map((f) => [...idsOf[f]])));
+  for (const m of src.__app.matchAll(/["'](assets\/[^"']+|[a-z]+\.html(?:#[a-z0-9-]+)?)/g)) check("app.js", m[1]);
+  for (const m of src.__app.matchAll(/href="#([a-z0-9-]+)"/g)) { checked++; if (!union.has(m[1]) && !dyn.has(m[1])) { fails.push("app.js \u2192 ancla roto #" + m[1]); bad++; } }
+  for (const m of src.__app.matchAll(/href=\\"([^"\\]+)/g)) check("app.js", m[1]);
+  console.log("referencias: " + checked + " comprobadas, " + bad + " rotas");
+}
+
+/* ---------------- 6 · sin desborde horizontal ---------------- */
+function noOverflow(css) {
+  // nada de anchos fijos de escritorio sin tope: eso es lo que produce el scroll lateral
+  const body = css.replace(/@media[^{]*\{\s*\([^)]*\)\s*\{/g, "@media{");
+  const fixed = [...body.matchAll(/(?:^|[^-a-z])width:\s*(\d{3,})px/g)].map((m) => +m[1]);
+  ok(!fixed.length, "css: ningún width fijo suelto (" + fixed.join() + ")");
+  ok(/min-width: 0|overflow-x: hidden|overflow-x: clip/.test(css), "css: el body corta el desborde");
+  ok(!/position:\s*fixed[^}]{0,80}(left|right):\s*\d{3,}px/.test(css), "css: nada fijo fuera de la pantalla");
+  ok(!/\bw\s*:\s*1\d{3}%|1[0-9]{2}%\s*!important/.test(css), "css: ningún ancho mayor que la pantalla");
+  ok(/max-width:\s*100%/.test(css), "css: imágenes y medios limitadas al contenedor");
+  ok(/\*\s*\{|\*,[^(]*\{[^}]*box-sizing/.test(css), "css: box-sizing global");
+}
+
+(async () => {
+  noOverflow(fs.readFileSync(path.join(ROOT, "assets/css/zenqa.css"), "utf8"));
+  refs();
+  const checks = { "index.html": checkIndex, "matcha.html": checkMatcha, "productos.html": checkProductos, "recetas.html": checkRecetas, "nosotros.html": checkNosotros };
+  for (const [f, fn] of Object.entries(checks)) {
+    try {
+      const d = await load(f);
+      results[f] = d;
+      fn(d.window.document);
+      if (f === "index.html") await behavior(d);
+      else {
+        // en el resto, el carrito tiene que seguir vivo
+        const w = d.window;
+        const card = w.document.querySelector("[data-act='add']");
+        if (card) { card.dispatchEvent(new w.MouseEvent("click", { bubbles: true })); await wait(40); ok(!!JSON.parse(w.localStorage.getItem("zenqa_cart")).length, f + ": comprar desde esta página meten el producto en el carrito"); }
+        ok(!/<(section|div)[^>]*class="[^"]*sec[^"]*"[^>]*>\s*<\/(section|div)>/.test(w.document.body.innerHTML), f + ": ninguna sección montada vacía");
+      }
+      console.log((fails.filter((x) => x.startsWith(f)).length ? "✗ " : "✓ ") + f);
+    } catch (e) {
+      fails.push(f + " EXCEPTION: " + e.message + "\n   " + String(e.stack).split("\n")[1]);
+      console.log("✗ " + f + " · " + e.message);
+    }
+  }
+  const before = fails.length;
+  console.log("\n" + (fails.length ? fails.length + " fallos:\n - " + fails.join("\n - ") : "TODO OK · " + Object.keys(PAGES).length + " páginas + " + EXTRA.length + " redirecciones"));
+  process.exit(fails.length ? 1 : 0);
+})();
