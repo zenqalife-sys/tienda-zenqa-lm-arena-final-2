@@ -235,6 +235,8 @@ function checkProductos(d) {
   ok(/Movimiento\s*Zenqa Life/i.test(len(hero.querySelector("h1").textContent)), "productos: título «Movimiento Zenqa Life»");
   ok(!/Todo lo que\s*vendemos/i.test(hero.textContent), "productos: sin «Todo lo que vendemos»");
   ok(!/Pen[ií]nsula|24-48/.test(hero.textContent), "productos: sin plazos inventados en la portada");
+  ok(/body\[data-page="productos"\] \.phead-soft h1\s*\{\s*font-size:\s*clamp\(2\.15rem, 8\.5vw, 4\.25rem\)/.test(CSS), "productos: título principal más grande");
+  ok(/body\[data-page="productos"\] \.phead-stick__row\s*\{[^}]*flex-wrap:\s*wrap;[^}]*overflow:\s*visible;/.test(CSS) && /body\[data-page="productos"\] \.phead-stick \.chip\s*\{[^}]*white-space:\s*normal;/.test(CSS), "productos: selector responsive con todas las etiquetas, sin deslizador");
   const secs = [...Q("#groups > section")];
   const catnav = q("#catnav");
   ok(!!catnav && catnav.nextElementSibling === hero, "productos: el menú de etiquetas va justo debajo del menú principal");
@@ -261,6 +263,7 @@ function checkRecetas(d) {
   ok(q(".hero h1 .hl").classList.contains("hl--draw"), "recetas: el título se ve mejor (el rotulador se dibuja)");
   ok(/Encuentra tu manera preferida de prepararlo/i.test(q(".hero").textContent), "recetas: subtítulo nuevo");
   ok(!!q(".hero .hero__sub") && /Encuentra tu manera preferida de prepararlo/i.test(q(".hero .hero__sub").textContent), "recetas: se ve como subtítulo, no como nota");
+  ok(/body\[data-page="recetas"\] \.hero__sub\s*\{\s*text-transform:\s*uppercase\s*\}/.test(CSS), "recetas: subtítulo en mayúsculas");
   ok(!/Diez formas de preparar el mismo polvo/i.test(q(".hero").textContent), "recetas: sin el subtítulo viejo");
   ok(!q("#ways") && !q(".hero .chip"), "recetas: sin etiquetas bajo el subtítulo");
   const b = [...Q(".hero__cta a")];
