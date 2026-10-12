@@ -51,12 +51,13 @@ const PAGES = {
   "index.html": "home", "matcha.html": "matcha", "productos.html": "productos",
   "recetas.html": "recetas", "nosotros.html": "nosotros",
 };
-const EXTRA = ["legal.html", "tienda.html", "ritual.html", "contacto.html", "prepararlo.html"];
+const EXTRA = ["legal.html", "tienda.html", "ritual.html", "contacto.html", "prepararlo.html",
+  ...D.recipes.map((r) => "receta-" + r.id + ".html")];
 const results = {};
 
 async function load(f) {
   const vc = new VirtualConsole();
-  vc.on("jsdomError", (e) => fails.push(f + " jsdomError: " + e.message));
+  vc.on("jsdomError", (e) => { if (!/navigation to another Document/.test(e.message)) fails.push(f + " jsdomError: " + e.message); });
   vc.on("error", (m) => fails.push(f + " console.error: " + m));
   const dom = await JSDOM.fromURL(BASE + f, {
     runScripts: "dangerously", resources: "usable", pretendToBeVisual: true, virtualConsole: vc,
@@ -72,7 +73,7 @@ function common(f, d, page) {
   const txt = (s) => len(d.querySelector(s) ? d.querySelector(s).textContent : "");
   // franja rosa superior: estática, 3 mensajes con punto blanco y redes del pie
   ok(!!q(".band--static"), f + ": franja arriba");
-  ok(!q(".band__track") && !q(".band--mid"), f + ": la franja no se mueve (sin bucle ni franja intermedia)");
+  ok(!q(".band__track") && !q(".band--mid"), f + ": sin marquesina (los mensajes no corren)");
   const bi = Q(".band--static .band__i");
   ok(bi.length === 3, f + ": 3 mensajes en la franja (" + bi.length + ")");
   const btop = q(".band--static") ? q(".band--static").textContent : "";
@@ -82,6 +83,8 @@ function common(f, d, page) {
   ok(!/Pen[ií]nsula|24-48/i.test(btop), f + ": sin plazos inventados en la franja");
   const soc = Q(".band--static .band__soc a");
   ok(soc.length === 4, f + ": las redes del pie junto a «Únete» (" + soc.length + ")");
+  ok(/@keyframes band-swap/.test(CSS) && /\.band__i:nth-child\(3\) \{ animation-delay: 8s \}/.test(CSS), f + ": en móvil los 3 mensajes giran en bucle, uno tras otro centrado");
+  ok(/@media \(max-width: 719px\)[\s\S]*?\.band__soc \{ display: none \}/.test(CSS), f + ": el bucle es solo móvil (las redes del pie siguen en escritorio)");
   ok(soc.every((a) => /instagram|tiktok|youtube|pinterest/.test(a.getAttribute("aria-label").toLowerCase())), f + ": las 4 redes del pie");
   // menú: alto, centrado, con la subpágina Contacto bajo Nosotros
   ok(d.defaultView.getComputedStyle(q(".nav")).position === "sticky", f + ": el menú es pegajoso");
@@ -116,6 +119,9 @@ function checkIndex(d) {
   ok(q(".hero h1 .hl"), "home: subrayado tipo rotulador");
   ok(q(".hero").classList.contains("hero--italic"), "home: el título de la portada en cursiva");
   ok(/\.hero--italic h1 \{ font-style: italic/.test(CSS), "home: CSS de la cursiva del título");
+  const claim = q(".hero__claim");
+  ok(claim && /únete al movimiento zenqa life/i.test(claim.textContent), "home: bajo el título, «Únete al movimiento Zenqa Life»");
+  ok(/\.hero__claim \{[^}]*color: var\(--sage-soft\)/.test(CSS) && /text-decoration-color: var\(--pink\)/.test(CSS), "home: el claim en verde clarito y subrayado en rosa");
   const cta = [...Q(".hero__cta a")];
   ok(cta.length === 2, "home: dos botones en la portada");
   ok(cta.every((a) => a.classList.contains("btn--lg")), "home: los dos botones grandes y separados");
@@ -135,15 +141,16 @@ function checkIndex(d) {
   const buy1 = spot1.querySelectorAll(".buy button");
   ok(buy1.length === 2, "home: dos botones bajo el producto");
   ok(/a[nñ]adir al carrito/i.test(buy1[0].textContent) && /ver ficha de producto/i.test(buy1[1].textContent), "home: añadir + ver ficha");
-  // sección verde clarito: qué es el té matcha, 4 líneas y solo texto
+  // «qué es el té matcha»: solo el texto, debajo de «Tu momento Matcha»,
+  // para que no quede ninguna sección entre los dos primeros productos
   const secs = Q("main > section");
-  const what = secs[2];
-  ok(what.classList.contains("whatis"), "home: la sección verde clarito va justo después del momento");
-  ok(!q(".band--mid"), "home: la franja en movimiento desapareció");
-  const lines = what.querySelectorAll(".whatis__lines p");
-  ok(lines.length === 4, "home: el matcha explicado en 4 líneas (" + lines.length + ")");
-  ok(!what.querySelector("img"), "home: la sección qué-es, solo texto");
-  ok(/\.whatis \{ background: var\(--sage-soft\)/.test(CSS), "home: fondo verde clarito en la sección qué-es");
+  ok(!!s1.querySelector(".moment__whatis"), "home: «¿qué es el té matcha?» debajo del título del momento, solo el texto");
+  ok(/¿qué es el té matcha\?/i.test(s1.querySelector(".moment__whatis").textContent), "home: el texto conserva la pregunta clave");
+  ok(/energ[ií]a limpia/i.test(s1.querySelector(".moment__whatis").textContent), "home: el texto conserva «energía limpia»");
+  ok(!s1.querySelector(".moment__whatis img"), "home: el texto del matcha, sin fotos");
+  ok(/\.moment__whatis \{/.test(CSS), "home: CSS del texto bajo el momento");
+  const kitSec0 = secs.find((x) => x.querySelector('[data-spot="kit-completo"]'));
+  ok(kitSec0 && secs.indexOf(kitSec0) === 2, "home: sin secciones entre los dos primeros productos (el kit va justo después del momento)");
   // bloque 2: kit a la izquierda, «preparación» a lo grande
   const kitSec = secs.find((x) => x.querySelector('[data-spot="kit-completo"]'));
   ok(kitSec && kitSec.querySelector(".split--flip"), "home: el kit va en el lado izquierto");
@@ -177,7 +184,8 @@ function checkIndex(d) {
   ok(!!q('a[href="nosotros.html"]'), "home: CTA a nosotros");
   const about = secs.find((x) => /Nacidos en/.test(x.textContent));
   ok(about && about.querySelector(".split--fill"), "home: «Nacidos en las colinas de Uji» con el texto a todo el alto de la foto");
-  ok(about && len(about.textContent).length < 460, "home: sobre nosotros en pocas líneas (" + (about ? len(about.textContent).length : 0) + ")");
+  ok(about && len(about.textContent).length < 1100 && len(about.textContent).length > 520, "home: la casa desarrollada, sin ser un dosier (" + (about ? len(about.textContent).length : 0) + ")");
+  ok(about && !!about.querySelector(".casa__vals") && about.querySelectorAll(".casa__vals .chip").length === 3, "home: la casa con sus pilares en etiquetas");
 }
 
 function checkMatcha(d) {
@@ -228,12 +236,19 @@ function checkProductos(d) {
   ok(!/Todo lo que\s*vendemos/i.test(hero.textContent), "productos: sin «Todo lo que vendemos»");
   ok(!/Pen[ií]nsula|24-48/.test(hero.textContent), "productos: sin plazos inventados en la portada");
   const secs = [...Q("#groups > section")];
+  const catnav = q("#catnav");
+  ok(!!catnav && catnav.nextElementSibling === hero, "productos: el menú de etiquetas va justo debajo del menú principal");
+  const chips = Q("[data-catnav] .chip");
+  ok(chips.length === 5, "productos: una etiqueta por categoría (" + chips.length + ")");
+  ok(chips.every((c) => /^#(matcha|te|kit|vaso|ropa)$/.test(c.getAttribute("href"))), "productos: las etiquetas son solo anclas dentro de la página");
   ok(secs.length === 5, "productos: 5 bloques (" + secs.length + ")");
   ok(JSON.stringify(secs.map((s) => s.id)) === '["matcha","te","kit","vaso","ropa"]', "productos: orden matcha > tés > kits > vaso > ropa");
   const cards = Q("#groups .card");
   ok(cards.length === 19, "productos: los 19 productos del catálogo (" + cards.length + ")");
   ok(Q("#groups .pgrid").length === 5, "productos: cada bloque en su rejilla");
   ok(secs[0].querySelectorAll(".card").length === 3, "productos: el bloque de matcha abre con culinario y ceremonial");
+  ok(secs[1].classList.contains("sec--ink"), "productos: «Más variedades de té» sobre fondo negro");
+  ok(/\.sec--ink \{ background: var\(--ink\)/.test(CSS), "productos: CSS del fondo negro");
   ok(cards.every((c) => c.querySelectorAll("button").length === 2), "productos: dos botones por ficha, ni uno más");
   ok(cards.every((c) => c.querySelector(".price")), "productos: precio visible en cada ficha");
   ok(!cards.some((c) => c.querySelector("p.note, .qv__pitch")), "productos: sin párrafos en la rejilla");
@@ -245,6 +260,7 @@ function checkRecetas(d) {
   ok(/latte,?\s*ice,?\s*solo/i.test(len(q(".hero h1").textContent)), "recetas: h1 'Latte, ice, solo…'");
   ok(q(".hero h1 .hl").classList.contains("hl--draw"), "recetas: el título se ve mejor (el rotulador se dibuja)");
   ok(/Encuentra tu manera preferida de prepararlo/i.test(q(".hero").textContent), "recetas: subtítulo nuevo");
+  ok(!!q(".hero .hero__sub") && /Encuentra tu manera preferida de prepararlo/i.test(q(".hero .hero__sub").textContent), "recetas: se ve como subtítulo, no como nota");
   ok(!/Diez formas de preparar el mismo polvo/i.test(q(".hero").textContent), "recetas: sin el subtítulo viejo");
   ok(!q("#ways") && !q(".hero .chip"), "recetas: sin etiquetas bajo el subtítulo");
   const b = [...Q(".hero__cta a")];
@@ -259,6 +275,8 @@ function checkRecetas(d) {
   ok(!!en.querySelector(".big-statement"), "recetas: energía limpia con frase grande");
   ok(len(en.textContent).length < 560, "recetas: energía limpia en pocas líneas");
   ok(Q("#grid-recipes-all .rcard").length === 10, "recetas: las 10 recetas");
+  ok(Q("#grid-recipes-all .rcard").every((a) => /^receta-[a-z0-9-]+\.html$/.test(a.getAttribute("href"))), "recetas: cada tarjeta lleva a su página, no a un pop up");
+  ok(Q("#grid-recipes-all .rcard").every((a) => !a.hasAttribute("data-act")), "recetas: sin capas de receta");
   const rec = q("#recetas");
   ok(/Recetas infinitas,?\s*sabores únicos/i.test(rec.querySelector("h2").textContent), "recetas: «Recetas infinitas, sabores únicos»");
   ok(!/dale al paso/i.test(rec.textContent), "recetas: sin «Elige una y dale al paso 1»");
@@ -294,10 +312,15 @@ function checkNosotros(d) {
   ok(/La calidad del t[eé]/i.test(cal.querySelector(".kicker").textContent), "nosotros: kicker «La calidad del té»");
   ok(/Cada decisión de campo y de molino/i.test(cal.textContent), "nosotros: copy que explica el proceso");
   ok(Q("#proceso .proc__i").length === 6, "nosotros: los 6 hitos del proceso");
+  ok(!/Recogemos|Compramos a|cu[aá]nto ganamos|nuestro molino|lo molido por nosotros/i.test(q("#proceso").textContent), "nosotros: el proceso se cuenta en general, sin atribuírnoslo");
+  ok(!/ganamos|ganancias|facturaci/i.test(q("#proceso").textContent), "nosotros: sin hablar de dinero en el proceso");
+  ok(/Así se cuida un matcha de verdad/i.test(cal.textContent), "nosotros: la intro del proceso también en general");
   ok(!q("#grades") && !cal.querySelector(".tile img"), "nosotros: fuera las fotos sin sentido de esta sección");
   ok(Q("#nosStats .stat2").length === 5, "nosotros: los 5 números de la casa");
   ok(!!q("#contacto"), "nosotros: el contacto es una ancla de esta página");
   ok(Q("#contacto .split__t, #contacto .inc li").length >= 4, "nosotros: los datos de contacto a la izquierda");
+  ok(!!q("#contacto .form-card"), "nosotros: el formulario va en su tarjeta");
+  ok(/form\[data-form\] \{ display: grid; gap: 13px \}/.test(CSS), "nosotros: los campos del formulario con aire entre ellos");
   const f = q("#contacto form[data-form='contact']");
   ok(!!f, "nosotros: formulario de contacto");
   ok(["name", "email", "tema", "msg", "priv"].every((n) => f.querySelector('[name="' + n + '"]')), "nosotros: nombre, email, motivo, mensaje y consentimiento");
@@ -335,6 +358,9 @@ async function behavior(d) {
   click(q('[data-spot="kit-completo"] [data-act="qv"]')); await wait(140);
   const qv = q("#qvBody");
   ok(openPanes().join() === "qv", "ficha: se abre la capa");
+  const qvh = q("#qvHero");
+  ok(!!qvh && /p-chawan\.jpg/.test(qvh.querySelector("img").getAttribute("src")), "ficha: el pop up lleva la MISMA imagen del producto");
+  ok(!!qvh.querySelector(".x--float"), "ficha: con su X arriba a la derecha para cerrar");
   ok(qv && len(qv.querySelector(".qv__pitch").textContent).length > 180, "ficha: el texto largo vive aquí");
   ok(qv.querySelectorAll(".qv__notes > div").length === 4, "ficha: 4 notas de sabor");
   ok(qv.querySelectorAll(".qv__bullets li").length === 3, "ficha: 3 argumentos");
@@ -382,15 +408,18 @@ async function behavior(d) {
   ok(!ncard.querySelector("form"), "únete: el formulario se sustituye por el aviso");
   ok(!/form/.test(doc.querySelector(".foot").innerHTML), "pie: sin formularios (como se pidió)");
 
-  // receta en capa
+  // recetas: cada una en su página (con sus 4 pasos montados por JS)
   const rc = q(".rcard");
   if (rc) {
-    click(rc); await wait(140);
-    ok(openPanes().join() === "recipe", "recetas: la tarjeta abre la capa de receta");
-    ok(Q("#recipeBody .rd__steps li").length === 4, "recetas: 4 pasos en la capa");
-    ok(!!q("#recipeBody [data-act='add']"), "recetas: el bote se añade desde la receta");
-    click(q("#recipe [data-act='close']")); await wait(40);
+    ok(/^receta-[a-z0-9-]+\.html$/.test(rc.getAttribute("href")), "recetas: la tarjeta enlaza a la página de la receta");
+    ok(!q("#recipe"), "recetas: no queda capa de receta en el DOM");
   }
+  // el menú móvil y el desplegable cierran la capa al pulsar un enlace
+  click(q('[data-act="menu"]')); await wait(120);
+  const sub = q('.msheet__sub[href="nosotros.html#contacto"]');
+  ok(!!sub, "flyout: Contacto sigue como subpágina de Nosotros");
+  click(sub); await wait(60);
+  ok(openPanes().length === 0 && !doc.body.classList.contains("lock"), "flyout: pulsar Contacto cierra el menú y libera la página");
   return true;
 }
 

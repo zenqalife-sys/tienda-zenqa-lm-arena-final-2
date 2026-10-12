@@ -547,15 +547,16 @@ window.ZENQA = (function () {
     { k: "A media tarde", m: "Se puede tomar sin fastidiar el sue\u00f1o", c: "Despu\u00e9s de las 16 h ya es loter\u00eda" },
   ];
 
-  /* Ficha de calidad: los seis hitos reales, por orden, tal y como los
-     contamos en Nosotros (enero → directo). */
+  /* Ficha de calidad: los seis hitos del matcha, por orden. Contados en
+     general —así se cultiva y se cuida un matcha de verdad—, sin atribuirse
+     el trabajo de las granjas ni hablar de dinero. */
   const proceso = [
     { n: "Enero", i: "01", t: "Sombra durante 21 días", d: "Cubrir las plantaciones retrasa la fotosíntesis: sube la clorofila, baja el amargor y aparece ese verde eléctrico. Sin sombreado no hay ceremonial." },
-    { n: "Mayo", i: "02", t: "Solo la primera cosecha", d: "Recogemos a mano las dos hojas más tiernas del primer brote de primavera. Las siguientes van al grado culinario: igual de honestas, más intensas." },
-    { n: "40 g/h", i: "03", t: "Molienda lenta en piedra", d: "Molinos de granito que tardan una hora en hacer 40 gramos. La piedra no calienta la hoja y preserva aroma y color. Los industriales lo hacen en segundos y lo tuestan sin querer." },
-    { n: "48 h", i: "04", t: "Envasado en oscuridad", d: "De molino a lata opaca con desoxidante en menos de dos días, en sala con humedad controlada. La luz y el oxígeno son lo que pone tu matcha pardo." },
-    { n: "Por lote", i: "05", t: "Analítica y cata", d: "Cada partida pasa control de metales pesados y pesticidas, y cata a ciegas de tres personas. Si no convence a las tres, no entra en almacén." },
-    { n: "Directo", i: "06", t: "Comercio sin intermediarios", d: "Compramos a granjas familiares con contrato de temporada y precio acordado en enero. Ellos saben cuánto ganamos y nosotros cuándo se recoge." },
+    { n: "Mayo", i: "02", t: "Solo la primera cosecha", d: "A mano se recogen las dos hojas más tiernas del primer brote de primavera. Las recogidas siguientes suelen ir al grado culinario: igual de honestas, más intensas." },
+    { n: "40 g/h", i: "03", t: "Molienda lenta en piedra", d: "Molinos de granito que tardan una hora en hacer 40 gramos. La piedra no calienta la hoja y preserva aroma y color; la molienda industrial lo hace en segundos y la calienta sin querer." },
+    { n: "48 h", i: "04", t: "Envasado en oscuridad", d: "Del molino a la lata opaca con desoxidante en menos de dos días, en sala con humedad controlada. La luz y el oxígeno son lo que ponen el matcha pardo." },
+    { n: "Por lote", i: "05", t: "Analítica y cata", d: "Cada partida seria pasa control de metales pesados y pesticidas y cata a ciegas. Si no convence en la taza, no entra en almacén." },
+    { n: "De temporada", i: "06", t: "Comercio sin intermediarios", d: "El comercio directo acostumbra a fijar con las granjas familiares el precio de la cosecha en enero, antes de la primera hoja, y a respetar su fecha de recogida. Sin intermediarios, el origen deja de ser un anónimo." },
   ];
 
   /* Los números de la casa, sin humo */
