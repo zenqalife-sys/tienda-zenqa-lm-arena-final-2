@@ -835,7 +835,36 @@ body[data-page="productos"] section[id] { scroll-margin-top: 56px }
 .socials--ico a svg { width: 16px; height: 16px; flex: none }
 .phead-soft .sec__h { align-items: flex-end }
 
-/* productos: submenú de categorías centrado (si no cabe, se desplaza
-   sin cortar la primera etiqueta) */
-.phead-stick__row > :first-child { margin-left: auto }
-.phead-stick__row > :last-child { margin-right: auto }
+/* ---------- ajustes solicitados: recetas y catálogo responsive ---------- */
+body[data-page="recetas"] .hero__sub { text-transform: uppercase }
+
+/* El título principal de productos gana presencia sin desbordarse en móvil. */
+body[data-page="productos"] .phead-soft h1 {
+  font-size: clamp(2.15rem, 8.5vw, 4.25rem);
+}
+
+/* Las categorías se envuelven en varias filas: todas quedan visibles,
+   sin carrusel horizontal ni etiquetas cortadas. */
+body[data-page="productos"] .phead-stick__row {
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: visible;
+}
+body[data-page="productos"] .phead-stick .chip {
+  flex: 0 1 auto;
+  min-width: 0;
+  white-space: normal;
+  justify-content: center;
+  text-align: center;
+}
+body[data-page="productos"] .phead-stick__row > :first-child,
+body[data-page="productos"] .phead-stick__row > :last-child { margin-inline: 0 }
+@media (max-width: 719px) {
+  body[data-page="productos"] .phead-stick__row { gap: 5px; padding-block: 7px }
+  body[data-page="productos"] .phead-stick .chip {
+    padding: 6px 8px;
+    font-size: .62rem;
+    letter-spacing: .01em;
+    line-height: 1.25;
+  }
+}
