@@ -211,6 +211,15 @@
       '<h3 class="d d-4">' + g.t + "</h3><p class=\"note\">" + g.d + "</p>" +
       '<p style="margin-top:2px">' + g.use + "</p></article>").join("") + "</div>";
   }
+  /* ---------------- las 4 redes con su icono (cabecera de productos) ---------------- */
+  function mountSocials() {
+    $$("[data-socials]").forEach((host) => {
+      host.innerHTML = Z.brand.social.map((s) =>
+        '<a href="' + s.u + '" target="_blank" rel="noopener" aria-label="' + s.k + ' ' + s.h + '">' +
+        (SOCIAL_ICON[s.k.toLowerCase()] || "") + "<span>" + s.k + "</span></a>").join("");
+    });
+  }
+
   /* ---------------- etiquetas de categoría de productos (solo anclas) ---------------- */
   function mountCatnav() {
     const host = $("[data-catnav]");
@@ -652,6 +661,7 @@
   mountNosStats();
   mountGroups();
   mountCatnav();
+  mountSocials();
   mountReviews();
   mountRecipes();
   mountTri("#grid-tri", TRI_HOME);
