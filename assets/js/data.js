@@ -153,18 +153,18 @@ window.ZENQA = (function () {
       specs: { "Incluye": "Chawan, chasen, chashaku", "Chawan": "Gres 320 ml", "Chasen": "Bambú · 80 púas", "Garantía": "2 años" },
     },
     {
-      id: "kit-completo", unit: "6 piezas", name: "Kit Completo Pro · 6 piezas + 54 g", cat: "kit", price: 79.95, compareAt: 94.8,
+      id: "kit-completo", unit: "6 piezas", name: "Kit Completo Pro · 6 piezas", cat: "kit", price: 79.95, compareAt: 94.8,
       rating: 5, reviews: 141, badge: "El favorito", stock: 9, img: "p-chawan.jpg",
-      hook: "El que te deja la textura de cafetería en casa desde la primera taza. Y te regalamos el bote.",
-      pitch: "Es el Kit Básico más el tamizador, el espumador USB-C y el soporte de bambú para secar el chasen (la pieza que duplica su vida útil). Dentro va además el bote de ceremonial de 54 g: te lo enviamos con el kit para que la primera espuma la hagas con matcha bueno, no con el que tenías del supermercado. Es la compra que más repetida nos piden por email, casi siempre como regalo a alguien que se pasa el día con tres cafés.",
-      notes: { "Incluye": "6 piezas + 54 g", "Tamizador": "Malla fina inox", "Espumador": "USB-C, 7.000 rpm", "Soporte": "Bambú para el chasen" },
-      benefits: ["🎁 Bote de regalo", "🧂 Tamizador fino", "🔌 Espumador USB-C", "💶 −14,85 €"],
+      hook: "El que te deja la textura de cafetería en casa desde la primera taza. Seis herramientas y nada de relleno.",
+      pitch: "Es el Kit Básico más el tamizador, el espumador USB-C y el soporte de bambú para secar el chasen (la pieza que duplica su vida útil). Son las seis piezas que de verdad se usan: cuenco, batidor, cuchara, colador, espumador y soporte. Es la compra que más repetida nos piden por email, casi siempre como regalo a alguien que se pasa el día con tres cafés y quiere empezar sin comprar dos veces.",
+      notes: { "Incluye": "6 piezas de herramientas", "Tamizador": "Malla fina inox", "Espumador": "USB-C, 7.000 rpm", "Soporte": "Bambú para el chasen" },
+      benefits: ["🧰 6 herramientas", "🧂 Tamizador fino", "🔌 Espumador USB-C", "💶 −14,85 €"],
       bullets: [
-        "Ahorras 14,85 € frente a comprar las piezas sueltas, y el bote de ceremonial va incluido.",
+        "Ahorras 14,85 € frente a comprar las piezas sueltas, porque el kit nació de la suma de los precios reales.",
         "El tamizador es el detalle que más nota la gente: 5 segundos y ni un grumo en el latte.",
-        "Seis piezas más el bote de 54 g, en caja rígida con lazo y guía impresa; si es para otra persona, la tarjeta la escribimos a mano.",
+        "Seis piezas en caja rígida con lazo y guía impresa; si es para otra persona, la tarjeta la escribimos a mano.",
       ],
-      specs: { "Incluye": "6 piezas + 54 g matcha", "Tamizador": "Malla fina inox", "Espumador": "USB-C", "Garantía": "2 años" },
+      specs: { "Incluye": "6 piezas (herramientas)", "Tamizador": "Malla fina inox", "Espumador": "USB-C", "Garantía": "2 años" },
     },
     {
       id: "kit-regalo", unit: "caja regalo", name: "Kit Regalo Zenqa · caja negra", cat: "kit", price: 64.95, compareAt: 74.85,
@@ -503,13 +503,14 @@ window.ZENQA = (function () {
   byId["kit-basico"].unit = "3 piezas";
   byId["kit-regalo"].unit = "caja regalo";
 
-  const bandTop = ["Env\u00edos gratis a partir de 35 \u20ac \u00b7 Pen\u00ednsula 24-48 h", "Env\u00edos gratis a partir de 35 \u20ac \u00b7 Pen\u00ednsula 24-48 h"];
-  const bandMid = ["Env\u00edos gratis a partir de 35 \u20ac", "Descarga nuestra gu\u00eda gratuita", "\u00danete al movimiento Zenqa Life"];
+  /* Franja superior: estática (sin movimiento), mensajes separados por punto
+     blanco y las redes del pie al lado de «Únete». Sin plazos inventados. */
+  const bandTop = ["Env\u00edos gratis a partir de 35 \u20ac", "Descarga nuestra gu\u00eda gratis", "\u00danete a Zenqa Life"];
+  /* El kit es solo herramientas: nada de bote de té dentro. */
   const kitIncluye = [
     ["Chawan de gres", "320 ml, borde ancho para batir sin salpicar"],
     ["Chasen de bamb\u00fa", "80 p\u00faas talladas de una sola pieza"],
     ["Chashaku + tamizador", "la curva que mide 1 g y el colador que quita los grumos"],
-    ["Bote de 54 g", "el ceremonial de Uji dentro, no de muestra"],
   ];
 
   const ways = [
@@ -531,11 +532,11 @@ window.ZENQA = (function () {
   const vsMatcha = {
     a: {
       id: "te-culinario", who: "Para quien lo mezcla: leche, hielo, fruta o bizcocho.",
-      list: [["Grado", "de latte, molido m\u00e1s grueso para que aguante la leche"], ["Sabor", "intenso y vegetal: no se pierde al a\u00f1adir nada"], ["Rendimiento", "100 g = 50 lattes fr\u00edos, 0,40 \u20ac por vaso"], ["Se toma", "en vaso grande, con sirope o sin \u00e9l, fr\u00edo o templado"]],
+      list: [["Grado", "de latte, molido m\u00e1s grueso para que aguante la leche"], ["Sabor", "intenso y vegetal: no se pierde al a\u00f1adir nada"], ["Se toma", "en vaso grande, con sirope o sin \u00e9l, fr\u00edo o templado"]],
     },
     b: {
       id: "te-ceremonial", who: "Para quien lo bebe con agua y quiere los sesenta segundos.",
-      list: [["Grado", "ceremonial primario, primera hoja de la primavera"], ["Sabor", "umami dulce, sin ese punto de heno"], ["Rendimiento", "54 g = 27 tazas de 1 g, 1,11 \u20ac por taza"], ["Se toma", "solo, a 70 \u00b0C, en cuenco de borde ancho"]],
+      list: [["Grado", "ceremonial primario, primera hoja de la primavera"], ["Sabor", "umami dulce, sin ese punto de heno"], ["Se toma", "solo, a 70 \u00b0C, en cuenco de borde ancho"]],
     },
   };
 
@@ -546,11 +547,34 @@ window.ZENQA = (function () {
     { k: "A media tarde", m: "Se puede tomar sin fastidiar el sue\u00f1o", c: "Despu\u00e9s de las 16 h ya es loter\u00eda" },
   ];
 
-  const quality = [
-    ["Origen", "Una finca de Uji (Kioto)"], ["Cosecha", "Primavera \u00b7 primera recogida"], ["Sombra", "20 d\u00edas antes del corte"],
-    ["Hoja", "tencha sin tallos ni venas"], ["Molienda", "piedra, 40 g/hora"], ["Grano", "6-8 \u00b5m"],
-    ["Envasado", "en origen, con n\u00f3itrogeno"], ["Anal\u00edtica", "pesticidas: no detectado"],
+  /* Ficha de calidad: los seis hitos reales, por orden, tal y como los
+     contamos en Nosotros (enero → directo). */
+  const proceso = [
+    { n: "Enero", i: "01", t: "Sombra durante 21 días", d: "Cubrir las plantaciones retrasa la fotosíntesis: sube la clorofila, baja el amargor y aparece ese verde eléctrico. Sin sombreado no hay ceremonial." },
+    { n: "Mayo", i: "02", t: "Solo la primera cosecha", d: "Recogemos a mano las dos hojas más tiernas del primer brote de primavera. Las siguientes van al grado culinario: igual de honestas, más intensas." },
+    { n: "40 g/h", i: "03", t: "Molienda lenta en piedra", d: "Molinos de granito que tardan una hora en hacer 40 gramos. La piedra no calienta la hoja y preserva aroma y color. Los industriales lo hacen en segundos y lo tuestan sin querer." },
+    { n: "48 h", i: "04", t: "Envasado en oscuridad", d: "De molino a lata opaca con desoxidante en menos de dos días, en sala con humedad controlada. La luz y el oxígeno son lo que pone tu matcha pardo." },
+    { n: "Por lote", i: "05", t: "Analítica y cata", d: "Cada partida pasa control de metales pesados y pesticidas, y cata a ciegas de tres personas. Si no convence a las tres, no entra en almacén." },
+    { n: "Directo", i: "06", t: "Comercio sin intermediarios", d: "Compramos a granjas familiares con contrato de temporada y precio acordado en enero. Ellos saben cuánto ganamos y nosotros cuándo se recoge." },
   ];
 
-  return { brand, manifesto, grades, timeline, compare, categories, products, recipes, reviews, faq, money, byId, recipeById, stars, bandTop, bandMid, kitIncluye, ways, ritual4, vsMatcha, energy, quality };
+  /* Los números de la casa, sin humo */
+  const nosStats = [
+    ["18.400", "pedidos enviados"],
+    ["1.284", "reseñas verificadas"],
+    ["9", "granjas familiares"],
+    ["4,9", "valoración media"],
+    ["30", "días de garantía"],
+  ];
+
+  const quality = [
+    ["Origen", "Uji y Wazuka, Kioto (Japón)"],
+    ["Cosecha", "Primera, mayo · ichibancha sombreada 21 días"],
+    ["Cultivo", "Sin pesticidas autorizados en UE, certificado JAS orgánico"],
+    ["Molienda", "Piedra granítica, 40 g/h"],
+    ["Cafeína", "≈ 65 mg/g · L-teanina ≈ 42 mg/g"],
+    ["Envase", "Lata opaca reciclable con sello y desoxidante"],
+  ];
+
+  return { brand, manifesto, grades, timeline, compare, categories, products, recipes, reviews, faq, money, byId, recipeById, stars, bandTop, kitIncluye, ways, ritual4, vsMatcha, energy, quality, proceso, nosStats };
 })();

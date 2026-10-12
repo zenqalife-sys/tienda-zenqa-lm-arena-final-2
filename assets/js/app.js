@@ -31,9 +31,9 @@
     { k: "nosotros", t: "Nosotros", href: "nosotros.html" },
   ];
   const TRI_HOME = [
-    { img: "m-hoodie.jpg", t: "Ropa", s: "Sudadera, camiseta y tote bag", h: "productos.html#ropa" },
-    { img: "m-glass.jpg", t: "Tazas y vasos", s: "Chawan, cristal y térmicos", h: "productos.html#vaso" },
     { img: "p-ceremonial.jpg", t: "Matcha y tés", s: "Ceremonial, culinario, hojicha", h: "productos.html#matcha" },
+    { img: "m-glass.jpg", t: "Tazas y vasos", s: "Chawan, cristal y térmicos", h: "productos.html#vaso" },
+    { img: "m-hoodie.jpg", t: "Ropa", s: "Sudadera, camiseta y tote bag", h: "productos.html#ropa" },
   ];
   const TRI_TES = [
     { img: "p-hojicha.jpg", t: "Hojicha", s: "Tostado, casi sin cafeína", h: "productos.html#te" },
@@ -41,34 +41,51 @@
     { img: "p-pack3.jpg", t: "Pack 3 botes", s: "Prueba los tres grados", h: "productos.html#matcha" },
   ];
 
-  /* ---------------- franjas rosas en bucle (sin huecos: dos grupos, -50 %) ---------------- */
-  function bandGroup(items) {
-    return '<div class="band__g">' + items.map((t) => '<span class="band__i">' + t + "</span>").join("") + "</div>";
-  }
-  function mountBands() {
-    $$("[data-band]").forEach((el) => {
-      const which = el.dataset.band;
-      const items = which === "mid"
-        ? Z.bandMid.map((t) => t.toUpperCase())
-        : Z.bandTop.map((t) => t.toUpperCase());
-      el.innerHTML = bandGroup(items) + bandGroup(items);
-    });
+  /* ---------------- franja rosa superior: estática (sin movimiento), mensajes
+     separados por punto blanco y las redes del pie junto a «Únete» ---------------- */
+  const SOCIAL_ICON = {
+    instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg>',
+    tiktok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M14 4v10.5a4 4 0 1 1-3.2-3.92"/><path d="M14 6.5c.8 1.8 2.4 2.9 4.5 3"/></svg>',
+    youtube: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.5v5l4.5-2.5-4.5-2.5Z" fill="currentColor" stroke="none"/></svg>',
+    pinterest: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M10 19c.7-2.2 1.4-4.4 1.8-6.2-.9-1.6.1-4 2-4 1.6 0 2.2 1.3 1.8 2.9-.4 1.7-1.3 3.4-1.3 3.4"/><path d="M9.7 15.4c-.5-2 .1-4.4 1.6-5.7"/></svg>',
+  };
+  function buildBand() {
+    const msgs = Z.bandTop.map((t) => '<span class="band__i">' + t + "</span>").join("");
+    const soc = '<span class="band__soc">' + Z.brand.social.map((s) =>
+      '<a href="' + s.u + '" target="_blank" rel="noopener" aria-label="' + s.k + '" title="' + s.k + '">' +
+      (SOCIAL_ICON[s.k.toLowerCase()] || "") + "</a>").join("") + "</span>";
+    document.body.insertAdjacentHTML("afterbegin",
+      '<div class="band band--static" role="region" aria-label="Envío gratuito desde 35 euros">' +
+      '<div class="band__row">' + msgs + soc + "</div></div>");
   }
 
-  /* ---------------- cabecera: franja + nav pegajosa (la home solo por el logo) ---------------- */
+  /* ---------------- cabecera: más alta, menú centrado y la subpágina
+     Contacto bajo Nosotros (con flechita) ---------------- */
+  const CHEV = '<svg class="nav__chev" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5l5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
   function buildHeader() {
-    const links = NAV.map((n) => '<a href="' + n.href + '"' + (n.k === page ? ' aria-current="page"' : "") + ">" + n.t + "</a>").join("");
-    const band = '<div class="band"><div class="band__track" data-band="top"></div></div>';
+    const links = NAV.map((n) => {
+      const cur = n.k === page ? ' aria-current="page"' : "";
+      if (n.k !== "nosotros") return '<a href="' + n.href + '"' + cur + ">" + n.t + "</a>";
+      return '<div class="nav__cell"><a class="nav__a" href="' + n.href + '"' + cur + ">" + n.t + CHEV + "</a>" +
+        '<div class="nav__drop"><ul><li><a href="nosotros.html#contacto">Contacto <i>&#8594;</i></a></li></ul></div></div>';
+    }).join("");
     const head = '<header class="nav"><div class="wrap nav__in">' +
       '<a class="brand" href="index.html" aria-label="ZENQA LIFE · ir al inicio">' + LOGO + '<span class="brand__w">Zenqa Life</span></a>' +
       '<nav class="nav__ul" aria-label="Principal">' + links + "</nav>" +
-      '<div class="nav__sp"></div>' +
       '<div class="nav__tools">' +
       '<button class="iconbtn" data-act="search" aria-label="Buscar productos">' + ICON.search + "</button>" +
       '<button class="iconbtn" data-act="cart" aria-label="Ver el carrito">' + ICON.cart + '<b data-cart-count hidden>0</b></button>' +
       '<button class="iconbtn nav__burger" data-act="menu" aria-label="Abrir el menú">' + ICON.menu + "</button>" +
       "</div></div></header>";
-    document.body.insertAdjacentHTML("afterbegin", band + head);
+    document.body.insertAdjacentHTML("afterbegin", head);
+    const cell = document.querySelector(".nav__cell");
+    if (cell) {
+      const open = (v) => cell.classList.toggle("open", v);
+      cell.addEventListener("mouseenter", () => open(true));
+      cell.addEventListener("mouseleave", () => open(false));
+      cell.addEventListener("focusin", () => open(true));
+      cell.addEventListener("focusout", (e) => { if (!cell.contains(e.relatedTarget)) open(false); });
+    }
   }
 
   /* ---------------- pie idéntico en las 5 páginas, sin lead magnet ni newsletter ---------------- */
@@ -82,7 +99,7 @@
     const socials = Z.brand.social.map((s) => '<a href="' + s.u + '" target="_blank" rel="noopener" aria-label="' + s.k + '"><span>' + s.k + "</span></a>").join("");
     const pay = ["VISA", "MASTERCARD", "BIZUM", "PAYPAL", "APPLE PAY", "KLARNA"].map((p) => "<span>" + p + "</span>").join("");
     const word = '<svg class="foot__word" viewBox="0 0 640 64" role="img" aria-label="Te matcha vibes">' +
-      '<text x="0" y="46" font-size="46" font-weight="900" letter-spacing="-1.5" fill="none" stroke="#ff6ebc" stroke-width="1.6" textLength="640" lengthAdjust="spacingAndGlyphs">TE MATCHA VIBES</text></svg>';
+      '<text x="0" y="46" font-size="46" font-weight="900" font-style="italic" letter-spacing="-1.5" fill="none" stroke="#ff6ebc" stroke-width="1.6" textLength="640" lengthAdjust="spacingAndGlyphs">TE MATCHA VIBES</text></svg>';
     const legal = '<a class="link" href="legal.html#aviso">Aviso legal</a><a class="link" href="legal.html#condiciones">Condiciones</a>' +
       '<a class="link" href="legal.html#envios">Envíos</a><a class="link" href="legal.html#devoluciones">Devoluciones</a>' +
       '<a class="link" href="legal.html#privacidad">Privacidad</a><a class="link" href="legal.html#cookies">Cookies</a>';
@@ -173,6 +190,18 @@
     if (!host) return;
     const ids = (host.dataset.picks || "te-ceremonial,te-culinario,kit-basico,vaso-latte,botella-ice,pack-descubrimiento").split(",");
     host.innerHTML = ids.map((i) => Z.byId[i.trim()]).filter(Boolean).map(cardHTML).join("");
+  }
+  function mountProcess() {
+    const host = $("#proceso");
+    if (!host) return;
+    host.innerHTML = '<div class="proc">' + Z.proceso.map((c) =>
+      '<article class="proc__i"><p class="proc__top"><span class="proc__n">' + c.n + '</span><span class="proc__idx">' + c.i + '</span></p>' +
+      '<h3>' + c.t + '</h3><p class="note">' + c.d + '</p></article>').join("") + '</div>';
+  }
+  function mountNosStats() {
+    const host = $("#nosStats");
+    if (!host) return;
+    host.innerHTML = Z.nosStats.map((s) => '<div class="stat2"><b>' + s[0] + '</b><span class="note">' + s[1] + "</span></div>").join("");
   }
   function mountGrades() {
     const host = $("#grades");
@@ -301,9 +330,11 @@
       '<div class="ov__scrim" data-act="close"></div><div class="drawer drawer--left msheet" style="background:var(--cream)">' +
       '<div class="msheet__top"><span class="brand">' + LOGO + '<span class="brand__w">Zenqa Life</span></span>' +
       '<button class="x" data-act="close" aria-label="Cerrar el menú" style="margin-left:auto">' + ICON.x + "</button></div>" +
-      '<div class="ov__b"><nav>' + NAV.map((n) => '<a href="' + n.href + '"' + (n.k === page ? ' aria-current="page"' : "") + ">" + n.t + "<i>→</i></a>").join("") + "</nav>" +
-      '<div class="msheet__cats">' + Z.categories.map((c) => '<a class="chip" href="productos.html#' + c.id + '">' + c.name + " <i>" + Z.products.filter((p) => p.cat === c.id).length + "</i></a>").join("") +
-      '<a class="chip" href="nosotros.html#contacto">Contacto</a><a class="chip" href="matcha.html#ritual">Cómo prepararlo</a></div></div></div></div>' +
+      '<div class="ov__b"><nav>' + NAV.map((n) => {
+        const cur = n.k === page ? ' aria-current="page"' : "";
+        const sub = n.k === "nosotros" ? '<a class="msheet__sub" href="nosotros.html#contacto">Contacto <i>→</i></a>' : "";
+        return '<a href="' + n.href + '"' + cur + ">" + n.t + "<i>→</i></a>" + sub;
+      }).join("") + "</nav></div></div></div>" +
 
       '<div class="ov" id="search" data-open="false" role="dialog" aria-modal="true" aria-label="Buscar">' +
       '<div class="ov__scrim" data-act="close"></div><div class="search"><div class="wrap">' +
@@ -433,22 +464,25 @@
   /* ---------------- formularios: guía (con PDF y cupón) y newsletter ---------------- */
   const okMail = (v) => /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v);
   function leadForm(inline) {
-    return '<form data-form="lead" novalidate>' +
-      '<div class="lead__t"><span class="kicker kicker--' + (inline ? "sage" : "light") + '">Gratis · PDF de 4 páginas</span>' +
-      '<h3 class="d d-4">Guía matcha<br>+ 10 % de dto.</h3>' +
-      '<p class="note">Los cuatro pasos, temperaturas, qué hacer si amarga y cómo guardar el bote. Y dentro el cupón para el primer pedido.</p></div>' +
-      '<div class="field"><label class="sr" for="le-' + (inline ? "i" : "m") + '">Tu email</label>' +
-      '<input id="le-' + (inline ? "i" : "m") + '" type="email" name="email" placeholder="tu@email.com" required></div>' +
+    const id = inline ? "i" : "m";
+    return '<form data-form="lead" class="lead__grid" novalidate>' +
+      '<div class="lead__col">' +
+      '<span class="kicker kicker--sage">Empieza sin riesgo</span>' +
+      '<h3 class="d d-3 lead__h">Descarga la <i>guía Zenqa</i> y pruébala</h3>' +
+      '<p class="note">Antes de comprar, lee el PDF de 4 páginas: recetas, dosis, conservación y hoja de cata. Si el matcha no te convence, lo devuelves en 30 días.</p>' +
+      '<div class="field"><label class="sr" for="le-' + id + '">Tu email</label>' +
+      '<input id="le-' + id + '" type="email" name="email" placeholder="tu@email.com" required></div>' +
       '<label class="consent"><input type="checkbox" name="priv" required> Acepto recibir la guía y la <a class="link" href="legal.html#privacidad">política de privacidad</a>.</label>' +
       '<p class="err" data-err hidden>Necesitamos un email válido y tu consentimiento.</p>' +
-      '<button class="btn btn--pink" type="submit" style="width:100%">Descargar la guía</button></form>';
+      '<button class="btn btn--pink" type="submit">Descargar la guía gratis</button></div>' +
+      '<div class="mock" aria-hidden="true"><span>PDF · 4 pág.</span><b>Guía Matcha<br>Zenqa Life</b><span>Recetas · dosis · cata</span></div>' +
+      "</form>";
   }
   function leadOk(mail) {
     return '<div class="ok"><p class="kicker kicker--sage">Listo</p>' +
-      "<p><b>Te hemos enviado la guía a " + mail + "</b><br><span class=\"note\">y sí, el cupón está en el primer correo. Revisa spam si no aparece en un minuto.</span></p>" +
-      '<div class="row"><a class="btn btn--forest" href="assets/downloads/guia-matcha-zenqa.pdf" download>Descargar el PDF</a>' +
-      '<span class="coupon">ZENQA10</span></div>' +
-      '<p class="note">Envíos gratis desde 35 € · Península 24-48 h · 30 días de prueba con el bote abierto.</p></div>';
+      "<p><b>Te hemos enviado la guía a " + mail + "</b><br><span class=\"note\">Revisa la carpeta de promociones si no aparece en un minuto.</span></p>" +
+      '<div class="row"><a class="btn btn--forest" href="assets/downloads/guia-matcha-zenqa.pdf" download>Descargar el PDF</a></div>' +
+      '<p class="note">Envíos gratis desde 35 € · 30 días de prueba con el bote abierto.</p></div>';
   }
   function mountLead() {
     $$("[data-lead]").forEach((host) => { host.innerHTML = leadForm(host.dataset.lead === "inline"); });
@@ -475,7 +509,7 @@
         if (f.dataset.form === "lead") {
           try { localStorage.setItem(LS_LEAD, mail.value.trim()); } catch (e) {}
           host.innerHTML = leadOk(mail.value.trim());
-          toast("Guía enviada · cupón ZENQA10 activo");
+          toast("Guía enviada · revisa tu correo");
         } else if (f.dataset.form === "contact") {
           const need = ["name", "email", "msg"].map((n) => f.querySelector('[name="' + n + '"]')).filter(Boolean);
           const bad2 = need.some((i) => (i.type === "email" ? !okMail(i.value.trim()) : i.value.trim().length < 4));
@@ -561,14 +595,16 @@
 
   /* ---------------- arranque ---------------- */
   buildHeader();
+  buildBand();
   buildFooter();
   buildPanes();
-  mountBands();
   mountJoin();
   mountSpots();
   mountInc();
   mountPicks();
   mountGrades();
+  mountProcess();
+  mountNosStats();
   mountGroups();
   mountReviews();
   mountRecipes();

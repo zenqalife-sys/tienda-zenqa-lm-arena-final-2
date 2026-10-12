@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
-process.env.LD_LIBRARY_PATH = "/home/user/.local/chromelibs/usr/lib/x86_64-linux-gnu:" + (process.env.LD_LIBRARY_PATH || "");
-const EXE = "/home/user/.cache/puppeteer/chrome/linux-148.0.7778.97/chrome-linux64/chrome";
+process.env.LD_LIBRARY_PATH = "/tmp/al2023lib/lib:/home/user/.local/chromelibs/usr/lib/x86_64-linux-gnu:" + (process.env.LD_LIBRARY_PATH || "");
+const EXE = process.env.ZENQA_CHROME || ["/tmp/chromium", "/home/user/.cache/puppeteer/chrome/linux-148.0.7778.97/chrome-linux64/chrome"].find((p) => { try { return fs.existsSync(p); } catch (e) { return false; } });
 import fs from "fs";
 const BASE = "http://127.0.0.1:8080/";
 fs.mkdirSync("shots", { recursive: true });

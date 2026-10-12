@@ -2,5 +2,8 @@
   "dependencies": {
     "jsdom": "^29.1.1",
     "puppeteer": "^24.43.1"
+  },
+  "devDependencies": {
+    "@sparticuz/chromium": "^153.0.0"
   }
 }

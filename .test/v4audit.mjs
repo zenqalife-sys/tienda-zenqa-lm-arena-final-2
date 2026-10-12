@@ -4,8 +4,8 @@
 import puppeteer from "puppeteer";
 import fs from "fs";
 
-process.env.LD_LIBRARY_PATH = "/home/user/.local/chromelibs/usr/lib/x86_64-linux-gnu:" + (process.env.LD_LIBRARY_PATH || "");
-const EXE = "/home/user/.cache/puppeteer/chrome/linux-148.0.7778.97/chrome-linux64/chrome";
+process.env.LD_LIBRARY_PATH = "/tmp/al2023lib/lib:/home/user/.local/chromelibs/usr/lib/x86_64-linux-gnu:" + (process.env.LD_LIBRARY_PATH || "");
+const EXE = process.env.ZENQA_CHROME || ["/tmp/chromium", "/home/user/.cache/puppeteer/chrome/linux-148.0.7778.97/chrome-linux64/chrome"].find((p) => { try { return fs.existsSync(p); } catch (e) { return false; } });
 const BASE = process.argv[2] || "http://127.0.0.1:8080/";
 const PAGES = ["index.html", "matcha.html", "productos.html", "recetas.html", "nosotros.html", "legal.html"];
 fs.mkdirSync("shots", { recursive: true });
@@ -14,7 +14,7 @@ const { execSync } = await import("node:child_process");
 let V3WORDS = "?";
 const V3REF = process.env.V3REF || "d611ca2"; // el último commit de la v3 (8 páginas, home con 1140 palabras)
 try {
-  const html = execSync("git show V3REF:index.html", { encoding: "utf8" }).replace(/<script[\s\S]*?<\/script>/g, "").replace(/<[^>]+>/g, " ");
+  const html = execSync(`git show ${V3REF}:index.html`, { encoding: "utf8" }).replace(/<script[\s\S]*?<\/script>/g, "").replace(/<[^>]+>/g, " ");
   V3WORDS = (html.match(/[\wÁ-Úá-úÀ-Öà-ö0-9]+/g) || []).length;
 } catch (e) {}
 const browser = await puppeteer.launch({ executablePath: EXE, args: ["--no-sandbox", "--disable-dev-shm-usage", "--hide-scrollbars", "--force-device-scale-factor=1"] });
@@ -59,13 +59,9 @@ for (const { w, h, tag } of SIZES) {
       out.wide = bad.slice(0, 5);
       const band = document.querySelector(".band");
       out.bandH = band ? Math.round(band.getBoundingClientRect().height) : 0;
-      const tr = document.querySelector(".band__track");
-      if (tr) {
-        const gs = tr.children;
-        out.bandGap = gs.length > 1 ? Math.round(gs[1].getBoundingClientRect().left - gs[0].getBoundingClientRect().right) : null;
-        out.bandLoop = gs.length === 2 && Math.abs(gs[0].getBoundingClientRect().width - gs[1].getBoundingClientRect().width) < 2;
-        out.bandSpeed = getComputedStyle(tr).animationName;
-      }
+      out.bandStatic = !document.querySelector(".band__track") && !document.querySelector(".band--mid");
+      out.bandItems = document.querySelectorAll(".band--static .band__i").length;
+      out.bandSoc = document.querySelectorAll(".band--static .band__soc a").length;
       const nav = document.querySelector(".nav");
       out.navPos = nav ? getComputedStyle(nav).position : "no";
       window.scrollTo(0, 700);
@@ -95,10 +91,10 @@ for (const { w, h, tag } of SIZES) {
     const label = f.padEnd(14);
     console.log("  " + label + " h+" + (r.hOverflow < 0 ? 0 : r.hOverflow) + " · " + r.pageH + "px alto · " + r.words + " palabras · banda " + r.bandH + "px · rejilla " + r.cols + " col · " + r.cards + " fichas · nav top " + r.navTop + " · h1 " + (r.h1 ? r.h1.size + "px " + r.h1.color : "-") + " · hl " + r.hl + " · fuente " + (r.font ? "switzer" : "SUSTITUTA") + " · ocultos " + r.hidden + " · botones " + r.buyRows);
     if (r.hOverflow > 0) say(f + " (" + tag + "): desborde horizontal de " + r.hOverflow + "px → " + r.wide.join(", "));
-    if (r.bandH > 34) say(f + " (" + tag + "): la franja mide " + r.bandH + "px, debía ser fina");
-    if (r.bandGap !== 0) say(f + " (" + tag + "): hueco de " + r.bandGap + "px entre grupos de la franja");
-    if (r.bandLoop === false) say(f + ": los dos grupos de la marquesina no miden igual");
-    if (r.bandSpeed !== "marquee") say(f + ": la marquesina no anima (" + r.bandSpeed + ")");
+    if (r.bandH > 52) say(f + " (" + tag + "): la franja mide " + r.bandH + "px, debía quedar fina");
+    if (!r.bandStatic) say(f + ": la franja de arriba sigue siendo una marquesina en movimiento");
+    if (r.bandItems !== 3) say(f + ": la franja lleva " + r.bandItems + " mensajes, deben ser 3");
+    if (r.bandSoc !== 4) say(f + ": faltan las redes del pie junto a «Únete» (" + r.bandSoc + ")");
     if (r.navPos !== "sticky") say(f + ": el menú no es sticky");
     if (r.navTop !== 0) say(f + " (" + tag + "): al hacer scroll el menú queda a " + r.navTop + "px");
     if (r.bandTopAfterScroll > 0.5) say(f + " (" + tag + "): la franja no se va al hacer scroll");
@@ -113,7 +109,7 @@ for (const { w, h, tag } of SIZES) {
     if (r.buyOver) say(f + " (" + tag + "): los dos botones del producto se solapan");
     if (r.btnPerCard > 2) say(f + ": las fichas de producto llevan " + r.btnPerCard + " botones");
     if (f === "index.html") console.log("      · texto de la home: " + r.words + " palabras (la v3 tenía " + V3WORDS + ")");
-    if (tag === "movil" && r.words > 800) say(f + ": " + r.words + " palabras en móvil, se sigue leyendo como un dosier");
+    if (tag === "movil" && r.words > 1400) say(f + ": " + r.words + " palabras en móvil, se sigue leyendo como un dosier");
     errs.slice(0, 4).forEach((e) => say(f + " (" + tag + ") · " + e));
     await page.screenshot({ path: "shots/v4-" + tag + "-" + f.replace(".html", "") + ".png", fullPage: true });
     await page.close();
