@@ -798,3 +798,44 @@ body[data-page="productos"] section[id] { scroll-margin-top: calc(var(--nav-h) +
 section[id], main [id] { scroll-margin-top: 0 }
 .phead-stick { scroll-margin-top: 0 }
 body[data-page="productos"] section[id] { scroll-margin-top: 56px }
+
+/* ============================================================
+   V7 · cambios pedidos por el cliente
+   ============================================================ */
+
+/* subtítulos de portada de la home y de recetas al mismo tamaño que
+   «Energía pura» de matcha; el de recetas, subrayado en verde clarito */
+.hero p.hero__claim,
+.hero p.hero__sub { font-size: clamp(1.7rem, 5.4vw, 3rem); line-height: 1.12 }
+.hero p.hero__sub {
+  display: inline-block; width: fit-content; max-width: 22ch; font-weight: 900; letter-spacing: -.01em;
+  text-decoration: underline; text-decoration-color: var(--sage-soft); text-decoration-thickness: .14em;
+  text-underline-offset: .14em; text-decoration-skip-ink: none;
+}
+
+/* «Tu momento Matcha» sobre verde (el verde clarito del logo) */
+.sec--moment .moment__whatis .q { color: var(--forest) }
+.sec--moment .moment__whatis p { color: var(--ink) }
+
+/* «¿Qué es el té matcha?» con letra más grande */
+.moment__whatis { gap: 10px; max-width: 52ch; margin-top: clamp(8px, 1.6vw, 22px) }
+.moment__whatis .q { font-size: clamp(1rem, 2.2vw, 1.2rem); letter-spacing: .06em }
+.moment__whatis p { font-size: clamp(1.06rem, 2.1vw, 1.22rem); line-height: 1.55 }
+@media (min-width: 820px) { .moment__whatis p { font-size: 1.22rem } }
+
+/* qué incluye el kit, también más grande */
+.split__t--fill .inc li { font-size: clamp(1.02rem, 2vw, 1.16rem); padding: 12px 0 }
+.split__t--fill .inc li span:first-child { min-width: 170px }
+@media (max-width: 479px) {
+  .split__t--fill .inc li { flex-direction: column; gap: 2px }
+  .split__t--fill .inc li span:first-child { min-width: 0 }
+}
+
+/* productos: las 4 redes con icono en la portada */
+.socials--ico a svg { width: 16px; height: 16px; flex: none }
+.phead-soft .sec__h { align-items: flex-end }
+
+/* productos: submenú de categorías centrado (si no cabe, se desplaza
+   sin cortar la primera etiqueta) */
+.phead-stick__row > :first-child { margin-left: auto }
+.phead-stick__row > :last-child { margin-right: auto }
