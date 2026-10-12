@@ -2,10 +2,12 @@
 
 Demo de e-commerce de té matcha hecha a mano (HTML + CSS + JS, sin build) para migrar después a Shopify.
 
-**Rediseño completo orientado a vender**: franja rosa estática con los tres mensajes de marca,
-menú alto con submenú «Contacto», titulares con rotulador (Permanent Marker), secciones de color
-alternadas (verde clarito del logo, crema, papel, negro) y todos los textos de venta a la vista.
-Cada cambio está hecho igual en escritorio y en móvil.
+**Rediseño completo orientado a vender**: menú alto con submenú «Contacto», titulares con
+rotulador (Permanent Marker), secciones de color alternadas (verde clarito del logo, crema, papel,
+negro) y todos los textos de venta a la vista. La franja rosa de arriba va **fija en escritorio**
+y **en bucle en móvil** (un mensaje tras otro, centrado, sin quedarse en blanco). Auditoría
+responsive completa: sin solapes, sin desbordes y con el formulario de contacto maquetado en
+tarjeta también en pantallas pequeñas.
 
 **Ver online:** https://zenqalife-sys.github.io/tienda-zenqa-lm-arena-final-2/
 · repositorio `zenqalife-sys/tienda-zenqa-lm-arena-final-2`, GitHub Pages desde `main/(root)`.
@@ -16,22 +18,25 @@ Cada cambio está hecho igual en escritorio y en móvil.
 
 | Página | Estructura |
 | --- | --- |
-| `index.html` | Franja rosa **estática** («Envíos gratis a partir de 35 €» · «Descarga nuestra guía gratis» · «Únete a Zenqa Life», separadas por punto blanco, con las 4 redes del pie al final; en móvil se desliza con el dedo, sin animación) · Hero con `#MATCHA VIBES` **en cursiva** y dos botones grandes separados (Comprar matcha ya / Cómo se prepara) · «Tu momento Matcha» con el título en **fuente pincel graffiti** ocupando casi todo el alto del producto · sección verde clarito **«¿Qué es el té matcha?»** en cuatro líneas y solo texto (sin fotos, con palabras en cursiva rosa) · Kit de preparación: «preparación» a tamaño grande, columna ocupando todo el alto con el qué-incluye (**solo herramientas: chawan, chasen y chashaku+tamizador; sin bote de 54 g**) · «Nuestros productos» (Matcha y tés primero, ropa tercera) · «Quien lo compra, repite» · «Descubre recetas» + **imán de leads en su propia sección verde** (estilo de la referencia, sin 10 %) · «Nacidos en las colinas de Uji» con el texto a todo el alto de la foto · «Únete» · pie con «TE MATCHA VIBES» **en cursiva**. |
+| `index.html` | Franja rosa (en PC **fija** con los tres mensajes + las 4 redes; **en móvil, en bucle**: un mensaje tras otro centrado, fundiendo, y los tres se ven siempre) · Hero con `#MATCHA VIBES` **en cursiva**, el claim **«Únete al movimiento Zenqa Life»** en verde clarito subrayado en rosa, y dos botones grandes separados · «Tu momento Matcha» con el título en **fuente pincel graffiti** y, **solo el texto de «¿Qué es el té matcha?»** justo debajo del título (así los dos primeros productos de la home van pegados, sin ninguna sección entre ellos) · Kit de preparación: «preparación» a tamaño grande, columna ocupando todo el alto con el qué-incluye (**solo herramientas: chawan, chasen y chashaku+tamizador; sin bote de 54 g**) · «Nuestros productos» (Matcha y tés primero, ropa tercera) · «Quien lo compra, repite» · «Descubre recetas» + **imán de leads en su propia sección verde** (estilo de la referencia, sin 10 %) · «La casa» desarrollada (dos párrafos + tres pilares en etiquetas + CTA) con el texto a todo el alto de la foto · «Únete» · pie con «TE MATCHA VIBES» **en cursiva**. |
 | `matcha.html` | Hero «Tu ritual diario» con subtítulo **«Energía pura»** grande, en rosa y subrayado en verde clarito · los dos botes en paralelo · comparativa sin perdedor (**sin la fila de rendimiento/precio por vaso**) · **«Calidad de nuestro matcha»** sobre fondo verde (el mismo de «Matcha frente al café»), ficha de 6 apartados · «Ritual en 60 segundos» con fondo distinto (separadas) · «Matcha frente al café» · **«Más formas de beberlo»** · **«Todos nuestros tés»** sobre fondo negro (la tipografía blanca, solo las fotos con su color) · «Únete». |
-| `productos.html` | Portada **sin foto y sobre verde clarito**: kicker «Envíos gratis a partir de 35 €» + título **«Movimiento Zenqa Life»** (sin «Todo lo que vendemos») · catálogo en bloques: matcha → tés → kits → vasos → ropa (19 productos) · «Únete». |
-| `recetas.html` | Hero con título mejorado (rotulador dibujado), subtítulo **«Encuentra tu manera preferida de prepararlo»** (sin chips) y dos botones grandes (Recetas / Guía gratis) · **«Energía limpia»** centrada y sobre verde clarito con la frase grande · **«Recetas infinitas, sabores únicos»** (las 10 recetas, sin el texto de las tarjetas) · **«Comprar lo que falta»** en su propia sección con fondo papel y bloque propio · imán de leads rediseñado y **sin el 10 %** · «Únete». |
-| `nosotros.html` | Menú con flecha y submenú **«Contacto»** que ancla a `nosotros.html#contacto` · «Menos ruido, más intención» **sobre verde clarito, todo centrado y con el copy literal** (manifiesto + cita «Premium sin solemnidad» + foto de Uji con pie) · «La calidad del té» con cabecera literal **«Lo que pasa antes de que abras la lata»**, la tabla de 6 comprobables, los **6 hitos del proceso** y los **5 números de la casa** (sin fotos de grados) · contacto con su formulario (tal cual estaba) · **imán de leads debajo del formulario**, copiado del de la referencia · «Únete». |
+| `productos.html` | **Barra de etiquetas por categoría justo debajo del menú principal** (pégajosa, solo enlaces ancla: #matcha, #te, #kit, #vaso, #ropa) · portada **sin foto y sobre verde clarito**: kicker «Envíos gratis a partir de 35 €» + título **«Movimiento Zenqa Life»** (sin «Todo lo que vendemos») · catálogo en bloques: matcha → **«Más variedades de té» sobre fondo negro** → kits → vasos → ropa (19 productos) · «Únete». |
+| `recetas.html` | Hero con título mejorado (rotulador dibujado), subtítulo **«Encuentra tu manera preferida de prepararlo»** **como subtítulo de verdad** (grande y claro, sin chips) y dos botones grandes (Recetas / Guía gratis) · **«Energía limpia»** centrada y sobre verde clarito con la frase grande · **«Recetas infinitas, sabores únicos»** (las 10 recetas en tarjetas, cada una enlaza a **su propia página**) · **«Comprar lo que falta»** en su propia sección con fondo papel y bloque propio · imán de leads rediseñado y **sin el 10 %** · «Únete». |
+| `nosotros.html` | Menú con flecha y submenú **«Contacto»** que ancla a `nosotros.html#contacto` (en móvil, el menú se cierra y el salto funciona de verdad) · «Menos ruido, más intención» **sobre verde clarito, todo centrado y con el copy literal** (manifiesto + cita «Premium sin solemnidad» + foto de Uji con pie) · «La calidad del té» con cabecera literal **«Lo que pasa antes de que abras la lata»**, la tabla de 6 comprobables, los **6 hitos del proceso contados en general —cómo se cultiva y se cuida un matcha, sin atribuírselo ni hablar de dinero—** y los **5 números de la casa** · contacto con su formulario **en tarjeta y con los campos separados** (maquetado también en móvil) · **imán de leads debajo del formulario**, copiado del de la referencia · «Únete». |
+| `receta-<id>.html` × 10 | **Una página por receta** (generadas por `node .test/gen-recetas.mjs`): foto, por qué funciona, los 4 pasos maquetados, el bote que mejor queda con botones de compra, y anterior/siguiente. Nada de pop up por receta. |
 | `legal.html` | Los textos legales en claro, con anclas. No lleva «Únete» ni newsletter. |
 | `tienda` `ritual` `contacto` `prepararlo` | Redirecciones de una línea a la página nueva, para que no se rompa ningún enlace compartido. |
 
 **Común en todas las páginas** (inyectado desde `assets/js/app.js`, así no puede descuadrar):
 
-- franja rosa arriba **estática** (sin marquesina): tres mensajes con punto blanco + las redes;
+- franja rosa arriba: en escritorio **estática** (tres mensajes con punto blanco + las redes), en
+  móvil **en bucle** (los tres mensajes giran centrados uno tras otro, siempre hay uno visible);
 - menú `position: sticky`, más alto y centrado; «Nosotros» abre un desplegable con **Contacto**;
 - en móvil, el menú hoja contiene **solo enlaces de página** (4 + Contacto como subpágina), sin atajos;
 - pie idéntico: «TE MATCHA VIBES» en cursiva rosa, wordmark, columnas Tienda/Ayuda, redes y
   medios de pago. **Sin imán de leads y ni newsletter en el pie**, como se pidió;
-- anclas con `scroll-margin-top` para que ningún enlace quede bajo el menú pegajoso.
+- anclas con `scroll-padding-top` para que ningún enlace quede bajo el menú (y, en productos,
+  bajo la barra de etiquetas).
 
 Los textos de producto, receta y reseña viven en **`assets/js/data.js`** (19 productos, 10 recetas,
 7 opiniones, franja, kit, comparativas, calidad, proceso y números). Cada página solo declara
@@ -60,7 +65,10 @@ Tipografía **Switzer** (Fontshare) autoalojada en `assets/fonts/`, pesos 300-90
 - **Imán de leads** (home `#guia`, `recetas.html#guia` y `nosotros.html#guia`): estilo de la
   referencia (columna de texto + tarjeta PDF rotada), valida email + consentimiento, guarda
   `zenqa_lead` y enlaza la descarga real del PDF de 4 páginas. **Sin cupón, sin «10 %»**.
-  Nunca está en el pie.
+  Nunca está en el pie. El PDF es **`assets/downloads/guia-matcha-zenqa.pdf`**, una guía de
+  4 páginas con la identidad de la web (Switzer + Permanent Marker, rosa/verde/crema) que
+  recoge lo que promete el formulario: recetas, dosis, conservación y hoja de cata.
+  Se regenera con `node .test/make-guia.mjs` (con `GUIA_SHOTS=1` saca capturas de preview).
 - **Capas**: carrito, menú, buscador, ficha, receta y guía comparten un gestor: una abierta cada
   vez, × propia, Escape cierra y el fondo queda inerte.
 - Las **reseñas** y los **marcadores** de las fichas salen de los mismos datos, así que no hay
@@ -73,8 +81,10 @@ node .test/serve.mjs 8080 &            # servidor estático sin dependencias
 node .test/smoke.mjs                   # jsdom: 22 comprobaciones de datos + contrato de las 5 páginas
                                        #   + carrito, capas, ficha, buscador, flyout y leads
 node .test/final.mjs                   # 555 referencias (href, src, anclas, ids) en las 10 páginas
-node .test/v4audit.mjs                 # Chrome: 0 px de desborde en 390 y 1440, franja estática de
+node .test/v4audit.mjs                 # Chrome: 0 px de desborde en 390 y 1440, franja de
                                        #   3 mensajes + 4 redes, menú pegajoso, tipografía cargada
+node .test/gen-recetas.mjs             # regenera las 10 páginas receta-<id>.html desde data.js
+node .test/make-guia.mjs               # regenera el PDF del imán de leads (GUIA_SHOTS=1 = preview)
 node .test/stack.mjs                   # que ningún bloque pise al siguiente
 node .test/contrast.mjs 390 844        # WCAG-lumi de todos los textos sobre su fondo real compuesto
 node .test/elem.mjs index.html 390 844 ".hero,#que-es" z1     # capturas por bloque

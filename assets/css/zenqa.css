@@ -621,3 +621,180 @@ section[id], main [id] { scroll-margin-top: calc(var(--nav-h) + 44px) }
 
 /* fondo verde clarito genérico (el verde del logo) */
 .sec--sage { background: var(--sage-soft); border-block: var(--edge) }
+
+/* ============================================================
+   V6 · auditoría responsive + cambios pedidos por el cliente
+   ============================================================ */
+
+/* ---------- franja rosa: en PC fija como siempre; en móvil, un mensaje
+   tras otro centrado, en bucle, sin quedarse nunca en blanco ---------- */
+@media (max-width: 719px) {
+  .band__row { position: relative; display: block; height: 36px; padding: 0; overflow: hidden }
+  .band__i {
+    position: absolute; inset: 0; height: 36px; margin: 0; padding-inline: 16px;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    opacity: 0; animation: band-swap 12s infinite both;
+  }
+  .band__i:nth-child(1) { animation-delay: 0s }
+  .band__i:nth-child(2) { animation-delay: 4s }
+  .band__i:nth-child(3) { animation-delay: 8s }
+  .band__soc { display: none }
+}
+@keyframes band-swap {
+  0% { opacity: 0 }
+  4% { opacity: 1 }
+  29% { opacity: 1 }
+  34% { opacity: 0 }
+  100% { opacity: 0 }
+}
+@media (prefers-reduced-motion: reduce) {
+  .band__i { animation: none }
+  .band__i:nth-child(1) { opacity: 1 }
+  .band__i:nth-child(2), .band__i:nth-child(3) { opacity: 0 }
+}
+
+/* ---------- anclas: reservar hueco bajo menú y chips de categoría ---------- */
+:root { --nav-h-sm: 62px }
+html { scroll-padding-top: calc(var(--nav-h) + 12px) }
+section[id], main [id] { scroll-margin-top: calc(var(--nav-h) + 12px) }
+.phead-stick { scroll-margin-top: calc(var(--nav-h) + 58px) }
+
+/* ---------- hero home: «Únete al movimiento Zenqa Life» bajo el título,
+   en verde clarito y subrayado en rosa ---------- */
+.hero__claim {
+  display: inline-block; width: fit-content; margin: 2px 0 2px;
+  font-weight: 900; text-transform: uppercase; letter-spacing: -.01em;
+  color: var(--sage-soft); font-size: clamp(1.05rem, 4.6vw, 2.05rem);
+  text-decoration: underline; text-decoration-color: var(--pink); text-decoration-thickness: .17em;
+  text-underline-offset: .18em; text-decoration-skip-ink: none;
+}
+
+/* ---------- home: «¿qué es el té matcha?» como texto bajo el título del
+   momento (solo texto: deja libres los dos primeros productos) ---------- */
+.moment__whatis { display: grid; gap: 7px; max-width: 46ch }
+.moment__whatis .q { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .11em; color: var(--ink-45) }
+.moment__whatis p { font-size: .93rem; line-height: 1.5; color: var(--ink-70) }
+.moment__whatis p i { font-style: italic; color: var(--pink-deep); font-weight: 700 }
+@media (min-width: 820px) { .moment__whatis p { font-size: .98rem } }
+
+/* ---------- fix del solape: la foto del spot crece por flex, nunca por
+   height:100% del área (que se comía la sección siguiente) ---------- */
+.split--fill [data-spot] { display: flex; flex-direction: column; gap: 10px; min-width: 0 }
+.split--fill [data-spot] > .frame { flex: 1 1 auto; height: auto; min-height: 340px; aspect-ratio: auto }
+.split--fill [data-spot] > * { min-width: 0 }
+
+/* ---------- home «La casa»: algo más desarrollado, con los pilares ---------- */
+.casa__p { display: grid; gap: 10px; max-width: 52ch }
+.casa__p p { font-size: .95rem; line-height: 1.6; color: var(--ink-70) }
+.casa__vals { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px }
+.casa__vals .chip { background: var(--sage-soft) }
+
+/* ---------- formularios: campos con aire y consentimientos legibles ---------- */
+form[data-form] { display: grid; gap: 13px }
+.consent { display: grid; grid-template-columns: 16px 1fr; align-items: start; column-gap: 8px; row-gap: 2px }
+.consent a { grid-column: 2 }
+select.field-sel, .field select { width: 100%; border: var(--edge); border-radius: 10px; background: var(--paper); padding: 12px 13px; font-size: .92rem; color: var(--ink); appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(50% + 1px), calc(100% - 15px) calc(50% + 1px);
+  background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; padding-right: 38px }
+.field label .opt { color: var(--ink-45); font-weight: 700 }
+@media (max-width: 719px) {
+  .field input, .field textarea, .field select { padding: 13px 14px; font-size: 1rem }
+  .field textarea { min-height: 110px }
+}
+
+/* ---------- ficha rápida: la MISMA imagen del producto arriba del pop up
+   y una X grande arriba a la derecha para cerrarlo ---------- */
+.modal--qv { padding: 0 }
+.qv__hero { position: relative; border-bottom: var(--edge); background: var(--cream) }
+.qv__hero img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block }
+.x--float {
+  position: absolute; top: 10px; right: 10px; z-index: 5; width: 42px; height: 42px;
+  border-radius: 50%; border: var(--edge); background: var(--paper); display: grid; place-items: center;
+  box-shadow: var(--shadow);
+}
+.x--float svg { width: 17px; height: 17px; stroke: var(--ink); stroke-width: 2.2; fill: none }
+.x--float:hover { background: var(--pink) }
+.qv .ov__h { display: none }
+.modal--qv .ov__b { padding-top: 14px }
+@media (max-width: 719px) { .qv__hero img { aspect-ratio: 1 / 1 } }
+
+/* ---------- productos: barra de etiquetas de categoría bajo el menú,
+   solo con anclas, pegada mientras navegas el catálogo ---------- */
+.phead-stick {
+  position: sticky; top: var(--nav-h); z-index: 25;
+  background: rgba(250, 249, 242, .96); backdrop-filter: blur(10px);
+  border-bottom: var(--edge);
+}
+.phead-stick__row {
+  display: flex; gap: 7px; padding-block: 9px; overflow-x: auto; scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.phead-stick__row::-webkit-scrollbar { display: none }
+.phead-stick .chip { flex: 0 0 auto }
+.phead-stick .chip:hover { background: var(--pink); color: var(--ink) }
+
+/* ---------- recetas: tarjetas más cuidadas y ficha de receta en su página ---------- */
+.rcard__m { min-height: 84px }
+@media (min-width: 720px) {
+  .rcards { gap: 14px }
+  .rcard { grid-template-columns: 1fr }
+}
+.rp { display: grid; gap: 18px }
+.rp__grid { display: grid; gap: 18px }
+@media (min-width: 900px) { .rp__grid { grid-template-columns: 1.05fr .95fr; align-items: start } }
+.rp__fig { border: var(--edge); border-radius: var(--r); overflow: hidden; background: var(--paper); box-shadow: var(--shadow) }
+.rp__fig img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover }
+.rp__body { display: grid; gap: 12px }
+.rp__lede { font-size: clamp(1.02rem, 2.2vw, 1.18rem); font-weight: 700; line-height: 1.5; letter-spacing: -.01em }
+.rp__why { font-size: .92rem; line-height: 1.6; color: var(--ink-70); border-left: 3px solid var(--pink); padding-left: 12px }
+.rp__steps { display: grid; gap: 10px; counter-reset: rp }
+.rp__steps li { display: grid; grid-template-columns: 34px 1fr; gap: 12px; border: var(--edge); border-radius: var(--r); background: var(--paper); padding: 13px 14px }
+.rp__steps li b:first-child { width: 34px; height: 34px; border-radius: 50%; background: var(--pink); border: var(--edge); display: grid; place-items: center; font-size: .86rem; font-weight: 900 }
+.rp__steps h3 { font-size: .95rem; font-weight: 900; letter-spacing: -.02em; line-height: 1.2; margin-bottom: 3px }
+.rp__steps p { font-size: .86rem; line-height: 1.5; color: var(--ink-70) }
+.rp__buy { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; border: var(--edge); border-radius: var(--r); background: var(--paper); padding: 12px 14px }
+.rp__buy img { width: 56px; height: 56px; border-radius: 10px; object-fit: cover; border: var(--edge) }
+.rp__buy .rp__buy-t { flex: 1 1 160px }
+.rp__nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; border-top: var(--edge); padding-top: 14px }
+.rp__nav a { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 18px; border: var(--edge); border-radius: 999px; background: var(--paper); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .04em }
+.rp__nav a:hover { background: var(--sage-soft) }
+.hero__sub { font-size: clamp(1.08rem, 3.6vw, 1.7rem); font-weight: 800; line-height: 1.3; letter-spacing: -.015em; color: rgba(255, 255, 255, .94); max-width: 30ch }
+.hero__sub i { font-style: italic; color: var(--pink) }
+
+/* ---------- tarjetas de producto: los dos botones en una línea sólida ---------- */
+@media (max-width: 479px) {
+  .card__acts .btn { padding: 0 6px; font-size: .68rem; letter-spacing: 0; white-space: nowrap; gap: 3px }
+  .card__acts .btn:first-child { flex: 0.9 1 0 }
+}
+
+/* ---------- formulario de contacto en tarjeta, con aire en móvil ---------- */
+.form-card { border: var(--edge); border-radius: var(--r); background: var(--paper); padding: clamp(16px, 3.2vw, 24px); box-shadow: var(--shadow) }
+@media (min-width: 820px) { #contacto .split { align-items: start } }
+
+/* en productos, las anclas de categoría deben quedar bajo la barra fija */
+body[data-page="productos"] section[id] { scroll-margin-top: calc(var(--nav-h) + 64px) }
+
+/* ---------- tarjetas blancas dentro de la sección negra de tés ---------- */
+.sec--ink .card .btn { background: var(--paper); border-color: var(--ink); color: var(--ink) }
+.sec--ink .card .btn:hover { background: var(--cream); box-shadow: 0 8px 0 -4px rgba(18, 22, 15, .25) }
+.sec--ink .card .btn--pink { background: var(--pink) }
+.sec--ink .card .btn--pink:hover { background: var(--pink-deep) }
+.sec--ink .card .st { color: var(--forest) }
+.sec--ink .card .price s { color: var(--ink-45) }
+
+/* ---------- listas ordenadas de la ficha de receta ---------- */
+.rp__steps { padding: 0; margin: 0; list-style: none }
+
+/* la tarjeta blanca de la sección negra conserva su tinta oscura */
+.sec--ink .card { color: var(--ink) }
+
+/* el descuento de la ficha nunca se parte solo */
+.card__kt-c { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0 }
+.card__kt-off { color: var(--pink-deep); white-space: nowrap; flex: none }
+.card__kt { min-width: 0 }
+
+/* el hueco del menú ya lo da html scroll-padding: no lo sumemos dos veces */
+section[id], main [id] { scroll-margin-top: 0 }
+.phead-stick { scroll-margin-top: 0 }
+body[data-page="productos"] section[id] { scroll-margin-top: 56px }

@@ -146,7 +146,7 @@
       '<a class="card__img" href="#' + p.id + '" data-act="qv" data-id="' + p.id + '">' +
       '<img src="assets/img/' + p.img + '" alt="' + p.name + '" loading="lazy" width="600" height="750">' +
       (p.badge ? '<span class="tag card__flag">' + p.badge + "</span>" : "") + "</a>" +
-      '<p class="card__kt">' + catOf(p) + (off ? ' · <span style="color:var(--pink-deep)">−' + off + " %</span>" : "") + "</p>" +
+      '<p class="card__kt"><span class="card__kt-c">' + catOf(p) + "</span>" + (off ? ' · <span class="card__kt-off">−' + off + " %</span>" : "") + "</p>" +
       '<h3 class="card__t"><a href="#' + p.id + '" data-act="qv" data-id="' + p.id + '">' + p.name + "</a></h3>" +
       rateLine(p) +
       '<div class="card__buy"><b class="price">' + Z.money(p.price) + (p.compareAt ? "<s>" + Z.money(p.compareAt) + "</s>" : "") + "</b>" +
@@ -211,6 +211,14 @@
       '<h3 class="d d-4">' + g.t + "</h3><p class=\"note\">" + g.d + "</p>" +
       '<p style="margin-top:2px">' + g.use + "</p></article>").join("") + "</div>";
   }
+  /* ---------------- etiquetas de categoría de productos (solo anclas) ---------------- */
+  function mountCatnav() {
+    const host = $("[data-catnav]");
+    if (!host) return;
+    host.innerHTML = Z.categories.map((c) =>
+      '<a class="chip" href="#' + c.id + '">' + c.name + "</a>").join("");
+  }
+
   /* ---------------- grupos de la página de productos ---------------- */
   function mountGroups() {
     const host = $("#groups");
@@ -218,7 +226,8 @@
     host.innerHTML = Z.categories.map((c) => {
       const items = Z.products.filter((p) => p.cat === c.id);
       const z = Z.categories.indexOf(c);
-      return '<section class="sec sec--tight' + (z % 2 ? " sec--paper" : "") + '" id="' + c.id + '">' +
+      const cls = c.id === "te" ? " sec--ink" : (z % 2 ? " sec--paper" : "");
+      return '<section class="sec sec--tight' + cls + '" id="' + c.id + '">' +
         '<div class="wrap"><div class="sec__h"><div><span class="kicker kicker--sage">' + items.length + ' productos</span>' +
         '<h2 class="d d-2">' + c.name + "</h2></div><p class=\"note\">" + c.note + "</p></div>" +
         '<div class="pgrid">' + items.map(cardHTML).join("") + "</div></div></section>";
@@ -240,10 +249,10 @@
     }).join("");
   }
   function recipeCard(r) {
-    return '<a class="rcard" href="#' + r.id + '" data-act="recipe" data-id="' + r.id + '">' +
+    return '<a class="rcard" href="receta-' + r.id + '.html">' +
       '<div class="rcard__m"><img src="assets/img/' + r.img + '" alt="' + r.name + '" loading="lazy"></div>' +
       '<div class="rcard__b"><h3>' + r.name + "</h3><p>" + r.short + "</p>" +
-      '<p class="rcard__go">' + r.kind + " · " + r.time + "</p></div></a>";
+      '<p class="rcard__go">' + r.kind + " · " + r.time + " · ver receta →</p></div></a>";
   }
   function mountRecipes() {
     const some = $("#grid-recipes");
@@ -297,7 +306,7 @@
   }
 
   /* ---------------- capas: una abierta cada vez ---------------- */
-  const PANES = ["cart", "menu", "search", "qv", "lead", "recipe"];
+  const PANES = ["cart", "menu", "search", "qv", "lead"];
   let openPane = null;
   function paneOpen(name) {
     if (openPane && openPane !== name) paneClose();
@@ -342,26 +351,26 @@
       '<div class="sres" id="sres"></div></div></div></div>' +
 
       '<div class="ov" id="qv" data-open="false" role="dialog" aria-modal="true" aria-label="Ficha de producto">' +
-      '<div class="ov__scrim" data-act="close"></div><div class="modal"><div class="ov__h"><span class="d">Ficha de producto</span>' +
-      '<button class="x" data-act="close" aria-label="Cerrar">' + ICON.x + "</button></div><div class=\"ov__b\"><div class=\"qv\" id=\"qvBody\"></div></div></div></div>" +
+      '<div class="ov__scrim" data-act="close"></div><div class="modal modal--qv">' +
+      '<div class="qv__hero" id="qvHero"></div>' +
+      '<div class="ov__b"><div class="qv" id="qvBody"></div></div></div></div>' +
 
-      '<div class="ov" id="recipe" data-open="false" role="dialog" aria-modal="true" aria-label="Receta">' +
-      '<div class="ov__scrim" data-act="close"></div><div class="modal"><div class="ov__h"><span class="d">Receta y guía</span>' +
-      '<button class="x" data-act="close" aria-label="Cerrar">' + ICON.x + "</button></div><div class=\"ov__b\"><div class=\"qv\" id=\"recipeBody\"></div></div></div></div>" +
 
       '<div class="ov" id="lead" data-open="false" role="dialog" aria-modal="true" aria-label="Guía gratuita">' +
       '<div class="ov__scrim" data-act="close"></div><div class="modal"><div class="ov__h"><span class="d">La guía gratis</span>' +
       '<button class="x" data-act="close" aria-label="Cerrar">' + ICON.x + "</button></div><div class=\"ov__b\"><div class=\"lead\" id=\"leadBody\" style=\"box-shadow:none\"></div></div></div></div>");
   }
 
-  /* ---------------- ficha rápida ---------------- */
+  /* ---------------- ficha rápida: imagen del producto arriba y X visible ---------------- */
   function quickView(id) {
     const p = Z.byId[id];
     if (!p) return;
     const rev = Z.reviews.find((r) => r.p === p.id) || Z.reviews.find((r) => Z.byId[r.p] && Z.byId[r.p].cat === p.cat) || Z.reviews[0];
     const rel = Z.products.filter((x) => x.cat === p.cat && x.id !== p.id).slice(0, 3);
+    const qvHero = $("#qvHero");
+    if (qvHero) qvHero.innerHTML = '<img src="assets/img/' + p.img + '" alt="' + p.name + '" width="900" height="675">' +
+      '<button class="x x--float" data-act="close" aria-label="Cerrar la ficha de producto">' + ICON.x + "</button>";
     $("#qvBody").innerHTML =
-      '<div class="qv__m"><img src="assets/img/' + p.img + '" alt="' + p.name + '"></div>' +
       '<div class="qv__kt">' + (p.badge ? '<span class="tag">' + p.badge + "</span>" : "") + '<span class="tag tag--sage">' + catOf(p) + "</span></div>" +
       "<h2>" + p.name + "</h2>" + rateLine(p) +
       '<p class="qv__hook">' + p.hook + "</p>" +
@@ -377,21 +386,6 @@
     paneOpen("qv");
   }
 
-  function recipeView(id) {
-    const r = Z.recipeById[id];
-    if (!r) return;
-    const p = Z.byId[r.product] || Z.byId["te-ceremonial"];
-    $("#recipeBody").innerHTML =
-      '<div class="qv__m"><img src="assets/img/' + r.img + '" alt="' + r.name + '"></div>' +
-      '<div class="rd__meta"><span>' + r.kind + "</span><span>" + r.time + "</span><span>" + r.level + "</span></div>" +
-      "<h2>" + r.name + "</h2><p class=\"qv__hook\">" + r.short + "</p>" +
-      '<p class="qv__pitch">' + r.why + "</p>" +
-      '<ol class="rd__steps">' + r.steps.map((s, i) => "<li><b>" + (i + 1) + "</b><span><b>" + s.s + "</b><br>" + s.d + "</span></li>").join("") + "</ol>" +
-      '<div class="qv__buy"><img src="assets/img/' + p.img + '" alt="" style="width:52px;height:52px;object-fit:cover;border-radius:8px;border:var(--edge)">' +
-      '<span style="flex:1 1 120px"><b>' + p.name + "</b><br><span class=\"note\">el que mejor queda aquí</span></span>" +
-      '<button class="btn btn--pink" data-act="add" data-id="' + p.id + '" data-close="true">' + Z.money(p.price) + "</button></div>";
-    paneOpen("recipe");
-  }
 
   /* ---------------- carrito ---------------- */
   const readCart = () => { try { return JSON.parse(localStorage.getItem(LS_CART)) || []; } catch (e) { return []; } };
@@ -457,7 +451,7 @@
     const rs = Z.recipes.filter((r) => hit(r.name) || hit(r.short) || hit(r.why)).slice(0, 3);
     host.innerHTML =
       (ps.length ? ps.map((p) => '<a href="#' + p.id + '" data-act="qv" data-id="' + p.id + '"><img src="assets/img/' + p.img + '" alt=""><span><b>' + p.name + "</b><span>" + p.hook.slice(0, 62) + "…</span></span><b class=\"price\">" + Z.money(p.price) + "</b></a>").join("") : "") +
-      (rs.length ? rs.map((r) => '<a href="#' + r.id + '" data-act="recipe" data-id="' + r.id + '"><img src="assets/img/' + r.img + '" alt=""><span><b>' + r.name + "</b><span>" + r.kind + " · " + r.time + "</span></span></a>").join("") : "") +
+      (rs.length ? rs.map((r) => '<a href="receta-' + r.id + '.html"><img src="assets/img/' + r.img + '" alt=""><span><b>' + r.name + "</b><span>" + r.kind + " · " + r.time + "</span></span></a>").join("") : "") +
       (!ps.length && !rs.length ? '<p class="note">No encontramos nada con <b>' + q + "</b>. Prueba con «matcha», «kit» o «vaso», o escríbenos por WhatsApp y te lo buscamos.</p>" : "");
   }
 
@@ -550,6 +544,25 @@
 
   /* ---------------- un solo sitio para todos los clics ---------------- */
   function wire() {
+    /* los enlaces del menú (Contacto y demás) cierran la capa y, si el destino
+       es un ancla de esta misma página, saltan a ella de verdad */
+    document.addEventListener("click", (ev) => {
+      const link = ev.target.closest("#menu a[href], .nav__drop a[href]");
+      if (!link) return;
+      const href = link.getAttribute("href");
+      const url = new URL(href, location.href);
+      paneClose();
+      const here = location.pathname.split("/").pop() || "index.html";
+      const there = url.pathname.split("/").pop() || "index.html";
+      if (url.hash && here === there) {
+        ev.preventDefault();
+        const t = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+        if (t) {
+          try { history.pushState(null, "", url.hash); } catch (e) {}
+          t.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+        }
+      }
+    });
     document.addEventListener("click", (ev) => {
       const a = ev.target.closest("[data-act]");
       if (!a) return;
@@ -567,7 +580,6 @@
           break;
         }
         case "qv": quickView(id); break;
-        case "recipe": recipeView(id); break;
         case "cart": paintCart(); paneOpen("cart"); break;
         case "menu": paneOpen("menu"); break;
         case "search": paneOpen("search"); setTimeout(() => { const q = $("#q"); if (q) search(q.value); }, 80); break;
@@ -593,6 +605,39 @@
     if (q) q.addEventListener("input", () => search(q.value));
   }
 
+  /* ---------------- página de receta (una por receta, sin pop up) ---------------- */
+  function mountRecipePage() {
+    const host = $("[data-recipe]");
+    if (!host) return;
+    const r = Z.recipeById[host.dataset.recipe];
+    if (!r) {
+      host.innerHTML = '<section class="sec"><div class="wrap"><p class="note">Esta receta no existe. <a class="link" href="recetas.html">Ver todas las recetas</a>.</p></div></section>';
+      return;
+    }
+    const i = Z.recipes.indexOf(r);
+    const prev = Z.recipes[(i - 1 + Z.recipes.length) % Z.recipes.length];
+    const next = Z.recipes[(i + 1) % Z.recipes.length];
+    const p = Z.byId[r.product] || Z.byId["te-ceremonial"];
+    host.innerHTML =
+      '<section class="sec sec--tight" id="receta"><div class="wrap rp">' +
+      '<p><a class="chip" href="recetas.html">← Todas las recetas</a></p>' +
+      '<div class="sec__h"><div><span class="kicker kicker--sage">' + r.kind + " · " + r.time + " · " + r.level + "</span>" +
+      '<h1 class="d d-2">' + r.name + "</h1></div>" +
+      '<p class="note">' + r.short + "</p></div>" +
+      '<div class="rp__grid"><figure class="rp__fig" style="margin:0"><img src="assets/img/' + r.img + '" alt="' + r.name + '" width="1200" height="900"></figure>' +
+      '<div class="rp__body">' +
+      '<p class="rp__why">' + r.why + "</p>" +
+      '<ol class="rp__steps">' + r.steps.map((st, k) =>
+        "<li><b>" + (k + 1) + "</b><div><h3>" + st.s + "</h3><p>" + st.d + "</p></div></li>").join("") + "</ol></div></div>" +
+      '<div class="rp__buy"><img src="assets/img/' + p.img + '" alt="' + p.name + '">' +
+      '<span class="rp__buy-t"><b>' + p.name + '</b><br><span class="note">el que mejor queda en esta receta · ' + Z.money(p.price) + "</span></span>" +
+      '<button class="btn btn--pink" data-act="add" data-id="' + p.id + '">Añadir al carrito</button>' +
+      '<button class="btn" data-act="qv" data-id="' + p.id + '">Ver ficha</button></div>' +
+      '<nav class="rp__nav"><a href="receta-' + prev.id + '.html">← ' + prev.name + "</a>" +
+      '<a href="receta-' + next.id + '.html">' + next.name + " →</a></nav>" +
+      "</div></section>";
+  }
+
   /* ---------------- arranque ---------------- */
   buildHeader();
   buildBand();
@@ -606,6 +651,7 @@
   mountProcess();
   mountNosStats();
   mountGroups();
+  mountCatnav();
   mountReviews();
   mountRecipes();
   mountTri("#grid-tri", TRI_HOME);
@@ -616,6 +662,7 @@
   mountRitual();
   mountEnergy();
   mountLead();
+  mountRecipePage();
   wire();
   wireForms();
   paintCart();

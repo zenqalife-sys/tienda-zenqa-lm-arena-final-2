@@ -5,11 +5,14 @@ import path from "path";
 import vm from "node:vm";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const PAGES = ["index.html", "matcha.html", "productos.html", "recetas.html", "nosotros.html", "legal.html", "tienda.html", "ritual.html", "contacto.html", "prepararlo.html"];
 const sb = { window: {} }; vm.createContext(sb);
 vm.runInContext(fs.readFileSync(path.join(ROOT, "assets/js/data.js"), "utf8"), sb);
 const { products, categories, recipes } = sb.window.ZENQA;
 if (!products || products.length !== 19) { console.log("FAIL: data.js no expone los 19 productos de la v4"); process.exit(1); }
+if (!recipes || recipes.length !== 10) { console.log("FAIL: data.js no expone las 10 recetas"); process.exit(1); }
+
+const PAGES = ["index.html", "matcha.html", "productos.html", "recetas.html", "nosotros.html", "legal.html", "tienda.html", "ritual.html", "contacto.html", "prepararlo.html",
+  ...recipes.map((r) => "receta-" + r.id + ".html")];
 
 const dynIds = new Set([
   ...products.map((p) => p.id), ...categories.map((c) => c.id), ...recipes.map((r) => r.id),

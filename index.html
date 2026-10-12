@@ -24,11 +24,12 @@
 <body data-page="home">
 <main>
 
-  <!-- 1 · portada: foto + #MATCHA VIBES en cursiva + dos botones bien separados -->
+  <!-- 1 · portada: foto + #MATCHA VIBES en cursiva + claim + dos botones bien separados -->
   <section class="hero hero--italic" id="top">
     <div class="hero__m" aria-hidden="true"><img src="assets/img/hero-matcha.jpg" alt="Taza de matcha batida junto a la ventana" width="1800" height="1200" fetchpriority="high"></div>
     <div class="wrap hero__in">
       <h1 class="d"><span class="hl">#MATCHA<br>VIBES</span></h1>
+      <p class="hero__claim">Únete al movimiento Zenqa Life</p>
       <div class="hero__cta">
         <a class="btn btn--pink btn--lg" href="matcha.html">Comprar matcha ya</a>
         <a class="btn btn--lg" href="recetas.html#recetas">Cómo se prepara</a>
@@ -36,24 +37,20 @@
     </div>
   </section>
 
-  <!-- 2 · tu momento matcha: título pincel a la izquierda a la altura del producto -->
+  <!-- 2 · tu momento matcha: título pincel + «qué es el matcha» en texto
+       (solo texto: así los dos primeros productos van pegados) -->
   <section class="sec"><div class="wrap split split--fill">
-    <div class="moment__t"><div><h2 class="d brush">Tu<br>momento<br>Matcha</h2></div></div>
+    <div class="moment__t"><div>
+      <h2 class="d brush">Tu<br>momento<br>Matcha</h2>
+      <div class="moment__whatis">
+        <p class="q">¿Qué es el té matcha?</p>
+        <p>Té verde japonés de hoja entera, cultivado tres semanas a la sombra para volverlo <i>dulce</i>, y molido en piedra hasta que se disuelve entero en el agua. No se infusa: bebes la hoja completa, con su cafeína, su L-teanina y su <i>umami</i>. Energía limpia y sesenta segundos de ritual cada día.</p>
+      </div>
+    </div></div>
     <div data-spot="te-ceremonial"></div>
   </div></section>
 
-  <!-- 3 · qué es el té matcha: verde clarito, solo texto, cuatro líneas -->
-  <section class="whatis" id="que-es"><div class="wrap">
-    <span class="kicker kicker--sage">¿Qué es el té matcha?</span>
-    <div class="whatis__lines">
-      <p>Té verde japonés de hoja entera, cultivado tres semanas a la sombra para volverlo <i>dulce</i>.</p>
-      <p>Se muele en piedra hasta hacerlo tan fino que se disuelve entero en el agua.</p>
-      <p>No se infusa: bebes la hoja completa, con su cafeína, su L-teanina y su <i>umami</i>.</p>
-      <p>Eso es el matcha: <i>energía limpia</i> y sesenta segundos de ritual cada día.</p>
-    </div>
-  </div></section>
-
-  <!-- 4 · kit: foto a la izquierda, «preparación» a lo grande y qué incluye a la derecha -->
+  <!-- 3 · kit: foto a la izquierda, «preparación» a lo grande y qué incluye a la derecha -->
   <section class="sec sec--paper"><div class="wrap split split--flip">
     <div data-spot="kit-completo"></div>
     <div class="split__t split__t--fill">
@@ -89,12 +86,20 @@
     <div class="lead" data-lead="inline"></div>
   </div></section>
 
-  <!-- 8 · sobre nosotros: el texto ocupa todo el alto de la foto -->
-  <section class="sec sec--paper"><div class="wrap split split--fill">
+  <!-- 8 · la casa, algo más desarrollada: texto a todo el alto de la foto -->
+  <section class="sec sec--paper" id="casa"><div class="wrap split split--fill">
     <div class="split__t split__t--fill">
       <span class="kicker kicker--sage">La casa</span>
       <h2 class="d d-2">Nacidos en<br>las colinas de Uji</h2>
-      <p class="note">Una finca, una cosecha al año y un molino de piedra que va lento a propósito. Sin marcas blancas, sin mezclas, sin aromas.</p>
+      <div class="casa__p">
+        <p>Una finca, una cosecha al año y un molino de piedra que va lento a propósito. Sin marcas blancas, sin mezclas, sin aromas: el polvo verde que recibes es la hoja que creció a la sombra, tal cual.</p>
+        <p>Elegimos Uji porque es donde el matcha aprendió a ser matcha: agua limpia, niebla de mañana y familias que llevan generaciones con el mismo cuidado. Nosotros ponemos la parte aburrida —lotes cerrados, catas a ciegas y prisa cero— para que a ti solo te llegue lo bueno.</p>
+      </div>
+      <div class="casa__vals">
+        <span class="chip">Una cosecha al año</span>
+        <span class="chip">Molienda en piedra</span>
+        <span class="chip">Sin mezclas ni aromas</span>
+      </div>
       <p><a class="btn btn--auto" href="nosotros.html" style="width:fit-content">Conócenos</a></p>
     </div>
     <div class="frame"><img src="assets/img/uji-field.jpg" alt="Campos de té cubiertos de sombra en Uji" width="1200" height="1500" loading="lazy"></div>
