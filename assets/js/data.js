@@ -153,18 +153,18 @@ window.ZENQA = (function () {
       specs: { "Incluye": "Chawan, chasen, chashaku", "Chawan": "Gres 320 ml", "Chasen": "Bambú · 80 púas", "Garantía": "2 años" },
     },
     {
-      id: "kit-completo", unit: "6 piezas", name: "Kit Completo Pro · 6 piezas + 54 g", cat: "kit", price: 79.95, compareAt: 94.8,
+      id: "kit-completo", unit: "6 piezas", name: "Kit Completo Pro · 6 piezas", cat: "kit", price: 79.95, compareAt: 94.8,
       rating: 5, reviews: 141, badge: "El favorito", stock: 9, img: "p-chawan.jpg",
-      hook: "El que te deja la textura de cafetería en casa desde la primera taza. Y te regalamos el bote.",
-      pitch: "Es el Kit Básico más el tamizador, el espumador USB-C y el soporte de bambú para secar el chasen (la pieza que duplica su vida útil). Dentro va además el bote de ceremonial de 54 g: te lo enviamos con el kit para que la primera espuma la hagas con matcha bueno, no con el que tenías del supermercado. Es la compra que más repetida nos piden por email, casi siempre como regalo a alguien que se pasa el día con tres cafés.",
-      notes: { "Incluye": "6 piezas + 54 g", "Tamizador": "Malla fina inox", "Espumador": "USB-C, 7.000 rpm", "Soporte": "Bambú para el chasen" },
-      benefits: ["🎁 Bote de regalo", "🧂 Tamizador fino", "🔌 Espumador USB-C", "💶 −14,85 €"],
+      hook: "El que te deja la textura de cafetería en casa desde la primera taza. Seis herramientas y nada de relleno.",
+      pitch: "Es el Kit Básico más el tamizador, el espumador USB-C y el soporte de bambú para secar el chasen (la pieza que duplica su vida útil). Son las seis piezas que de verdad se usan: cuenco, batidor, cuchara, colador, espumador y soporte. Es la compra que más repetida nos piden por email, casi siempre como regalo a alguien que se pasa el día con tres cafés y quiere empezar sin comprar dos veces.",
+      notes: { "Incluye": "6 piezas de herramientas", "Tamizador": "Malla fina inox", "Espumador": "USB-C, 7.000 rpm", "Soporte": "Bambú para el chasen" },
+      benefits: ["🧰 6 herramientas", "🧂 Tamizador fino", "🔌 Espumador USB-C", "💶 −14,85 €"],
       bullets: [
-        "Ahorras 14,85 € frente a comprar las piezas sueltas, y el bote de ceremonial va incluido.",
+        "Ahorras 14,85 € frente a comprar las piezas sueltas, porque el kit nació de la suma de los precios reales.",
         "El tamizador es el detalle que más nota la gente: 5 segundos y ni un grumo en el latte.",
-        "Seis piezas más el bote de 54 g, en caja rígida con lazo y guía impresa; si es para otra persona, la tarjeta la escribimos a mano.",
+        "Seis piezas en caja rígida con lazo y guía impresa; si es para otra persona, la tarjeta la escribimos a mano.",
       ],
-      specs: { "Incluye": "6 piezas + 54 g matcha", "Tamizador": "Malla fina inox", "Espumador": "USB-C", "Garantía": "2 años" },
+      specs: { "Incluye": "6 piezas (herramientas)", "Tamizador": "Malla fina inox", "Espumador": "USB-C", "Garantía": "2 años" },
     },
     {
       id: "kit-regalo", unit: "caja regalo", name: "Kit Regalo Zenqa · caja negra", cat: "kit", price: 64.95, compareAt: 74.85,
@@ -435,5 +435,146 @@ window.ZENQA = (function () {
   const recipeById = Object.fromEntries(recipes.map((r) => [r.id, r]));
   const stars = (r) => "★★★★★".slice(0, Math.round(r)) + "☆☆☆☆☆".slice(0, 5 - Math.round(r));
 
-  return { brand, manifesto, grades, timeline, compare, categories, products, recipes, reviews, faq, money, byId, recipeById, stars };
+  /* ================= v4 · estructura de 5 páginas =================
+     La web es una tienda: catálogo agrupado en bloques de tres, y el
+     detalle largo vive en la ficha (capa), no en la página. */
+  categories.length = 0;
+  categories.push(
+    { id: "matcha", name: "T\u00e9 matcha", note: "Culinario, ceremonial y el pack para no fallar con el grado" },
+    { id: "te", name: "M\u00e1s variedades de t\u00e9", note: "Tostados y hoja completa para la taza larga de la tarde" },
+    { id: "kit", name: "Kits de preparaci\u00f3n", note: "Cuenco, batidor, cuchara y tamizador en una caja" },
+    { id: "vaso", name: "Teteras, tazas, botellas y vasos", note: "Donde lo bates y donde te lo llevas" },
+    { id: "ropa", name: "Ropa y accesorios", note: "Camisetas, tote bags y esmalte con el verde puesto" }
+  );
+
+  products.push(
+    {
+      id: "te-hojicha", cat: "te", name: "Hojicha tostado de Kioto 60 g", price: 21.95, compareAt: 24.95,
+      rating: 4.7, reviews: 84, stock: 30, badge: "SIN CAFE\u00cdNA", img: "p-hojicha.jpg", unit: "60 g",
+      hook: "Tostado a 180 \u00b0C: la taza de despu\u00e9s de cenar, sin quitar el sue\u00f1o.",
+      pitch: "El hojicha no es t\u00e9 verde: la hoja se tuesta antes de molerse y ah\u00ed se le van los amargos y casi toda la cafe\u00edna. Queda un polvo color caramelo con aroma a pan tostado y un punto de cacao, dulce de por s\u00ed, que se puede tomar con leche a las diez de la noche. Es el que recomendamos a quien quiere el ritual del matcha \u2014tamizar, batir, sostener la taza\u2014 pero no quiere el aceler\u00f3n.",
+      notes: { "Sabor": "tostado, pan y caramelo", "Aroma": "humo dulce, cacao", "Textura": "ligera y limpia", "Final": "redondo, sin astringencia" },
+      benefits: ["10 mg de cafe\u00edna", "Se toma a cualquier hora", "Dulce sin leche ni az\u00facar"],
+      bullets: [
+        "60 g a 2 g por taza: 30 tazas por 21,95 \u20ac, 0,73 \u20ac la taza.",
+        "Cafe\u00edna ≈10 mg frente a los 68 mg del matcha: es la taza de la noche.",
+        "Tostado el mismo d\u00eda del envasado: el aroma aguanta 3 meses abierto, no 2 a\u00f1os.",
+      ],
+      specs: { "Contenido": "60 g", "Origen": "\ud83c\uddef\ud83c\uddf5 Kagoshima", "Tueste": "180 \u00b0C \u00b7 12 min", "Agua": "90 \u00b0C \u00b7 100 ml" },
+    },
+    {
+      id: "te-sencha", cat: "te", name: "Sencha de primavera \u00b7 hoja entera 50 g", price: 19.95, compareAt: 0,
+      rating: 4.6, reviews: 51, stock: 44, badge: "", img: "p-sencha.jpg", unit: "50 g",
+      hook: "La primera recogida en hoja entera, para la tetera grande de la tarde.",
+      pitch: "Donde el matcha se bebe de golpe, el sencha se queda en la mesa: hoja entera que se abre en el agua y aguanta tres vertidos. Traemos la primera recogida de primavera, la que tiene m\u00e1s amino\u00e1cidos y menos amargor, y el truco est\u00e1 en el agua: a 60 \u00b0C sale dulce y con cuerpo; a 100 \u00b0C, astringente. Si te gusta el t\u00e9 de taza larga, este es el bote que se acaba antes.",
+      notes: { "Sabor": "herbal fresco con c\u00edtrico", "Aroma": "hierba y algas suaves", "Textura": "ligera", "Final": "umami corto y limpio" },
+      benefits: ["3 vertidos por hoja", "Agua a 60 \u00b0C", "Taza larga de tarde"],
+      bullets: [
+        "2,5 g por 200 ml: 20 sesiones por 19,95 \u20ac.",
+        "Resiste tres vertidos si bajas a 60 \u00b0C; con agua hirviendo solo aguanta uno.",
+        "40 mg de cafe\u00edna por taza: la mitad que el matcha, m\u00e1s que un t\u00e9 negro.",
+      ],
+      specs: { "Contenido": "50 g", "Hoja": "sencha ichibancha", "Agua": "60 \u00b0C \u00b7 90 s", "Vertidos": "2-3" },
+    },
+    {
+      id: "botella-ice", cat: "vaso", name: "Botella Matcha On-the-Go 600 ml", price: 21.95, compareAt: 25.95,
+      rating: 4.8, reviews: 63, stock: 38, badge: "PARA LLEVAR", img: "p-bottle.jpg", unit: "600 ml",
+      hook: "Se bate dentro: polvo, agua, tres hielos y agitar 15 segundos.",
+      pitch: "Para el iced latte que se acaba en el coche o en el gimnasio: la botella lleva un batidor de var\u00edlla desmontable en la tapa, as\u00ed que disuelve el polvo sin grumos y sin necesitar un chasen. Trit\u00e1n de 600 ml, boca ancha para meter hielo, junta de silicona que no gotea en la mochila y una marca interior a los 200 ml para no pasarte de leche.",
+      notes: { "Capacidad": "600 ml", "Boca": "ancha, entra el hielo", "Batidor": "var\u00edlla extra\u00edble", "Fr\u00edo": "12 h en nevera" },
+      benefits: ["Sin grumos en 15 s", "No gotea", "Apta lavavajillas"],
+      bullets: [
+        "600 ml y marca a los 200 ml: la proporci\u00f3n justa de concentrado y leche.",
+        "Trit\u00e1n sin BPA: pesa 160 g y aguanta el hielo sin agrietarse.",
+        "Se desmonta en 3 piezas y todas caben en el lavavajillas.",
+      ],
+      specs: { "Capacidad": "600 ml", "Material": "Trit\u00e1n sin BPA", "Incluye": "Batidor + junta", "Cuidado": "Lavavajillas" },
+    },
+  );
+
+  products.forEach((p) => (byId[p.id] = p));
+  byId["te-guante"].cat = "te";
+  byId["taza-esmaltada"].cat = "vaso";
+  const ord = ["te-culinario", "te-ceremonial", "pack-descubrimiento", "te-guante", "te-hojicha", "te-sencha",
+    "kit-basico", "kit-completo", "kit-regalo", "recambio-chasen", "chawan-negro", "taza-zenqa", "vaso-latte",
+    "termico", "botella-ice", "taza-esmaltada", "sudadera", "camiseta", "tote"];
+  products.sort((a, b) => ord.indexOf(a.id) - ord.indexOf(b.id));
+  byId["kit-completo"].unit = "6 piezas";
+  byId["kit-basico"].unit = "3 piezas";
+  byId["kit-regalo"].unit = "caja regalo";
+
+  /* Franja superior: estática (sin movimiento), mensajes separados por punto
+     blanco y las redes del pie al lado de «Únete». Sin plazos inventados. */
+  const bandTop = ["Env\u00edos gratis a partir de 35 \u20ac", "Descarga nuestra gu\u00eda gratis", "\u00danete a Zenqa Life"];
+  /* El kit es solo herramientas: nada de bote de té dentro. */
+  const kitIncluye = [
+    ["Chawan de gres", "320 ml, borde ancho para batir sin salpicar"],
+    ["Chasen de bamb\u00fa", "80 p\u00faas talladas de una sola pieza"],
+    ["Chashaku + tamizador", "la curva que mide 1 g y el colador que quita los grumos"],
+  ];
+
+  const ways = [
+    { t: "Usucha solo", s: "1 g \u00b7 70 ml \u00b7 70 \u00b0C" },
+    { t: "Latte caliente", s: "2 g \u00b7 200 ml de avena" },
+    { t: "Iced latte", s: "2 g \u00b7 hielo \u00b7 250 ml" },
+    { t: "Smoothie verde", s: "1 g culinario \u00b7 pl\u00e1tano" },
+    { t: "Yuzu tonic", s: "1,5 g \u00b7 t\u00f3nica \u00b7 lima" },
+    { t: "De noche", s: "2.\u00aa infusi\u00f3n \u00b7 65 \u00b0C" },
+  ];
+
+  const ritual4 = [
+    { t: "Tamiza 1 g", d: "Dos chashaku colmados por la malla fina. El batidor empuja el grumo, no lo deshace." },
+    { t: "Agua a 70 \u00b0C", d: "Hierve y espera cuatro minutos: a 100 \u00b0C arrastras amargor y quemas dulzor." },
+    { t: "Bate en \u00abW\u00bb", d: "De mu\u00f1eca, 15 segundos, sin apretar contra el fondo. Microespuma, no espuma de fregar." },
+    { t: "B\u00e9belo en tres tragos", d: "El matcha caliente pierde aroma en dos minutos. Es un momento corto a propósito." },
+  ];
+
+  const vsMatcha = {
+    a: {
+      id: "te-culinario", who: "Para quien lo mezcla: leche, hielo, fruta o bizcocho.",
+      list: [["Grado", "de latte, molido m\u00e1s grueso para que aguante la leche"], ["Sabor", "intenso y vegetal: no se pierde al a\u00f1adir nada"], ["Se toma", "en vaso grande, con sirope o sin \u00e9l, fr\u00edo o templado"]],
+    },
+    b: {
+      id: "te-ceremonial", who: "Para quien lo bebe con agua y quiere los sesenta segundos.",
+      list: [["Grado", "ceremonial primario, primera hoja de la primavera"], ["Sabor", "umami dulce, sin ese punto de heno"], ["Se toma", "solo, a 70 \u00b0C, en cuenco de borde ancho"]],
+    },
+  };
+
+  const energy = [
+    { k: "C\u00f3mo sube", m: "En 20-40 min y se mantiene 3-5 h", c: "Pico r\u00e1pido y baj\u00f3n seg\u00fan dosis" },
+    { k: "Cafe\u00edna", m: "68 mg por taza de 1 g", c: "\u2248120 mg en un solo de barra" },
+    { k: "C\u00f3mo te deja", m: "Concentraci\u00f3n tranquila, sin temblor", c: "Alerta\u2026 y a veces taquicardia" },
+    { k: "A media tarde", m: "Se puede tomar sin fastidiar el sue\u00f1o", c: "Despu\u00e9s de las 16 h ya es loter\u00eda" },
+  ];
+
+  /* Ficha de calidad: los seis hitos reales, por orden, tal y como los
+     contamos en Nosotros (enero → directo). */
+  const proceso = [
+    { n: "Enero", i: "01", t: "Sombra durante 21 días", d: "Cubrir las plantaciones retrasa la fotosíntesis: sube la clorofila, baja el amargor y aparece ese verde eléctrico. Sin sombreado no hay ceremonial." },
+    { n: "Mayo", i: "02", t: "Solo la primera cosecha", d: "Recogemos a mano las dos hojas más tiernas del primer brote de primavera. Las siguientes van al grado culinario: igual de honestas, más intensas." },
+    { n: "40 g/h", i: "03", t: "Molienda lenta en piedra", d: "Molinos de granito que tardan una hora en hacer 40 gramos. La piedra no calienta la hoja y preserva aroma y color. Los industriales lo hacen en segundos y lo tuestan sin querer." },
+    { n: "48 h", i: "04", t: "Envasado en oscuridad", d: "De molino a lata opaca con desoxidante en menos de dos días, en sala con humedad controlada. La luz y el oxígeno son lo que pone tu matcha pardo." },
+    { n: "Por lote", i: "05", t: "Analítica y cata", d: "Cada partida pasa control de metales pesados y pesticidas, y cata a ciegas de tres personas. Si no convence a las tres, no entra en almacén." },
+    { n: "Directo", i: "06", t: "Comercio sin intermediarios", d: "Compramos a granjas familiares con contrato de temporada y precio acordado en enero. Ellos saben cuánto ganamos y nosotros cuándo se recoge." },
+  ];
+
+  /* Los números de la casa, sin humo */
+  const nosStats = [
+    ["18.400", "pedidos enviados"],
+    ["1.284", "reseñas verificadas"],
+    ["9", "granjas familiares"],
+    ["4,9", "valoración media"],
+    ["30", "días de garantía"],
+  ];
+
+  const quality = [
+    ["Origen", "Uji y Wazuka, Kioto (Japón)"],
+    ["Cosecha", "Primera, mayo · ichibancha sombreada 21 días"],
+    ["Cultivo", "Sin pesticidas autorizados en UE, certificado JAS orgánico"],
+    ["Molienda", "Piedra granítica, 40 g/h"],
+    ["Cafeína", "≈ 65 mg/g · L-teanina ≈ 42 mg/g"],
+    ["Envase", "Lata opaca reciclable con sello y desoxidante"],
+  ];
+
+  return { brand, manifesto, grades, timeline, compare, categories, products, recipes, reviews, faq, money, byId, recipeById, stars, bandTop, kitIncluye, ways, ritual4, vsMatcha, energy, quality, proceso, nosStats };
 })();

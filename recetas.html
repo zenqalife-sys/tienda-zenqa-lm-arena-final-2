@@ -1,71 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Recetas y guías de matcha con gramos y temperatura · ZENQA LIFE</title>
-<meta name="description" content="Iced matcha latte de avena, strawberry cloud, yuzu tonic, smoothie verde, pre-entreno y las guías que arreglan la espuma: agua a 70 °C, tamizado y conservación del bote.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recetas y guías · ZENQA LIFE</title>
+<meta name="description" content="Todas las maneras de preparar matcha: solo, latte, con hielo, en batido o de noche. Con medidas, temperaturas y la guía gratis en PDF.">
 <meta name="theme-color" content="#ff6ebc">
-<link rel="icon" href="assets/img/favicon.png">
-<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="canonical" href="https://zenqalife-sys.github.io/tienda-zenqa-lm-arena-final-2/recetas.html">
+<link rel="icon" href="assets/img/favicon.png" sizes="32x32">
+<meta property="og:title" content="Recetas y guías · ZENQA LIFE">
+<meta property="og:description" content="Latte, ice, solo… diez formas de preparar matcha con medidas exactas.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/r-iced-latte.jpg">
+<link rel="preload" href="assets/fonts/switzer-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/zenqa.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"Cómo se prepara el matcha","timeRequired":"PT1M","tool":[{"@type":"HowToTool","name":"Chawan"},{"@type":"HowToTool","name":"Chasen"},{"@type":"HowToTool","name":"Tamizador"}],
+"step":[{"@type":"HowToStep","position":1,"name":"Tamiza 1 g","text":"Dos chashaku colmados por la malla fina."},{"@type":"HowToStep","position":2,"name":"Agua a 70 °C","text":"Hierve y espera cuatro minutos."},{"@type":"HowToStep","position":3,"name":"Bate en W","text":"De muñeca, 15 segundos, sin apretar contra el fondo."},{"@type":"HowToStep","position":4,"name":"Bébelo","text":"En tres tragos: el aroma se pierde en dos minutos."}]}
+</script>
+<script defer src="assets/js/data.js"></script>
+<script defer src="assets/js/app.js"></script>
 </head>
 <body data-page="recetas">
-<main id="MainContent">
+<main>
 
-  <section class="phead">
-    <div class="wrap">
-      <p class="crumb"><a href="index.html">Inicio</a> / <a href="ritual.html">Ritual</a> / Recetas</p>
-      <h1>Recetas<br>y guías</h1>
-      <p class="lede">Diez formas de aprovechar un bote, con gramos, temperatura y el motivo de cada paso. Si te sabe a hierba, no es el té: está en las guías.</p>
-      <p class="note" style="color:rgba(255,255,255,.75)">Cada receta dice con qué grado queda bien, para que no gastes ceremonial en un batido.</p>
-    </div>
-  </section>
-
-  <div class="shopbar">
-    <div class="wrap shopbar__in"><div class="shopbar__scroll">
-      <button class="chip" data-kind="todo" aria-pressed="true">Todo <i class="c">10</i></button>
-      <button class="chip" data-kind="receta" aria-pressed="false">Recetas <i class="c">6</i></button>
-      <button class="chip" data-kind="guia" aria-pressed="false">Guías <i class="c">4</i></button>
-      </div><div class="shopbar__end"><span class="note" id="count-r">10 guías</span></div>
-    </div>
-  </div>
-
-  <section class="sec tight" id="detalle">
-    <div class="wrap"><div id="recipeDetail" hidden></div></div>
-  </section>
-
-  <section class="sec tight">
-    <div class="wrap">
-      <div class="rcards" id="grid-r"></div>
-      <div class="row row--wrap" style="margin-top:16px">
-        <button class="btn btn--buy btn--auto" data-act="add" data-id="te-culinario">Añadir el culinario para recetas · 19,95 €</button>
-        <button class="btn btn--ghost btn--auto" data-act="qv" data-id="kit-completo">El Kit Pro, con espumador</button>
+  <!-- portada: todas las maneras, resumidas -->
+  <section class="hero hero--short" id="top">
+    <div class="hero__m" aria-hidden="true"><img src="assets/img/r-iced-latte.jpg" alt="Vaso de iced matcha latte con hielo" width="1800" height="1200" fetchpriority="high"></div>
+    <div class="wrap hero__in">
+      <h1 class="d"><span class="hl hl--draw">Latte, ice,<br>solo&hellip;</span></h1>
+      <p class="note" style="color:rgba(255,255,255,.85)">Encuentra tu manera preferida de prepararlo.</p>
+      <div class="hero__cta">
+        <a class="btn btn--pink btn--lg" href="#recetas">Recetas</a>
+        <a class="btn btn--lg" href="#guia">Guía gratis</a>
       </div>
     </div>
   </section>
 
-  <section class="sec sec--mint">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker kicker--sage">Lo que preguntáis antes de guardar esto en marcadores</span>
-        <h2 class="d d-3">Cuatro cosas que sí cambian el resultado</h2>
-      </div>
-      <div class="why">
-        <article class="why__i"><span class="why__n">1</span><div><h3>La leche vegetal que funciona</h3><p>Avena barista o coco. La de soja se corta con el matcha caliente y la de almendra es demasiado fina: se queda en agua verde con color.</p></div></article>
-        <article class="why__i"><span class="why__n">2</span><div><h3>Endulza en el concentrado</h3><p>El azúcar no se disuelve en frío. Si lo añades al final, te queda dulce arriba y amargo abajo. Con sirope o miel en el concentrado, todo igual.</p></div></article>
-        <article class="why__i"><span class="why__n">3</span><div><h3>Hielo hasta arriba, siempre</h3><p>Poco hielo = agua de más en dos minutos = verde apagado y capas que se mezclan. El vaso lleno de hielo enfría rápido y no aguúa si el concentrado es espeso.</p></div></article>
-        <article class="why__i"><span class="why__n">4</span><div><h3>No lo licúes con matcha ceremonial</h3><p>La batidora de alta velocidad rompe el aroma fino y lo oxida al instante. Para smoothies, culinario: más cuerpo, un tercio del precio por gramo.</p></div></article>
-      </div>
-      <div class="row row--wrap" style="margin-top:12px">
-        <a class="btn btn--auto" href="ritual.html#pasos">Volver a los cuatro pasos</a>
-        <a class="link" href="tienda.html">Comprar el bote que toque</a>
-      </div>
-    </div>
-  </section>
+  <!-- energía limpia: verde clarito y todo centrado -->
+  <section class="sec sec--mint sec--center" id="energia"><div class="wrap">
+    <div class="sec__h"><div><span class="kicker kicker--sage">Por qué cambia la tarde</span><h2 class="d d-2">Energía limpia</h2></div></div>
+    <p class="big-statement">68&nbsp;mg de cafeína con <i>L-teanina</i> dentro: sube en 20-40 minutos y se mantiene 3-5 horas sin pico ni bajón.</p>
+    <p class="note" style="margin-top:12px">El azúcar no existe en el bote; si tu latte lo lleva, se lo pones tú y decides cuánto. Y si te sienta fatal el café, aquí no hay nada que imitar: es otro tipo de estimulante.</p>
+  </div></section>
 
+  <!-- recetas + productos -->
+  <section class="sec" id="recetas"><div class="wrap">
+    <div class="sec__h"><div><span class="kicker kicker--sage">Guía en 10 recetas</span><h2 class="d d-2">Recetas infinitas,<br>sabores únicos</h2></div></div>
+    <div class="rcards" id="grid-recipes-all"></div>
+  </div></section>
+
+  <!-- comprar lo que falta: bloque propio, con otro fondo y separación clara -->
+  <section class="sec sec--paper" id="comprar"><div class="wrap">
+    <div class="buyblock">
+      <div class="buyblock__hd">
+        <div><span class="kicker kicker--sage">Lo que necesitas para repetirla</span><h2 class="d d-3">Comprar lo que falta</h2></div>
+        <div class="row row--wrap"><a class="btn btn--pink btn--lg" href="productos.html">Ir a la tienda</a>
+        <span class="note">Kit completo 79,95&nbsp;€ · 6 piezas · 30 días para devolverlo usado</span></div>
+      </div>
+      <div class="pgrid" id="grid-picks"></div>
+    </div>
+  </div></section>
+
+  <!-- imán de leads -->
+  <section class="sec sec--mint" id="guia"><div class="wrap">
+    <div class="lead" data-lead="inline"></div>
+  </div></section>
+
+  <div data-join></div>
 </main>
-<script src="assets/js/data.js"></script>
-<script src="assets/js/app.js"></script>
 </body>
 </html>

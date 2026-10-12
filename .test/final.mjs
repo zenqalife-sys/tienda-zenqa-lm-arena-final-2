@@ -1,19 +1,19 @@
-/* Enlazado completo: recorre las 8 páginas y comprueba que TODO lo local resuelve.
+/* Enlazado completo: recorre las 5 páginas de la v4 (+legal y las 4 redirecciones) y comprueba que TODO lo local resuelve.
    ids dinámicos (productos, categorías, recetas, legal) se validan contra data.js. */
 import fs from "fs";
 import path from "path";
 import vm from "node:vm";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const PAGES = ["index.html", "tienda.html", "ritual.html", "recetas.html", "nosotros.html", "contacto.html", "legal.html", "prepararlo.html"];
+const PAGES = ["index.html", "matcha.html", "productos.html", "recetas.html", "nosotros.html", "legal.html", "tienda.html", "ritual.html", "contacto.html", "prepararlo.html"];
 const sb = { window: {} }; vm.createContext(sb);
 vm.runInContext(fs.readFileSync(path.join(ROOT, "assets/js/data.js"), "utf8"), sb);
 const { products, categories, recipes } = sb.window.ZENQA;
-if (!products || products.length !== 16) { console.log("FAIL: data.js no expone 16 productos"); process.exit(1); }
+if (!products || products.length !== 19) { console.log("FAIL: data.js no expone los 19 productos de la v4"); process.exit(1); }
 
 const dynIds = new Set([
   ...products.map((p) => p.id), ...categories.map((c) => c.id), ...recipes.map((r) => r.id),
-  "MainContent", "menu", "cart", "search", "leadModal", "qv", "toast", "grid", "grid-home", "grid-nos", "grid-reviews", "grid-recipes", "grid-r", "recipeDetail", "faqList", "count", "count-r", "sort", "leadHome",
+  "menu", "cart", "search", "qv", "lead", "recipe", "toast", "unete", "top", "ways", "groups", "grid-tri", "grid-tes", "grid-picks", "grid-reviews", "grid-recipes", "grid-recipes-all", "quality", "grades", "ritual4", "energy", "vsTable", "opiniones",
 ]);
 
 let bad = 0, checked = 0;
