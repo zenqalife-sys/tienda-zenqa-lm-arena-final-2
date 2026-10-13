@@ -25,7 +25,7 @@
   "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-ES": {
     "status": 200,
     "type": "application/javascript; charset=utf-8",
-    "bytes": 10848,
+    "bytes": 12854,
     "err": "",
     "kind": "enlace",
     "where": [
@@ -46,7 +46,7 @@
     "type": "text/javascript",
     "bytes": 13938,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "home",
       "tienda",
@@ -138,7 +138,7 @@
     "type": "text/css",
     "bytes": 57886,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "home",
       "tienda",
@@ -161,7 +161,7 @@
     "type": "text/javascript",
     "bytes": 49517,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "home",
       "tienda",
@@ -184,7 +184,7 @@
     "type": "text/javascript",
     "bytes": 34478,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "home",
       "tienda",
@@ -240,7 +240,7 @@
     "type": "image/jpeg",
     "bytes": 350999,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "home",
       "matcha"
@@ -249,7 +249,7 @@
   "https://zenqalife.roadshop.online/pages/te-matcha": {
     "status": 200,
     "type": "text/html; charset=utf-8",
-    "bytes": 48884,
+    "bytes": 47701,
     "err": "",
     "kind": "enlace",
     "where": [
@@ -299,7 +299,7 @@
     "type": "image/jpeg",
     "bytes": 244026,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "home",
       "nosotros"
@@ -310,7 +310,7 @@
     "type": "image/jpeg",
     "bytes": 76258,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "recetas"
     ]
@@ -328,7 +328,7 @@
   "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-US": {
     "status": 200,
     "type": "application/javascript; charset=utf-8",
-    "bytes": 10848,
+    "bytes": 12854,
     "err": "",
     "kind": "enlace",
     "where": [
@@ -343,7 +343,7 @@
     "type": "text/css",
     "bytes": 386872,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -399,7 +399,7 @@
     "type": "image/jpeg",
     "bytes": 134693,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -413,7 +413,7 @@
     "type": "image/jpeg",
     "bytes": 144796,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -427,7 +427,7 @@
     "type": "image/jpeg",
     "bytes": 124777,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -441,7 +441,7 @@
     "type": "image/jpeg",
     "bytes": 118128,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -455,7 +455,7 @@
     "type": "image/jpeg",
     "bytes": 134262,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -469,7 +469,7 @@
     "type": "image/jpeg",
     "bytes": 160036,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -483,7 +483,7 @@
     "type": "image/jpeg",
     "bytes": 135348,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -497,7 +497,7 @@
     "type": "image/jpeg",
     "bytes": 137489,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -511,7 +511,7 @@
     "type": "image/jpeg",
     "bytes": 174245,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -525,7 +525,7 @@
     "type": "image/jpeg",
     "bytes": 140809,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -539,7 +539,7 @@
     "type": "image/jpeg",
     "bytes": 139449,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -553,7 +553,7 @@
     "type": "image/jpeg",
     "bytes": 124012,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -567,7 +567,7 @@
     "type": "image/jpeg",
     "bytes": 132219,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -595,7 +595,7 @@
     "type": "image/jpeg",
     "bytes": 212088,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -610,7 +610,7 @@
     "type": "image/jpeg",
     "bytes": 118766,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -625,7 +625,7 @@
     "type": "image/jpeg",
     "bytes": 202341,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -654,7 +654,7 @@
     "type": "image/jpeg",
     "bytes": 191205,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -669,7 +669,7 @@
     "type": "image/jpeg",
     "bytes": 167427,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -684,7 +684,7 @@
     "type": "image/jpeg",
     "bytes": 156924,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -699,7 +699,7 @@
     "type": "image/jpeg",
     "bytes": 292129,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -714,7 +714,7 @@
     "type": "image/jpeg",
     "bytes": 255858,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -729,7 +729,7 @@
     "type": "image/jpeg",
     "bytes": 267414,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -744,7 +744,7 @@
     "type": "image/jpeg",
     "bytes": 240738,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -759,7 +759,7 @@
     "type": "image/jpeg",
     "bytes": 241819,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -789,7 +789,7 @@
     "type": "image/jpeg",
     "bytes": 234570,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -804,7 +804,7 @@
     "type": "image/jpeg",
     "bytes": 215720,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -819,7 +819,7 @@
     "type": "image/jpeg",
     "bytes": 170309,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -834,7 +834,7 @@
     "type": "image/jpeg",
     "bytes": 215812,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -849,7 +849,7 @@
     "type": "image/jpeg",
     "bytes": 196106,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -864,7 +864,7 @@
     "type": "image/jpeg",
     "bytes": 146265,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -879,7 +879,7 @@
     "type": "image/jpeg",
     "bytes": 150687,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -894,7 +894,7 @@
     "type": "image/jpeg",
     "bytes": 138958,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -909,7 +909,7 @@
     "type": "image/jpeg",
     "bytes": 124711,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -924,7 +924,7 @@
     "type": "image/jpeg",
     "bytes": 293932,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -939,7 +939,7 @@
     "type": "image/jpeg",
     "bytes": 292974,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -954,7 +954,7 @@
     "type": "image/jpeg",
     "bytes": 285541,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -969,7 +969,7 @@
     "type": "image/jpeg",
     "bytes": 291324,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "receta-usucha",
       "producto-kit",
@@ -992,7 +992,7 @@
   "https://zenqalife.roadshop.online/products/te-matcha-ceremonial-organico446": {
     "status": 200,
     "type": "text/html; charset=utf-8",
-    "bytes": 62748,
+    "bytes": 61565,
     "err": "",
     "kind": "enlace",
     "where": [
@@ -1005,7 +1005,7 @@
     "type": "image/png",
     "bytes": 763462,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "producto-ceremonial"
     ]
@@ -1015,7 +1015,7 @@
     "type": "image/png",
     "bytes": 763462,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "producto-ceremonial"
     ]
@@ -1025,7 +1025,7 @@
     "type": "image/jpeg",
     "bytes": 148062,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "producto-ceremonial"
     ]
@@ -1035,7 +1035,7 @@
     "type": "image/jpeg",
     "bytes": 438883,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "producto-ceremonial"
     ]
@@ -1065,7 +1065,7 @@
     "type": "image/jpeg",
     "bytes": 234570,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "producto-sudadera"
     ]
@@ -1075,7 +1075,7 @@
     "type": "image/jpeg",
     "bytes": 234570,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "producto-sudadera"
     ]
@@ -1085,7 +1085,7 @@
     "type": "image/jpeg",
     "bytes": 215720,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "producto-sudadera"
     ]
@@ -1095,7 +1095,7 @@
     "type": "image/jpeg",
     "bytes": 170309,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "producto-sudadera"
     ]
@@ -1105,7 +1105,7 @@
     "type": "image/jpeg",
     "bytes": 215812,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "producto-sudadera"
     ]
@@ -1115,7 +1115,7 @@
     "type": "image/jpeg",
     "bytes": 196106,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "producto-sudadera"
     ]
@@ -1145,7 +1145,7 @@
     "type": "text/javascript",
     "bytes": 583,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all"
     ]
@@ -1155,7 +1155,7 @@
     "type": "text/javascript",
     "bytes": 1385,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1166,7 +1166,7 @@
     "type": "text/javascript",
     "bytes": 18072,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1177,7 +1177,7 @@
     "type": "text/javascript",
     "bytes": 5199,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1188,7 +1188,7 @@
     "type": "text/css",
     "bytes": 1132,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1209,7 +1209,7 @@
     "type": "image/jpeg",
     "bytes": 133531,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1220,7 +1220,7 @@
     "type": "image/jpeg",
     "bytes": 90382,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1231,7 +1231,7 @@
     "type": "image/jpeg",
     "bytes": 88271,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1242,7 +1242,7 @@
     "type": "image/jpeg",
     "bytes": 103181,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1253,7 +1253,7 @@
     "type": "image/jpeg",
     "bytes": 123708,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1264,7 +1264,7 @@
     "type": "image/jpeg",
     "bytes": 145219,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1275,7 +1275,7 @@
     "type": "image/png",
     "bytes": 763462,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1286,7 +1286,7 @@
     "type": "image/jpeg",
     "bytes": 148062,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1297,7 +1297,7 @@
     "type": "image/jpeg",
     "bytes": 438883,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1306,7 +1306,7 @@
   "https://zenqalife.roadshop.online/products/te-matcha-culinario-organico447": {
     "status": 200,
     "type": "text/html; charset=utf-8",
-    "bytes": 62725,
+    "bytes": 61542,
     "err": "",
     "kind": "enlace",
     "where": [
@@ -1318,7 +1318,7 @@
     "type": "image/png",
     "bytes": 750326,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1329,7 +1329,7 @@
     "type": "image/jpeg",
     "bytes": 438883,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1340,7 +1340,7 @@
     "type": "image/jpeg",
     "bytes": 148062,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all",
       "buscador"
@@ -1361,7 +1361,7 @@
     "type": "image/jpeg",
     "bytes": 91955,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all"
     ]
@@ -1371,7 +1371,7 @@
     "type": "image/jpeg",
     "bytes": 196758,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all"
     ]
@@ -1381,7 +1381,7 @@
     "type": "image/jpeg",
     "bytes": 77221,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all"
     ]
@@ -1391,7 +1391,7 @@
     "type": "image/jpeg",
     "bytes": 79437,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all"
     ]
@@ -1401,7 +1401,7 @@
     "type": "image/jpeg",
     "bytes": 132949,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "coleccion-all"
     ]
@@ -1421,7 +1421,7 @@
     "type": "text/javascript",
     "bytes": 783,
     "err": "",
-    "kind": "enlace",
+    "kind": "recurso",
     "where": [
       "buscador"
     ]

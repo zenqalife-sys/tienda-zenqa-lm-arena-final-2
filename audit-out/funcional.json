@@ -1,296 +1,2291 @@
 {
-  "anadir-portada": {
-    "ok": false,
-    "why": "",
-    "before": {
-      "items": 0,
-      "total": 0
-    },
-    "after": {
-      "err": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-    },
-    "click": {
+  "1-anadir-producto-real-tote": {
+    "ok": true,
+    "antes": "0",
+    "btn": {
       "ok": true,
-      "tag": "BUTTON",
-      "cls": "btn btn--pink",
-      "href": null,
-      "text": "añadir al carrito"
+      "id": "tote",
+      "texto": "AÑADIR"
     },
-    "drawer": null,
-    "calls": [
-      {
-        "url": "https://zenqalife.roadshop.online/cart.js",
-        "status": 200,
-        "body": "{\"token\":\"d086b9c5d06f5436985afbdbc6b39af4\",\"note\":null,\"attributes\":{},\"original_total_price\":0,\"total_price\":0,\"total_discount\":0,\"total_weight\":0.0,\"item_count\":0,\"items\":[],\"requires_shipping\":false,\"currency\":\"EUR\",\"items_subtotal_price\":0,\"cart_level_discount_applications\":[],\"discount_codes\":[]}"
-      },
-      {
-        "url": "https://zenqalife.roadshop.online/cart/add",
-        "status": 422,
-        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>El artículo &#39;Té Matcha Orgánico PREMIUM Grado CEREMONIAL&#39; ya está agotado.</title>\n  <meta name=\"referrer\" content=\"never\" />\n  <style type=\"text/css\">\n\n    * { border:0; margin:0; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }\n    html,body { height:100%; border:0; mar"
-      },
-      {
-        "url": "https://zenqalife.roadshop.online/cart.js",
-        "status": 429,
-        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
-      },
-      {
-        "url": "https://zenqalife.roadshop.online/cart/add",
-        "status": 429,
-        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
-      },
-      {
-        "url": "https://zenqalife.roadshop.online/cart.js",
-        "status": 429,
-        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
-      },
-      {
-        "url": "https://zenqalife.roadshop.online/cart.js",
-        "status": 429,
-        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
-      }
-    ],
-    "alerts": [
-      "El artículo 'Té Matcha Orgánico PREMIUM Grado CEREMONIAL' ya está agotado.: El artículo 'Té Matcha Orgánico PREMIUM Grado CEREMONIAL' ya está agotado."
-    ]
-  },
-  "persistencia-carrito": {
-    "ok": false,
-    "items": -1
-  },
-  "sumar-unidad": {
-    "ok": false,
-    "click": {
-      "ok": false,
-      "why": "no encontrado: +",
-      "n": 0
-    },
-    "afterPlus": {
-      "err": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-    },
-    "calls": [
-      {
-        "url": "https://zenqalife.roadshop.online/cart.js",
-        "status": 429,
-        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
-      },
-      {
-        "url": "https://zenqalife.roadshop.online/cart/add",
-        "status": 429,
-        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
-      },
-      {
-        "url": "https://zenqalife.roadshop.online/cart.js",
-        "status": 429,
-        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
-      }
-    ]
-  },
-  "envio-gratis-texto": {
-    "matches": []
-  },
-  "ficha-rapida": {
-    "ok": false,
-    "why": "no se abrió ninguna capa",
-    "before": {
-      "dialogs": 0
-    },
-    "click": {
-      "ok": false,
-      "why": "no encontrado: ver ficha",
-      "n": 0
-    },
-    "layer": null,
-    "esc": true,
-    "closed": true
-  },
-  "buscador": {
-    "ok": false,
-    "why": "no hay campo de búsqueda visible",
-    "opened": {
-      "ok": false,
-      "why": "no encontrado: buscar",
-      "n": 0
-    },
-    "typed": {
-      "ok": false
-    },
-    "results": []
-  },
-  "guia-lead": {
-    "ok": false,
-    "why": "no encontré el botón de descarga",
-    "filled": {
-      "ok": false
-    },
-    "submitted": {
-      "ok": false,
-      "why": "no encontrado: descargar la guía",
-      "n": 0
-    },
-    "after": {
-      "links": [],
-      "msg": [],
-      "stored": [
-        [
-          "signInWithShop:cartSyncTransferAttemptedAt",
-          "1791909997910"
-        ]
-      ]
-    },
-    "posts": [
-      {
-        "url": "https://zenqalife.roadshop.online/cdn-cgi/challenge-platform/h/g/fo/2575135020:1791908127:ClcU1XjQOyXAbAajjxl3LpGUvWmprmXOQuT9ifUjLpk/a49fd5b44a0d8627/sczbbhhE8",
-        "data": "jdjvU0GkqcYMvrluGXME98ccRsELHQ9xBH9w0Xwl-uXRFfCC04-DPg4jicAP+omCLJtTZl1eEH6oJQ6YpG9TDzjPrMqHknD6d6OLDj5HMRsf6K-Tv7zD6MhQOz6bMudd7mn9-6b0QWM0sdhdCrkOsoVm6tGFBN0wrX6RNfw-VLfU3MGBQBPo4QImLRFwfUNpOwmcNB+lM5juzWuJTOGoFQbw2M6NEI+Oow7-JQwU4MU-Oqclr9zZvsO0VVttiQ3A-2O9oo5OsXfqTrXuIRRuqhGovwtnWo3fQ-mqY$dhVnfG"
-      },
-      {
-        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5b5f8f4b625/pDbn2L1NK_",
-        "data": "BmGZMZwIgIBdpi+JUgEHdEA0xXuOUDcOhZbdFW6j55Vql7cec4ulHFUMB3OoxvDL84MJ6Yg9NxcUgHF7KkOze0VMiE+SZwonvPgEJAOs7uSZZyNCUk6srLCS5-8nYb-DM+9wuziegFzuw4D3tcdzA51FzGeUB2QvjSLLWtLeSJMvRgmHufYoN7S86uu9V77xMtWI4-FVYjBGEZlnwdHh2UVm$viJewO41I8xoMM-osGidNwjBPOt09AV4dQRQpOLH-KPp89Z-MuxSwlYxfKYDdge30sdaibbwGnf8j$UXcvz"
-      },
-      {
-        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5b5f8f4b625/pDbn2L1NK_",
-        "data": "BmGZMZwIgIBdpi+JUgEHdEA0xXuOUDcOhZbdFW6j55Vql7cec4ulHFUMB3OoxvDL84MJ6Yg9NxcUgHF7KkOze0VMiE+SZwonvPgEJAOs7uSZZyNCUk6srLCS5-8nYb-DM+9wuziegFzuw4D3tcdzA51FzGeUB2QvjSLLWtLeSJMV09+BwKpOK3bJIMr8ZzvAMzMzuJig7Spjb8KVjDRzr0UknUZ1a+A7N$tOnQWfNGKZELhLmwH7DvsvUNljS5OgtfmKaSVvbczXAu-zGw7f6ibyKIbft1L0a6Y-CLgDKMQI"
-      }
-    ],
-    "pdf": null
-  },
-  "newsletter-pie": {
-    "ok": false,
-    "why": "sin formulario de newsletter en el pie",
-    "nl": {
-      "ok": false
-    },
-    "nlAfter": {
-      "msg": [],
-      "stored": [
-        "signInWithShop:cartSyncTransferAttemptedAt"
-      ]
-    },
-    "posts": [
-      {
-        "url": "https://zenqalife.roadshop.online/cdn-cgi/challenge-platform/h/g/fo/2575135020:1791908127:ClcU1XjQOyXAbAajjxl3LpGUvWmprmXOQuT9ifUjLpk/a49fd5b44a0d8627/sczbbhhE8",
-        "data": "jdjvU0GkqcYMvrluGXME98ccRsELHQ9xBH9w0Xwl-uXRFfCC04-DPg4jicAP+omCLJtTZl1eEH6oJQ6YpG9TDzjPrMqHknD6d6OLDj5HMRsf6K-Tv7zD6MhQOz6bMudd7mn9-6b0QWM0sdhdCrkOsoVm6tGFBN0wrX6RNfw-VLfU3MGBQBPo4QImLRFwfUNpOwmcNB+lM5juzWuJTOGoFQbw2M6NEI+Oow7-JQwU4MU-Oqclr9zZvsO0VVttiQ3A-2O9oo5OsXfqTrXuIRRuqhGovwtnWo3fQ-mqY$dhVnfG"
-      },
-      {
-        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5b5f8f4b625/pDbn2L1NK_",
-        "data": "BmGZMZwIgIBdpi+JUgEHdEA0xXuOUDcOhZbdFW6j55Vql7cec4ulHFUMB3OoxvDL84MJ6Yg9NxcUgHF7KkOze0VMiE+SZwonvPgEJAOs7uSZZyNCUk6srLCS5-8nYb-DM+9wuziegFzuw4D3tcdzA51FzGeUB2QvjSLLWtLeSJMvRgmHufYoN7S86uu9V77xMtWI4-FVYjBGEZlnwdHh2UVm$viJewO41I8xoMM-osGidNwjBPOt09AV4dQRQpOLH-KPp89Z-MuxSwlYxfKYDdge30sdaibbwGnf8j$UXcvz"
-      },
-      {
-        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5b5f8f4b625/pDbn2L1NK_",
-        "data": "BmGZMZwIgIBdpi+JUgEHdEA0xXuOUDcOhZbdFW6j55Vql7cec4ulHFUMB3OoxvDL84MJ6Yg9NxcUgHF7KkOze0VMiE+SZwonvPgEJAOs7uSZZyNCUk6srLCS5-8nYb-DM+9wuziegFzuw4D3tcdzA51FzGeUB2QvjSLLWtLeSJMV09+BwKpOK3bJIMr8ZzvAMzMzuJig7Spjb8KVjDRzr0UknUZ1a+A7N$tOnQWfNGKZELhLmwH7DvsvUNljS5OgtfmKaSVvbczXAu-zGw7f6ibyKIbft1L0a6Y-CLgDKMQI"
-      }
-    ]
-  },
-  "contacto": {
-    "ok": false,
-    "why": "no encontré el botón de enviar",
-    "filled": {
-      "email": false,
-      "name": false,
-      "msg": false,
-      "sel": 0,
-      "checked": null,
-      "forms": []
-    },
-    "sent": {
-      "ok": false,
-      "why": "no encontrado: enviar mensaje",
-      "n": 0
-    },
-    "after": {
-      "msg": [],
-      "url": "https://zenqalife.roadshop.online/pages/el-ritual#contacto"
-    },
-    "posts": [
-      {
-        "url": "https://zenqalife.roadshop.online/cdn-cgi/challenge-platform/h/g/fo/2575135020:1791908127:ClcU1XjQOyXAbAajjxl3LpGUvWmprmXOQuT9ifUjLpk/a49fd5ec98d58627/LoeyiEbBX",
-        "data": "G2nGPwnevZFGc+fgQMi8GCLPePeTB-BUUMXtt3XUB0iFlwehmRDRUc9mTjNpfoWmFMonEBZ9iBYOg8IFqqj4aPVK+PTXjXim3mitFtIoxGnZ7qSR6Vvb4eeVa5UHMFvkINiu5NxIE72d1tLAJDIxRaPAEVPngpbhbR92Q8t43uwFu9vnDSq9jBs2JWW1bNftunEOuKOF2HiilQL96crkiPJHoMg4RBsHxvmp90O$t6lW9qhi+6mRouY$EK1hBhx+BMYCDBTwqmwNp5p3u36xdI65ZoNc3SdffAeIobrJdHXWhKoxLiAiUqDhpVIA1SFwuGJIet8a$um9jGBUT2QCwNV9dTJVERmvlx0KOgFgjzmr91JLhLIg8x+TwJRvfuE359n$NkqGevtMg+JX"
-      },
-      {
-        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5ee3a93b625/6Ulo1xsYmK",
-        "data": "1rp-WwkLtdh5n373EHBQznCfMCKHUZ86EE4UNiCAqnrOmvG3bfXsYDy9mYQpdEytLPVixUFX2d3-PWn9GP6JxYbFEbVibg4y2AcQzqD576xHsirMRGsGWm7WSjq9vodt25kBccobj81K$NveShMc+PP$o542d6+n1j0ULpXuQ6$xsbw9ONO3oO39lYlXMwVvWLgxeDq5+dslKKiUEplvyKXV2SJ08UMaqaj5ZOAQHxcJZ7MWzXnjvIMvq9EWg2kNguNkubku9QRG9cpCz+0SEkNtI2EZ39nbg7BkxInXGls5S5IeDkLtyUt5VdWu2enJslWS9-I9b4Z-Br6evgUxYozRbg$fQCwav5Dvfk7xk8Pmyp+iqI8ruUc0+iBFUBAVqXGSOIGK-VyxtEYz"
-      },
-      {
-        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5ee3a93b625/6Ulo1xsYmK",
-        "data": "1rp-WwkLtdh5n373EHBQznCfMCKHUZ86EE4UNiCAqnrOmvG3bfXsYDy9mYQpdEytLPVixUFX2d3-PWn9GP6JxYbFEbVibg4y2AcQzqD576xHsirMRGsGWm7WSjq9vodt25kBccobj81K$NveShMc+PP$o542d6+n1j0ULpXuQ6$pwaAMzObCvw5FWHA$ztVDskmk$pAPKdYKD$QIHAf5k5rtiwu9PWGwkO2BY2ojBGXB4umnhtEnEtN-5RL$grQGvzVcd09AMXDMUgq9mf6Dl8O+t+ho4WYzpO3H+oGyrqeO8IKZQUYJp+2CxtHf86Zgj7DZLO3d5cXDNEPSP8O$2edz74OP0xhFs5tyLowKu3voFUS3Ds4-P-hASUHbKzGdGLfamb0EVcmaOVso"
-      }
-    ]
-  },
-  "carrito-checkout": {
-    "ok": false,
-    "cart": {
-      "text": "Your connection needs to be verified before you can proceed",
-      "empty": false,
-      "items": 0,
-      "qtyInputs": 0
-    },
-    "click": {
-      "ok": false,
-      "why": "no encontrado: finalizar compra",
-      "n": 0
-    },
-    "coInfo": {
+    "despues": {
       "url": "https://zenqalife.roadshop.online/cart",
-      "title": "Un momento…",
-      "text": "Your connection needs to be verified before you can proceed"
+      "title": "Tu carrito",
+      "texto": "ENVÍOS GRATIS A PARTIR DE 35 € DESCARGA NUESTRA GUÍA GRATIS ÚNETE A ZENQA LIFE ZENQA LIFE TU MOMENTO MATCHA Tu carrito Revisa tu selección y prepara tu próximo ritual Zenqa Life. T-SHIRT Eco Tote Bag €19,90 Eliminar CANTIDAD Actualizar carrito RESUMEN Total estimado €19,90 Envío gratis a partir de 35 €. Te faltan €15,10. Pasar al checkout Seguir comprando TE MATCHA VIBES ZENQA LIFE Matcha ceremonial de Uji para quien quiere concentrarse sin ponérselo difícil al corazón. INSTAGRAM TIKTOK YOUTUBE PINTEREST VISA MASTERCARD BIZUM PAYPAL APPLE PAY KLARNA TIENDA Matcha Productos Recetas y guías Nosotros AYUDA Contacto Cómo prepararlo Envíos y devoluciones Opiniones © 2026 Zenqa Life · tienda de de",
+      "badge": "0",
+      "cartJs": {
+        "items": 1,
+        "total": 19.9,
+        "lineas": [
+          "Eco Tote Bag · 1 × 19.9 €"
+        ]
+      }
     },
-    "calls": [
+    "posts": [
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://zenqalife.roadshop.online/api/collect",
+      "https://monorail-edge.shopifysvc.com/v1/produce",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "https://zenqalife.roadshop.online/cart/add",
+      "https://monorail-edge.shopifysvc.com/v1/produce",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://zenqalife.roadshop.online/api/collect",
+      "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "https://zenqalife.roadshop.online/.well-known/shopify/fec/produce",
+      "https://otlp-http-production.shopifysvc.com/v1/metrics"
+    ],
+    "llamadas": [
+      {
+        "url": "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-ES",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/polyfills.DsjDEvpF.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/app.DvebNZUS.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.Bn2XBZD_.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.B3Or15Cg.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/4b4bc88f.xFeORAnM.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2495faa4.CDCruv3K.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cf29e63b.BoX1An_4.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9dba8418.DoyQj_XX.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cb38e5c2.C0fCfmHx.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2255f8fa.-u4XU6ye.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d25d1b95.CjtmH3XH.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f67abd2c.CWnzIcYE.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b8733b27.DUXk-_91.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e39bc11c.XtswV7aF.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/08a3b809.CtDR94Sf.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.BVv2APid.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/69fae6d4.BnPRa7Y2.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e12db40c.BdycI1kX.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/60a453ce.CP978BaO.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.ByEQunzi.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.Cr01JUEX.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dffdfb34.DYkVJAGs.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/3ca8ef7e.BRyq1gpL.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1f5e7811.g0NWtnt4.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1d34c07e.h4dJAaCz.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2fdb3dd3.D-nO7o9P.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/22345fd4.1wX-o1AR.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0e67bd3b.jO6Rt1DS.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/74835653.DnzKNB6Y.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a9fa9fda.BAeZjzDC.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ca3e798e.CzzLpqae.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/47b970b2.2UVOQoR_.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/064f6ac1.DW1tjG40.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/efa0389a.YXx0uq_V.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/4b1c22b7.BjF0AS4R.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/17425706.BRwOpTxF.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cb5cf153.CUaRvVUf.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e3e348f2.AJxL5r1k.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/71ae3d5c.BtTy-RNc.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/78ab3dd0.BH-aWN50.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/89e2d30a.C5b5F0vy.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ed9f2238.DntZbiJr.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6fb6f9d8.DQDZysST.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1444e6bd.J590fSWt.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0b8657b8.b1_Vm9MW.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a422df8c.DC49H8DA.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/55098bf1.YprcRZKT.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f49d4216.CFtMKn_S.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d22d2b80.Ddql8ZCZ.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f58f39d8.CgXUh05e.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e03065ab.CTdRaWnX.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/79974aab.BgwIKdvK.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7b0c98ea.BgeratRS.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0e9ee714.DiHW2YFO.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/39921a74.DrgWGa-n.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7a8217fd.DNXkECZz.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/8599b02a.DGVedcdI.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ccdf3592.CoFDC5SS.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/71b60e0a.DfPLdYsH.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/24773686.ZbU_bKS1.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ec391382.eramAUj3.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6bfea526.CIVR0ifo.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ac5a19ff.D80mktE3.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/598fef4e.CUL4oBOF.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e77f7fe0.CMKiVZlj.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cc6ff67d.boAGeP7h.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/bf513f9c.CI-aBM73.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dfca5da5.B6WYFuK8.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dae24aab.Bjd8H2hA.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a25deb9a.B6XWf2y6.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/01973ac7.pE3qkHKh.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/58314944.BLFwoWyN.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/945a08d6.DI3T_eSW.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7bc8057b.Dje3Vmww.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f1968089.BrnZjzNz.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2b89a178.8790URVz.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b684bff6.BKguz6RC.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/910cd6e2.C8s0NJwk.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/347b440c.BCI4W4Mq.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9ce08e25.QjhMHs0Z.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/181d38d3.CRIq7Rw8.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/792bb671.B3OvVnSg.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.DdCQei8N.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f51e663e.l_PKpLEH.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/21cc90a2.DHzOO82q.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/64de7b49.B1Cjhvbw.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.CkIPdsHE.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/90e26f5f.Ct143nQG.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/31cc568e.95lmLO5k.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/65f3d4da.Bb3QiqCm.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ca5e9c49.C3t2BZNP.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f3e117aa.DcRz-A-H.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.CEsB0ngb.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b3389d5c.ChyU8eM0.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.pFeKZVey.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/25604ae0.56pfEpxV.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dada7e07.BDOQpVkJ.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/81e109b1.DOkM2TK2.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.DPBBHNna.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f692f62f.3EfggsCB.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9babe369.VqWZm-jr.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/434e3b0a.oup8Ur0H.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e0989459.CDwVvDXi.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cdfd59e6.ChHWCT1Z.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/fc21c11a.B3Dq6pEx.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e129c76e.CSXGaESr.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d4ea2faa.DbQd7li-.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/fe885b80.8rG3C6XN.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f78726c8.CTEjjlsu.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e477f96c.CEyIi4pG.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1ed8f5e3.zSlAOOl_.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7ee73f43.BhfPZYnP.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0c0ad074.BaHmCzAr.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/87bfafec.CxwEzGHg.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/051149c8.lHD9iIAq.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d2e6a587.CAZneIbj.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/c10167e6.DMzHJAfh.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b9c0319a.DM0_FhDt.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/17e57de1.AqQHEhs_.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/app.CcGlIMpn.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/wallet-prefilled-guest-return.BJvF0-q4.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.Lwx3mCeL.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/OnePage.C_uC3EPz.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/VatNumberValidationField.CCUOu22N.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/StickyPayButton.D-gNjNDa.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Tipping.BcTJoNaV.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Section.CU18S7Ap.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentLine.DT05kVlY.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentIcon.gzvCNwz_.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayProgressIntercepts.CIy8uDiZ.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Choice.CrYuHUmO.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/constants.xO_7ctnq.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/BillingAddressForm.BdwN7V1K.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayLogo.87JMHPUK.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Switch.BS8yVgoP.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/EmptyState.BEvzDDvy.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PhoneField.uZEuHncj.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Middot.D7Ujmshx.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethods.DU0m5rdF.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/EstimatedDeliveryContent.B_THySFF.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ExpressCheckoutButton.BnDF3H7t.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/TransitionHeight.CuRoM9zv.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/BelowTheFoldContent.DF_4CoKM.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/RememberMeSection.JBO5WNhc.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PayButtonSection.CZuxzxFG.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.DjDhVpQB.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/hooks.CKE1iCma.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.C0BOgdmL.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Popover.Bi1nHaU-.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/floating-layer.DfWUBaTh.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayButtonClassName.D-F4uQ9M.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethodSelector.B0hio2RO.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/SubscriptionPriceBreakdown.vTcdVGq4.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/RedirectionNotice.DgiInWJ-.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cart/add",
+        "status": 302
+      },
       {
         "url": "https://zenqalife.roadshop.online/cart",
-        "status": 429
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/web-pixels@e990e96fw5665eac5pbd6f5b22m75757206/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/cart",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-ES",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/polyfills.DsjDEvpF.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/app.DvebNZUS.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.Bn2XBZD_.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.B3Or15Cg.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/4b4bc88f.xFeORAnM.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2495faa4.CDCruv3K.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cf29e63b.BoX1An_4.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9dba8418.DoyQj_XX.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cb38e5c2.C0fCfmHx.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2255f8fa.-u4XU6ye.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d25d1b95.CjtmH3XH.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f67abd2c.CWnzIcYE.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b8733b27.DUXk-_91.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e39bc11c.XtswV7aF.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/08a3b809.CtDR94Sf.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.BVv2APid.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/69fae6d4.BnPRa7Y2.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e12db40c.BdycI1kX.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/60a453ce.CP978BaO.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.ByEQunzi.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.Cr01JUEX.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dffdfb34.DYkVJAGs.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/3ca8ef7e.BRyq1gpL.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1f5e7811.g0NWtnt4.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1d34c07e.h4dJAaCz.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2fdb3dd3.D-nO7o9P.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/22345fd4.1wX-o1AR.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0e67bd3b.jO6Rt1DS.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/74835653.DnzKNB6Y.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a9fa9fda.BAeZjzDC.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ca3e798e.CzzLpqae.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/47b970b2.2UVOQoR_.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/064f6ac1.DW1tjG40.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/efa0389a.YXx0uq_V.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/4b1c22b7.BjF0AS4R.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/17425706.BRwOpTxF.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cb5cf153.CUaRvVUf.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e3e348f2.AJxL5r1k.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/71ae3d5c.BtTy-RNc.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/78ab3dd0.BH-aWN50.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/89e2d30a.C5b5F0vy.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ed9f2238.DntZbiJr.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6fb6f9d8.DQDZysST.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1444e6bd.J590fSWt.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0b8657b8.b1_Vm9MW.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a422df8c.DC49H8DA.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/55098bf1.YprcRZKT.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f49d4216.CFtMKn_S.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d22d2b80.Ddql8ZCZ.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f58f39d8.CgXUh05e.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e03065ab.CTdRaWnX.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/79974aab.BgwIKdvK.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7b0c98ea.BgeratRS.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0e9ee714.DiHW2YFO.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/39921a74.DrgWGa-n.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7a8217fd.DNXkECZz.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/8599b02a.DGVedcdI.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ccdf3592.CoFDC5SS.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/71b60e0a.DfPLdYsH.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/24773686.ZbU_bKS1.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ec391382.eramAUj3.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6bfea526.CIVR0ifo.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ac5a19ff.D80mktE3.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/598fef4e.CUL4oBOF.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e77f7fe0.CMKiVZlj.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cc6ff67d.boAGeP7h.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/bf513f9c.CI-aBM73.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dfca5da5.B6WYFuK8.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dae24aab.Bjd8H2hA.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a25deb9a.B6XWf2y6.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/01973ac7.pE3qkHKh.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/58314944.BLFwoWyN.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/945a08d6.DI3T_eSW.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7bc8057b.Dje3Vmww.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f1968089.BrnZjzNz.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2b89a178.8790URVz.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b684bff6.BKguz6RC.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/910cd6e2.C8s0NJwk.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/347b440c.BCI4W4Mq.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9ce08e25.QjhMHs0Z.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/181d38d3.CRIq7Rw8.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/792bb671.B3OvVnSg.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.DdCQei8N.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f51e663e.l_PKpLEH.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/21cc90a2.DHzOO82q.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/64de7b49.B1Cjhvbw.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.CkIPdsHE.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/90e26f5f.Ct143nQG.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/31cc568e.95lmLO5k.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/65f3d4da.Bb3QiqCm.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ca5e9c49.C3t2BZNP.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f3e117aa.DcRz-A-H.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.CEsB0ngb.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b3389d5c.ChyU8eM0.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.pFeKZVey.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/25604ae0.56pfEpxV.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dada7e07.BDOQpVkJ.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/81e109b1.DOkM2TK2.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.DPBBHNna.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f692f62f.3EfggsCB.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9babe369.VqWZm-jr.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/434e3b0a.oup8Ur0H.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e0989459.CDwVvDXi.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cdfd59e6.ChHWCT1Z.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/fc21c11a.B3Dq6pEx.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e129c76e.CSXGaESr.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d4ea2faa.DbQd7li-.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/fe885b80.8rG3C6XN.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f78726c8.CTEjjlsu.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e477f96c.CEyIi4pG.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1ed8f5e3.zSlAOOl_.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7ee73f43.BhfPZYnP.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0c0ad074.BaHmCzAr.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/87bfafec.CxwEzGHg.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/051149c8.lHD9iIAq.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d2e6a587.CAZneIbj.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/c10167e6.DMzHJAfh.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b9c0319a.DM0_FhDt.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/17e57de1.AqQHEhs_.js",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/app.CcGlIMpn.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/wallet-prefilled-guest-return.BJvF0-q4.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.Lwx3mCeL.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/OnePage.C_uC3EPz.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/VatNumberValidationField.CCUOu22N.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/StickyPayButton.D-gNjNDa.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Tipping.BcTJoNaV.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Section.CU18S7Ap.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentLine.DT05kVlY.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentIcon.gzvCNwz_.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayProgressIntercepts.CIy8uDiZ.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Choice.CrYuHUmO.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/constants.xO_7ctnq.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/BillingAddressForm.BdwN7V1K.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayLogo.87JMHPUK.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Switch.BS8yVgoP.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/EmptyState.BEvzDDvy.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PhoneField.uZEuHncj.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Middot.D7Ujmshx.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethods.DU0m5rdF.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/EstimatedDeliveryContent.B_THySFF.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ExpressCheckoutButton.BnDF3H7t.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/TransitionHeight.CuRoM9zv.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/BelowTheFoldContent.DF_4CoKM.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/RememberMeSection.JBO5WNhc.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PayButtonSection.CZuxzxFG.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.DjDhVpQB.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/hooks.CKE1iCma.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.C0BOgdmL.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Popover.Bi1nHaU-.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/floating-layer.DfWUBaTh.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayButtonClassName.D-F4uQ9M.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethodSelector.B0hio2RO.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/SubscriptionPriceBreakdown.vTcdVGq4.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/RedirectionNotice.DgiInWJ-.css",
+        "status": 200
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cart.js",
+        "status": 200
       }
     ]
   },
-  "anclas-y-estructura": {
-    "anchorsDOM": [],
-    "structure": {
-      "top": [
-        [
-          "page",
-          1
-        ],
-        [
-          "text-container",
-          1
-        ],
-        [
-          "text-container--main",
-          1
-        ],
-        [
-          "cf-injected-html",
-          1
-        ],
-        [
-          "main-wrapper",
-          1
-        ],
-        [
-          "main-content",
-          1
-        ],
-        [
-          "kXWP4",
-          1
-        ],
-        [
-          "amsb2",
-          1
-        ],
-        [
-          "mSEeZ8",
-          1
-        ]
-      ],
-      "dataAttrs": {
-        "data-i18n": 1
-      },
-      "spots": []
+  "2-anadir-ceremonial-agotado": {
+    "ok": false,
+    "why": "acaba en la página de error de Shopify («ya está agotado»)",
+    "click": {
+      "ok": true,
+      "texto": "AÑADIR AL CARRITO"
     },
-    "jumped": {
-      "before": 0,
-      "after": 0,
-      "targetTop": null,
-      "headerH": 0
+    "despues": {
+      "url": "https://zenqalife.roadshop.online/cart/add",
+      "title": "El artículo 'Té Matcha Orgánico PREMIUM Grado CEREMONIAL' ya está agotado.",
+      "texto": "Algo ha salido mal. ¿Qué ha pasado? El artículo 'Té Matcha Orgánico PREMIUM Grado CEREMONIAL' ya está agotado.: El artículo 'Té Matcha Orgánico PREMIUM Grado CEREMONIAL' ya está agotado. ¿Qué puedo hacer? Vuelve a la página anterior. ID de la solicitud: fecd4ec9-e8e5-443f-9f34-f8657800a03a-1791910607"
+    },
+    "llamadas": [
+      "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-ES → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/polyfills.DsjDEvpF.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/app.Gtg7oVpm.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.Bn2XBZD_.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.B6ZZkOu1.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/4b4bc88f.BOngYSUV.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2495faa4.DVQ5951v.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cf29e63b.BI-HAv8E.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9dba8418.2M58BSp6.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cb38e5c2.DjWU649q.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2255f8fa.CAntJQkD.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d25d1b95.CBsfS-fm.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f67abd2c.OidwWlzG.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b8733b27.HKgcD4tM.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e39bc11c.d4j8xk3V.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/08a3b809.a4Ey5Nw2.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.B_dQDats.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/69fae6d4.wc-fnrvx.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e12db40c.BBX5gvYb.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/60a453ce.CThGNu8l.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.ByEQunzi.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.D_MKrGKe.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dffdfb34.s9CMML77.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/3ca8ef7e.BYzAhHan.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1f5e7811.DR4YlBnf.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1d34c07e.h4dJAaCz.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2fdb3dd3.BEfSgKmh.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/22345fd4.CXyQXp4l.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0e67bd3b.DKVza0Hf.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/74835653.BVfEwjAk.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a9fa9fda.DsLFnROr.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ca3e798e.CzzLpqae.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/47b970b2.B1c4SWWx.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/064f6ac1.CfO4pMhb.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/efa0389a.BUrWyo_Z.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/4b1c22b7.Cf2Xw4GP.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/17425706.CdcPBdIR.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cb5cf153.DUHq8gZr.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e3e348f2.C7H3dAe6.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/71ae3d5c.BZorbz1G.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/78ab3dd0.DtLNHfh1.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/89e2d30a.CjD1DqN2.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ed9f2238.B8OP_j1v.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6fb6f9d8.ClUctDbd.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1444e6bd.J590fSWt.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0b8657b8.CuOEv5bS.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a422df8c.DJuLvB7Z.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/55098bf1.BDPePdl2.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f49d4216.Cvg1lEYo.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d22d2b80.msphd9y5.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f58f39d8.YN-im9Mx.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e03065ab.Cqtd_T4Z.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/79974aab.DHG9gY47.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7b0c98ea.Ccw6XkTW.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0e9ee714.CJJMt3KN.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/39921a74.D4G_E_q2.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7a8217fd.rf_zfl0W.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/8599b02a.DBfW_IeO.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ccdf3592.BhdoUp7I.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/71b60e0a.DfPLdYsH.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/24773686.CFMRE_zp.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ec391382.BneRJKlP.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6bfea526.CQZCGizc.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ac5a19ff.CTxSKvFu.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/598fef4e.Db_JDGAl.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e77f7fe0.Cmf4q9o1.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cc6ff67d.B5fy9peJ.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/bf513f9c.Bhn0H_qV.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dfca5da5.BWFDFxU8.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dae24aab.Bjd8H2hA.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a25deb9a.CaLOOmHq.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/01973ac7.CYlNHzhb.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/58314944.CuQrEK_x.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/945a08d6.Bjf1_yD7.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7bc8057b.IsY76yMA.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f1968089.QSVZRGs7.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2b89a178.BQhT1Pr0.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b684bff6.DLqI_Rqs.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/910cd6e2.CVQhmtCt.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/347b440c.BX5VL7mq.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9ce08e25.DDeMkUIF.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/181d38d3.Bw65vefG.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/792bb671.B3OvVnSg.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.BMNiH-2E.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f51e663e.Cm6V3uJJ.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/21cc90a2.DHzOO82q.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/64de7b49.Ba3y9kB0.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.Ya5SfkKb.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/90e26f5f.C9D3fkB5.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/31cc568e.95lmLO5k.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/65f3d4da.Bb3QiqCm.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ca5e9c49.Dyk3b93D.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f3e117aa.BM_xDXNl.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.Al_1STRv.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b3389d5c.Bw41gqmB.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.BQCvqne6.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/25604ae0.56pfEpxV.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dada7e07.h7hmxPIG.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/81e109b1.DOkM2TK2.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.BYZqBIhC.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f692f62f.CuG6h5OH.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9babe369.VqWZm-jr.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/434e3b0a.oup8Ur0H.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e0989459.CkSA98NP.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cdfd59e6.CPcXHsM4.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/fc21c11a.CktlwtPn.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e129c76e.DwjtCbnV.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d4ea2faa.CHM175uM.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/fe885b80.DZm9qM8s.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f78726c8.CejMS_JJ.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e477f96c.2oDAICUi.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1ed8f5e3.zSlAOOl_.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7ee73f43.44GuOmnb.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0c0ad074.BbIe2r9F.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/87bfafec.CxwEzGHg.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/051149c8.lHD9iIAq.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d2e6a587.BbowiC9r.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/c10167e6.BsiPgVeo.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b9c0319a.-yrOIl7z.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/17e57de1.AqQHEhs_.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/app.CcGlIMpn.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/wallet-prefilled-guest-return.BJvF0-q4. → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.Lwx3mCeL.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/OnePage.C_uC3EPz.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/VatNumberValidationField.CCUOu22N.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/StickyPayButton.D-gNjNDa.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Tipping.BcTJoNaV.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Section.CU18S7Ap.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentLine.DT05kVlY.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentIcon.gzvCNwz_.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayProgressIntercepts.CIy8uDiZ.c → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Choice.CrYuHUmO.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/constants.xO_7ctnq.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/BillingAddressForm.BdwN7V1K.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayLogo.87JMHPUK.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Switch.BS8yVgoP.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/EmptyState.BEvzDDvy.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PhoneField.uZEuHncj.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Middot.D7Ujmshx.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethods.DU0m5rdF.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/EstimatedDeliveryContent.B_THySFF.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ExpressCheckoutButton.BnDF3H7t.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/TransitionHeight.CuRoM9zv.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/BelowTheFoldContent.DF_4CoKM.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/RememberMeSection.JBO5WNhc.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PayButtonSection.CZuxzxFG.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.DjDhVpQB.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/hooks.CKE1iCma.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.C0BOgdmL.c → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Popover.Bi1nHaU-.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/floating-layer.DfWUBaTh.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayButtonClassName.D-F4uQ9M.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethodSelector.B0hio2RO.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/SubscriptionPriceBreakdown.vTcdVGq4.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/RedirectionNotice.DgiInWJ-.css → 200",
+      "https://zenqalife.roadshop.online/cart/add → 422"
+    ]
+  },
+  "3-anadir-kit-inexistente": {
+    "ok": false,
+    "why": "no es una compra real: https://zenqalife.roadshop.online/cart/add",
+    "click": {
+      "ok": true,
+      "texto": "AÑADIR"
+    },
+    "despues": {
+      "url": "https://zenqalife.roadshop.online/cart/add",
+      "title": "Cart Error: Cannot find variant",
+      "texto": "Something went wrong. What happened? Cart Error: Cannot find variant What can I do? Return to the previous page. Request ID: 3effe63a-2e2f-4059-ac6a-e1df1aff102f-1791910615"
+    },
+    "llamadas": [
+      "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-ES → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/polyfills.DsjDEvpF.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/app.DvebNZUS.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.Bn2XBZD_.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.B3Or15Cg.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/4b4bc88f.xFeORAnM.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2495faa4.CDCruv3K.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cf29e63b.BoX1An_4.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9dba8418.DoyQj_XX.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cb38e5c2.C0fCfmHx.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2255f8fa.-u4XU6ye.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d25d1b95.CjtmH3XH.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f67abd2c.CWnzIcYE.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b8733b27.DUXk-_91.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e39bc11c.XtswV7aF.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/08a3b809.CtDR94Sf.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.BVv2APid.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/69fae6d4.BnPRa7Y2.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e12db40c.BdycI1kX.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/60a453ce.CP978BaO.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.ByEQunzi.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.Cr01JUEX.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dffdfb34.DYkVJAGs.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/3ca8ef7e.BRyq1gpL.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1f5e7811.g0NWtnt4.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1d34c07e.h4dJAaCz.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2fdb3dd3.D-nO7o9P.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/22345fd4.1wX-o1AR.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0e67bd3b.jO6Rt1DS.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/74835653.DnzKNB6Y.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a9fa9fda.BAeZjzDC.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ca3e798e.CzzLpqae.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/47b970b2.2UVOQoR_.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/064f6ac1.DW1tjG40.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/efa0389a.YXx0uq_V.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/4b1c22b7.BjF0AS4R.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/17425706.BRwOpTxF.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cb5cf153.CUaRvVUf.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e3e348f2.AJxL5r1k.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/71ae3d5c.BtTy-RNc.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/78ab3dd0.BH-aWN50.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/89e2d30a.C5b5F0vy.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ed9f2238.DntZbiJr.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6fb6f9d8.DQDZysST.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1444e6bd.J590fSWt.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0b8657b8.b1_Vm9MW.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a422df8c.DC49H8DA.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/55098bf1.YprcRZKT.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f49d4216.CFtMKn_S.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d22d2b80.Ddql8ZCZ.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f58f39d8.CgXUh05e.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e03065ab.CTdRaWnX.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/79974aab.BgwIKdvK.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7b0c98ea.BgeratRS.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0e9ee714.DiHW2YFO.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/39921a74.DrgWGa-n.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7a8217fd.DNXkECZz.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/8599b02a.DGVedcdI.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ccdf3592.CoFDC5SS.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/71b60e0a.DfPLdYsH.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/24773686.ZbU_bKS1.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ec391382.eramAUj3.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6bfea526.CIVR0ifo.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ac5a19ff.D80mktE3.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/598fef4e.CUL4oBOF.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e77f7fe0.CMKiVZlj.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cc6ff67d.boAGeP7h.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/bf513f9c.CI-aBM73.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dfca5da5.B6WYFuK8.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dae24aab.Bjd8H2hA.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a25deb9a.B6XWf2y6.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/01973ac7.pE3qkHKh.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/58314944.BLFwoWyN.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/945a08d6.DI3T_eSW.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7bc8057b.Dje3Vmww.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f1968089.BrnZjzNz.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2b89a178.8790URVz.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b684bff6.BKguz6RC.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/910cd6e2.C8s0NJwk.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/347b440c.BCI4W4Mq.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9ce08e25.QjhMHs0Z.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/181d38d3.CRIq7Rw8.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/792bb671.B3OvVnSg.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.DdCQei8N.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f51e663e.l_PKpLEH.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/21cc90a2.DHzOO82q.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/64de7b49.B1Cjhvbw.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.CkIPdsHE.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/90e26f5f.Ct143nQG.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/31cc568e.95lmLO5k.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/65f3d4da.Bb3QiqCm.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ca5e9c49.C3t2BZNP.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f3e117aa.DcRz-A-H.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.CEsB0ngb.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b3389d5c.ChyU8eM0.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.pFeKZVey.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/25604ae0.56pfEpxV.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dada7e07.BDOQpVkJ.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/81e109b1.DOkM2TK2.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.DPBBHNna.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f692f62f.3EfggsCB.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9babe369.VqWZm-jr.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/434e3b0a.oup8Ur0H.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e0989459.CDwVvDXi.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cdfd59e6.ChHWCT1Z.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/fc21c11a.B3Dq6pEx.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e129c76e.CSXGaESr.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d4ea2faa.DbQd7li-.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/fe885b80.8rG3C6XN.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f78726c8.CTEjjlsu.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e477f96c.CEyIi4pG.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1ed8f5e3.zSlAOOl_.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7ee73f43.BhfPZYnP.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0c0ad074.BaHmCzAr.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/87bfafec.CxwEzGHg.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/051149c8.lHD9iIAq.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d2e6a587.CAZneIbj.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/c10167e6.DMzHJAfh.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b9c0319a.DM0_FhDt.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/17e57de1.AqQHEhs_.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/app.CcGlIMpn.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/wallet-prefilled-guest-return.BJvF0-q4. → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.Lwx3mCeL.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/OnePage.C_uC3EPz.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/VatNumberValidationField.CCUOu22N.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/StickyPayButton.D-gNjNDa.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Tipping.BcTJoNaV.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Section.CU18S7Ap.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentLine.DT05kVlY.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentIcon.gzvCNwz_.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayProgressIntercepts.CIy8uDiZ.c → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Choice.CrYuHUmO.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/constants.xO_7ctnq.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/BillingAddressForm.BdwN7V1K.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayLogo.87JMHPUK.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Switch.BS8yVgoP.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/EmptyState.BEvzDDvy.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PhoneField.uZEuHncj.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Middot.D7Ujmshx.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethods.DU0m5rdF.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/EstimatedDeliveryContent.B_THySFF.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ExpressCheckoutButton.BnDF3H7t.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/TransitionHeight.CuRoM9zv.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/BelowTheFoldContent.DF_4CoKM.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/RememberMeSection.JBO5WNhc.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PayButtonSection.CZuxzxFG.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.DjDhVpQB.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/hooks.CKE1iCma.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.C0BOgdmL.c → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Popover.Bi1nHaU-.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/floating-layer.DfWUBaTh.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayButtonClassName.D-F4uQ9M.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethodSelector.B0hio2RO.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/SubscriptionPriceBreakdown.vTcdVGq4.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/RedirectionNotice.DgiInWJ-.css → 200",
+      "https://zenqalife.roadshop.online/cart/add → 422"
+    ]
+  },
+  "4-carrito-tema-y-checkout": {
+    "ok": false,
+    "why": "el carrito del tema es una simulación en localStorage",
+    "drawer": true,
+    "carrito": {
+      "texto": "",
+      "localStorage": null
+    },
+    "antesUrl": "https://zenqalife.roadshop.online/cart/add",
+    "fuera": {
+      "url": "https://zenqalife.roadshop.online/cart/add",
+      "texto": "Something went wrong. What happened? Cart Error: Cannot find variant What can I do? Return to the previous page. Request ID: 39f5a2ad-c5cf-4192-86de-bb2423e75d1a-1791910621"
+    },
+    "llamadas": [
+      "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-ES → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/polyfills.DsjDEvpF.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/app.Gtg7oVpm.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.Bn2XBZD_.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.B6ZZkOu1.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/4b4bc88f.BOngYSUV.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2495faa4.DVQ5951v.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cf29e63b.BI-HAv8E.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9dba8418.2M58BSp6.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cb38e5c2.DjWU649q.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2255f8fa.CAntJQkD.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d25d1b95.CBsfS-fm.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f67abd2c.OidwWlzG.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b8733b27.HKgcD4tM.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e39bc11c.d4j8xk3V.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/08a3b809.a4Ey5Nw2.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.B_dQDats.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/69fae6d4.wc-fnrvx.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e12db40c.BBX5gvYb.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/60a453ce.CThGNu8l.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.ByEQunzi.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.D_MKrGKe.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dffdfb34.s9CMML77.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/3ca8ef7e.BYzAhHan.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1f5e7811.DR4YlBnf.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1d34c07e.h4dJAaCz.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2fdb3dd3.BEfSgKmh.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/22345fd4.CXyQXp4l.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0e67bd3b.DKVza0Hf.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/74835653.BVfEwjAk.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a9fa9fda.DsLFnROr.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ca3e798e.CzzLpqae.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/47b970b2.B1c4SWWx.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/064f6ac1.CfO4pMhb.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/efa0389a.BUrWyo_Z.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/4b1c22b7.Cf2Xw4GP.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/17425706.CdcPBdIR.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cb5cf153.DUHq8gZr.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e3e348f2.C7H3dAe6.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/71ae3d5c.BZorbz1G.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/78ab3dd0.DtLNHfh1.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/89e2d30a.CjD1DqN2.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ed9f2238.B8OP_j1v.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6fb6f9d8.ClUctDbd.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1444e6bd.J590fSWt.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0b8657b8.CuOEv5bS.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a422df8c.DJuLvB7Z.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/55098bf1.BDPePdl2.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f49d4216.Cvg1lEYo.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d22d2b80.msphd9y5.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f58f39d8.YN-im9Mx.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e03065ab.Cqtd_T4Z.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/79974aab.DHG9gY47.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7b0c98ea.Ccw6XkTW.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0e9ee714.CJJMt3KN.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/39921a74.D4G_E_q2.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7a8217fd.rf_zfl0W.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/8599b02a.DBfW_IeO.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ccdf3592.BhdoUp7I.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/71b60e0a.DfPLdYsH.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/24773686.CFMRE_zp.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ec391382.BneRJKlP.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/6bfea526.CQZCGizc.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ac5a19ff.CTxSKvFu.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/598fef4e.Db_JDGAl.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e77f7fe0.Cmf4q9o1.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cc6ff67d.B5fy9peJ.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/bf513f9c.Bhn0H_qV.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dfca5da5.BWFDFxU8.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dae24aab.Bjd8H2hA.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/a25deb9a.CaLOOmHq.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/01973ac7.CYlNHzhb.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/58314944.CuQrEK_x.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/945a08d6.Bjf1_yD7.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7bc8057b.IsY76yMA.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f1968089.QSVZRGs7.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/2b89a178.BQhT1Pr0.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b684bff6.DLqI_Rqs.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/910cd6e2.CVQhmtCt.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/347b440c.BX5VL7mq.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9ce08e25.DDeMkUIF.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/181d38d3.Bw65vefG.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/792bb671.B3OvVnSg.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.BMNiH-2E.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f51e663e.Cm6V3uJJ.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/21cc90a2.DHzOO82q.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/64de7b49.Ba3y9kB0.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.Ya5SfkKb.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/90e26f5f.C9D3fkB5.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/31cc568e.95lmLO5k.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/65f3d4da.Bb3QiqCm.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/ca5e9c49.Dyk3b93D.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f3e117aa.BM_xDXNl.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.Al_1STRv.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b3389d5c.Bw41gqmB.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.BQCvqne6.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/25604ae0.56pfEpxV.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/dada7e07.h7hmxPIG.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/81e109b1.DOkM2TK2.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.BYZqBIhC.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f692f62f.CuG6h5OH.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/9babe369.VqWZm-jr.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/434e3b0a.oup8Ur0H.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e0989459.CkSA98NP.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/cdfd59e6.CPcXHsM4.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/fc21c11a.CktlwtPn.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e129c76e.DwjtCbnV.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d4ea2faa.CHM175uM.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/fe885b80.DZm9qM8s.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/f78726c8.CejMS_JJ.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/e477f96c.2oDAICUi.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/1ed8f5e3.zSlAOOl_.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/7ee73f43.44GuOmnb.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/0c0ad074.BbIe2r9F.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/87bfafec.CxwEzGHg.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/051149c8.lHD9iIAq.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/d2e6a587.BbowiC9r.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/c10167e6.BsiPgVeo.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/b9c0319a.-yrOIl7z.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/17e57de1.AqQHEhs_.js → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/app.CcGlIMpn.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/wallet-prefilled-guest-return.BJvF0-q4.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.Lwx3mCeL.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/OnePage.C_uC3EPz.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/VatNumberValidationField.CCUOu22N.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/StickyPayButton.D-gNjNDa.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Tipping.BcTJoNaV.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Section.CU18S7Ap.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentLine.DT05kVlY.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentIcon.gzvCNwz_.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayProgressIntercepts.CIy8uDiZ.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Choice.CrYuHUmO.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/constants.xO_7ctnq.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/BillingAddressForm.BdwN7V1K.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayLogo.87JMHPUK.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Switch.BS8yVgoP.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/EmptyState.BEvzDDvy.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PhoneField.uZEuHncj.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Middot.D7Ujmshx.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethods.DU0m5rdF.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/EstimatedDeliveryContent.B_THySFF.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ExpressCheckoutButton.BnDF3H7t.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/TransitionHeight.CuRoM9zv.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/BelowTheFoldContent.DF_4CoKM.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/RememberMeSection.JBO5WNhc.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PayButtonSection.CZuxzxFG.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.DjDhVpQB.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/hooks.CKE1iCma.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.C0BOgdmL.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/Popover.Bi1nHaU-.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/floating-layer.DfWUBaTh.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayButtonClassName.D-F4uQ9M.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethodSelector.B0hio2RO.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/SubscriptionPriceBreakdown.vTcdVGq4.css → 200",
+      "https://zenqalife.roadshop.online/cdn/shopifycloud/checkout-web/assets/c1/assets/RedirectionNotice.DgiInWJ-.css → 200",
+      "https://zenqalife.roadshop.online/cart/add → 422"
+    ]
+  },
+  "5-ficha-rapida": {
+    "ok": true,
+    "click": {
+      "ok": true,
+      "id": "te-ceremonial"
+    },
+    "ficha": {
+      "abierto": "true",
+      "texto": "MÁS VENDIDO TÉ MATCHA TÉ MATCHA ORGÁNICO PREMIUM GRADO CEREMONIAL ★★★★★ 4.9 (412) quedan 18 uds Umami dulce y verde esmeralda: se nota que es hoja entera molida en piedra. Es el bote con el que empieza quien quiere beber matcha solo, con agua. Cosecha de primavera de Uji, tencha sin tallos ni venas y molienda lenta en piedra: el polvo sale tan fino que no se asienta en el fondo de la taza. Da un umami redondo con punta de cacao amargo y un final largo a hierba fresca. Que no amargue no es suerte: son 20 días de sombra y tu agua a 70 °C. SABOR Umami dulce, cacao verde AROMA Hierba fresca y vainilla TEXTURA Sedosa, espuma densa FINAL Limpio y largo, sin astringencia 27 tazas por bote: 1,11 € la taza frente a los 3,50 € de tu cafetería. Molido en piedra a 40 g/hora; el polvo de bola industrial no llega a esta textura. Envasado en origen con nitrógeno y en bote opaco: abre y huele a té, no a heno. ★★★★★ «Llevaba seis años con el café de las cinco de la tarde y el bajón posterior. Ahora tomo matcha a esa hora y sigo enfocada hasta la cena sin notar el corazón. El sabor es dulce, sin ese punto a hierba que temía, y con la avena está más rico que el de mi cafetería de siempre.» L Laura M.",
+      "enlaces": [
+        "/products/te-matcha-ceremonial-organico446"
+      ]
+    },
+    "addEnFicha": {
+      "ok": true,
+      "id": "te-ceremonial"
+    },
+    "cartTrasFicha": null
+  },
+  "6-buscador": {
+    "ok": true,
+    "abrir": {
+      "ok": true
+    },
+    "escribir": {
+      "ok": true,
+      "resultados": "Hojicha tostado de Kioto 60 g Tostado a 180 °C: la taza de después de cenar, sin quitar el s… 21,95 €"
+    },
+    "ir": {
+      "ok": true,
+      "href": "#te-hojicha"
+    },
+    "urlFinal": "https://zenqalife.roadshop.online/"
+  },
+  "7-formularios": {
+    "ok": false,
+    "why": "ninguno envía datos fuera del navegador",
+    "salida": {
+      "guia": {
+        "form": "lead",
+        "email": true,
+        "nombre": false,
+        "msg": false,
+        "checked": true,
+        "sel": 0,
+        "boton": "DESCARGAR LA GUÍA GRATIS",
+        "despues": [
+          "«Las dos primeras veces me salió amargo y pensé que el matcha no era lo mío. Escribí al correo y me contestaron en una hora: agua demasiado caliente. Seguí la guía, ahora me queda cremoso y dulce, y ya voy por el tercer bote. Le doy cuatro y no cinco porque la tapa del bote cuesta abrir con las manos mojadas.»",
+          "RECETAS Y GUÍAS",
+          "Te hemos enviado la guía a auditoria.test@example.com",
+          "Recetas y guías",
+          "© 2026 Zenqa Life · tienda de demostración (destino: Shopify)",
+          "Guía enviada · revisa tu correo"
+        ],
+        "almacenado": [
+          "zenqa_lead=auditoria.test@example.com"
+        ],
+        "oculto": 0
+      },
+      "newsletter": {
+        "form": "news",
+        "email": true,
+        "nombre": false,
+        "msg": false,
+        "checked": true,
+        "sel": 0,
+        "boton": "SUSCRIBIRME",
+        "despues": [
+          "«Las dos primeras veces me salió amargo y pensé que el matcha no era lo mío. Escribí al correo y me contestaron en una hora: agua demasiado caliente. Seguí la guía, ahora me queda cremoso y dulce, y ya voy por el tercer bote. Le doy cuatro y no cinco porque la tapa del bote cuesta abrir con las manos mojadas.»",
+          "RECETAS Y GUÍAS",
+          "Te hemos enviado la guía a auditoria.test@example.com",
+          "Ya estás en la lista.",
+          "Recetas y guías",
+          "© 2026 Zenqa Life · tienda de demostración (destino: Shopify)"
+        ],
+        "almacenado": [
+          "zenqa_lead=auditoria.test@example.com"
+        ],
+        "oculto": 0
+      },
+      "contacto": {
+        "form": "contact",
+        "email": true,
+        "nombre": true,
+        "msg": true,
+        "checked": true,
+        "sel": 6,
+        "boton": "ENVIAR MENSAJE",
+        "despues": [
+          "Acepto recibir la guía y la",
+          "DESCARGAR LA GUÍA GRATIS",
+          "GUÍA MATCHA",
+          "Recetas y guías",
+          "© 2026 Zenqa Life · tienda de demostración (destino: Shopify)",
+          "Mensaje enviado (demo)"
+        ],
+        "almacenado": [
+          "zenqa_lead=auditoria.test@example.com"
+        ],
+        "oculto": 0
+      }
+    },
+    "posts": [
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"metadata\":{\"event_sent_at_ms\":1791910641608},\"events\":[{\"schema_id\":\"web_pixels_manager_load/3.3\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"bundle_target\":\"modern\",\"page_url\":\"http"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"metadata\":{\"event_sent_at_ms\":1791910641609},\"events\":[{\"schema_id\":\"web_pixels_manager_load/3.3\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"bundle_target\":\"modern\",\"page_url\":\"http"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/api/collect",
+        "data": "{\"v\":1,\"s\":{\"wd\":true,\"ua\":false,\"cf\":true,\"be\":true,\"nm\":false,\"nc\":false,\"ka\":false,\"sa\":false,\"ta\":false,\"pt\":false,\"mp\":false,\"sd\":false},\"r\":\"change\",\"l\":\"2.5.1\"}"
+      },
+      {
+        "url": "https://monorail-edge.shopifysvc.com/v1/produce",
+        "data": "{\"schema_id\":\"privacy_banner_initialized/1.2\",\"payload\":{\"shop_permanent_domain\":\"zenqalife.roadshop.online\",\"session_token\":\"deprecated\",\"regulation\":\"CMP\",\"path\":\"/\",\"server_region\":\"USIA\"},\"metadat"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"trekkie_metrics/2.0\",\"payload\":{\"metric_name\":\"navigation-PerformanceNavigationTiming-navigate\",\"shop_id\":109524156765},\"metadata\":{\"event_created_at_ms\":1791910641694}}],\"met"
+      },
+      {
+        "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+        "data": "{\"resourceMetrics\":[{\"resource\":{\"attributes\":[{\"key\":\"service.name\",\"value\":{\"stringValue\":\"web-pixels-manager\"}}]},\"scopeMetrics\":[{\"scope\":{\"name\":\"open-telemetry-mini-client\",\"version\":\"1.1.0\",\"at"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"storefront_customer_tracking/4.30\",\"payload\":{\"api_client_id\":580111,\"event_id\":\"sh-3632814c-E126-46F0-BCE9-2D42474A4781\",\"referrer\":\"\",\"canonical_url\":\"https://zenqalife.road"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"trekkie_asset_context/1.3\",\"payload\":{\"build_id\":\"32ff6085714fe9c4d5859e332c5de5f8759a859e\",\"page_url\":\"https://zenqalife.roadshop.online/#guia\",\"app_name\":\"storefront\",\"shop_"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"storefront_customer_tracking/5.9\",\"payload\":{\"event_id\":\"sh-3632814c-E126-46F0-BCE9-2D42474A4781\",\"event_time\":1791910641702,\"event_source_url\":\"https://zenqalife.roadshop.onl"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"web_pixels_manager_init/3.2\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"bundle_target\":\"modern\",\"page_url\":\"https://zenqalife.roadshop.online/#guia\",\"shop_id\""
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"web_pixels_manager_pixel_register/3.8\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"page_url\":\"https://zenqalife.roadshop.online/#guia\",\"shop_id\":109524156765,\""
+      },
+      {
+        "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+        "data": "{\"resourceMetrics\":[{\"resource\":{\"attributes\":[{\"key\":\"service.name\",\"value\":{\"stringValue\":\"shop-js\"}}]},\"scopeMetrics\":[{\"scope\":{\"name\":\"open-telemetry-mini-client\",\"version\":\"1.1.0\",\"attributes\":["
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"web_pixels_manager_pixel_register/3.8\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"page_url\":\"https://zenqalife.roadshop.online/#guia\",\"shop_id\":109524156765,\""
+      },
+      {
+        "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+        "data": ""
+      },
+      {
+        "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+        "data": "{\"resourceMetrics\":[{\"resource\":{\"attributes\":[{\"key\":\"service.name\",\"value\":{\"stringValue\":\"web-pixels-manager\"}}]},\"scopeMetrics\":[{\"scope\":{\"name\":\"open-telemetry-mini-client\",\"version\":\"1.1.0\",\"at"
+      },
+      {
+        "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+        "data": "{\"resourceMetrics\":[{\"resource\":{\"attributes\":[{\"key\":\"service.name\",\"value\":{\"stringValue\":\"consent-tracking-api\"}}]},\"scopeMetrics\":[{\"scope\":{\"name\":\"consent-tracking-api-opentelemetry\",\"version\":\""
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"metadata\":{\"event_sent_at_ms\":1791910650021},\"events\":[{\"schema_id\":\"web_pixels_manager_load/3.3\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"bundle_target\":\"modern\",\"page_url\":\"http"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"metadata\":{\"event_sent_at_ms\":1791910650022},\"events\":[{\"schema_id\":\"web_pixels_manager_load/3.3\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"bundle_target\":\"modern\",\"page_url\":\"http"
+      },
+      {
+        "url": "https://monorail-edge.shopifysvc.com/v1/produce",
+        "data": "{\"schema_id\":\"privacy_banner_initialized/1.2\",\"payload\":{\"shop_permanent_domain\":\"zenqalife.roadshop.online\",\"session_token\":\"deprecated\",\"regulation\":\"CMP\",\"path\":\"/pages/el-ritual\",\"server_region\":\""
+      },
+      {
+        "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+        "data": "{\"resourceMetrics\":[{\"resource\":{\"attributes\":[{\"key\":\"service.name\",\"value\":{\"stringValue\":\"web-pixels-manager\"}}]},\"scopeMetrics\":[{\"scope\":{\"name\":\"open-telemetry-mini-client\",\"version\":\"1.1.0\",\"at"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"trekkie_metrics/2.0\",\"payload\":{\"metric_name\":\"navigation-PerformanceNavigationTiming-navigate\",\"shop_id\":109524156765},\"metadata\":{\"event_created_at_ms\":1791910650051}}],\"met"
+      },
+      {
+        "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+        "data": "{\"resourceMetrics\":[{\"resource\":{\"attributes\":[{\"key\":\"service.name\",\"value\":{\"stringValue\":\"consent-tracking-api\"}}]},\"scopeMetrics\":[{\"scope\":{\"name\":\"consent-tracking-api-opentelemetry\",\"version\":\""
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/api/collect",
+        "data": "{\"v\":1,\"s\":{\"wd\":true,\"ua\":false,\"cf\":true,\"be\":true,\"nm\":false,\"nc\":false,\"ka\":false,\"sa\":false,\"ta\":false,\"pt\":false,\"mp\":false,\"sd\":false},\"r\":\"periodic\",\"l\":\"2.5.1\"}"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"storefront_customer_tracking/5.9\",\"payload\":{\"event_id\":\"sh-3632a18b-1E5E-431F-BAB1-7A1B9CD727D5\",\"event_time\":1791910650033,\"event_source_url\":\"https://zenqalife.roadshop.onl"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"web_pixels_manager_init/3.2\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"bundle_target\":\"modern\",\"page_url\":\"https://zenqalife.roadshop.online/pages/el-ritual#"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"storefront_customer_tracking/4.30\",\"payload\":{\"api_client_id\":580111,\"event_id\":\"sh-3632a18b-1E5E-431F-BAB1-7A1B9CD727D5\",\"referrer\":\"\",\"canonical_url\":\"https://zenqalife.road"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"trekkie_asset_context/1.3\",\"payload\":{\"build_id\":\"32ff6085714fe9c4d5859e332c5de5f8759a859e\",\"page_url\":\"https://zenqalife.roadshop.online/pages/el-ritual#contacto\",\"app_name\":"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"web_pixels_manager_pixel_register/3.8\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"page_url\":\"https://zenqalife.roadshop.online/pages/el-ritual#contacto\",\"shop"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"web_pixels_manager_pixel_register/3.8\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"page_url\":\"https://zenqalife.roadshop.online/pages/el-ritual#contacto\",\"shop"
+      },
+      {
+        "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+        "data": ""
+      },
+      {
+        "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+        "data": "{\"resourceMetrics\":[{\"resource\":{\"attributes\":[{\"key\":\"service.name\",\"value\":{\"stringValue\":\"web-pixels-manager\"}}]},\"scopeMetrics\":[{\"scope\":{\"name\":\"open-telemetry-mini-client\",\"version\":\"1.1.0\",\"at"
+      }
+    ],
+    "pdfGuia": 200
+  },
+  "8-compra-real-tote": {
+    "ok": true,
+    "trasAdd": {
+      "url": "https://zenqalife.roadshop.online/cart",
+      "title": "Tu carrito",
+      "texto": "ENVÍOS GRATIS A PARTIR DE 35 € DESCARGA NUESTRA GUÍA GRATIS ÚNETE A ZENQA LIFE ZENQA LIFE TU MOMENTO MATCHA Tu carrito Revisa tu selección y prepara tu próximo ritual Zenqa Life. T-SHIRT Eco Tote Bag €39,80 Eliminar CANTIDAD Actualizar carrito RESUMEN Total estimado €39,80 Envío gratis activado. Pasar al checkout Seguir comprando TE MATCHA VIBES ZENQA LIFE Matcha ceremonial de Uji para quien quiere concentrarse sin ponérselo difícil al corazón. INSTAGRAM TIKTOK YOUTUBE PINTEREST VISA MASTERCARD "
+    },
+    "checkout": {
+      "click": {
+        "ok": true,
+        "texto": "Pasar al checkout"
+      },
+      "url": "https://zenqalife.roadshop.online/checkouts/cn/hWNHvhwrWj4TVAD3w6P84XeK/es-es?_r=AQABaCjCsVofQcVKxeY1FR7zQ8EETp_LbPBDjktb5Mu2FmSg-yPg",
+      "title": "Pantalla de pago - ZENQA LIFE",
+      "texto": "Ir directamente al contenido ZENQA LIFE Ir a la tienda online Resumen del pedido Precio total 39,80 € ZENQA LIFE Pantalla de pago Pago exprés O Contacto Iniciar sesión Correo electrónico Se usa para la confirmación del pedido y los recordatorios del carrito Enviarme novedades y ofertas por correo electrónico Entrega País / Región España Nombre Apellidos Dirección Casa, apartamento, etc. (opcional) Código postal Ciudad Provincia / Estado La Coruña Álava Albacete Alicante Almería Asturias Ávila Badajoz Islas Baleares Barcelona Burgos Cáceres Cádiz Cantabria Castellón Ceuta Ciudad Real Córdoba Cuenca Gerona Granada Guadalajara Guipúzcoa Huelva Huesca Jaén La Rioja Las Palmas León Lérida Lugo Madrid Málaga Melilla Murcia Navarra Orense Palencia Pontevedra Salamanca Santa Cruz de Tenerife Segovia Sevilla Soria Tarragona Teruel Toledo Valencia Valladolid Vizcaya Zamora Zaragoza Teléfono (opcional) En caso de que tengamos que contactarte sobre tu pedido. Métodos de envío Ingresa tu dirección de envío para ver los métodos disponibles. Pago Todas las transacciones son seguras y están encriptadas. Tarjeta de crédito +2 Número de tarjeta Fecha de vencimiento (MM / AA) Código de seguridad Código de seguridad de 3 dígitos ubicado normalmente en la parte trasera de tu tarjeta. Las tarjetas American Express tienen un código de 4 dígitos ubicado en el frente. Nombre del titular como aparece en la tarjeta Usar la dirección de envío como dirección de facturación PayPal Recordarme Guardar mi in"
+    },
+    "llamadas": [
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/useResizeObserver-CgCAVDcS.js → 200",
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/useEscapeKeypress-DZZ4lxhY.js → 200",
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/AnalyticsReporter-DtAOUQ-x.js → 200",
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/Link-DYv6SQsD.js → 200",
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/virtual_pay-feature-flags-Cm03FBMh.js → 200",
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/useFooterTranslationInformation-BrJg_vaI.js → 200",
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/index-BO8tGMMG.js → 200",
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/RumMetrics-Dq9Pr3RQ.js → 200",
+      "https://www.paypal.com/xoplatform/logger/api/logger?disableSetCookie=true → 200",
+      "https://www.paypal.com/xoplatform/logger/api/logger?disableSetCookie=true → 200"
+    ]
+  },
+  "9-teclado-y-capas": {
+    "orden": [
+      "A «Instagram»",
+      "A «TikTok»",
+      "A «YouTube»",
+      "A «Pinterest»",
+      "A «ZENQA LIFE»",
+      "A «MATCHA»",
+      "A «PRODUCTOS»",
+      "A «RECETAS Y GUÍAS»",
+      "A «NOSOTROS»",
+      "BUTTON «Buscar productos»",
+      "BUTTON «Ver el carrito»",
+      "A «COMPRAR MATCHA YA»"
+    ],
+    "abrirCarrito": true,
+    "foco": {
+      "abierto": "true",
+      "aria": "dialog",
+      "ariaModal": "true",
+      "inertes": 0,
+      "foco": "A «COMPRAR MATCHA YA»"
+    },
+    "cerrado": "false"
+  },
+  "10-disponibilidad-catalogo-tema": {
+    "n": 23,
+    "filas": {
+      "te-ceremonial": {
+        "handle": "te-matcha-ceremonial-organico446",
+        "variante": "65498951647581",
+        "status": 200,
+        "producto": "Té Matcha Orgánico PREMIUM Grado CEREMONIAL",
+        "publicado": "2026-08-06T17:55:38+02:00",
+        "varianteExiste": true,
+        "disp": false,
+        "precio": 31.2
+      },
+      "te-culinario": {
+        "handle": "te-matcha-culinario-organico447",
+        "variante": "65498951745885",
+        "status": 200,
+        "producto": "Té Matcha Orgánico PREMIUM Grado Culinario",
+        "publicado": "2026-08-06T17:54:12+02:00",
+        "varianteExiste": true,
+        "disp": false,
+        "precio": 19.5
+      },
+      "chawan-negro": {
+        "handle": "chawan-bol-ceremonial-zenqa-life",
+        "variante": "65369796575581",
+        "status": 404
+      },
+      "kit-basico": {
+        "handle": "kit-basico-matcha-zenqa-life",
+        "variante": "65369795527005",
+        "status": 404
+      },
+      "kit-completo": {
+        "handle": "kit-completo-matcha-zenqa-life",
+        "variante": "65369795985757",
+        "status": 404
+      },
+      "vaso-latte": {
+        "handle": "vasos-matcha-latte-zenqa-life",
+        "variante": "65369798672733",
+        "status": 404
+      },
+      "termico": {
+        "handle": "vaso-con-pajita-termico-de-doble-cara-transparente",
+        "variante": "65495524016477",
+        "status": 200,
+        "producto": "Vaso térmico de doble cara transparente con pajita",
+        "publicado": "2026-08-06T11:31:14+02:00",
+        "varianteExiste": true,
+        "disp": true,
+        "precio": 21.9
+      },
+      "botella-ice": {
+        "handle": "botella-termica-zenqa-life",
+        "variante": "65371551072605",
+        "status": 404
+      },
+      "taza-zenqa": {
+        "handle": "taza-te-matcha-vibes",
+        "variante": "65498515702109",
+        "status": 200,
+        "producto": "Taza Te Matcha Vibes",
+        "publicado": "2026-08-06T16:28:06+02:00",
+        "varianteExiste": true,
+        "disp": true,
+        "precio": 13.9
+      },
+      "chawan": {
+        "handle": "chawan-bol-ceremonial-zenqa-life",
+        "variante": "65369796575581",
+        "status": 404
+      },
+      "vaso": {
+        "handle": "vasos-matcha-latte-zenqa-life",
+        "variante": "65369798672733",
+        "status": 404
+      },
+      "chasen": {
+        "handle": "chasen-batidor-bambu-zenqa-life",
+        "variante": "65369799098717",
+        "status": 404
+      },
+      "espumador": {
+        "handle": "espumador-electrico-matcha-zenqa-life",
+        "variante": "65369799623005",
+        "status": 404
+      },
+      "chashaku": {
+        "handle": "chashaku-cuchara-medidora-zenqa-life",
+        "variante": "65369800114525",
+        "status": 404
+      },
+      "tamizador": {
+        "handle": "tamizador-matcha-zenqa-life",
+        "variante": "65369800704349",
+        "status": 404
+      },
+      "hielera": {
+        "handle": "hielera-matcha-latte-zenqa-life",
+        "variante": "65369801228637",
+        "status": 404
+      },
+      "hervidor": {
+        "handle": "hervidor-electrico-matcha-zenqa-life",
+        "variante": "65369801720157",
+        "status": 404
+      },
+      "botella": {
+        "handle": "botella-termica-zenqa-life",
+        "variante": "65371551072605",
+        "status": 404
+      },
+      "taza": {
+        "handle": "taza-te-matcha-vibes",
+        "variante": "65498515702109",
+        "status": 200,
+        "producto": "Taza Te Matcha Vibes",
+        "publicado": "2026-08-06T16:28:06+02:00",
+        "varianteExiste": true,
+        "disp": true,
+        "precio": 13.9
+      },
+      "gorra": {
+        "handle": "gorra-te-matcha-vibes",
+        "variante": "65498530251101",
+        "status": 200,
+        "producto": "Gorra Te Matcha Vibes",
+        "publicado": "2026-08-06T16:30:44+02:00",
+        "varianteExiste": true,
+        "disp": true,
+        "precio": 20.9
+      },
+      "tote": {
+        "handle": "eco-tote-bag",
+        "variante": "65498568622429",
+        "status": 200,
+        "producto": "Eco Tote Bag",
+        "publicado": "2026-08-06T16:39:47+02:00",
+        "varianteExiste": true,
+        "disp": true,
+        "precio": 19.9
+      },
+      "camiseta": {
+        "handle": "camiseta-clasica-unisex",
+        "variante": "65498710311261",
+        "status": 200,
+        "producto": "Camiseta clásica unisex",
+        "publicado": "2026-08-06T16:51:20+02:00",
+        "varianteExiste": true,
+        "disp": true,
+        "precio": 10.5
+      },
+      "sudadera": {
+        "handle": "sudadera-con-capucha-unisex",
+        "variante": "65498918486365",
+        "status": 200,
+        "producto": "Sudadera con capucha unisex",
+        "publicado": "2026-08-06T17:39:14+02:00",
+        "varianteExiste": true,
+        "disp": true,
+        "precio": 25.5
+      }
     }
   }
 }
