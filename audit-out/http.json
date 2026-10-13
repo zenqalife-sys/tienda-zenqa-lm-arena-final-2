@@ -9,7 +9,7 @@
         "status": 404,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 207,
+        "ms": 124,
         "bytes": 173829
       }
     ],
@@ -62,7 +62,7 @@
         "status": 200,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 339,
+        "ms": 422,
         "bytes": 49177
       }
     ],
@@ -117,7 +117,7 @@
         "status": 200,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 238,
+        "ms": 107,
         "bytes": 45171
       }
     ],
@@ -170,7 +170,7 @@
         "status": 200,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 202,
+        "ms": 112,
         "bytes": 47668
       }
     ],
@@ -225,7 +225,7 @@
         "status": 200,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 180,
+        "ms": 123,
         "bytes": 46985
       }
     ],
@@ -281,7 +281,7 @@
         "status": 200,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 193,
+        "ms": 118,
         "bytes": 49386
       }
     ],
@@ -336,7 +336,7 @@
         "status": 404,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 194,
+        "ms": 198,
         "bytes": 173829
       }
     ],
@@ -389,7 +389,7 @@
         "status": 200,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 237,
+        "ms": 122,
         "bytes": 61499
       }
     ],
@@ -447,8 +447,8 @@
         "status": 404,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 332,
-        "bytes": 173829
+        "ms": 202,
+        "bytes": 175012
       }
     ],
     "headers": {
@@ -500,7 +500,7 @@
         "status": 200,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 197,
+        "ms": 131,
         "bytes": 128644
       }
     ],
@@ -559,7 +559,7 @@
         "status": 200,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 194,
+        "ms": 103,
         "bytes": 52363
       }
     ],
@@ -612,7 +612,7 @@
         "status": 200,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 199,
+        "ms": 121,
         "bytes": 373789
       }
     ],
@@ -671,7 +671,7 @@
         "status": 200,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 414,
+        "ms": 337,
         "bytes": 279097
       }
     ],
@@ -730,7 +730,7 @@
         "status": 404,
         "location": null,
         "type": "text/html; charset=utf-8",
-        "ms": 250,
+        "ms": 178,
         "bytes": 173829
       }
     ],

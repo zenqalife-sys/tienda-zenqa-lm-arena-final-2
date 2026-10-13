@@ -184,41 +184,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 65,
-        "domReady": 391,
-        "load": 574,
+        "ttfb": 159,
+        "domReady": 369,
+        "load": 608,
         "transfer": 16153,
-        "domNodes": 541,
-        "requests": 123,
-        "bytes": 1442445,
+        "domNodes": 561,
+        "requests": 144,
+        "bytes": 1494964,
         "slowest": [
           {
             "u": "metrics",
-            "t": 841
+            "t": 466
           },
           {
             "u": "produce",
-            "t": 275
+            "t": 245
           },
           {
-            "u": "Captura_de_pantalla_2026-08-06_174529.png?v=1786031687",
-            "t": 233
+            "u": "produce_batch",
+            "t": 162
+          },
+          {
+            "u": "produce_batch",
+            "t": 159
           },
           {
             "u": "metrics",
-            "t": 165
+            "t": 140
           },
           {
-            "u": "metrics",
-            "t": 149
-          },
-          {
-            "u": "favicon.ico",
-            "t": 146
+            "u": "zq-switzer-700.woff2",
+            "t": 139
           }
         ],
-        "fcp": 288,
-        "lcp": 348,
+        "fcp": 280,
+        "lcp": 356,
         "cls": 0
       }
     },
@@ -419,41 +419,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 386,
-        "domReady": 583,
-        "load": 662,
+        "ttfb": 248,
+        "domReady": 405,
+        "load": 636,
         "transfer": 16153,
         "domNodes": 632,
-        "requests": 213,
-        "bytes": 43748,
+        "requests": 214,
+        "bytes": 15115,
         "slowest": [
           {
-            "u": "metrics",
-            "t": 412
-          },
-          {
-            "u": "metrics",
-            "t": 360
+            "u": "produce_batch",
+            "t": 150
           },
           {
             "u": "produce_batch",
-            "t": 143
+            "t": 147
           },
           {
             "u": "produce_batch",
-            "t": 136
+            "t": 145
           },
           {
             "u": "produce_batch",
-            "t": 130
+            "t": 138
           },
           {
             "u": "produce_batch",
-            "t": 126
+            "t": 133
+          },
+          {
+            "u": "produce_batch",
+            "t": 128
           }
         ],
-        "fcp": 480,
-        "lcp": 536,
+        "fcp": 392,
+        "lcp": 392,
         "cls": 0
       }
     },
@@ -654,41 +654,41 @@
       ],
       "perf": {
         "ttfb": 11,
-        "domReady": 314,
-        "load": 448,
+        "domReady": 250,
+        "load": 394,
         "transfer": 16153,
         "domNodes": 631,
         "requests": 215,
-        "bytes": 16417,
+        "bytes": 15174,
         "slowest": [
           {
-            "u": "metrics",
-            "t": 1326
+            "u": "produce_batch",
+            "t": 137
           },
           {
-            "u": "metrics",
-            "t": 1226
+            "u": "produce_batch",
+            "t": 135
+          },
+          {
+            "u": "produce_batch",
+            "t": 132
+          },
+          {
+            "u": "produce_batch",
+            "t": 131
+          },
+          {
+            "u": "produce_batch",
+            "t": 129
           },
           {
             "u": "produce",
-            "t": 128
-          },
-          {
-            "u": "produce_batch",
-            "t": 127
-          },
-          {
-            "u": "produce_batch",
-            "t": 126
-          },
-          {
-            "u": "produce_batch",
-            "t": 119
+            "t": 125
           }
         ],
-        "fcp": 364,
-        "lcp": 364,
-        "cls": 0.075
+        "fcp": 272,
+        "lcp": 272,
+        "cls": 0.185
       }
     },
     "errs": [
@@ -882,17 +882,21 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 25,
-        "domReady": 332,
-        "load": 423,
+        "ttfb": 106,
+        "domReady": 209,
+        "load": 384,
         "transfer": 14770,
         "domNodes": 862,
         "requests": 217,
         "bytes": 433783,
         "slowest": [
           {
-            "u": "Captura_de_pantalla_2026-08-06_174645.png?v=1786031570",
-            "t": 194
+            "u": "metrics",
+            "t": 827
+          },
+          {
+            "u": "produce_batch",
+            "t": 154
           },
           {
             "u": "produce_batch",
@@ -900,23 +904,19 @@
           },
           {
             "u": "produce_batch",
-            "t": 128
+            "t": 133
           },
           {
             "u": "produce_batch",
-            "t": 124
+            "t": 131
           },
           {
             "u": "produce_batch",
-            "t": 114
-          },
-          {
-            "u": "produce",
-            "t": 111
+            "t": 100
           }
         ],
-        "fcp": 256,
-        "lcp": 256,
+        "fcp": 168,
+        "lcp": 168,
         "cls": 0
       }
     },
@@ -1117,41 +1117,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 19,
-        "domReady": 308,
-        "load": 369,
+        "ttfb": 18,
+        "domReady": 211,
+        "load": 331,
         "transfer": 300,
         "domNodes": 862,
-        "requests": 215,
-        "bytes": 17378,
+        "requests": 218,
+        "bytes": 17366,
         "slowest": [
           {
-            "u": "produce_batch",
-            "t": 222
+            "u": "metrics",
+            "t": 1358
+          },
+          {
+            "u": "metrics",
+            "t": 1339
+          },
+          {
+            "u": "metrics",
+            "t": 952
+          },
+          {
+            "u": "metrics",
+            "t": 825
+          },
+          {
+            "u": "Captura_de_pantalla_2026-08-06_174529.png?v=1786031687",
+            "t": 218
           },
           {
             "u": "produce_batch",
-            "t": 135
-          },
-          {
-            "u": "produce_batch",
-            "t": 134
-          },
-          {
-            "u": "produce_batch",
-            "t": 123
-          },
-          {
-            "u": "produce_batch",
-            "t": 114
-          },
-          {
-            "u": "produce_batch",
-            "t": 105
+            "t": 147
           }
         ],
-        "fcp": 232,
-        "lcp": 232,
+        "fcp": 164,
+        "lcp": 164,
         "cls": 0
       }
     },
@@ -1347,41 +1347,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 9,
-        "domReady": 321,
-        "load": 377,
+        "ttfb": 12,
+        "domReady": 219,
+        "load": 365,
         "transfer": 14770,
         "domNodes": 861,
-        "requests": 219,
+        "requests": 217,
         "bytes": 17366,
         "slowest": [
           {
-            "u": "metrics",
-            "t": 1318
-          },
-          {
-            "u": "metrics",
-            "t": 814
+            "u": "produce_batch",
+            "t": 145
           },
           {
             "u": "produce_batch",
-            "t": 146
+            "t": 144
           },
           {
             "u": "produce_batch",
-            "t": 129
+            "t": 135
           },
           {
             "u": "produce_batch",
-            "t": 127
+            "t": 123
           },
           {
             "u": "produce_batch",
-            "t": 125
+            "t": 121
+          },
+          {
+            "u": "produce_batch",
+            "t": 111
           }
         ],
-        "fcp": 248,
-        "lcp": 336,
+        "fcp": 196,
+        "lcp": 308,
         "cls": 0.103
       }
     },
@@ -1577,41 +1577,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 19,
-        "domReady": 312,
-        "load": 392,
+        "ttfb": 116,
+        "domReady": 238,
+        "load": 420,
         "transfer": 15503,
         "domNodes": 663,
-        "requests": 214,
+        "requests": 215,
         "bytes": 38125,
         "slowest": [
           {
-            "u": "produce_batch",
-            "t": 1721
-          },
-          {
             "u": "metrics",
-            "t": 528
+            "t": 888
           },
           {
             "u": "produce_batch",
-            "t": 124
+            "t": 152
           },
           {
             "u": "produce_batch",
-            "t": 124
+            "t": 145
           },
           {
             "u": "produce_batch",
-            "t": 112
+            "t": 144
+          },
+          {
+            "u": "produce",
+            "t": 136
           },
           {
             "u": "produce_batch",
-            "t": 90
+            "t": 135
           }
         ],
-        "fcp": 240,
-        "lcp": 284,
+        "fcp": 232,
+        "lcp": 232,
         "cls": 0
       }
     },
@@ -1807,41 +1807,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 20,
-        "domReady": 274,
-        "load": 365,
+        "ttfb": 19,
+        "domReady": 232,
+        "load": 349,
         "transfer": 300,
         "domNodes": 663,
-        "requests": 215,
+        "requests": 212,
         "bytes": 17066,
         "slowest": [
           {
             "u": "metrics",
-            "t": 844
+            "t": 1320
           },
           {
-            "u": "metrics",
-            "t": 834
+            "u": "produce_batch",
+            "t": 148
+          },
+          {
+            "u": "produce_batch",
+            "t": 138
+          },
+          {
+            "u": "produce_batch",
+            "t": 135
           },
           {
             "u": "produce_batch",
             "t": 127
           },
           {
-            "u": "produce_batch",
-            "t": 123
-          },
-          {
-            "u": "produce_batch",
-            "t": 122
-          },
-          {
-            "u": "produce_batch",
-            "t": 119
+            "u": "produce",
+            "t": 126
           }
         ],
-        "fcp": 276,
-        "lcp": 276,
+        "fcp": 244,
+        "lcp": 244,
         "cls": 0
       }
     },
@@ -2037,17 +2037,29 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 9,
-        "domReady": 308,
-        "load": 375,
+        "ttfb": 13,
+        "domReady": 205,
+        "load": 357,
         "transfer": 15503,
         "domNodes": 662,
-        "requests": 214,
-        "bytes": 17066,
+        "requests": 213,
+        "bytes": 17366,
         "slowest": [
           {
+            "u": "Captura_de_pantalla_2026-08-06_174645.png?v=1786031570",
+            "t": 176
+          },
+          {
             "u": "produce_batch",
-            "t": 136
+            "t": 165
+          },
+          {
+            "u": "produce",
+            "t": 135
+          },
+          {
+            "u": "produce_batch",
+            "t": 135
           },
           {
             "u": "produce_batch",
@@ -2055,23 +2067,11 @@
           },
           {
             "u": "produce_batch",
-            "t": 119
-          },
-          {
-            "u": "produce",
-            "t": 107
-          },
-          {
-            "u": "produce_batch",
-            "t": 93
-          },
-          {
-            "u": "produce_batch",
-            "t": 91
+            "t": 122
           }
         ],
-        "fcp": 252,
-        "lcp": 300,
+        "fcp": 192,
+        "lcp": 256,
         "cls": 0.899
       }
     },
@@ -2083,8 +2083,8 @@
       "net::ERR_ABORTED https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch"
     ],
     "bad": [
-      "404 https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantalla_2026-08-06_174645",
-      "404 https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantalla_2026-08-06_174529"
+      "404 https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantalla_2026-08-06_174529",
+      "404 https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantalla_2026-08-06_174645"
     ]
   },
   "recetas.movil": {
@@ -2266,41 +2266,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 160,
-        "domReady": 301,
-        "load": 406,
+        "ttfb": 111,
+        "domReady": 229,
+        "load": 408,
         "transfer": 15457,
         "domNodes": 680,
-        "requests": 218,
+        "requests": 220,
         "bytes": 139759,
         "slowest": [
           {
-            "u": "produce_batch",
-            "t": 1384
+            "u": "metrics",
+            "t": 1222
           },
           {
-            "u": "produce",
-            "t": 221
-          },
-          {
-            "u": "produce_batch",
-            "t": 125
+            "u": "metrics",
+            "t": 1209
           },
           {
             "u": "produce_batch",
-            "t": 124
+            "t": 140
           },
           {
             "u": "produce_batch",
-            "t": 119
+            "t": 134
           },
           {
             "u": "produce_batch",
-            "t": 111
+            "t": 126
+          },
+          {
+            "u": "produce_batch",
+            "t": 116
           }
         ],
-        "fcp": 260,
-        "lcp": 296,
+        "fcp": 184,
+        "lcp": 268,
         "cls": 0
       }
     },
@@ -2496,40 +2496,40 @@
       ],
       "perf": {
         "ttfb": 19,
-        "domReady": 308,
-        "load": 372,
+        "domReady": 217,
+        "load": 362,
         "transfer": 300,
         "domNodes": 679,
-        "requests": 218,
-        "bytes": 10926,
+        "requests": 217,
+        "bytes": 11238,
         "slowest": [
           {
             "u": "produce_batch",
-            "t": 145
+            "t": 135
           },
           {
-            "u": "produce_batch",
-            "t": 139
-          },
-          {
-            "u": "produce_batch",
+            "u": "produce",
             "t": 132
           },
           {
             "u": "produce_batch",
-            "t": 126
+            "t": 128
           },
           {
             "u": "produce_batch",
-            "t": 119
+            "t": 125
           },
           {
             "u": "produce_batch",
-            "t": 111
+            "t": 99
+          },
+          {
+            "u": "produce_batch",
+            "t": 94
           }
         ],
-        "fcp": 248,
-        "lcp": 248,
+        "fcp": 224,
+        "lcp": 224,
         "cls": 0.268
       }
     },
@@ -2732,21 +2732,25 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 198,
-        "domReady": 326,
-        "load": 413,
+        "ttfb": 107,
+        "domReady": 218,
+        "load": 366,
         "transfer": 16387,
         "domNodes": 612,
-        "requests": 212,
+        "requests": 213,
         "bytes": 187367,
         "slowest": [
           {
-            "u": "metrics",
-            "t": 479
+            "u": "produce_batch",
+            "t": 140
           },
           {
             "u": "produce_batch",
-            "t": 136
+            "t": 135
+          },
+          {
+            "u": "produce_batch",
+            "t": 133
           },
           {
             "u": "produce_batch",
@@ -2754,19 +2758,15 @@
           },
           {
             "u": "produce_batch",
-            "t": 128
-          },
-          {
-            "u": "produce",
-            "t": 115
+            "t": 126
           },
           {
             "u": "produce_batch",
-            "t": 101
+            "t": 122
           }
         ],
-        "fcp": 264,
-        "lcp": 324,
+        "fcp": 184,
+        "lcp": 260,
         "cls": 0
       }
     },
@@ -2969,48 +2969,48 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 10,
-        "domReady": 279,
-        "load": 350,
+        "ttfb": 12,
+        "domReady": 210,
+        "load": 358,
         "transfer": 300,
         "domNodes": 611,
-        "requests": 211,
-        "bytes": 10926,
+        "requests": 212,
+        "bytes": 11226,
         "slowest": [
           {
-            "u": "collect",
-            "t": 2258
-          },
-          {
             "u": "metrics",
-            "t": 1403
+            "t": 1517
           },
           {
             "u": "produce_batch",
-            "t": 156
+            "t": 144
           },
           {
             "u": "produce_batch",
-            "t": 139
+            "t": 144
           },
           {
             "u": "produce_batch",
-            "t": 126
+            "t": 116
           },
           {
             "u": "produce_batch",
-            "t": 125
+            "t": 105
+          },
+          {
+            "u": "produce_batch",
+            "t": 104
           }
         ],
-        "fcp": 248,
-        "lcp": 248,
+        "fcp": 224,
+        "lcp": 224,
         "cls": 0.078
       }
     },
     "errs": [],
     "netFail": [
-      "net::ERR_ABORTED https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-      "net::ERR_ABORTED https://zenqalife.roadshop.online/api/collect"
+      "net::ERR_ABORTED https://zenqalife.roadshop.online/api/collect",
+      "net::ERR_ABORTED https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch"
     ],
     "bad": []
   },
@@ -3229,41 +3229,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 183,
-        "domReady": 300,
-        "load": 445,
+        "ttfb": 125,
+        "domReady": 257,
+        "load": 429,
         "transfer": 22516,
         "domNodes": 751,
-        "requests": 231,
+        "requests": 234,
         "bytes": 554916,
         "slowest": [
           {
-            "u": "metrics",
-            "t": 1373
-          },
-          {
-            "u": "metrics",
-            "t": 896
-          },
-          {
             "u": "produce_batch",
-            "t": 180
-          },
-          {
-            "u": "produce_batch",
-            "t": 151
-          },
-          {
-            "u": "produce_batch",
-            "t": 145
+            "t": 179
           },
           {
             "u": "metrics",
-            "t": 143
+            "t": 173
+          },
+          {
+            "u": "produce_batch",
+            "t": 169
+          },
+          {
+            "u": "produce_batch",
+            "t": 150
+          },
+          {
+            "u": "produce_batch",
+            "t": 138
+          },
+          {
+            "u": "produce_batch",
+            "t": 130
           }
         ],
-        "fcp": 264,
-        "lcp": 336,
+        "fcp": 208,
+        "lcp": 244,
         "cls": 0
       }
     },
@@ -3271,6 +3271,8 @@
       "consola: Failed to load resource: the server responded with a status of 404 ()"
     ],
     "netFail": [
+      "net::ERR_ABORTED https://zenqalife.roadshop.online/cdn/shop/files/classic-dad-hat-spruce-left-front-6a749a8282134.jpg?v=1786026643&width=832",
+      "net::ERR_ABORTED https://zenqalife.roadshop.online/cdn/shop/files/classic-dad-hat-stone-front-6a749a82825a2.jpg?v=1786026643&width=832",
       "net::ERR_ABORTED https://zenqalife.roadshop.online/api/collect",
       "net::ERR_ABORTED https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch"
     ],
@@ -3493,42 +3495,42 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 196,
-        "domReady": 356,
-        "load": 401,
-        "transfer": 22516,
+        "ttfb": 119,
+        "domReady": 335,
+        "load": 816,
+        "transfer": 22512,
         "domNodes": 750,
         "requests": 228,
-        "bytes": 80546,
+        "bytes": 165347,
         "slowest": [
           {
             "u": "metrics",
-            "t": 883
+            "t": 771
+          },
+          {
+            "u": "receta-usucha",
+            "t": 280
           },
           {
             "u": "produce_batch",
-            "t": 132
+            "t": 158
           },
           {
             "u": "produce_batch",
-            "t": 119
+            "t": 137
           },
           {
             "u": "produce_batch",
-            "t": 117
-          },
-          {
-            "u": "produce",
-            "t": 109
+            "t": 128
           },
           {
             "u": "produce_batch",
-            "t": 108
+            "t": 128
           }
         ],
-        "fcp": 296,
-        "lcp": 296,
-        "cls": 0.064
+        "fcp": 432,
+        "lcp": 432,
+        "cls": 0
       }
     },
     "errs": [
@@ -3715,41 +3717,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 17,
-        "domReady": 330,
-        "load": 397,
+        "ttfb": 96,
+        "domReady": 244,
+        "load": 353,
         "transfer": 18395,
         "domNodes": 463,
-        "requests": 216,
-        "bytes": 105382,
+        "requests": 215,
+        "bytes": 104782,
         "slowest": [
           {
-            "u": "produce_batch",
-            "t": 1315
+            "u": "metrics",
+            "t": 192
           },
           {
             "u": "produce_batch",
-            "t": 353
-          },
-          {
-            "u": "produce",
-            "t": 146
+            "t": 151
           },
           {
             "u": "produce_batch",
-            "t": 123
+            "t": 130
           },
           {
             "u": "produce_batch",
-            "t": 112
+            "t": 126
           },
           {
             "u": "produce_batch",
-            "t": 111
+            "t": 122
+          },
+          {
+            "u": "produce_batch",
+            "t": 121
           }
         ],
-        "fcp": 280,
-        "lcp": 304,
+        "fcp": 168,
+        "lcp": 224,
         "cls": 0
       }
     },
@@ -3933,25 +3935,29 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 65,
-        "domReady": 331,
-        "load": 426,
+        "ttfb": 34,
+        "domReady": 330,
+        "load": 394,
         "transfer": 300,
         "domNodes": 463,
-        "requests": 217,
-        "bytes": 11526,
+        "requests": 214,
+        "bytes": 11226,
         "slowest": [
           {
             "u": "produce_batch",
-            "t": 210
+            "t": 401
           },
           {
             "u": "produce",
-            "t": 205
+            "t": 341
           },
           {
             "u": "produce_batch",
-            "t": 154
+            "t": 156
+          },
+          {
+            "u": "produce_batch",
+            "t": 152
           },
           {
             "u": "produce_batch",
@@ -3959,15 +3965,11 @@
           },
           {
             "u": "produce_batch",
-            "t": 137
-          },
-          {
-            "u": "produce_batch",
-            "t": 130
+            "t": 141
           }
         ],
-        "fcp": 284,
-        "lcp": 284,
+        "fcp": 244,
+        "lcp": 244,
         "cls": 0
       }
     },
@@ -4151,17 +4153,25 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 8,
-        "domReady": 315,
-        "load": 353,
+        "ttfb": 13,
+        "domReady": 260,
+        "load": 355,
         "transfer": 18395,
         "domNodes": 462,
-        "requests": 214,
-        "bytes": 70670,
+        "requests": 217,
+        "bytes": 75432,
         "slowest": [
           {
+            "u": "metrics",
+            "t": 1406
+          },
+          {
+            "u": "metrics",
+            "t": 512
+          },
+          {
             "u": "produce_batch",
-            "t": 139
+            "t": 131
           },
           {
             "u": "produce_batch",
@@ -4169,23 +4179,15 @@
           },
           {
             "u": "produce_batch",
-            "t": 125
+            "t": 127
           },
           {
-            "u": "collect",
+            "u": "produce_batch",
             "t": 124
-          },
-          {
-            "u": "produce_batch",
-            "t": 119
-          },
-          {
-            "u": "produce_batch",
-            "t": 117
           }
         ],
-        "fcp": 248,
-        "lcp": 312,
+        "fcp": 184,
+        "lcp": 280,
         "cls": 0.078
       }
     },
@@ -4411,41 +4413,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 163,
-        "domReady": 309,
-        "load": 381,
+        "ttfb": 120,
+        "domReady": 247,
+        "load": 437,
         "transfer": 22516,
         "domNodes": 751,
-        "requests": 231,
-        "bytes": 7583,
+        "requests": 232,
+        "bytes": 12645,
         "slowest": [
           {
             "u": "metrics",
-            "t": 1969
+            "t": 1810
+          },
+          {
+            "u": "metrics",
+            "t": 1499
           },
           {
             "u": "produce_batch",
-            "t": 135
+            "t": 179
           },
           {
             "u": "produce_batch",
-            "t": 126
+            "t": 149
           },
           {
             "u": "produce_batch",
-            "t": 125
+            "t": 147
           },
           {
             "u": "produce_batch",
-            "t": 122
-          },
-          {
-            "u": "produce_batch",
-            "t": 120
+            "t": 138
           }
         ],
-        "fcp": 236,
-        "lcp": 288,
+        "fcp": 228,
+        "lcp": 228,
         "cls": 0
       }
     },
@@ -4675,41 +4677,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 188,
-        "domReady": 331,
-        "load": 395,
+        "ttfb": 117,
+        "domReady": 237,
+        "load": 396,
         "transfer": 22516,
         "domNodes": 750,
         "requests": 228,
-        "bytes": 7364,
+        "bytes": 11826,
         "slowest": [
           {
             "u": "metrics",
-            "t": 325
-          },
-          {
-            "u": "collect",
-            "t": 140
+            "t": 2206
           },
           {
             "u": "produce_batch",
-            "t": 137
+            "t": 153
           },
           {
             "u": "produce_batch",
+            "t": 141
+          },
+          {
+            "u": "produce_batch",
+            "t": 136
+          },
+          {
+            "u": "produce",
             "t": 128
           },
           {
             "u": "produce_batch",
-            "t": 126
-          },
-          {
-            "u": "produce_batch",
-            "t": 125
+            "t": 123
           }
         ],
-        "fcp": 272,
-        "lcp": 324,
+        "fcp": 224,
+        "lcp": 284,
         "cls": 0.064
       }
     },
@@ -4897,41 +4899,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 20,
-        "domReady": 297,
-        "load": 379,
+        "ttfb": 112,
+        "domReady": 264,
+        "load": 381,
         "transfer": 22781,
         "domNodes": 548,
-        "requests": 219,
-        "bytes": 39099,
+        "requests": 217,
+        "bytes": 43261,
         "slowest": [
           {
-            "u": "produce_batch",
-            "t": 1136
+            "u": "metrics",
+            "t": 2100
+          },
+          {
+            "u": "metrics",
+            "t": 1005
           },
           {
             "u": "produce_batch",
-            "t": 135
+            "t": 151
           },
           {
             "u": "produce_batch",
-            "t": 127
+            "t": 147
           },
           {
             "u": "produce_batch",
-            "t": 123
+            "t": 138
           },
           {
-            "u": "produce_batch",
-            "t": 120
-          },
-          {
-            "u": "produce_batch",
-            "t": 120
+            "u": "produce",
+            "t": 132
           }
         ],
-        "fcp": 232,
-        "lcp": 232,
+        "fcp": 208,
+        "lcp": 208,
         "cls": 0
       }
     },
@@ -5115,41 +5117,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 10,
-        "domReady": 301,
-        "load": 382,
+        "ttfb": 13,
+        "domReady": 271,
+        "load": 366,
         "transfer": 300,
         "domNodes": 547,
-        "requests": 216,
-        "bytes": 89984,
+        "requests": 219,
+        "bytes": 94446,
         "slowest": [
           {
-            "u": "produce_batch",
-            "t": 127
+            "u": "metrics",
+            "t": 1005
+          },
+          {
+            "u": "metrics",
+            "t": 295
           },
           {
             "u": "produce_batch",
-            "t": 124
+            "t": 168
           },
           {
             "u": "produce_batch",
-            "t": 119
+            "t": 158
           },
           {
             "u": "produce_batch",
-            "t": 117
+            "t": 153
           },
           {
             "u": "produce_batch",
-            "t": 111
-          },
-          {
-            "u": "produce_batch",
-            "t": 97
+            "t": 151
           }
         ],
-        "fcp": 264,
-        "lcp": 328,
+        "fcp": 188,
+        "lcp": 256,
         "cls": 0.078
       }
     },
@@ -5318,41 +5320,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 21,
-        "domReady": 307,
-        "load": 386,
+        "ttfb": 98,
+        "domReady": 185,
+        "load": 349,
         "transfer": 16437,
         "domNodes": 418,
-        "requests": 209,
-        "bytes": 7283,
+        "requests": 211,
+        "bytes": 12045,
         "slowest": [
           {
             "u": "produce_batch",
-            "t": 135
+            "t": 146
           },
           {
             "u": "produce_batch",
-            "t": 122
+            "t": 138
           },
           {
             "u": "produce_batch",
-            "t": 116
+            "t": 138
           },
           {
             "u": "produce_batch",
-            "t": 114
+            "t": 132
           },
           {
             "u": "produce_batch",
-            "t": 108
+            "t": 119
           },
           {
             "u": "produce_batch",
-            "t": 98
+            "t": 102
           }
         ],
-        "fcp": 256,
-        "lcp": 256,
+        "fcp": 156,
+        "lcp": 156,
         "cls": 0
       }
     },
@@ -5521,17 +5523,21 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 9,
-        "domReady": 288,
-        "load": 340,
+        "ttfb": 15,
+        "domReady": 185,
+        "load": 306,
         "transfer": 300,
         "domNodes": 418,
         "requests": 209,
-        "bytes": 6464,
+        "bytes": 10926,
         "slowest": [
           {
+            "u": "metrics",
+            "t": 211
+          },
+          {
             "u": "produce_batch",
-            "t": 1707
+            "t": 141
           },
           {
             "u": "produce_batch",
@@ -5539,23 +5545,19 @@
           },
           {
             "u": "produce_batch",
-            "t": 134
+            "t": 132
           },
           {
             "u": "produce_batch",
-            "t": 134
-          },
-          {
-            "u": "produce_batch",
-            "t": 133
-          },
-          {
-            "u": "produce",
             "t": 128
+          },
+          {
+            "u": "produce_batch",
+            "t": 110
           }
         ],
-        "fcp": 248,
-        "lcp": 248,
+        "fcp": 160,
+        "lcp": 220,
         "cls": 0
       }
     },
@@ -5724,42 +5726,42 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 17,
-        "domReady": 298,
-        "load": 352,
+        "ttfb": 18,
+        "domReady": 200,
+        "load": 337,
         "transfer": 16437,
         "domNodes": 417,
-        "requests": 209,
-        "bytes": 7331,
+        "requests": 210,
+        "bytes": 11226,
         "slowest": [
           {
             "u": "metrics",
-            "t": 851
+            "t": 757
           },
           {
             "u": "produce_batch",
-            "t": 471
+            "t": 145
           },
           {
             "u": "produce_batch",
-            "t": 146
+            "t": 145
           },
           {
             "u": "produce_batch",
-            "t": 131
+            "t": 143
           },
           {
             "u": "produce_batch",
-            "t": 120
+            "t": 137
           },
           {
-            "u": "produce",
-            "t": 120
+            "u": "produce_batch",
+            "t": 123
           }
         ],
-        "fcp": 228,
-        "lcp": 228,
-        "cls": 0.077
+        "fcp": 184,
+        "lcp": 184,
+        "cls": 0.076
       }
     },
     "errs": [],
@@ -6049,29 +6051,29 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 187,
-        "domReady": 412,
-        "load": 448,
+        "ttfb": 110,
+        "domReady": 328,
+        "load": 431,
         "transfer": 36984,
         "domNodes": 1373,
-        "requests": 249,
-        "bytes": 326101,
+        "requests": 246,
+        "bytes": 330251,
         "slowest": [
           {
-            "u": "produce_batch",
-            "t": 217
+            "u": "metrics",
+            "t": 1974
           },
           {
             "u": "produce_batch",
-            "t": 147
+            "t": 161
           },
           {
             "u": "produce_batch",
-            "t": 142
+            "t": 144
           },
           {
             "u": "produce",
-            "t": 142
+            "t": 137
           },
           {
             "u": "produce_batch",
@@ -6079,11 +6081,11 @@
           },
           {
             "u": "produce_batch",
-            "t": 132
+            "t": 106
           }
         ],
-        "fcp": 252,
-        "lcp": 396,
+        "fcp": 256,
+        "lcp": 256,
         "cls": 0
       }
     },
@@ -6092,8 +6094,8 @@
       "js: Failed to resolve module specifier \"@theme/section-renderer\". Relative references must start with either \"/\", \"./\", or \"../\"."
     ],
     "netFail": [
-      "net::ERR_ABORTED https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-      "net::ERR_ABORTED https://zenqalife.roadshop.online/api/collect"
+      "net::ERR_ABORTED https://zenqalife.roadshop.online/api/collect",
+      "net::ERR_ABORTED https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch"
     ],
     "bad": []
   },
@@ -6377,41 +6379,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 12,
-        "domReady": 380,
-        "load": 411,
+        "ttfb": 15,
+        "domReady": 340,
+        "load": 443,
         "transfer": 36984,
         "domNodes": 1372,
-        "requests": 250,
-        "bytes": 258551,
+        "requests": 249,
+        "bytes": 262713,
         "slowest": [
           {
             "u": "metrics",
-            "t": 1955
+            "t": 972
           },
           {
-            "u": "produce",
-            "t": 153
-          },
-          {
-            "u": "produce_batch",
-            "t": 127
+            "u": "bG9jYWw6Ly9tZWRpYS85Ry9HQy82MFIzMEMxRzZXVDNHQzlHL2Q5MzAzZDU0",
+            "t": 180
           },
           {
             "u": "produce_batch",
-            "t": 121
+            "t": 162
           },
           {
             "u": "produce_batch",
-            "t": 120
+            "t": 146
           },
           {
             "u": "produce_batch",
-            "t": 117
+            "t": 139
+          },
+          {
+            "u": "produce_batch",
+            "t": 138
           }
         ],
-        "fcp": 248,
-        "lcp": 308,
+        "fcp": 240,
+        "lcp": 324,
         "cls": 0.079
       }
     },
@@ -6687,21 +6689,21 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 20,
-        "domReady": 2177,
-        "load": 2268,
+        "ttfb": 232,
+        "domReady": 466,
+        "load": 641,
         "transfer": 33529,
         "domNodes": 1109,
-        "requests": 238,
-        "bytes": 202784,
+        "requests": 242,
+        "bytes": 124133,
         "slowest": [
           {
             "u": "produce_batch",
-            "t": 887
+            "t": 162
           },
           {
-            "u": "collect",
-            "t": 773
+            "u": "produce",
+            "t": 159
           },
           {
             "u": "produce_batch",
@@ -6709,19 +6711,19 @@
           },
           {
             "u": "produce_batch",
-            "t": 148
+            "t": 156
+          },
+          {
+            "u": "produce",
+            "t": 138
           },
           {
             "u": "produce_batch",
-            "t": 134
-          },
-          {
-            "u": "produce_batch",
-            "t": 125
+            "t": 135
           }
         ],
-        "fcp": 2056,
-        "lcp": 2132,
+        "fcp": 420,
+        "lcp": 420,
         "cls": 0
       }
     },
@@ -6731,8 +6733,8 @@
       "js: Failed to resolve module specifier \"@theme/section-renderer\". Relative references must start with either \"/\", \"./\", or \"../\"."
     ],
     "netFail": [
-      "net::ERR_ABORTED https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-      "net::ERR_ABORTED https://zenqalife.roadshop.online/api/collect"
+      "net::ERR_ABORTED https://zenqalife.roadshop.online/api/collect",
+      "net::ERR_ABORTED https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch"
     ],
     "bad": []
   },
@@ -6998,41 +7000,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 9,
-        "domReady": 2500,
-        "load": 2506,
+        "ttfb": 107,
+        "domReady": 311,
+        "load": 402,
         "transfer": 33529,
         "domNodes": 1108,
-        "requests": 241,
-        "bytes": 7509,
+        "requests": 242,
+        "bytes": 12264,
         "slowest": [
           {
-            "u": "produce_batch",
-            "t": 2195
-          },
-          {
             "u": "metrics",
-            "t": 549
-          },
-          {
-            "u": "produce",
-            "t": 138
+            "t": 501
           },
           {
             "u": "produce_batch",
-            "t": 132
+            "t": 172
           },
           {
             "u": "produce_batch",
-            "t": 123
+            "t": 141
+          },
+          {
+            "u": "produce_batch",
+            "t": 140
           },
           {
             "u": "produce",
-            "t": 118
+            "t": 134
+          },
+          {
+            "u": "produce_batch",
+            "t": 130
           }
         ],
-        "fcp": 2052,
-        "lcp": 2512,
+        "fcp": 224,
+        "lcp": 224,
         "cls": 0.079
       }
     },
@@ -7042,8 +7044,8 @@
       "js: Failed to resolve module specifier \"@theme/section-renderer\". Relative references must start with either \"/\", \"./\", or \"../\"."
     ],
     "netFail": [
-      "net::ERR_ABORTED https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-      "net::ERR_ABORTED https://zenqalife.roadshop.online/api/collect"
+      "net::ERR_ABORTED https://zenqalife.roadshop.online/api/collect",
+      "net::ERR_ABORTED https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch"
     ],
     "bad": []
   },
@@ -7262,41 +7264,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 211,
-        "domReady": 358,
+        "ttfb": 115,
+        "domReady": 251,
         "load": 425,
         "transfer": 22516,
         "domNodes": 751,
-        "requests": 232,
-        "bytes": 8195,
+        "requests": 230,
+        "bytes": 12645,
         "slowest": [
           {
-            "u": "produce_batch",
-            "t": 1849
+            "u": "metrics",
+            "t": 556
           },
           {
             "u": "produce_batch",
-            "t": 152
+            "t": 169
           },
           {
             "u": "produce_batch",
-            "t": 129
+            "t": 155
           },
           {
             "u": "produce_batch",
-            "t": 127
+            "t": 146
           },
           {
             "u": "produce_batch",
-            "t": 121
+            "t": 141
           },
           {
             "u": "produce_batch",
-            "t": 120
+            "t": 137
           }
         ],
-        "fcp": 292,
-        "lcp": 332,
+        "fcp": 232,
+        "lcp": 232,
         "cls": 0
       }
     },
@@ -7526,41 +7528,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 193,
-        "domReady": 345,
-        "load": 419,
+        "ttfb": 116,
+        "domReady": 233,
+        "load": 383,
         "transfer": 22516,
         "domNodes": 750,
-        "requests": 227,
-        "bytes": 7364,
+        "requests": 226,
+        "bytes": 11826,
         "slowest": [
           {
-            "u": "metrics",
-            "t": 759
-          },
-          {
-            "u": "metrics",
-            "t": 304
+            "u": "produce_batch",
+            "t": 154
           },
           {
             "u": "produce_batch",
-            "t": 142
+            "t": 132
           },
           {
             "u": "produce_batch",
-            "t": 137
+            "t": 120
           },
           {
             "u": "produce_batch",
-            "t": 130
+            "t": 116
           },
           {
             "u": "produce_batch",
-            "t": 122
+            "t": 113
+          },
+          {
+            "u": "produce_batch",
+            "t": 112
           }
         ],
-        "fcp": 300,
-        "lcp": 340,
+        "fcp": 244,
+        "lcp": 244,
         "cls": 0.064
       }
     },
@@ -7790,41 +7792,41 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 195,
-        "domReady": 354,
-        "load": 459,
+        "ttfb": 120,
+        "domReady": 252,
+        "load": 419,
         "transfer": 22516,
         "domNodes": 751,
-        "requests": 234,
-        "bytes": 8183,
+        "requests": 232,
+        "bytes": 12652,
         "slowest": [
           {
             "u": "produce_batch",
-            "t": 1270
+            "t": 434
+          },
+          {
+            "u": "produce_batch",
+            "t": 236
           },
           {
             "u": "metrics",
-            "t": 329
+            "t": 150
           },
           {
             "u": "produce_batch",
-            "t": 131
+            "t": 145
           },
           {
             "u": "produce_batch",
-            "t": 129
+            "t": 130
           },
           {
             "u": "produce_batch",
-            "t": 122
-          },
-          {
-            "u": "produce_batch",
-            "t": 120
+            "t": 130
           }
         ],
-        "fcp": 296,
-        "lcp": 336,
+        "fcp": 240,
+        "lcp": 240,
         "cls": 0
       }
     },
@@ -8054,17 +8056,25 @@
         "lead:false"
       ],
       "perf": {
-        "ttfb": 192,
-        "domReady": 342,
-        "load": 442,
+        "ttfb": 117,
+        "domReady": 251,
+        "load": 412,
         "transfer": 22516,
         "domNodes": 750,
-        "requests": 226,
-        "bytes": 7064,
+        "requests": 225,
+        "bytes": 11826,
         "slowest": [
           {
             "u": "metrics",
-            "t": 878
+            "t": 1148
+          },
+          {
+            "u": "produce_batch",
+            "t": 288
+          },
+          {
+            "u": "produce_batch",
+            "t": 156
           },
           {
             "u": "produce_batch",
@@ -8072,23 +8082,15 @@
           },
           {
             "u": "produce_batch",
-            "t": 125
+            "t": 136
           },
           {
             "u": "produce_batch",
-            "t": 121
-          },
-          {
-            "u": "produce_batch",
-            "t": 120
-          },
-          {
-            "u": "produce_batch",
-            "t": 118
+            "t": 128
           }
         ],
-        "fcp": 296,
-        "lcp": 332,
+        "fcp": 244,
+        "lcp": 324,
         "cls": 0.064
       }
     },

@@ -1,0 +1,317 @@
+{
+  "home": {
+    "n": 199,
+    "porTipo": {
+      "css": 43094,
+      "js": 1076490,
+      "imagen": 418707,
+      "otro": 4119,
+      "fuente": 100668
+    },
+    "top": [
+      {
+        "t": "imagen",
+        "kb": 257,
+        "u": "/cdn/shop/t/10/assets/zq-hero-matcha.jpg?v=15079191781286413491791900318"
+      },
+      {
+        "t": "js",
+        "kb": 184,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.BVv2APid.js"
+      },
+      {
+        "t": "imagen",
+        "kb": 142,
+        "u": "/cdn/shop/t/10/assets/zq-p-chawan.jpg"
+      },
+      {
+        "t": "js",
+        "kb": 87,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.B3Or15Cg.js"
+      },
+      {
+        "t": "js",
+        "kb": 84,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/4b4bc88f.xFeORAnM.js"
+      },
+      {
+        "t": "js",
+        "kb": 80,
+        "u": "/cdn/wpm/be990e96fw5665eac5pbd6f5b22m75757206m.js"
+      },
+      {
+        "t": "js",
+        "kb": 46,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.Cr01JUEX.js"
+      },
+      {
+        "t": "js",
+        "kb": 41,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.Bn2XBZD_.js"
+      },
+      {
+        "t": "js",
+        "kb": 36,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.DPBBHNna.js"
+      },
+      {
+        "t": "js",
+        "kb": 35,
+        "u": "/cdn/s/trekkie.storefront.32ff6085714fe9c4d5859e332c5de5f8759a859e.min.js"
+      }
+    ],
+    "totalKB": 1605
+  },
+  "producto": {
+    "n": 215,
+    "porTipo": {
+      "css": 11997,
+      "js": 86877,
+      "imagen": 34150,
+      "otro": 4121,
+      "fuente": 0
+    },
+    "top": [
+      {
+        "t": "js",
+        "kb": 80,
+        "u": "/cdn/wpm/b000c43caw11aa9ebbp53097d09mf26b756fm.js"
+      },
+      {
+        "t": "imagen",
+        "kb": 20,
+        "u": "/cdn/shop/files/eco-tote-bag-oyster-front-6a749ca21725a.jpg?v=1786027186&width=832"
+      },
+      {
+        "t": "imagen",
+        "kb": 5,
+        "u": "/cdn/shop/files/eco-tote-bag-oyster-front-6a749ca21725a.jpg?v=1786027186&width=240"
+      },
+      {
+        "t": "imagen",
+        "kb": 5,
+        "u": "/cdn/shop/files/eco-tote-bag-oyster-front-6a749ca218f2b.jpg?v=1786027186&width=240"
+      },
+      {
+        "t": "imagen",
+        "kb": 4,
+        "u": "/cdn/shop/files/eco-tote-bag-oyster-product-details-6a749ca2184e6.jpg?v=1786027186&width=2"
+      },
+      {
+        "t": "js",
+        "kb": 3,
+        "u": "/checkouts/internal/preloads.js?locale=es-ES"
+      },
+      {
+        "t": "css",
+        "kb": 2,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.C0BOgdmL.css"
+      },
+      {
+        "t": "css",
+        "kb": 2,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/PayButtonSection.CZuxzxFG.css"
+      },
+      {
+        "t": "css",
+        "kb": 1,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.DjDhVpQB.css"
+      },
+      {
+        "t": "css",
+        "kb": 1,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css"
+      }
+    ],
+    "totalKB": 134
+  },
+  "tienda": {
+    "n": 221,
+    "porTipo": {
+      "css": 0,
+      "js": 3764,
+      "otro": 4119,
+      "fuente": 19864,
+      "imagen": 401874
+    },
+    "top": [
+      {
+        "t": "imagen",
+        "kb": 106,
+        "u": "/cdn/shop/t/10/assets/zq-p-hojicha.jpg"
+      },
+      {
+        "t": "imagen",
+        "kb": 104,
+        "u": "/cdn/shop/t/10/assets/zq-p-sencha.jpg"
+      },
+      {
+        "t": "imagen",
+        "kb": 99,
+        "u": "/cdn/shop/t/10/assets/zq-p-teapot.jpg"
+      },
+      {
+        "t": "imagen",
+        "kb": 78,
+        "u": "/cdn/shop/t/10/assets/zq-p-pack3.jpg"
+      },
+      {
+        "t": "fuente",
+        "kb": 19,
+        "u": "/cdn/shop/t/10/assets/zq-switzer-500.woff2"
+      },
+      {
+        "t": "js",
+        "kb": 3,
+        "u": "/checkouts/internal/preloads.js?locale=es-ES"
+      },
+      {
+        "t": "imagen",
+        "kb": 3,
+        "u": "/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de"
+      },
+      {
+        "t": "imagen",
+        "kb": 3,
+        "u": "/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de"
+      },
+      {
+        "t": "otro",
+        "kb": 1,
+        "u": "/web-pixels@e990e96fw5665eac5pbd6f5b22m75757206/custom/web-pixel-shopify-custom-pixel@0530"
+      },
+      {
+        "t": "js",
+        "kb": 0,
+        "u": "https://cdn.shopify.com/storefront/standard-actions.js"
+      }
+    ],
+    "totalKB": 420
+  },
+  "coleccion": {
+    "n": 248,
+    "porTipo": {
+      "css": 767,
+      "js": 11496,
+      "imagen": 842399,
+      "otro": 4849,
+      "fuente": 0
+    },
+    "top": [
+      {
+        "t": "imagen",
+        "kb": 81,
+        "u": "/cdn/shop/files/bG9jYWw6Ly9tZWRpYS85Ry9HQy82MFIzMEMxRzZXVDNHQzlHL2Q5MzAzZDU0LnBuZw_bf918ca"
+      },
+      {
+        "t": "imagen",
+        "kb": 61,
+        "u": "/cdn/shop/files/Captura_de_pantalla_2026-08-06_174645.png?v=1786031570&width=832"
+      },
+      {
+        "t": "imagen",
+        "kb": 60,
+        "u": "/cdn/shop/files/Captura_de_pantalla_2026-08-06_174529.png?v=1786031687&width=832"
+      },
+      {
+        "t": "imagen",
+        "kb": 46,
+        "u": "/cdn/shop/files/creamy_matcha_latte.webp?v=1786011072&width=832"
+      },
+      {
+        "t": "imagen",
+        "kb": 42,
+        "u": "/cdn/shop/files/classic-dad-hat-stone-left-front-6a749a8282164.jpg?v=1786026643&width=832"
+      },
+      {
+        "t": "imagen",
+        "kb": 40,
+        "u": "/cdn/shop/files/eco-tote-bag-oyster-product-details-6a749ca2184e6.jpg?v=1786027186&width=8"
+      },
+      {
+        "t": "imagen",
+        "kb": 31,
+        "u": "/cdn/shop/files/classic-dad-hat-stone-front-6a749a82825a2.jpg?v=1786026643&width=832"
+      },
+      {
+        "t": "imagen",
+        "kb": 31,
+        "u": "/cdn/shop/files/unisex-heavy-blend-hoodie-carolina-blue-front-6a74aa7c5c257.jpg?v=17860307"
+      },
+      {
+        "t": "imagen",
+        "kb": 30,
+        "u": "/cdn/shop/files/unisex-heavy-blend-hoodie-carolina-blue-front-6a74aa7c5c88f.jpg?v=17860307"
+      },
+      {
+        "t": "imagen",
+        "kb": 30,
+        "u": "/cdn/shop/files/unisex-heavy-blend-hoodie-light-pink-front-6a74aa7c5c908.jpg?v=1786030750&"
+      }
+    ],
+    "totalKB": 839
+  },
+  "carrito": {
+    "n": 212,
+    "porTipo": {
+      "css": 0,
+      "js": 3766,
+      "otro": 3819,
+      "fuente": 0,
+      "imagen": 0
+    },
+    "top": [
+      {
+        "t": "js",
+        "kb": 3,
+        "u": "/checkouts/internal/preloads.js?locale=es-ES"
+      },
+      {
+        "t": "otro",
+        "kb": 1,
+        "u": "/web-pixels@e990e96fw5665eac5pbd6f5b22m75757206/custom/web-pixel-shopify-custom-pixel@0530"
+      },
+      {
+        "t": "js",
+        "kb": 0,
+        "u": "https://cdn.shopify.com/storefront/standard-actions.js"
+      },
+      {
+        "t": "otro",
+        "kb": 0,
+        "u": "/.well-known/shopify/monorail/unstable/produce_batch"
+      },
+      {
+        "t": "otro",
+        "kb": 0,
+        "u": "/.well-known/shopify/monorail/unstable/produce_batch"
+      },
+      {
+        "t": "otro",
+        "kb": 0,
+        "u": "/api/collect"
+      },
+      {
+        "t": "otro",
+        "kb": 0,
+        "u": "/.well-known/shopify/monorail/unstable/produce_batch"
+      },
+      {
+        "t": "otro",
+        "kb": 0,
+        "u": "/.well-known/shopify/monorail/unstable/produce_batch"
+      },
+      {
+        "t": "otro",
+        "kb": 0,
+        "u": "/.well-known/shopify/monorail/unstable/produce_batch"
+      },
+      {
+        "t": "otro",
+        "kb": 0,
+        "u": "/.well-known/shopify/monorail/unstable/produce_batch"
+      }
+    ],
+    "totalKB": 7
+  }
+}

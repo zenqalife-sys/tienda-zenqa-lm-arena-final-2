@@ -1,0 +1,234 @@
+{
+  "home": {
+    "malos": [
+      {
+        "txt": "ZENQA LIFE",
+        "ratio": 3.6,
+        "min": 4.5,
+        "px": 17.28,
+        "color": "rgb(239, 47, 151)",
+        "bg": "rgba(250, 249, 242, 0.93)",
+        "sel": "SPAN.brand__w"
+      },
+      {
+        "txt": "dulce",
+        "ratio": 2.99,
+        "min": 4.5,
+        "px": 16.96,
+        "color": "rgb(239, 47, 151)",
+        "bg": "rgb(223, 232, 203)",
+        "sel": "I."
+      },
+      {
+        "txt": "umami",
+        "ratio": 2.99,
+        "min": 4.5,
+        "px": 16.96,
+        "color": "rgb(239, 47, 151)",
+        "bg": "rgb(223, 232, 203)",
+        "sel": "I."
+      },
+      {
+        "txt": "GUÍA ZENQA",
+        "ratio": 3.8,
+        "min": 4.5,
+        "px": 17.6,
+        "color": "rgb(239, 47, 151)",
+        "bg": "rgb(255, 255, 255)",
+        "sel": "I."
+      }
+    ],
+    "n": 4,
+    "ampliable": false,
+    "altImagenes": {
+      "(vacío)": 3,
+      "Taza de matcha batida junto a la ventana": 1,
+      "Té Matcha Orgánico PREMIUM Grado CEREMONIAL": 1,
+      "Kit Completo Matcha Zenqa Life": 1,
+      "Matcha y tés": 1,
+      "Tazas y vasos": 1,
+      "Ropa": 1,
+      "Iced Matcha Latte de avena": 1,
+      "Strawberry Cloud Matcha": 1,
+      "Matcha pre-entreno": 1,
+      "Campos de té cubiertos de sombra en Uji": 1
+    }
+  },
+  "producto": {
+    "malos": [
+      {
+        "txt": "ZENQA LIFE",
+        "ratio": 3.6,
+        "min": 4.5,
+        "px": 17.28,
+        "color": "rgb(239, 47, 151)",
+        "bg": "rgba(250, 249, 242, 0.93)",
+        "sel": "SPAN.brand__w"
+      },
+      {
+        "txt": "T-SHIRT",
+        "ratio": 2.52,
+        "min": 4.5,
+        "px": 11.84,
+        "color": "rgb(255, 110, 188)",
+        "bg": "rgb(255, 253, 248)",
+        "sel": "P.zq-product-page__eyebrow"
+      },
+      {
+        "txt": "Añadir al carrito",
+        "ratio": 3.06,
+        "min": 4.5,
+        "px": 15,
+        "color": "rgb(255, 110, 188)",
+        "bg": "rgb(11, 95, 42)",
+        "sel": "BUTTON.zq-product-page__button"
+      },
+      {
+        "txt": "Añadir al carrito · €19,90",
+        "ratio": 3.06,
+        "min": 4.5,
+        "px": 15,
+        "color": "rgb(255, 110, 188)",
+        "bg": "rgb(11, 95, 42)",
+        "sel": "BUTTON.zq-product-page__button"
+      }
+    ],
+    "n": 4,
+    "ampliable": false,
+    "altImagenes": {
+      "(vacío)": 3,
+      "Product mockup": 4
+    }
+  },
+  "tienda": {
+    "malos": [
+      {
+        "txt": "ZENQA LIFE",
+        "ratio": 3.6,
+        "min": 4.5,
+        "px": 17.28,
+        "color": "rgb(239, 47, 151)",
+        "bg": "rgba(250, 249, 242, 0.93)",
+        "sel": "SPAN.brand__w"
+      },
+      {
+        "txt": "−36 %",
+        "ratio": 3.8,
+        "min": 4.5,
+        "px": 9.92,
+        "color": "rgb(239, 47, 151)",
+        "bg": "rgb(255, 255, 255)",
+        "sel": "SPAN.card__kt-off"
+      },
+      {
+        "txt": "−12 %",
+        "ratio": 3.8,
+        "min": 4.5,
+        "px": 9.92,
+        "color": "rgb(239, 47, 151)",
+        "bg": "rgb(255, 255, 255)",
+        "sel": "SPAN.card__kt-off"
+      },
+      {
+        "txt": "−13 %",
+        "ratio": 3.8,
+        "min": 4.5,
+        "px": 9.92,
+        "color": "rgb(239, 47, 151)",
+        "bg": "rgb(255, 255, 255)",
+        "sel": "SPAN.card__kt-off"
+      }
+    ],
+    "n": 4,
+    "ampliable": false,
+    "altImagenes": {
+      "(vacío)": 3,
+      "Té Matcha Orgánico PREMIUM Grado Culinario": 1,
+      "Té Matcha Orgánico PREMIUM Grado CEREMONIAL": 1,
+      "Pack Descubrimiento · 3 botes 30 g": 1,
+      "Matcha Latte Guante Blanco 60 g": 1,
+      "Hojicha tostado de Kioto 60 g": 1,
+      "Sencha de primavera · hoja entera 50 g": 1,
+      "Kit Basico Matcha Zenqa Life": 1,
+      "Kit Completo Matcha Zenqa Life": 1,
+      "Kit Regalo Zenqa · caja negra": 1,
+      "Chasen de repuesto · bambú Nara": 1,
+      "Chawan Bol Ceremonial Zenqa Life": 1,
+      "Taza Te Matcha Vibes": 1,
+      "Vasos Matcha Latte Zenqa Life": 1,
+      "Vaso térmico de doble cara transparente con pajita": 1,
+      "Botella Termica Zenqa Life": 1,
+      "Taza esmaltada Zenqa Rosa": 1,
+      "Sudadera con capucha unisex": 1,
+      "Camiseta clásica unisex": 1,
+      "Eco Tote Bag": 1
+    }
+  },
+  "coleccion": {
+    "malos": [
+      {
+        "txt": "ZENQA LIFE",
+        "ratio": 3.6,
+        "min": 4.5,
+        "px": 17.28,
+        "color": "rgb(239, 47, 151)",
+        "bg": "rgba(250, 249, 242, 0.93)",
+        "sel": "SPAN.brand__w"
+      }
+    ],
+    "n": 1,
+    "ampliable": false,
+    "altImagenes": {
+      "(vacío)": 3,
+      "Product mockup": 46,
+      "Té Matcha Orgánico PREMIUM Grado CEREMONIAL": 3,
+      "Té Matcha Orgánico PREMIUM Grado Culinario": 3,
+      "Vaso térmico de doble cara transparente con pajita": 2
+    }
+  },
+  "carrito": {
+    "malos": [
+      {
+        "txt": "ZENQA LIFE",
+        "ratio": 3.6,
+        "min": 4.5,
+        "px": 17.28,
+        "color": "rgb(239, 47, 151)",
+        "bg": "rgba(250, 249, 242, 0.93)",
+        "sel": "SPAN.brand__w"
+      },
+      {
+        "txt": "TU MOMENTO MATCHA",
+        "ratio": 2.56,
+        "min": 4.5,
+        "px": 11.84,
+        "color": "rgb(255, 110, 188)",
+        "bg": "rgb(255, 255, 255)",
+        "sel": "P.zq-product-page__eyebrow"
+      },
+      {
+        "txt": "Empieza por el matcha ceremonial y añade",
+        "ratio": 3.06,
+        "min": 4.5,
+        "px": 15,
+        "color": "rgb(11, 95, 42)",
+        "bg": "rgb(255, 110, 188)",
+        "sel": "P."
+      },
+      {
+        "txt": "Descubrir la tienda",
+        "ratio": 3.06,
+        "min": 4.5,
+        "px": 15,
+        "color": "rgb(255, 110, 188)",
+        "bg": "rgb(11, 95, 42)",
+        "sel": "A.zq-cart-page__button"
+      }
+    ],
+    "n": 4,
+    "ampliable": false,
+    "altImagenes": {
+      "(vacío)": 3
+    }
+  }
+}

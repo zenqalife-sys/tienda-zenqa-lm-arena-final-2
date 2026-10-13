@@ -1,0 +1,163 @@
+{
+  "/pages/legal": {
+    "status": 404,
+    "final": "/pages/legal",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/pages/aviso-legal": {
+    "status": 200,
+    "final": "/pages/aviso-legal",
+    "bytes": 49383,
+    "titulo": "Aviso legal",
+    "h1": "Aviso legal"
+  },
+  "/pages/terminos": {
+    "status": 404,
+    "final": "/pages/terminos",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/pages/condiciones": {
+    "status": 404,
+    "final": "/pages/condiciones",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/pages/envios": {
+    "status": 404,
+    "final": "/pages/envios",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/pages/devoluciones": {
+    "status": 404,
+    "final": "/pages/devoluciones",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/pages/privacidad": {
+    "status": 404,
+    "final": "/pages/privacidad",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/pages/cookies": {
+    "status": 404,
+    "final": "/pages/cookies",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/pages/contacto": {
+    "status": 200,
+    "final": "/pages/contacto",
+    "bytes": 49383,
+    "titulo": "Contacto",
+    "h1": "Nacidos enlas colinasde Uji"
+  },
+  "/pages/faq": {
+    "status": 404,
+    "final": "/pages/faq",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/policies/privacy-policy": {
+    "status": 200,
+    "final": "/policies/privacy-policy",
+    "bytes": 63486,
+    "titulo": "Política de privacidad",
+    "h1": "Política de privacidad"
+  },
+  "/policies/refund-policy": {
+    "status": 404,
+    "final": "/policies/refund-policy",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/policies/terms-of-service": {
+    "status": 404,
+    "final": "/policies/terms-of-service",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/policies/shipping-policy": {
+    "status": 404,
+    "final": "/policies/shipping-policy",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/policies/legal-notice": {
+    "status": 404,
+    "final": "/policies/legal-notice",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/policies/contact-information": {
+    "status": 404,
+    "final": "/policies/contact-information",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/policies/terms-of-service#": {
+    "status": 404,
+    "final": "/policies/terms-of-service",
+    "bytes": 173829,
+    "titulo": "404 No encontrado",
+    "h1": "Page not found"
+  },
+  "/account/login": {
+    "status": 406,
+    "final": "https://shopify.com/109524156765/account?locale=es&buyer_flags=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ2dHJxamstYnoubXlzaG9waWZ5LmNvbSIsImZsYWdzIjpbXSwiZXhwIjoxNzkyNTE2NzQ4LCJuYmYiOjE3OTE5MTE5NDh9.abeWt4ZU-X95--f9VhbDnOiL4ZE3YDgQGuJkpguC7U0",
+    "bytes": 14,
+    "titulo": "",
+    "h1": ""
+  },
+  "/blogs/noticias": {
+    "status": 200,
+    "final": "/blogs/noticias",
+    "bytes": 47311,
+    "titulo": "Noticias",
+    "h1": "Noticias"
+  },
+  "/agents.md": {
+    "status": 200,
+    "final": "/agents.md",
+    "bytes": 5555,
+    "titulo": "",
+    "h1": ""
+  },
+  "/.well-known/ucp": {
+    "status": 200,
+    "final": "/.well-known/ucp",
+    "bytes": 4840,
+    "titulo": "",
+    "h1": ""
+  },
+  "/favicon.ico": {
+    "status": 404,
+    "final": "/favicon.ico",
+    "bytes": 0,
+    "titulo": "",
+    "h1": ""
+  },
+  "/checkout": {
+    "status": 403,
+    "final": "/checkouts/cn/hWNHvkEDvqLawh3TblwEVjtQ/es-es?_r=AQAB4GBQ3eGbSm_GCKNRzKQ9whD0sSBlp0Iy8TTFEIOi0k1SmBP6&auto_redirect=false&edge_redirect=true&skip_shop_pay=true",
+    "bytes": 51,
+    "titulo": "",
+    "h1": ""
+  }
+}
