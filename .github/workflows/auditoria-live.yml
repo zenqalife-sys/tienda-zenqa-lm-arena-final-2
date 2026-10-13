@@ -1,0 +1,47 @@
+name: Auditoría live
+
+# Audita la tienda Shopify publicada (zenqalife.roadshop.online) con un navegador
+# real: HTTP + enlaces + catálogo, flujos de compra, capturas en móvil/tablet/
+# escritorio, accesibilidad (axe) y Lighthouse. Deja la evidencia en el artefacto
+# `auditoria-live` (audit-out/).
+on:
+  workflow_dispatch:
+  push:
+    branches: ["arena/**"]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Herramientas de auditoría
+        run: npm install --no-save --omit=dev --no-audit --no-fund puppeteer@24 axe-core@4 lighthouse@12
+
+      - name: Chrome de puppeteer como CHROME_PATH
+        run: |
+          echo "CHROME_PATH=$(node -e "console.log(require('puppeteer').executablePath())")" >> "$GITHUB_ENV"
+
+      - name: Auditoría
+        run: node .test/live-audit.mjs
+        env:
+          BASE: https://zenqalife.roadshop.online
+
+      - name: Resumen en el log
+        if: always()
+        run: node .test/live-audit-report.mjs
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: auditoria-live
+          path: audit-out/
+          retention-days: 14
