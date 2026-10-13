@@ -192,11 +192,12 @@ await J("anchors.json", anchors);
 
 /* ─────────────────────────── E · navegador real ─────────────────────────── */
 const VIEWPORTS = [
-  { name: "movil", width: 390, height: 844, isMobile: true, deviceScaleFactor: 3, ua: "mobile" },
-  { name: "tablet", width: 768, height: 1024, isMobile: true, deviceScaleFactor: 2, ua: "mobile" },
+  { name: "movil", width: 390, height: 844, isMobile: true, deviceScaleFactor: 2, ua: "mobile" },
+  { name: "tablet", width: 768, height: 1024, isMobile: true, deviceScaleFactor: 1, ua: "mobile" },
   { name: "escritorio", width: 1440, height: 900, isMobile: false, deviceScaleFactor: 1, ua: "desktop" },
 ];
 const TABLET_PAGES = new Set(["home", "tienda", "matcha", "recetas", "producto-ceremonial", "carrito"]);
+const ESCRITORIO_FULL = new Set(["home", "tienda", "matcha", "recetas", "producto-ceremonial", "carrito", "nosotros", "404"]);
 const browserReport = {};
 const funcional = {};
 
@@ -305,9 +306,9 @@ if (puppeteer) {
         await page.evaluate(() => window.scrollTo(0, 0));
       } catch {}
 
-      const shot = async (suffix, full) => page.screenshot({ path: path.join(OUT, "screens", `${key}${suffix}.jpg`), type: "jpeg", quality: 72, fullPage: full }).catch(() => {});
+      const shot = async (suffix, full) => page.screenshot({ path: path.join(OUT, "screens", `${key}${suffix}.jpg`), type: "jpeg", quality: 62, fullPage: full }).catch(() => {});
       await shot("", false);
-      await shot(".full", true);
+      if (vp.name === "movil" || (vp.name === "escritorio" && ESCRITORIO_FULL.has(name))) await shot(".full", true);
 
       browserReport[key] = { path: p, status, vp: `${vp.width}x${vp.height}`, info, sticky, errs: [...new Set(errs)].slice(0, 12), netFail: [...new Set(netFail)].slice(0, 12), bad: [...new Set(bad)].slice(0, 20), reqs: reqs.filter((r) => /cart|cart\.js|checkout|contact|lead|klaviyo|mail|signup/i.test(r)).slice(0, 30) };
       console.log(`· ${key.padEnd(30)} ${status} imp ${info.height}px desborde ${info.overflow} px · táctiles<40 ${info.smallCount} · rotas ${info.broken?.length || 0} · errores ${errs.length}`);

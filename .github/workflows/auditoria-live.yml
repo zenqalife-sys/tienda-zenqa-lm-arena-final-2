@@ -10,7 +10,7 @@ on:
     branches: ["arena/**"]
 
 permissions:
-  contents: read
+  contents: write   # para publicar la evidencia en la propia rama (los artefactos no son accesibles desde el sandbox)
 
 jobs:
   audit:
@@ -45,3 +45,14 @@ jobs:
           name: auditoria-live
           path: audit-out/
           retention-days: 14
+
+      - name: Publicar la evidencia en la rama
+        if: always()
+        run: |
+          set -e
+          rm -f audit-out/lh-*.json          # los informes Lighthouse en crudo pesan; queda lh-summary.json
+          git config user.name "auditoría zenqa"
+          git config user.email "auditoria@users.noreply.github.com"
+          git add -A audit-out
+          git commit -m "Auditoría live: evidencia (run ${{ github.run_id }})" || echo "sin cambios que commitear"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
