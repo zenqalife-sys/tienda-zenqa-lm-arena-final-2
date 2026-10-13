@@ -64,7 +64,7 @@ jobs:
         if: always()
         run: |
           set -e
-          rm -f audit-out/lh-*.json          # los informes Lighthouse en crudo pesan; queda lh-summary.json
+          rm -f audit-out/lh-*-mobile.json audit-out/lh-*-desktop.json   # los informes Lighthouse en crudo pesan; se conserva lh-summary.json
           git config user.name "auditoría zenqa"
           git config user.email "auditoria@users.noreply.github.com"
           git add -A audit-out

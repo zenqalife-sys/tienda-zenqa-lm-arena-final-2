@@ -22,7 +22,7 @@ const shot = (n) => page.screenshot({ path: path.join(OUT, "screens", "probe-" +
 await page.goto(BASE + "/pages/tienda", { waitUntil: "networkidle2" }); await sleep(1300);
 out.p1 = await page.evaluate(async () => {
   const medir = () => {
-    const nav = document.querySelector(".nav"), shelf = document.querySelector("[class*=shelf],[class*=catnav],.chips");
+    const nav = document.querySelector(".nav"), shelf = document.querySelector(".phead-stick");
     const n = nav ? nav.getBoundingClientRect() : null, s = shelf ? shelf.getBoundingClientRect() : null;
     return { navBottom: n ? Math.round(n.bottom) : null, shelfBottom: s ? Math.round(s.bottom) : null, shelfCls: shelf ? shelf.className : null, shelfHeight: s ? Math.round(s.height) : null };
   };
@@ -79,7 +79,7 @@ await page.goto(BASE + "/pages/tienda", { waitUntil: "networkidle2" }); await sl
 out.p6 = await page.evaluate(() => {
   const alto = (sel) => { const e = document.querySelector(sel); return e ? Math.round(e.getBoundingClientRect().height) : null; };
   const nav = document.querySelector(".nav");
-  const shelf = document.querySelector("[class*=shelf],[class*=catnav]");
+  const shelf = document.querySelector(".phead-stick");
   const prod = document.querySelector('[data-act="add"]')?.closest("article,li,.card,div");
   const r = prod?.getBoundingClientRect();
   const shelfR = shelf?.getBoundingClientRect();
@@ -90,7 +90,12 @@ out.p6 = await page.evaluate(() => {
     if (nav && b.top < nav.getBoundingClientRect().bottom && b.bottom > nav.getBoundingClientRect().top) tapado.push({ txt: el.innerText.trim().slice(0, 12), bajoNav: true });
     if (tapado.length > 6) break;
   }
-  return { alturaBanda: alto(".band"), alturaNav: alto(".nav"), alturaShelf: shelf ? Math.round(shelfR.height) : null, shelfCls: shelf?.className, scrollPadding: getComputedStyle(document.documentElement).scrollPaddingTop, chromeTotal: (alto(".band") || 0) + (alto(".nav") || 0) + (shelf ? Math.round(shelfR.height) : 0), botonesBajoElMenus: tapado, viewport: window.innerHeight };
+  const cs = shelf ? getComputedStyle(shelf) : null;
+  return { alturaBanda: alto(".band"), alturaNav: alto(".nav"), alturaShelf: shelf ? Math.round(shelfR.height) : null, shelfCls: shelf?.className,
+    shelfPos: cs?.position, shelfTop: cs?.top, shelfFondo: cs?.backgroundColor, shelfBlur: cs?.backdropFilter, shelfZ: cs?.zIndex,
+    scrollPadding: getComputedStyle(document.documentElement).scrollPaddingTop,
+    chromeTotal: (alto(".band") || 0) + (alto(".nav") || 0) + (shelf ? Math.round(shelfR.height) : 0),
+    botonesBajoElMenus: tapado, viewport: window.innerHeight };
 });
 /* ¿el cajón del carrito bloquea el fondo? */
 out.p6b = await page.evaluate(() => ({ inertTrasAbrir: document.querySelectorAll("[inert]").length, ariaHidden: document.querySelectorAll('[aria-hidden="true"]').length }));
