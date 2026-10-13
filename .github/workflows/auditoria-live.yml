@@ -46,6 +46,11 @@ jobs:
           path: audit-out/
           retention-days: 14
 
+      - name: Sondas puntuales
+        run: node .test/live-probe.mjs
+        env:
+          BASE: https://zenqalife.roadshop.online
+
       - name: Publicar la evidencia en la rama
         if: always()
         run: |
