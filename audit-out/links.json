@@ -369,7 +369,7 @@
   "https://zenqalife.roadshop.online/collections/all": {
     "status": 200,
     "type": "text/html; charset=utf-8",
-    "bytes": 374027,
+    "bytes": 375210,
     "err": "",
     "kind": "enlace",
     "where": [
@@ -1123,7 +1123,7 @@
   "https://zenqalife.roadshop.online/cart": {
     "status": 200,
     "type": "text/html; charset=utf-8",
-    "bytes": 52381,
+    "bytes": 53564,
     "err": "",
     "kind": "enlace",
     "where": [

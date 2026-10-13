@@ -1,0 +1,273 @@
+{
+  "p1": {
+    "antes": {
+      "navBottom": 100,
+      "shelfBottom": null,
+      "shelfCls": null,
+      "shelfHeight": null
+    },
+    "chip": {
+      "txt": "Kits de preparación",
+      "href": "#kit"
+    },
+    "scroll": 2202,
+    "seccionTop": 130,
+    "tituloTop": 176,
+    "tapadoPor": {
+      "navBottom": 63,
+      "shelfBottom": null,
+      "shelfCls": null,
+      "shelfHeight": null
+    }
+  },
+  "p2": {
+    "add": {
+      "ok": true,
+      "badgeAntes": "0"
+    },
+    "badgeDespues": {
+      "badge": "0",
+      "hidden": true,
+      "ls": null
+    },
+    "abrirCajon": true,
+    "cajon": {
+      "open": "true",
+      "texto": "TU CARRITO El carrito está vacío Empieza por el bote con el que no se falla: ceremonial de Uji, 54 g para 27 tazas. AÑADIR · 29,95 € VER LA TIENDA Te faltan 35,00 € para el envío gratis Total 0,00 € FINALIZAR COMPRA",
+      "total": "0,00 €",
+      "envio": "Te faltan 35,00 € para el envío gratis"
+    },
+    "checkoutBtn": {
+      "ok": true
+    },
+    "final": {
+      "url": "https://zenqalife.roadshop.online/checkouts/cn/hWNHviqRdpMWHA6UYXIJj90M/es-es?_r=AQABRXxRFtLHnaFJGvm6x1B-RH-MUJawUPwFx-kJlvF9H14L93T2&auto_redirect=false&edge_redirect=true&skip_shop_pay=true",
+      "title": "Pantalla de pago - ZENQA LIFE",
+      "texto": "Ir directamente al contenido ZENQA LIFE Ir a la tienda online Resumen del pedido Precio total 19,90 € ZENQA LIFE Pantalla de pago Pago exprés O Contacto Iniciar sesión Correo electrónico Se usa para la confirmación del pedido y los recordatorios del carrito Enviarme novedades y ofertas por correo electrónico Entrega País / Región España Nombre Apellidos Dirección Casa, apartamento, etc. (opcional)"
+    }
+  },
+  "p3": {
+    "texto": "TU MOMENTO MATCHA Tu carrito Revisa tu selección y prepara tu próximo ritual Zenqa Life. T-SHIRT Eco Tote Bag €19,90 Eliminar CANTIDAD Actualizar carrito RESUMEN Total estimado €19,90 Envío gratis a partir de 35 €. Te faltan €15,10. Pasar al checkout Seguir comprando"
+  },
+  "p4": {
+    "ficha": {
+      "h1": "Eco Tote Bag",
+      "precio": [
+        "ENVÍOS GRATIS A PARTIR DE 35 €",
+        "€19,90",
+        "Envío gratis desde 35 €",
+        "Añadir al carrito · €19,90"
+      ],
+      "variantes": 0,
+      "botones": [
+        "Añadir al carrito",
+        "Añadir al carrito · €19,90"
+      ],
+      "descripcion": "Say goodbye to plastic, and bag your goodies in this organic cotton tote bag. There’s more than enough room for groceries, books, and anything in between. • 100% certified organic cotton 3/1 twill • Fabric weight: 8 oz/yd² (272 g/m²) • Dimensions: 16″ × 14 ½″ × 5″ (40.6 cm × 35.6 cm × 12.7 cm) • Wei"
+    }
+  },
+  "p5": {
+    "abrir": {
+      "ok": true
+    },
+    "menu": {
+      "open": "true",
+      "role": "dialog",
+      "ariaModal": "true",
+      "enlaces": [
+        "MATCHA\n→",
+        "PRODUCTOS\n→",
+        "RECETAS Y GUÍAS\n→",
+        "NOSOTROS\n→",
+        "CONTACTO\n→"
+      ],
+      "focoDentro": false,
+      "inert": 0,
+      "btnCerrar": true
+    },
+    "cerrarEsc": "false"
+  },
+  "p6": {
+    "alturaBanda": 37,
+    "alturaNav": 63,
+    "alturaShelf": null,
+    "scrollPadding": "74px",
+    "chromeTotal": 100,
+    "botonesBajoElMenus": [],
+    "viewport": 844
+  },
+  "p6b": {
+    "inertTrasAbrir": 0,
+    "ariaHidden": 18
+  },
+  "p7": {
+    "banner": [
+      {
+        "sel": "SECTION.sec sec--mint",
+        "txt": "Empieza sin riesgoDescarga la guía Zenqa y pruébalaAntes de comprar, lee el PDF de 4 páginas: recetas, dosis, conservación y hoja de cata. Si el matcha no te convence, lo devuelves en 30 días.Tu email"
+      },
+      {
+        "sel": "DIV.wrap",
+        "txt": "Empieza sin riesgoDescarga la guía Zenqa y pruébalaAntes de comprar, lee el PDF de 4 páginas: recetas, dosis, conservación y hoja de cata. Si el matcha no te convence, lo devuelves en 30 días.Tu email"
+      },
+      {
+        "sel": "DIV.lead",
+        "txt": "Empieza sin riesgoDescarga la guía Zenqa y pruébalaAntes de comprar, lee el PDF de 4 páginas: recetas, dosis, conservación y hoja de cata. Si el matcha no te convence, lo devuelves en 30 días.Tu email"
+      }
+    ],
+    "metaRefresh": [
+      "<meta http-equiv=\"origin-trial\" content=\"A1duO9QWZ/3h+eq5jQsvYqOTVq5h5q2AoGInpwNr4FT22/JUt3BxFERXHAo5iKhs6doOavi6G5hno0oBANPzSgIAAABxeyJvcmlnaW4iOiJodHRwczovL2Nkbi5zaG9waWZ5LmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJlcmVuZGVyVW50aWxTY3JpcHQiLCJleHBpcnkiOjE3ODg4MjU2MDAsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=\">",
+      "<meta http-equiv=\"origin-trial\" content=\"AwnTE1hYg9Bsa5x0wEDsbG6tOdZ3j6ebKzXxbr/2TnTilsCRK9FwndlhAyFVnnBH1qQAqpOPJxVWiKGUqBnOmAYAAAB8eyJvcmlnaW4iOiJodHRwczovL2Nkbi5zaG9waWZ5LmNvbTo0NDMiLCJmZWF0dXJlIjoiTG9uZ0FuaW1hdGlvbkZyYW1lU3R5bGVEdXJhdGlvbiIsImV4cGlyeSI6MTc5MTI0NDgwMCwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==\">",
+      "<meta http-equiv=\"origin-trial\" content=\"A1cNj7yeFpBT/ETqZHRgUfM9tToLwOpBySTd4C9Eya3JtQo/BEQegM6MMV7BZESSyAjQJJXYgH/ovHY1UHmB8woAAABjeyJvcmlnaW4iOiJodHRwczovL2Nkbi5zaG9waWZ5LmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViTUNQIiwiZXhwaXJ5IjoxNzk0ODczNjAwLCJpc1RoaXJkUGFydHkiOnRydWV9\">",
+      "<meta http-equiv=\"origin-trial\" content=\"A1XQljJxk3U4c44gueu4vlIeDofyyWFswfVKbUiNw4itZx4Yy8Uw3nIhtzBePIrv1bSXqzHGDfYymYF5W7TKKAoAAABzeyJvcmlnaW4iOiJodHRwczovL2Nkbi5zaG9waWZ5LmNvbTo0NDMiLCJmZWF0dXJlIjoiU3BlY3VsYXRpb25NZWFzdXJlbWVudCIsImV4cGlyeSI6MTc5MzY2NDAwMCwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==\">",
+      "<meta http-equiv=\"origin-trial\" content=\"Ax9yX6wXQN8G5IFmAMuROwlLDFBpw1CUnFgsIGNYqJJ4H6td1fqjIYkL02d7HpmOAFMFSi3/1kym00LEfYqOdwYAAACOeyJvcmlnaW4iOiJodHRwczovL2Nkbi5zaG9waWZ5LmNvbTo0NDMiLCJmZWF0dXJlIjoiU3BlY3VsYXRpb25SdWxlc01vZGVyYXRlVmlld3BvcnRIZXVyaXN0aWNzQ29udHJvbCIsImV4cGlyeSI6MTc5NjY4ODAwMCwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==\">"
+    ],
+    "cookiesJs": "localization=ES; cart_currency=EUR; cart=hWNHviqRdpMWHA6UYXIJj90M%3Fkey%3D4ec9406a5a10e2f7fba745977da1de55",
+    "iframes": [
+      "https://zenqalife.roadshop.online/web-pixels@000c43caw11aa9ebbp53097d09mf26b756f"
+    ],
+    "cookiesRespuesta": [
+      "localization"
+    ]
+  },
+  "p8": {
+    "search": {
+      "titulo": "Búsqueda: 8 resultados encontrados para \"matcha\"",
+      "resultados": 24,
+      "agotado": 2,
+      "filtrosTexto": 0
+    },
+    "collection": {
+      "agotado": 2,
+      "filtroMoneda": 0,
+      "ordenOpciones": [
+        "Características",
+        "Más relevantes",
+        "Más vendidos",
+        "Alfabéticamente, A-Z",
+        "Alfabéticamente, Z-A",
+        "Precio, menor a mayor",
+        "Precio, mayor a menor",
+        "Fecha: antiguo(a) a reciente",
+        "Fecha: reciente a antiguo(a)",
+        "Características",
+        "Más relevantes",
+        "Más vendidos"
+      ],
+      "h1": "Productos"
+    },
+    "orden": {
+      "ok": true,
+      "url": "https://zenqalife.roadshop.online/collections/all",
+      "primeros": [
+        "€10,50",
+        "€19,90",
+        "€20,90",
+        "€25,50",
+        "€13,90",
+        "€31,20"
+      ]
+    }
+  },
+  "p9": {
+    "ok": true,
+    "href": "#te-ceremonial",
+    "alto": 38,
+    "text": "Compró Té Matcha Orgánico PREMIUM Grado CEREMONIAL",
+    "qvAbierto": "true",
+    "hash": "#opiniones"
+  },
+  "p10": {
+    "html": "<div class=\"col\" style=\"gap:12px\"><span class=\"brand\"><img src=\"//zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-logo-2x.png\" alt=\"\" width=\"30\" height=\"30\" loading=\"eager\"><span class=\"brand__w\" style=\"color:#fff\">Zenqa Life</span></span><p class=\"note\" style=\"color:rgba(255,255,255,.78);max-width:34ch\">Matcha ceremonial de Uji para quien quiere concentrarse sin ponérselo difícil al corazón.</p><div class=\"socials\" style=\"margin-top:2px\"><a href=\"https://instagram.com\" target=\"_blank\" rel=\"noopener\" aria-label=\"Instagram\"><span>Instagram</span></a><a href=\"https://tiktok.com\" target=\"_blank\" rel=\"noopener\" aria-label=\"TikTok\"><span>TikTok</span></a><a href=\"https://youtube.com\" target=\"_b",
+    "imagenesPago": 0,
+    "alt": []
+  },
+  "p11": {
+    "bloques": [
+      {
+        "t": "TÉ MATCHA",
+        "n": 0
+      },
+      {
+        "t": "MÁS VARIEDADES DE TÉ",
+        "n": 0
+      },
+      {
+        "t": "KITS DE PREPARACIÓN",
+        "n": 0
+      },
+      {
+        "t": "TETERAS, TAZAS, BOTELLAS Y VASOS",
+        "n": 0
+      },
+      {
+        "t": "ROPA Y ACCESORIOS",
+        "n": 0
+      },
+      {
+        "t": "ÚNETE AL UNIVERSO ZENQA",
+        "n": 0
+      }
+    ],
+    "tarjetas": 20,
+    "enlacesFicha": [
+      "te-culinario",
+      "te-culinario",
+      "te-culinario",
+      "te-ceremonial",
+      "te-ceremonial",
+      "te-ceremonial",
+      "pack-descubrimiento",
+      "pack-descubrimiento",
+      "pack-descubrimiento",
+      "te-guante",
+      "te-guante",
+      "te-guante",
+      "te-hojicha",
+      "te-hojicha",
+      "te-hojicha",
+      "te-sencha",
+      "te-sencha",
+      "te-sencha",
+      "kit-basico",
+      "kit-basico",
+      "kit-basico",
+      "kit-completo",
+      "kit-completo",
+      "kit-completo",
+      "kit-regalo",
+      "kit-regalo",
+      "kit-regalo",
+      "recambio-chasen",
+      "recambio-chasen",
+      "recambio-chasen",
+      "chawan-negro",
+      "chawan-negro",
+      "chawan-negro",
+      "taza-zenqa",
+      "taza-zenqa",
+      "taza-zenqa",
+      "vaso-latte",
+      "vaso-latte",
+      "vaso-latte",
+      "termico",
+      "termico",
+      "termico",
+      "botella-ice",
+      "botella-ice",
+      "botella-ice",
+      "taza-esmaltada",
+      "taza-esmaltada",
+      "taza-esmaltada",
+      "sudadera",
+      "sudadera",
+      "sudadera",
+      "camiseta",
+      "camiseta",
+      "camiseta",
+      "tote",
+      "tote",
+      "tote"
+    ]
+  }
+}
