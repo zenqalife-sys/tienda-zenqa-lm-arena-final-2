@@ -8,6 +8,8 @@ on:
   workflow_dispatch:
   push:
     branches: ["arena/**"]
+    paths-ignore:
+      - "audit-out/**"     # la propia evidencia no debe re-disparar la auditoría (bucle)
 
 permissions:
   contents: write   # para publicar la evidencia en la propia rama (los artefactos no son accesibles desde el sandbox)
