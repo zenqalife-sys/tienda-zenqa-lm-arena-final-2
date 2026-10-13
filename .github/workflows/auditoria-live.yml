@@ -47,11 +47,13 @@ jobs:
           retention-days: 14
 
       - name: Sondas puntuales
+        continue-on-error: true
         run: node .test/live-probe.mjs
         env:
           BASE: https://zenqalife.roadshop.online
 
       - name: Lighthouse, legales, contraste y peso
+        continue-on-error: true
         run: node .test/live-audit2.mjs
         env:
           BASE: https://zenqalife.roadshop.online

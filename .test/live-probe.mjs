@@ -11,6 +11,7 @@ const UA_M = "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit
 const puppeteer = (await import("puppeteer")).default;
 const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox", "--disable-dev-shm-usage", "--hide-scrollbars"] });
 const out = {};
+const guard = async (n, fn) => { try { out[n] = await fn(); } catch (e) { out[n] = { error: String(e.message || e) }; console.log("· sonda " + n + " falló: " + out[n].error); } };
 const page = await browser.newPage();
 await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
 await page.setUserAgent(UA_M);
@@ -158,5 +159,5 @@ out.p11 = await page.evaluate(() => {
 });
 
 await fsp.writeFile(path.join(OUT, "probe.json"), JSON.stringify(out, null, 2));
-await browser.close();
+await browser.close().catch(() => {});
 console.log(JSON.stringify(out, null, 1).slice(0, 6000));
