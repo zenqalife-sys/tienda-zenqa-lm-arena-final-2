@@ -24,7 +24,7 @@ jobs:
           node-version: "20"
 
       - name: Herramientas de auditoría
-        run: npm install --no-save --omit=dev --no-audit --no-fund puppeteer@24 axe-core@4 lighthouse@12
+        run: npm install --no-save --omit=dev --no-audit --no-fund puppeteer@24 axe-core@4 lighthouse@12 chrome-launcher@0.15
 
       - name: Chrome de puppeteer como CHROME_PATH
         run: |
@@ -48,6 +48,11 @@ jobs:
 
       - name: Sondas puntuales
         run: node .test/live-probe.mjs
+        env:
+          BASE: https://zenqalife.roadshop.online
+
+      - name: Lighthouse, legales, contraste y peso
+        run: node .test/live-audit2.mjs
         env:
           BASE: https://zenqalife.roadshop.online
 
