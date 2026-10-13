@@ -25,11 +25,10 @@
       "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
       "https://zenqalife.roadshop.online/api/collect",
       "https://monorail-edge.shopifysvc.com/v1/produce",
-      "https://otlp-http-production.shopifysvc.com/v1/metrics",
-      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
       "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
       "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+      "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
       "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
       "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
       "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
@@ -40,11 +39,11 @@
       "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
       "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
       "https://monorail-edge.shopifysvc.com/v1/produce",
+      "https://otlp-http-production.shopifysvc.com/v1/metrics",
       "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
       "https://zenqalife.roadshop.online/api/collect",
       "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
       "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-      "https://otlp-http-production.shopifysvc.com/v1/metrics",
       "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
       "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
       "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
@@ -687,11 +686,11 @@
         "status": 200
       },
       {
-        "url": "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-ES",
+        "url": "https://zenqalife.roadshop.online/web-pixels@000c43caw11aa9ebbp53097d09mf26b756f/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/cart",
         "status": 200
       },
       {
-        "url": "https://zenqalife.roadshop.online/web-pixels@000c43caw11aa9ebbp53097d09mf26b756f/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/cart",
+        "url": "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-ES",
         "status": 200
       },
       {
@@ -1330,7 +1329,7 @@
     "despues": {
       "url": "https://zenqalife.roadshop.online/cart/add",
       "title": "El artículo 'Té Matcha Orgánico PREMIUM Grado CEREMONIAL' ya está agotado.",
-      "texto": "Algo ha salido mal. ¿Qué ha pasado? El artículo 'Té Matcha Orgánico PREMIUM Grado CEREMONIAL' ya está agotado.: El artículo 'Té Matcha Orgánico PREMIUM Grado CEREMONIAL' ya está agotado. ¿Qué puedo hacer? Vuelve a la página anterior. ID de la solicitud: d7f0dbff-060f-4985-a1af-eca25cc57eef-1791911803"
+      "texto": "Algo ha salido mal. ¿Qué ha pasado? El artículo 'Té Matcha Orgánico PREMIUM Grado CEREMONIAL' ya está agotado.: El artículo 'Té Matcha Orgánico PREMIUM Grado CEREMONIAL' ya está agotado. ¿Qué puedo hacer? Vuelve a la página anterior. ID de la solicitud: 4261cc6d-bc6a-4a1c-a7f3-202a656216e2-1791912266"
     },
     "llamadas": [
       "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-ES → 200",
@@ -1502,7 +1501,7 @@
     "despues": {
       "url": "https://zenqalife.roadshop.online/cart/add",
       "title": "Cart Error: Cannot find variant",
-      "texto": "Something went wrong. What happened? Cart Error: Cannot find variant What can I do? Return to the previous page. Request ID: 9ab7e8e5-9204-47c9-85d4-b12a0cb5439c-1791911810"
+      "texto": "Something went wrong. What happened? Cart Error: Cannot find variant What can I do? Return to the previous page. Request ID: f878b7f1-84a8-4f61-84ce-666b54f2c05f-1791912273"
     },
     "llamadas": [
       "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-ES → 200",
@@ -1675,7 +1674,7 @@
     "antesUrl": "https://zenqalife.roadshop.online/cart/add",
     "fuera": {
       "url": "https://zenqalife.roadshop.online/cart/add",
-      "texto": "Something went wrong. What happened? Cart Error: Cannot find variant What can I do? Return to the previous page. Request ID: 76c0b45a-1991-40b2-9fd3-aebd8653b931-1791911817"
+      "texto": "Something went wrong. What happened? Cart Error: Cannot find variant What can I do? Return to the previous page. Request ID: 12bb50bf-4a66-44aa-bad0-da45a97deb56-1791912280"
     },
     "llamadas": [
       "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-ES → 200",
@@ -1942,23 +1941,23 @@
     "posts": [
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"metadata\":{\"event_sent_at_ms\":1791911836750},\"events\":[{\"schema_id\":\"web_pixels_manager_load/3.3\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"bundle_target\":\"modern\",\"page_url\":\"http"
+        "data": "{\"metadata\":{\"event_sent_at_ms\":1791912299701},\"events\":[{\"schema_id\":\"web_pixels_manager_load/3.3\",\"payload\":{\"version\":\"000c43caw11aa9ebbp53097d09mf26b756f\",\"bundle_target\":\"modern\",\"page_url\":\"http"
       },
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"metadata\":{\"event_sent_at_ms\":1791911836752},\"events\":[{\"schema_id\":\"web_pixels_manager_load/3.3\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"bundle_target\":\"modern\",\"page_url\":\"http"
-      },
-      {
-        "url": "https://monorail-edge.shopifysvc.com/v1/produce",
-        "data": "{\"schema_id\":\"privacy_banner_initialized/1.2\",\"payload\":{\"shop_permanent_domain\":\"zenqalife.roadshop.online\",\"session_token\":\"deprecated\",\"regulation\":\"CMP\",\"path\":\"/\",\"server_region\":\"USAZ\"},\"metadat"
+        "data": "{\"metadata\":{\"event_sent_at_ms\":1791912299704},\"events\":[{\"schema_id\":\"web_pixels_manager_load/3.3\",\"payload\":{\"version\":\"000c43caw11aa9ebbp53097d09mf26b756f\",\"bundle_target\":\"modern\",\"page_url\":\"http"
       },
       {
         "url": "https://zenqalife.roadshop.online/api/collect",
         "data": "{\"v\":1,\"s\":{\"wd\":true,\"ua\":false,\"cf\":true,\"be\":true,\"nm\":false,\"nc\":false,\"ka\":false,\"sa\":false,\"ta\":false,\"pt\":false,\"mp\":false,\"sd\":false},\"r\":\"change\",\"l\":\"2.5.1\"}"
       },
       {
+        "url": "https://monorail-edge.shopifysvc.com/v1/produce",
+        "data": "{\"schema_id\":\"privacy_banner_initialized/1.2\",\"payload\":{\"shop_permanent_domain\":\"zenqalife.roadshop.online\",\"session_token\":\"deprecated\",\"regulation\":\"CMP\",\"path\":\"/\",\"server_region\":\"USVA\"},\"metadat"
+      },
+      {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"events\":[{\"schema_id\":\"trekkie_metrics/2.0\",\"payload\":{\"metric_name\":\"navigation-PerformanceNavigationTiming-navigate\",\"shop_id\":109524156765},\"metadata\":{\"event_created_at_ms\":1791911836871}}],\"met"
+        "data": "{\"events\":[{\"schema_id\":\"trekkie_metrics/2.0\",\"payload\":{\"metric_name\":\"navigation-PerformanceNavigationTiming-navigate\",\"shop_id\":109524156765},\"metadata\":{\"event_created_at_ms\":1791912299824}}],\"met"
       },
       {
         "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
@@ -1966,7 +1965,7 @@
       },
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"events\":[{\"schema_id\":\"storefront_customer_tracking/4.30\",\"payload\":{\"api_client_id\":580111,\"event_id\":\"sh-3644bde8-955C-4493-418C-AA26F7C2C535\",\"referrer\":\"\",\"canonical_url\":\"https://zenqalife.road"
+        "data": "{\"events\":[{\"schema_id\":\"storefront_customer_tracking/4.30\",\"payload\":{\"api_client_id\":580111,\"event_id\":\"sh-364bce6c-A953-4F84-8FCE-0AA7B70BCBED\",\"referrer\":\"\",\"canonical_url\":\"https://zenqalife.road"
       },
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
@@ -1974,19 +1973,19 @@
       },
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"events\":[{\"schema_id\":\"storefront_customer_tracking/5.9\",\"payload\":{\"event_id\":\"sh-3644bde8-955C-4493-418C-AA26F7C2C535\",\"event_time\":1791911836885,\"event_source_url\":\"https://zenqalife.roadshop.onl"
+        "data": "{\"events\":[{\"schema_id\":\"storefront_customer_tracking/5.9\",\"payload\":{\"event_id\":\"sh-364bce6c-A953-4F84-8FCE-0AA7B70BCBED\",\"event_time\":1791912299840,\"event_source_url\":\"https://zenqalife.roadshop.onl"
       },
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"events\":[{\"schema_id\":\"web_pixels_manager_init/3.2\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"bundle_target\":\"modern\",\"page_url\":\"https://zenqalife.roadshop.online/#guia\",\"shop_id\""
+        "data": "{\"events\":[{\"schema_id\":\"web_pixels_manager_init/3.2\",\"payload\":{\"version\":\"000c43caw11aa9ebbp53097d09mf26b756f\",\"bundle_target\":\"modern\",\"page_url\":\"https://zenqalife.roadshop.online/#guia\",\"shop_id\""
       },
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"events\":[{\"schema_id\":\"web_pixels_manager_pixel_register/3.8\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"page_url\":\"https://zenqalife.roadshop.online/#guia\",\"shop_id\":109524156765,\""
+        "data": "{\"events\":[{\"schema_id\":\"web_pixels_manager_pixel_register/3.8\",\"payload\":{\"version\":\"000c43caw11aa9ebbp53097d09mf26b756f\",\"page_url\":\"https://zenqalife.roadshop.online/#guia\",\"shop_id\":109524156765,\""
       },
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"events\":[{\"schema_id\":\"web_pixels_manager_subscriber_event_emit/4.1\",\"payload\":{\"version\":\"e990e96fw5665eac5pbd6f5b22m75757206\",\"bundle_target\":\"modern\",\"page_url\":\"https://zenqalife.roadshop.online"
+        "data": "{\"events\":[{\"schema_id\":\"web_pixels_manager_subscriber_event_emit/4.1\",\"payload\":{\"version\":\"000c43caw11aa9ebbp53097d09mf26b756f\",\"bundle_target\":\"modern\",\"page_url\":\"https://zenqalife.roadshop.online"
       },
       {
         "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
@@ -1998,31 +1997,15 @@
       },
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"metadata\":{\"event_sent_at_ms\":1791911845081},\"events\":[{\"schema_id\":\"web_pixels_manager_load/3.3\",\"payload\":{\"version\":\"000c43caw11aa9ebbp53097d09mf26b756f\",\"bundle_target\":\"modern\",\"page_url\":\"http"
+        "data": "{\"metadata\":{\"event_sent_at_ms\":1791912308071},\"events\":[{\"schema_id\":\"web_pixels_manager_load/3.3\",\"payload\":{\"version\":\"000c43caw11aa9ebbp53097d09mf26b756f\",\"bundle_target\":\"modern\",\"page_url\":\"http"
       },
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"metadata\":{\"event_sent_at_ms\":1791911845082},\"events\":[{\"schema_id\":\"web_pixels_manager_load/3.3\",\"payload\":{\"version\":\"000c43caw11aa9ebbp53097d09mf26b756f\",\"bundle_target\":\"modern\",\"page_url\":\"http"
+        "data": "{\"metadata\":{\"event_sent_at_ms\":1791912308073},\"events\":[{\"schema_id\":\"web_pixels_manager_load/3.3\",\"payload\":{\"version\":\"000c43caw11aa9ebbp53097d09mf26b756f\",\"bundle_target\":\"modern\",\"page_url\":\"http"
       },
       {
         "url": "https://monorail-edge.shopifysvc.com/v1/produce",
         "data": "{\"schema_id\":\"privacy_banner_initialized/1.2\",\"payload\":{\"shop_permanent_domain\":\"zenqalife.roadshop.online\",\"session_token\":\"deprecated\",\"regulation\":\"CMP\",\"path\":\"/pages/el-ritual\",\"server_region\":\""
-      },
-      {
-        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"events\":[{\"schema_id\":\"trekkie_metrics/2.0\",\"payload\":{\"metric_name\":\"navigation-PerformanceNavigationTiming-navigate\",\"shop_id\":109524156765},\"metadata\":{\"event_created_at_ms\":1791911845097}}],\"met"
-      },
-      {
-        "url": "https://zenqalife.roadshop.online/api/collect",
-        "data": "{\"v\":1,\"s\":{\"wd\":true,\"ua\":false,\"cf\":true,\"be\":true,\"nm\":false,\"nc\":false,\"ka\":false,\"sa\":false,\"ta\":false,\"pt\":false,\"mp\":false,\"sd\":false},\"r\":\"periodic\",\"l\":\"2.5.1\"}"
-      },
-      {
-        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"events\":[{\"schema_id\":\"storefront_customer_tracking/4.30\",\"payload\":{\"api_client_id\":580111,\"event_id\":\"sh-3644ddcd-E3F1-46D1-A619-B454A861510E\",\"referrer\":\"\",\"canonical_url\":\"https://zenqalife.road"
-      },
-      {
-        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"events\":[{\"schema_id\":\"trekkie_asset_context/1.3\",\"payload\":{\"build_id\":\"32ff6085714fe9c4d5859e332c5de5f8759a859e\",\"page_url\":\"https://zenqalife.roadshop.online/pages/el-ritual#contacto\",\"app_name\":"
       },
       {
         "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
@@ -2030,7 +2013,15 @@
       },
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
-        "data": "{\"events\":[{\"schema_id\":\"storefront_customer_tracking/5.9\",\"payload\":{\"event_id\":\"sh-3644ddcd-E3F1-46D1-A619-B454A861510E\",\"event_time\":1791911845151,\"event_source_url\":\"https://zenqalife.roadshop.onl"
+        "data": "{\"events\":[{\"schema_id\":\"trekkie_metrics/2.0\",\"payload\":{\"metric_name\":\"navigation-PerformanceNavigationTiming-navigate\",\"shop_id\":109524156765},\"metadata\":{\"event_created_at_ms\":1791912308109}}],\"met"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/api/collect",
+        "data": "{\"v\":1,\"s\":{\"wd\":true,\"ua\":false,\"cf\":true,\"be\":true,\"nm\":false,\"nc\":false,\"ka\":false,\"sa\":false,\"ta\":false,\"pt\":false,\"mp\":false,\"sd\":false},\"r\":\"periodic\",\"l\":\"2.5.1\"}"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"storefront_customer_tracking/5.9\",\"payload\":{\"event_id\":\"sh-364bee4d-F2D6-4B03-B14D-AA69114A50FB\",\"event_time\":1791912308089,\"event_source_url\":\"https://zenqalife.roadshop.onl"
       },
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
@@ -2038,7 +2029,19 @@
       },
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"storefront_customer_tracking/4.30\",\"payload\":{\"api_client_id\":580111,\"event_id\":\"sh-364bee4d-F2D6-4B03-B14D-AA69114A50FB\",\"referrer\":\"\",\"canonical_url\":\"https://zenqalife.road"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
+        "data": "{\"events\":[{\"schema_id\":\"trekkie_asset_context/1.3\",\"payload\":{\"build_id\":\"32ff6085714fe9c4d5859e332c5de5f8759a859e\",\"page_url\":\"https://zenqalife.roadshop.online/pages/el-ritual#contacto\",\"app_name\":"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
         "data": "{\"events\":[{\"schema_id\":\"web_pixels_manager_pixel_register/3.8\",\"payload\":{\"version\":\"000c43caw11aa9ebbp53097d09mf26b756f\",\"page_url\":\"https://zenqalife.roadshop.online/pages/el-ritual#contacto\",\"shop"
+      },
+      {
+        "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+        "data": "{\"resourceMetrics\":[{\"resource\":{\"attributes\":[{\"key\":\"service.name\",\"value\":{\"stringValue\":\"shop-js\"}}]},\"scopeMetrics\":[{\"scope\":{\"name\":\"open-telemetry-mini-client\",\"version\":\"1.1.0\",\"attributes\":["
       },
       {
         "url": "https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch",
@@ -2067,18 +2070,18 @@
         "ok": true,
         "texto": "Pasar al checkout"
       },
-      "url": "https://zenqalife.roadshop.online/checkouts/cn/hWNHvjy0gxEixsbu2ibpdkb2/es-es?_r=AQAB47q_rvRvqVjq9tXpvvfkCEj78wKaMtS2KpBXBKFkBH2assfM",
+      "url": "https://zenqalife.roadshop.online/checkouts/cn/hWNHvkkZQToTUWKcIBJgZeZ0/es-es?_r=AQABO0vyWBKtvDkCfejClhouZEYHTIybp2sGX5CIaYf3di57Rpmq",
       "title": "Pantalla de pago - ZENQA LIFE",
       "texto": "Ir directamente al contenido ZENQA LIFE Ir a la tienda online Resumen del pedido Precio total 39,80 € ZENQA LIFE Pantalla de pago Pago exprés O Contacto Iniciar sesión Correo electrónico Se usa para la confirmación del pedido y los recordatorios del carrito Enviarme novedades y ofertas por correo electrónico Entrega País / Región España Nombre Apellidos Dirección Casa, apartamento, etc. (opcional) Código postal Ciudad Provincia / Estado La Coruña Álava Albacete Alicante Almería Asturias Ávila Badajoz Islas Baleares Barcelona Burgos Cáceres Cádiz Cantabria Castellón Ceuta Ciudad Real Córdoba Cuenca Gerona Granada Guadalajara Guipúzcoa Huelva Huesca Jaén La Rioja Las Palmas León Lérida Lugo Madrid Málaga Melilla Murcia Navarra Orense Palencia Pontevedra Salamanca Santa Cruz de Tenerife Segovia Sevilla Soria Tarragona Teruel Toledo Valencia Valladolid Vizcaya Zamora Zaragoza Teléfono (opcional) En caso de que tengamos que contactarte sobre tu pedido. Métodos de envío Ingresa tu dirección de envío para ver los métodos disponibles. Pago Todas las transacciones son seguras y están encriptadas. Tarjeta de crédito +2 Número de tarjeta Fecha de vencimiento (MM / AA) Código de seguridad Código de seguridad de 3 dígitos ubicado normalmente en la parte trasera de tu tarjeta. Las tarjetas American Express tienen un código de 4 dígitos ubicado en el frente. Nombre del titular como aparece en la tarjeta Usar la dirección de envío como dirección de facturación PayPal Recordarme Guardar mi in"
     },
     "llamadas": [
-      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/useResizeObserver-CgCAVDcS.js → 200",
-      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/AnimatedShopLogo-B8WOsTSO.js → 200",
-      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/string-BjbqEgkz.js → 200",
-      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/BannerPrompt-CIdd7Z93.js → 200",
-      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/utils-ZAf_zw4L.js → 200",
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/useComputedValue-D5uN0wGs.js → 200",
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/index-CRVD4ABY.js → 200",
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/checkout-DTJs6qRt.js → 200",
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/CountriesProvider-BFY1BuSM.js → 200",
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/index-Bh8zGfvj.js → 200",
+      "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/index-ogVLWx9T.js → 200",
       "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/index-BO8tGMMG.js → 200",
-      "https://shop.app/pay/assets/sprite.svg → 200",
       "https://cdn.shopify.com/shopifycloud/arrive-server/pay/vite-pay/assets/RumMetrics-Dq9Pr3RQ.js → 200",
       "https://www.paypal.com/xoplatform/logger/api/logger?disableSetCookie=true → 200",
       "https://www.paypal.com/xoplatform/logger/api/logger?disableSetCookie=true → 200"

@@ -2,9 +2,9 @@
   "p1": {
     "antes": {
       "navBottom": 100,
-      "shelfBottom": null,
-      "shelfCls": null,
-      "shelfHeight": null
+      "shelfBottom": 173,
+      "shelfCls": "phead-stick",
+      "shelfHeight": 73
     },
     "chip": {
       "txt": "Kits de preparación",
@@ -15,9 +15,9 @@
     "tituloTop": 176,
     "tapadoPor": {
       "navBottom": 63,
-      "shelfBottom": null,
-      "shelfCls": null,
-      "shelfHeight": null
+      "shelfBottom": 135,
+      "shelfCls": "phead-stick",
+      "shelfHeight": 73
     }
   },
   "p2": {
@@ -41,7 +41,7 @@
       "ok": true
     },
     "final": {
-      "url": "https://zenqalife.roadshop.online/checkouts/cn/hWNHvk9E5OrCPSsVed7Dp83M/es-es?_r=AQABNHlnLIylFXwwjdvYnTQVycytcGJ0G_0ZV3aoq8azQG21vATK&auto_redirect=false&edge_redirect=true&skip_shop_pay=true",
+      "url": "https://zenqalife.roadshop.online/checkouts/cn/hWNHvkvm2cuwizMsDkbV0FUo/es-es?_r=AQABFmxGi2S937DM3OcnXLWO29gbgYWiLAVC175rnvB5aqxDEGaL&auto_redirect=false&edge_redirect=true&skip_shop_pay=true",
       "title": "Pantalla de pago - ZENQA LIFE",
       "texto": "Ir directamente al contenido ZENQA LIFE Ir a la tienda online Resumen del pedido Precio total 19,90 € ZENQA LIFE Pantalla de pago Pago exprés O Contacto Iniciar sesión Correo electrónico Se usa para la confirmación del pedido y los recordatorios del carrito Enviarme novedades y ofertas por correo electrónico Entrega País / Región España Nombre Apellidos Dirección Casa, apartamento, etc. (opcional)"
     }
@@ -90,9 +90,15 @@
   "p6": {
     "alturaBanda": 37,
     "alturaNav": 63,
-    "alturaShelf": null,
+    "alturaShelf": 73,
+    "shelfCls": "phead-stick",
+    "shelfPos": "sticky",
+    "shelfTop": "62px",
+    "shelfFondo": "rgba(250, 249, 242, 0.96)",
+    "shelfBlur": "blur(10px)",
+    "shelfZ": "25",
     "scrollPadding": "74px",
-    "chromeTotal": 100,
+    "chromeTotal": 173,
     "botonesBajoElMenus": [],
     "viewport": 844
   },
@@ -122,7 +128,7 @@
       "<meta http-equiv=\"origin-trial\" content=\"A1XQljJxk3U4c44gueu4vlIeDofyyWFswfVKbUiNw4itZx4Yy8Uw3nIhtzBePIrv1bSXqzHGDfYymYF5W7TKKAoAAABzeyJvcmlnaW4iOiJodHRwczovL2Nkbi5zaG9waWZ5LmNvbTo0NDMiLCJmZWF0dXJlIjoiU3BlY3VsYXRpb25NZWFzdXJlbWVudCIsImV4cGlyeSI6MTc5MzY2NDAwMCwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==\">",
       "<meta http-equiv=\"origin-trial\" content=\"Ax9yX6wXQN8G5IFmAMuROwlLDFBpw1CUnFgsIGNYqJJ4H6td1fqjIYkL02d7HpmOAFMFSi3/1kym00LEfYqOdwYAAACOeyJvcmlnaW4iOiJodHRwczovL2Nkbi5zaG9waWZ5LmNvbTo0NDMiLCJmZWF0dXJlIjoiU3BlY3VsYXRpb25SdWxlc01vZGVyYXRlVmlld3BvcnRIZXVyaXN0aWNzQ29udHJvbCIsImV4cGlyeSI6MTc5NjY4ODAwMCwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==\">"
     ],
-    "cookiesJs": "localization=ES; cart_currency=EUR; cart=hWNHvk9E5OrCPSsVed7Dp83M%3Fkey%3Dab78c030085103e636ab8becb58642ec",
+    "cookiesJs": "localization=ES; cart_currency=EUR; cart=hWNHvkvm2cuwizMsDkbV0FUo%3Fkey%3Deb997b0ca779e8ce8907efd6dad29b11",
     "iframes": [
       "https://zenqalife.roadshop.online/web-pixels@000c43caw11aa9ebbp53097d09mf26b756f"
     ],

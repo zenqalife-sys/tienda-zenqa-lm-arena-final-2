@@ -79,7 +79,7 @@
   "/policies/refund-policy": {
     "status": 404,
     "final": "/policies/refund-policy",
-    "bytes": 173829,
+    "bytes": 175012,
     "titulo": "404 No encontrado",
     "h1": "Page not found"
   },
@@ -120,7 +120,7 @@
   },
   "/account/login": {
     "status": 406,
-    "final": "https://shopify.com/109524156765/account?locale=es&buyer_flags=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ2dHJxamstYnoubXlzaG9waWZ5LmNvbSIsImZsYWdzIjpbXSwiZXhwIjoxNzkyNTE2NzQ4LCJuYmYiOjE3OTE5MTE5NDh9.abeWt4ZU-X95--f9VhbDnOiL4ZE3YDgQGuJkpguC7U0",
+    "final": "https://shopify.com/109524156765/account?locale=es&buyer_flags=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ2dHJxamstYnoubXlzaG9waWZ5LmNvbSIsImZsYWdzIjpbXSwiZXhwIjoxNzkyNTE3MjEyLCJuYmYiOjE3OTE5MTI0MTJ9._IDfdOMwBnHhDr4pDSHuBYLm2gfa3-lVEXBYPHTFu0Y",
     "bytes": 14,
     "titulo": "",
     "h1": ""
@@ -155,7 +155,7 @@
   },
   "/checkout": {
     "status": 403,
-    "final": "/checkouts/cn/hWNHvkEDvqLawh3TblwEVjtQ/es-es?_r=AQAB4GBQ3eGbSm_GCKNRzKQ9whD0sSBlp0Iy8TTFEIOi0k1SmBP6&auto_redirect=false&edge_redirect=true&skip_shop_pay=true",
+    "final": "/checkouts/cn/hWNHvl0gEVXBcRzJ1Acexc26/es-es?_r=AQABHTVobGrHnRDNGF_nPOZC2oh7mH4bNndWp8dLmEcNFVm-XYHk&auto_redirect=false&edge_redirect=true&skip_shop_pay=true",
     "bytes": 51,
     "titulo": "",
     "h1": ""

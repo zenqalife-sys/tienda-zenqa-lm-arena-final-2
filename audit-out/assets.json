@@ -1,11 +1,11 @@
 {
   "home": {
-    "n": 199,
+    "n": 130,
     "porTipo": {
-      "css": 43094,
-      "js": 1076490,
+      "js": 933097,
+      "css": 0,
       "imagen": 418707,
-      "otro": 4119,
+      "otro": 4121,
       "fuente": 100668
     },
     "top": [
@@ -37,7 +37,7 @@
       {
         "t": "js",
         "kb": 80,
-        "u": "/cdn/wpm/be990e96fw5665eac5pbd6f5b22m75757206m.js"
+        "u": "/cdn/wpm/b000c43caw11aa9ebbp53097d09mf26b756fm.js"
       },
       {
         "t": "js",
@@ -51,36 +51,41 @@
       },
       {
         "t": "js",
-        "kb": 36,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.DPBBHNna.js"
+        "kb": 35,
+        "u": "/cdn/s/trekkie.storefront.32ff6085714fe9c4d5859e332c5de5f8759a859e.min.js"
       },
       {
         "t": "js",
-        "kb": 35,
-        "u": "/cdn/s/trekkie.storefront.32ff6085714fe9c4d5859e332c5de5f8759a859e.min.js"
+        "kb": 32,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.ByEQunzi.js"
       }
     ],
-    "totalKB": 1605
+    "totalKB": 1422
   },
   "producto": {
-    "n": 215,
+    "n": 159,
     "porTipo": {
-      "css": 11997,
-      "js": 86877,
+      "js": 56600,
+      "css": 0,
       "imagen": 34150,
       "otro": 4121,
       "fuente": 0
     },
     "top": [
       {
-        "t": "js",
-        "kb": 80,
-        "u": "/cdn/wpm/b000c43caw11aa9ebbp53097d09mf26b756fm.js"
-      },
-      {
         "t": "imagen",
         "kb": 20,
         "u": "/cdn/shop/files/eco-tote-bag-oyster-front-6a749ca21725a.jpg?v=1786027186&width=832"
+      },
+      {
+        "t": "js",
+        "kb": 8,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.CEsB0ngb.js"
+      },
+      {
+        "t": "js",
+        "kb": 5,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.pFeKZVey.js"
       },
       {
         "t": "imagen",
@@ -93,6 +98,11 @@
         "u": "/cdn/shop/files/eco-tote-bag-oyster-front-6a749ca218f2b.jpg?v=1786027186&width=240"
       },
       {
+        "t": "js",
+        "kb": 4,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/347b440c.BCI4W4Mq.js"
+      },
+      {
         "t": "imagen",
         "kb": 4,
         "u": "/cdn/shop/files/eco-tote-bag-oyster-product-details-6a749ca2184e6.jpg?v=1786027186&width=2"
@@ -100,37 +110,27 @@
       {
         "t": "js",
         "kb": 3,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.DdCQei8N.js"
+      },
+      {
+        "t": "js",
+        "kb": 3,
         "u": "/checkouts/internal/preloads.js?locale=es-ES"
       },
       {
-        "t": "css",
-        "kb": 2,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.C0BOgdmL.css"
-      },
-      {
-        "t": "css",
-        "kb": 2,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/PayButtonSection.CZuxzxFG.css"
-      },
-      {
-        "t": "css",
-        "kb": 1,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.DjDhVpQB.css"
-      },
-      {
-        "t": "css",
-        "kb": 1,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css"
+        "t": "js",
+        "kb": 3,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.CkIPdsHE.js"
       }
     ],
-    "totalKB": 134
+    "totalKB": 93
   },
   "tienda": {
-    "n": 221,
+    "n": 219,
     "porTipo": {
-      "css": 0,
-      "js": 3764,
-      "otro": 4119,
+      "js": 93376,
+      "css": 55454,
+      "otro": 3821,
       "fuente": 19864,
       "imagen": 401874
     },
@@ -156,45 +156,45 @@
         "u": "/cdn/shop/t/10/assets/zq-p-pack3.jpg"
       },
       {
+        "t": "js",
+        "kb": 36,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.DPBBHNna.js"
+      },
+      {
+        "t": "js",
+        "kb": 20,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/fc21c11a.B3Dq6pEx.js"
+      },
+      {
         "t": "fuente",
         "kb": 19,
         "u": "/cdn/shop/t/10/assets/zq-switzer-500.woff2"
       },
       {
-        "t": "js",
-        "kb": 3,
-        "u": "/checkouts/internal/preloads.js?locale=es-ES"
-      },
-      {
-        "t": "imagen",
-        "kb": 3,
-        "u": "/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de"
-      },
-      {
-        "t": "imagen",
-        "kb": 3,
-        "u": "/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de"
-      },
-      {
-        "t": "otro",
-        "kb": 1,
-        "u": "/web-pixels@e990e96fw5665eac5pbd6f5b22m75757206/custom/web-pixel-shopify-custom-pixel@0530"
+        "t": "css",
+        "kb": 16,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.Lwx3mCeL.css"
       },
       {
         "t": "js",
-        "kb": 0,
-        "u": "https://cdn.shopify.com/storefront/standard-actions.js"
+        "kb": 8,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/f692f62f.3EfggsCB.js"
+      },
+      {
+        "t": "css",
+        "kb": 7,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/wallet-prefilled-guest-return.BJvF0-q4.css"
       }
     ],
-    "totalKB": 420
+    "totalKB": 561
   },
   "coleccion": {
-    "n": 248,
+    "n": 247,
     "porTipo": {
       "css": 767,
-      "js": 11496,
+      "js": 11196,
       "imagen": 842399,
-      "otro": 4849,
+      "otro": 4851,
       "fuente": 0
     },
     "top": [
@@ -252,11 +252,11 @@
     "totalKB": 839
   },
   "carrito": {
-    "n": 212,
+    "n": 209,
     "porTipo": {
       "css": 0,
-      "js": 3766,
-      "otro": 3819,
+      "js": 3464,
+      "otro": 3521,
       "fuente": 0,
       "imagen": 0
     },
@@ -269,12 +269,7 @@
       {
         "t": "otro",
         "kb": 1,
-        "u": "/web-pixels@e990e96fw5665eac5pbd6f5b22m75757206/custom/web-pixel-shopify-custom-pixel@0530"
-      },
-      {
-        "t": "js",
-        "kb": 0,
-        "u": "https://cdn.shopify.com/storefront/standard-actions.js"
+        "u": "/web-pixels@000c43caw11aa9ebbp53097d09mf26b756f/custom/web-pixel-shopify-custom-pixel@0530"
       },
       {
         "t": "otro",
@@ -290,6 +285,11 @@
         "t": "otro",
         "kb": 0,
         "u": "/api/collect"
+      },
+      {
+        "t": "otro",
+        "kb": 0,
+        "u": "/.well-known/shopify/monorail/unstable/produce_batch"
       },
       {
         "t": "otro",
