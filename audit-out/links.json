@@ -369,7 +369,7 @@
   "https://zenqalife.roadshop.online/collections/all": {
     "status": 200,
     "type": "text/html; charset=utf-8",
-    "bytes": 375210,
+    "bytes": 374027,
     "err": "",
     "kind": "enlace",
     "where": [
@@ -381,9 +381,9 @@
     ]
   },
   "https://zenqalife.roadshop.online/products/camiseta-clasica-unisex": {
-    "status": 200,
-    "type": "text/html; charset=utf-8",
-    "bytes": 131249,
+    "status": 503,
+    "type": "text/html",
+    "bytes": 12194,
     "err": "",
     "kind": "enlace",
     "where": [
@@ -1479,7 +1479,7 @@
   "https://zenqalife.roadshop.online/products/eco-tote-bag?_pos=5&_sid=848b2f564&_ss=r": {
     "status": 200,
     "type": "text/html; charset=utf-8",
-    "bytes": 62674,
+    "bytes": 61491,
     "err": "",
     "kind": "enlace",
     "where": [
@@ -1489,7 +1489,7 @@
   "https://zenqalife.roadshop.online/products/sudadera-con-capucha-unisex?_pos=6&_sid=848b2f564&_ss=r": {
     "status": 200,
     "type": "text/html; charset=utf-8",
-    "bytes": 129957,
+    "bytes": 128774,
     "err": "",
     "kind": "enlace",
     "where": [

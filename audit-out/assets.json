@@ -1,9 +1,9 @@
 {
   "home": {
-    "n": 130,
+    "n": 154,
     "porTipo": {
-      "js": 933097,
       "css": 0,
+      "js": 977931,
       "imagen": 418707,
       "otro": 4121,
       "fuente": 100668
@@ -60,32 +60,47 @@
         "u": "/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.ByEQunzi.js"
       }
     ],
-    "totalKB": 1422
+    "totalKB": 1466
   },
   "producto": {
-    "n": 159,
+    "n": 215,
     "porTipo": {
-      "js": 56600,
-      "css": 0,
+      "js": 95140,
+      "css": 55454,
       "imagen": 34150,
       "otro": 4121,
       "fuente": 0
     },
     "top": [
       {
+        "t": "js",
+        "kb": 36,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.DPBBHNna.js"
+      },
+      {
+        "t": "js",
+        "kb": 20,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/fc21c11a.B3Dq6pEx.js"
+      },
+      {
         "t": "imagen",
         "kb": 20,
         "u": "/cdn/shop/files/eco-tote-bag-oyster-front-6a749ca21725a.jpg?v=1786027186&width=832"
       },
       {
-        "t": "js",
-        "kb": 8,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.CEsB0ngb.js"
+        "t": "css",
+        "kb": 16,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.Lwx3mCeL.css"
       },
       {
         "t": "js",
-        "kb": 5,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.pFeKZVey.js"
+        "kb": 8,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/f692f62f.3EfggsCB.js"
+      },
+      {
+        "t": "css",
+        "kb": 7,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/wallet-prefilled-guest-return.BJvF0-q4.css"
       },
       {
         "t": "imagen",
@@ -99,37 +114,22 @@
       },
       {
         "t": "js",
+        "kb": 5,
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/d2e6a587.CAZneIbj.js"
+      },
+      {
+        "t": "js",
         "kb": 4,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/347b440c.BCI4W4Mq.js"
-      },
-      {
-        "t": "imagen",
-        "kb": 4,
-        "u": "/cdn/shop/files/eco-tote-bag-oyster-product-details-6a749ca2184e6.jpg?v=1786027186&width=2"
-      },
-      {
-        "t": "js",
-        "kb": 3,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.DdCQei8N.js"
-      },
-      {
-        "t": "js",
-        "kb": 3,
-        "u": "/checkouts/internal/preloads.js?locale=es-ES"
-      },
-      {
-        "t": "js",
-        "kb": 3,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.CkIPdsHE.js"
+        "u": "/cdn/shopifycloud/checkout-web/assets/c1/c10167e6.DMzHJAfh.js"
       }
     ],
-    "totalKB": 93
+    "totalKB": 184
   },
   "tienda": {
     "n": 219,
     "porTipo": {
-      "js": 93376,
-      "css": 55454,
+      "js": 5007,
+      "css": 0,
       "otro": 3821,
       "fuente": 19864,
       "imagen": 401874
@@ -156,43 +156,43 @@
         "u": "/cdn/shop/t/10/assets/zq-p-pack3.jpg"
       },
       {
-        "t": "js",
-        "kb": 36,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.DPBBHNna.js"
-      },
-      {
-        "t": "js",
-        "kb": 20,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/fc21c11a.B3Dq6pEx.js"
-      },
-      {
         "t": "fuente",
         "kb": 19,
         "u": "/cdn/shop/t/10/assets/zq-switzer-500.woff2"
       },
       {
-        "t": "css",
-        "kb": 16,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.Lwx3mCeL.css"
+        "t": "js",
+        "kb": 3,
+        "u": "/checkouts/internal/preloads.js?locale=es-ES"
+      },
+      {
+        "t": "imagen",
+        "kb": 3,
+        "u": "/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de"
+      },
+      {
+        "t": "imagen",
+        "kb": 3,
+        "u": "/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de"
       },
       {
         "t": "js",
-        "kb": 8,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/f692f62f.3EfggsCB.js"
+        "kb": 2,
+        "u": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.reportAssetMetrics_DwVGXsNp."
       },
       {
-        "t": "css",
-        "kb": 7,
-        "u": "/cdn/shopifycloud/checkout-web/assets/c1/assets/wallet-prefilled-guest-return.BJvF0-q4.css"
+        "t": "otro",
+        "kb": 1,
+        "u": "/web-pixels@000c43caw11aa9ebbp53097d09mf26b756f/custom/web-pixel-shopify-custom-pixel@0530"
       }
     ],
-    "totalKB": 561
+    "totalKB": 420
   },
   "coleccion": {
     "n": 247,
     "porTipo": {
-      "css": 767,
       "js": 11196,
+      "css": 767,
       "imagen": 842399,
       "otro": 4851,
       "fuente": 0
