@@ -93,9 +93,12 @@ const lh = read("lh-summary.json", {});
 p("");
 p("═══ 8 · LIGHTHOUSE ═══");
 for (const [k, v] of Object.entries(lh)) {
-  p(`  ${k}: perf ${v.scores.performance} · a11y ${v.scores.accessibility} · buenas prácticas ${v.scores["best-practices"]} · SEO ${v.scores.seo}   (${v.failCount} auditorías que fallan)`);
-  p(`     ${JSON.stringify(v.metrics)}`);
-  v.fails.slice(0, 14).forEach((f) => p(`      - ${f.id}: ${f.title} ${f.value}`));
+  const sc = v.puntuaciones || v.scores || {};
+  const mt = v.metricas || v.metrics || {};
+  const fl = v.fallos || v.fails || [];
+  p(`  ${k}: perf ${sc.performance} · a11y ${sc.accessibility} · buenas prácticas ${sc["best-practices"]} · SEO ${sc.seo}   (${v.nFallos ?? v.failCount ?? fl.length} auditorías que fallan)`);
+  p(`     ${JSON.stringify(mt)}`);
+  fl.slice(0, 14).forEach((f) => p(`      - ${f.id}: ${f.titulo || f.title} ${f.valor || f.value || ""}`));
 }
 
 const out = L.join("\n");
