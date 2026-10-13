@@ -1,0 +1,21 @@
+{
+  "home": {
+    "/pages/recetas-y-guias#recetas": true
+  },
+  "matcha": {
+    "/pages/tienda#te": false
+  },
+  "recetas": {
+    "#recetas": true,
+    "#guia": true
+  },
+  "nosotros": {
+    "/pages/legal#privacidad": false
+  },
+  "coleccion-all": {
+    "#ResultsList": true
+  },
+  "buscador": {
+    "#ResultsList": true
+  }
+}

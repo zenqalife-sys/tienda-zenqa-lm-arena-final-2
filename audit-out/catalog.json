@@ -1,0 +1,1458 @@
+{
+  "products": [
+    {
+      "id": 16395276222813,
+      "handle": "te-matcha-ceremonial-organico446",
+      "title": "Té Matcha Orgánico PREMIUM Grado CEREMONIAL",
+      "vendor": "AWArtisan Dropship",
+      "type": "Tés e Infusiones Artesanales Granel - 50 G",
+      "tags": [
+        "Artisan Product",
+        "Handmade",
+        "Organic",
+        "White Label"
+      ],
+      "published": "2026-08-06T17:55:38+02:00",
+      "updated": "2026-10-13T18:46:36+02:00",
+      "bodyText": "",
+      "images": 3,
+      "imageStatus": [],
+      "variants": [
+        {
+          "id": 65498951647581,
+          "title": "Default Title",
+          "sku": "arteap-24",
+          "price": "31.20",
+          "compare_at": "31.20",
+          "available": false,
+          "grams": 50
+        }
+      ]
+    },
+    {
+      "id": 16395276255581,
+      "handle": "te-matcha-culinario-organico447",
+      "title": "Té Matcha Orgánico PREMIUM Grado Culinario",
+      "vendor": "AWArtisan Dropship",
+      "type": "Tés e Infusiones Artesanales Granel - 50 G",
+      "tags": [
+        "Artisan Product",
+        "Handmade",
+        "Organic",
+        "White Label"
+      ],
+      "published": "2026-08-06T17:54:12+02:00",
+      "updated": "2026-10-13T18:46:36+02:00",
+      "bodyText": "",
+      "images": 3,
+      "imageStatus": [],
+      "variants": [
+        {
+          "id": 65498951745885,
+          "title": "Default Title",
+          "sku": "arteap-25",
+          "price": "19.50",
+          "compare_at": "19.50",
+          "available": false,
+          "grams": 50
+        }
+      ]
+    },
+    {
+      "id": 16395270193501,
+      "handle": "sudadera-con-capucha-unisex",
+      "title": "Sudadera con capucha unisex",
+      "vendor": "ZENQA LIFE",
+      "type": "T-SHIRT",
+      "tags": [],
+      "published": "2026-08-06T17:39:14+02:00",
+      "updated": "2026-10-13T18:46:36+02:00",
+      "bodyText": "Todo el mundo necesita una sudadera cómoda con la que abrigarse y estar a la moda en el día a día. Y si además es suave, cálida y elegante como esta, mejor que mejor. ¡Ideal también para las noches más frescas! • 50 % algodón preencogido y 50 % poliéster • El tejido jaspeado color azul marino oscuro deportivo es 40% algodón y 60% poliéster • Peso del tejido: 271,25 g/m² (8 oz/yd²) • Hilado por chorro de aire, con un tacto suave y un nivel de frisado reducido • Capucha de doble forro con cordón de ajuste a juego • Cuerpo de un cuarto de vuelta para evitar arrugas en el centro • 1 × 1 puños y cintura de punto acanalado atléticos con spandex • Bolsillo canguro frontal • Cuello, hombros, brazos, sisas, puños y dobladillo con un doble pespunte • Producto base procedente de Bangladesh, Nicaragua, Honduras o El Salvador Aviso: Debido a las propiedades del tejido, la variante en color blanco puede parecer blanco roto en lugar de blanco brillante.",
+      "images": 36,
+      "imageStatus": [],
+      "variants": [
+        {
+          "id": 65498918486365,
+          "title": "Negro / S",
+          "sku": "1092979_5530",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 454
+        },
+        {
+          "id": 65498918519133,
+          "title": "Negro / M",
+          "sku": "1092979_5531",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 468
+        },
+        {
+          "id": 65498918551901,
+          "title": "Negro / L",
+          "sku": "1092979_5532",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 567
+        },
+        {
+          "id": 65498918584669,
+          "title": "Negro / XL",
+          "sku": "1092979_5533",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 618
+        },
+        {
+          "id": 65498918617437,
+          "title": "Negro / 2XL",
+          "sku": "1092979_5534",
+          "price": "27.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 638
+        },
+        {
+          "id": 65498918650205,
+          "title": "Negro / 3XL",
+          "sku": "1092979_5535",
+          "price": "29.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 714
+        },
+        {
+          "id": 65498918682973,
+          "title": "Negro / 4XL",
+          "sku": "1092979_5536",
+          "price": "32.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 726
+        },
+        {
+          "id": 65498918715741,
+          "title": "Negro / 5XL",
+          "sku": "1092979_5537",
+          "price": "34.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 746
+        },
+        {
+          "id": 65498918748509,
+          "title": "Marino / S",
+          "sku": "1092979_5594",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 454
+        },
+        {
+          "id": 65498918781277,
+          "title": "Marino / M",
+          "sku": "1092979_5595",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 468
+        },
+        {
+          "id": 65498918814045,
+          "title": "Marino / L",
+          "sku": "1092979_5596",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 567
+        },
+        {
+          "id": 65498918846813,
+          "title": "Marino / XL",
+          "sku": "1092979_5597",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 618
+        },
+        {
+          "id": 65498918879581,
+          "title": "Marino / 2XL",
+          "sku": "1092979_5598",
+          "price": "27.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 638
+        },
+        {
+          "id": 65498918912349,
+          "title": "Marino / 3XL",
+          "sku": "1092979_5599",
+          "price": "29.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 714
+        },
+        {
+          "id": 65498918945117,
+          "title": "Marino / 4XL",
+          "sku": "1092979_5600",
+          "price": "32.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 726
+        },
+        {
+          "id": 65498918977885,
+          "title": "Marino / 5XL",
+          "sku": "1092979_5601",
+          "price": "34.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 746
+        },
+        {
+          "id": 65498919010653,
+          "title": "Granate / S",
+          "sku": "1092979_5586",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 454
+        },
+        {
+          "id": 65498919043421,
+          "title": "Granate / M",
+          "sku": "1092979_5587",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 468
+        },
+        {
+          "id": 65498919076189,
+          "title": "Granate / L",
+          "sku": "1092979_5588",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 567
+        },
+        {
+          "id": 65498919108957,
+          "title": "Granate / XL",
+          "sku": "1092979_5589",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 618
+        },
+        {
+          "id": 65498919141725,
+          "title": "Granate / 2XL",
+          "sku": "1092979_5590",
+          "price": "27.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 638
+        },
+        {
+          "id": 65498919174493,
+          "title": "Granate / 3XL",
+          "sku": "1092979_5591",
+          "price": "29.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 714
+        },
+        {
+          "id": 65498919207261,
+          "title": "Verde bosque / S",
+          "sku": "1092979_20570",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 454
+        },
+        {
+          "id": 65498919240029,
+          "title": "Verde bosque / M",
+          "sku": "1092979_20571",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 468
+        },
+        {
+          "id": 65498919272797,
+          "title": "Verde bosque / L",
+          "sku": "1092979_20572",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 567
+        },
+        {
+          "id": 65498919305565,
+          "title": "Verde bosque / XL",
+          "sku": "1092979_20573",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 618
+        },
+        {
+          "id": 65498919338333,
+          "title": "Verde bosque / 2XL",
+          "sku": "1092979_20574",
+          "price": "27.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 638
+        },
+        {
+          "id": 65498919371101,
+          "title": "Verde bosque / 3XL",
+          "sku": "1092979_20575",
+          "price": "29.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 714
+        },
+        {
+          "id": 65498919403869,
+          "title": "Verde bosque / 4XL",
+          "sku": "1092979_20576",
+          "price": "32.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 726
+        },
+        {
+          "id": 65498919436637,
+          "title": "Verde bosque / 5XL",
+          "sku": "1092979_20577",
+          "price": "34.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 746
+        },
+        {
+          "id": 65498919469405,
+          "title": "Verde militar / S",
+          "sku": "1092979_12989",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 454
+        },
+        {
+          "id": 65498919502173,
+          "title": "Verde militar / M",
+          "sku": "1092979_12990",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 468
+        },
+        {
+          "id": 65498919534941,
+          "title": "Verde militar / L",
+          "sku": "1092979_12991",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 567
+        },
+        {
+          "id": 65498919567709,
+          "title": "Verde militar / XL",
+          "sku": "1092979_12992",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 618
+        },
+        {
+          "id": 65498919600477,
+          "title": "Verde militar / 2XL",
+          "sku": "1092979_12993",
+          "price": "27.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 638
+        },
+        {
+          "id": 65498919633245,
+          "title": "Verde militar / 3XL",
+          "sku": "1092979_12994",
+          "price": "29.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 714
+        },
+        {
+          "id": 65498919666013,
+          "title": "Verde militar / 4XL",
+          "sku": "1092979_12995",
+          "price": "32.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 726
+        },
+        {
+          "id": 65498919698781,
+          "title": "Verde militar / 5XL",
+          "sku": "1092979_12996",
+          "price": "34.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 746
+        },
+        {
+          "id": 65498919731549,
+          "title": "Azul Carolina / S",
+          "sku": "1092979_21635",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 454
+        },
+        {
+          "id": 65498919764317,
+          "title": "Azul Carolina / M",
+          "sku": "1092979_21636",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 468
+        },
+        {
+          "id": 65498919797085,
+          "title": "Azul Carolina / L",
+          "sku": "1092979_21637",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 567
+        },
+        {
+          "id": 65498919829853,
+          "title": "Azul Carolina / XL",
+          "sku": "1092979_21638",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 618
+        },
+        {
+          "id": 65498919862621,
+          "title": "Azul Carolina / 2XL",
+          "sku": "1092979_21639",
+          "price": "27.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 638
+        },
+        {
+          "id": 65498919895389,
+          "title": "Azul Carolina / 3XL",
+          "sku": "1092979_21640",
+          "price": "29.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 714
+        },
+        {
+          "id": 65498919928157,
+          "title": "Azul Carolina / 4XL",
+          "sku": "1092979_21641",
+          "price": "32.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 726
+        },
+        {
+          "id": 65498919960925,
+          "title": "Azul Carolina / 5XL",
+          "sku": "1092979_21642",
+          "price": "34.00",
+          "compare_at": null,
+          "available": false,
+          "grams": 746
+        },
+        {
+          "id": 65498919993693,
+          "title": "Azalea / S",
+          "sku": "1092979_23489",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 454
+        },
+        {
+          "id": 65498920026461,
+          "title": "Azalea / M",
+          "sku": "1092979_23490",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 468
+        },
+        {
+          "id": 65498920059229,
+          "title": "Azalea / L",
+          "sku": "1092979_23491",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 567
+        },
+        {
+          "id": 65498920091997,
+          "title": "Azalea / XL",
+          "sku": "1092979_23492",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 618
+        },
+        {
+          "id": 65498920124765,
+          "title": "Azalea / 2XL",
+          "sku": "1092979_23493",
+          "price": "27.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 638
+        },
+        {
+          "id": 65498920157533,
+          "title": "Azalea / 3XL",
+          "sku": "1092979_23494",
+          "price": "29.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 714
+        },
+        {
+          "id": 65498920190301,
+          "title": "Arena / S",
+          "sku": "1092979_12997",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 454
+        },
+        {
+          "id": 65498920223069,
+          "title": "Arena / M",
+          "sku": "1092979_12998",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 468
+        },
+        {
+          "id": 65498920255837,
+          "title": "Arena / L",
+          "sku": "1092979_12999",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 567
+        },
+        {
+          "id": 65498920288605,
+          "title": "Arena / XL",
+          "sku": "1092979_13000",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 618
+        },
+        {
+          "id": 65498920321373,
+          "title": "Arena / 2XL",
+          "sku": "1092979_13001",
+          "price": "27.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 638
+        },
+        {
+          "id": 65498920354141,
+          "title": "Arena / 3XL",
+          "sku": "1092979_13002",
+          "price": "29.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 714
+        },
+        {
+          "id": 65498920386909,
+          "title": "Rosa claro / S",
+          "sku": "1092979_10849",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 454
+        },
+        {
+          "id": 65498920419677,
+          "title": "Rosa claro / M",
+          "sku": "1092979_10850",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 468
+        },
+        {
+          "id": 65498920452445,
+          "title": "Rosa claro / L",
+          "sku": "1092979_10851",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 567
+        },
+        {
+          "id": 65498920485213,
+          "title": "Rosa claro / XL",
+          "sku": "1092979_10852",
+          "price": "25.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 618
+        },
+        {
+          "id": 65498920517981,
+          "title": "Rosa claro / 2XL",
+          "sku": "1092979_10853",
+          "price": "27.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 638
+        },
+        {
+          "id": 65498920550749,
+          "title": "Rosa claro / 3XL",
+          "sku": "1092979_10854",
+          "price": "29.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 714
+        },
+        {
+          "id": 65498920583517,
+          "title": "Rosa claro / 4XL",
+          "sku": "1092979_10855",
+          "price": "32.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 726
+        },
+        {
+          "id": 65498920616285,
+          "title": "Rosa claro / 5XL",
+          "sku": "1092979_10856",
+          "price": "34.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 746
+        }
+      ]
+    },
+    {
+      "id": 16395207999837,
+      "handle": "camiseta-clasica-unisex",
+      "title": "Camiseta clásica unisex",
+      "vendor": "ZENQA LIFE",
+      "type": "T-SHIRT",
+      "tags": [],
+      "published": "2026-08-06T16:51:20+02:00",
+      "updated": "2026-10-13T18:46:36+02:00",
+      "bodyText": "La camiseta clásica unisex 100% algodón te ayuda a conseguir una imagen más estructurada. Queda muy bien, mantiene las líneas rectas en los bordes y queda genial con outfits por capas. Además, ¡ahora está muy de moda! • 100% algodón • El tono Sport Grey es 90% algodón y 10% poliéster • El tono Ash Grey es 99% algodón y 1% poliéster • Los tonos Heather son 50% algodón y 50% poliéster • Peso del tejido: 170–180 g/m² (5.0–5.3 oz/yd²) • Tejido tubular • Cuello y hombros con reborde • Doble costura en mangas y dobladillo inferior • Producto base procedente de Honduras, Nicaragua, Haití, República Dominicana, Bangladés, México Descargos de responsabilidad: • Debido a las propiedades de la tela, la variante de color blanco puede ser blanco roto en lugar de blanco brillante. • Se espera que haya motas oscuras en la tela del tono Natural.",
+      "images": 30,
+      "imageStatus": [],
+      "variants": [
+        {
+          "id": 65498710311261,
+          "title": "Granate / S",
+          "sku": "8715784_12634",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 164
+        },
+        {
+          "id": 65498710344029,
+          "title": "Granate / M",
+          "sku": "8715784_12635",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 190
+        },
+        {
+          "id": 65498710376797,
+          "title": "Granate / L",
+          "sku": "8715784_12636",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 215
+        },
+        {
+          "id": 65498710409565,
+          "title": "Granate / XL",
+          "sku": "8715784_12637",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 241
+        },
+        {
+          "id": 65498710442333,
+          "title": "Granate / 2XL",
+          "sku": "8715784_12638",
+          "price": "13.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 275
+        },
+        {
+          "id": 65498710475101,
+          "title": "Granate / 3XL",
+          "sku": "8715784_16247",
+          "price": "15.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 261
+        },
+        {
+          "id": 65498710507869,
+          "title": "Granate / 4XL",
+          "sku": "8715784_16248",
+          "price": "17.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 292
+        },
+        {
+          "id": 65498710540637,
+          "title": "Granate / 5XL",
+          "sku": "8715784_16249",
+          "price": "19.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 303
+        },
+        {
+          "id": 65498710573405,
+          "title": "Negro / S",
+          "sku": "8715784_11546",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 164
+        },
+        {
+          "id": 65498710606173,
+          "title": "Negro / M",
+          "sku": "8715784_11547",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 190
+        },
+        {
+          "id": 65498710638941,
+          "title": "Negro / L",
+          "sku": "8715784_11548",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 215
+        },
+        {
+          "id": 65498710671709,
+          "title": "Negro / XL",
+          "sku": "8715784_11549",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 241
+        },
+        {
+          "id": 65498710704477,
+          "title": "Negro / 2XL",
+          "sku": "8715784_11550",
+          "price": "13.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 275
+        },
+        {
+          "id": 65498710737245,
+          "title": "Negro / 3XL",
+          "sku": "8715784_12644",
+          "price": "15.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 261
+        },
+        {
+          "id": 65498710770013,
+          "title": "Negro / 4XL",
+          "sku": "8715784_12645",
+          "price": "17.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 292
+        },
+        {
+          "id": 65498710802781,
+          "title": "Negro / 5XL",
+          "sku": "8715784_12646",
+          "price": "19.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 303
+        },
+        {
+          "id": 65498710835549,
+          "title": "Verde bosque / S",
+          "sku": "8715784_20453",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 164
+        },
+        {
+          "id": 65498710868317,
+          "title": "Verde bosque / M",
+          "sku": "8715784_20454",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 190
+        },
+        {
+          "id": 65498710901085,
+          "title": "Verde bosque / L",
+          "sku": "8715784_20455",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 215
+        },
+        {
+          "id": 65498710933853,
+          "title": "Verde bosque / XL",
+          "sku": "8715784_20456",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 241
+        },
+        {
+          "id": 65498710966621,
+          "title": "Verde bosque / 2XL",
+          "sku": "8715784_20457",
+          "price": "13.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 275
+        },
+        {
+          "id": 65498710999389,
+          "title": "Verde bosque / 3XL",
+          "sku": "8715784_20458",
+          "price": "15.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 261
+        },
+        {
+          "id": 65498711032157,
+          "title": "Verde bosque / 4XL",
+          "sku": "8715784_20459",
+          "price": "17.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 292
+        },
+        {
+          "id": 65498711064925,
+          "title": "Verde bosque / 5XL",
+          "sku": "8715784_20460",
+          "price": "19.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 303
+        },
+        {
+          "id": 65498711097693,
+          "title": "Chocolate oscuro / S",
+          "sku": "8715784_15837",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 164
+        },
+        {
+          "id": 65498711130461,
+          "title": "Chocolate oscuro / M",
+          "sku": "8715784_15838",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 190
+        },
+        {
+          "id": 65498711163229,
+          "title": "Chocolate oscuro / L",
+          "sku": "8715784_15839",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 215
+        },
+        {
+          "id": 65498711195997,
+          "title": "Chocolate oscuro / XL",
+          "sku": "8715784_15840",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 241
+        },
+        {
+          "id": 65498711228765,
+          "title": "Chocolate oscuro / 2XL",
+          "sku": "8715784_15841",
+          "price": "13.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 275
+        },
+        {
+          "id": 65498711261533,
+          "title": "Chocolate oscuro / 3XL",
+          "sku": "8715784_15842",
+          "price": "15.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 261
+        },
+        {
+          "id": 65498711294301,
+          "title": "Verde militar / S",
+          "sku": "8715784_15867",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 164
+        },
+        {
+          "id": 65498711327069,
+          "title": "Verde militar / M",
+          "sku": "8715784_15868",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 190
+        },
+        {
+          "id": 65498711359837,
+          "title": "Verde militar / L",
+          "sku": "8715784_15869",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 215
+        },
+        {
+          "id": 65498711392605,
+          "title": "Verde militar / XL",
+          "sku": "8715784_15870",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 241
+        },
+        {
+          "id": 65498711425373,
+          "title": "Verde militar / 2XL",
+          "sku": "8715784_15871",
+          "price": "13.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 275
+        },
+        {
+          "id": 65498711458141,
+          "title": "Verde militar / 3XL",
+          "sku": "8715784_15872",
+          "price": "15.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 261
+        },
+        {
+          "id": 65498711490909,
+          "title": "Verde militar / 4XL",
+          "sku": "8715784_16253",
+          "price": "17.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 292
+        },
+        {
+          "id": 65498711523677,
+          "title": "Verde militar / 5XL",
+          "sku": "8715784_16254",
+          "price": "19.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 303
+        },
+        {
+          "id": 65498711556445,
+          "title": "Brown Savana / S",
+          "sku": "8715784_15807",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 164
+        },
+        {
+          "id": 65498711589213,
+          "title": "Brown Savana / M",
+          "sku": "8715784_15808",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 190
+        },
+        {
+          "id": 65498711621981,
+          "title": "Brown Savana / L",
+          "sku": "8715784_15809",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 215
+        },
+        {
+          "id": 65498711654749,
+          "title": "Brown Savana / XL",
+          "sku": "8715784_15810",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 241
+        },
+        {
+          "id": 65498711687517,
+          "title": "Brown Savana / 2XL",
+          "sku": "8715784_15811",
+          "price": "13.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 275
+        },
+        {
+          "id": 65498711720285,
+          "title": "Brown Savana / 3XL",
+          "sku": "8715784_15812",
+          "price": "15.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 261
+        },
+        {
+          "id": 65498711753053,
+          "title": "Arena / S",
+          "sku": "8715784_12639",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 164
+        },
+        {
+          "id": 65498711785821,
+          "title": "Arena / M",
+          "sku": "8715784_12640",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 190
+        },
+        {
+          "id": 65498711818589,
+          "title": "Arena / L",
+          "sku": "8715784_12641",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 215
+        },
+        {
+          "id": 65498711851357,
+          "title": "Arena / XL",
+          "sku": "8715784_12642",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 241
+        },
+        {
+          "id": 65498711884125,
+          "title": "Arena / 2XL",
+          "sku": "8715784_12643",
+          "price": "13.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 275
+        },
+        {
+          "id": 65498711916893,
+          "title": "Arena / 3XL",
+          "sku": "8715784_16255",
+          "price": "15.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 261
+        },
+        {
+          "id": 65498711949661,
+          "title": "Natural / S",
+          "sku": "8715784_11556",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 164
+        },
+        {
+          "id": 65498711982429,
+          "title": "Natural / M",
+          "sku": "8715784_11557",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 190
+        },
+        {
+          "id": 65498712015197,
+          "title": "Natural / L",
+          "sku": "8715784_11558",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 215
+        },
+        {
+          "id": 65498712047965,
+          "title": "Natural / XL",
+          "sku": "8715784_11559",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 241
+        },
+        {
+          "id": 65498712080733,
+          "title": "Natural / 2XL",
+          "sku": "8715784_11560",
+          "price": "13.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 275
+        },
+        {
+          "id": 65498712113501,
+          "title": "Natural / 3XL",
+          "sku": "8715784_16246",
+          "price": "15.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 261
+        },
+        {
+          "id": 65498712146269,
+          "title": "Rosa claro / S",
+          "sku": "8715784_11551",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 164
+        },
+        {
+          "id": 65498712179037,
+          "title": "Rosa claro / M",
+          "sku": "8715784_11552",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 190
+        },
+        {
+          "id": 65498712211805,
+          "title": "Rosa claro / L",
+          "sku": "8715784_11553",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 215
+        },
+        {
+          "id": 65498712244573,
+          "title": "Rosa claro / XL",
+          "sku": "8715784_11554",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 241
+        },
+        {
+          "id": 65498712277341,
+          "title": "Rosa claro / 2XL",
+          "sku": "8715784_11555",
+          "price": "13.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 275
+        },
+        {
+          "id": 65498712310109,
+          "title": "Rosa claro / 3XL",
+          "sku": "8715784_14989",
+          "price": "15.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 261
+        },
+        {
+          "id": 65498712342877,
+          "title": "Rosa claro / 4XL",
+          "sku": "8715784_14990",
+          "price": "17.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 292
+        },
+        {
+          "id": 65498712375645,
+          "title": "Rosa claro / 5XL",
+          "sku": "8715784_14991",
+          "price": "19.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 303
+        },
+        {
+          "id": 65498712408413,
+          "title": "Azul claro / S",
+          "sku": "8715784_15861",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 164
+        },
+        {
+          "id": 65498712441181,
+          "title": "Azul claro / M",
+          "sku": "8715784_15862",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 190
+        },
+        {
+          "id": 65498712473949,
+          "title": "Azul claro / L",
+          "sku": "8715784_15863",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 215
+        },
+        {
+          "id": 65498712506717,
+          "title": "Azul claro / XL",
+          "sku": "8715784_15864",
+          "price": "10.50",
+          "compare_at": null,
+          "available": true,
+          "grams": 241
+        },
+        {
+          "id": 65498712539485,
+          "title": "Azul claro / 2XL",
+          "sku": "8715784_15865",
+          "price": "13.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 275
+        },
+        {
+          "id": 65498712572253,
+          "title": "Azul claro / 3XL",
+          "sku": "8715784_15866",
+          "price": "15.00",
+          "compare_at": null,
+          "available": true,
+          "grams": 261
+        }
+      ]
+    },
+    {
+      "id": 16395175199069,
+      "handle": "eco-tote-bag",
+      "title": "Eco Tote Bag",
+      "vendor": "ZENQA LIFE",
+      "type": "T-SHIRT",
+      "tags": [],
+      "published": "2026-08-06T16:39:47+02:00",
+      "updated": "2026-10-13T18:46:36+02:00",
+      "bodyText": "Say goodbye to plastic, and bag your goodies in this organic cotton tote bag. There’s more than enough room for groceries, books, and anything in between. • 100% certified organic cotton 3/1 twill • Fabric weight: 8 oz/yd² (272 g/m²) • Dimensions: 16″ × 14 ½″ × 5″ (40.6 cm × 35.6 cm × 12.7 cm) • Weight limit: 30 lbs (13.6 kg) • 1″ (2.5 cm) wide dual straps, 24.5″ (62.2 cm) length • Open main compartment • Blank product sourced from India",
+      "images": 3,
+      "imageStatus": [],
+      "variants": [
+        {
+          "id": 65498568622429,
+          "title": "Default Title",
+          "sku": "3905124_10458",
+          "price": "19.90",
+          "compare_at": null,
+          "available": true,
+          "grams": 130
+        }
+      ]
+    },
+    {
+      "id": 16395161895261,
+      "handle": "gorra-te-matcha-vibes",
+      "title": "Gorra Te Matcha Vibes",
+      "vendor": "ZENQA LIFE",
+      "type": "EMBROIDERY",
+      "tags": [],
+      "published": "2026-08-06T16:30:44+02:00",
+      "updated": "2026-10-13T18:46:36+02:00",
+      "bodyText": "Nuestros padres no son los únicos que pueden llevar esta gorra. Cuenta con corona baja, cierre ajustable y visera curva. • 100% sarga de algodón • El tono Green Camo es 35% sarga de algodón, 65% poliéster • Sin estructura, 6 paneles, corona baja • 6 ojales bordados • Corona de 3 ⅛” • Cierre ajustable con hebilla envejecida • Producto base procedente de Vietnam o Bangladés",
+      "images": 12,
+      "imageStatus": [],
+      "variants": [
+        {
+          "id": 65498530251101,
+          "title": "Abeto",
+          "sku": "1671734_8745",
+          "price": "20.90",
+          "compare_at": null,
+          "available": true,
+          "grams": 94
+        },
+        {
+          "id": 65498530283869,
+          "title": "Piedra",
+          "sku": "1671734_7859",
+          "price": "20.90",
+          "compare_at": null,
+          "available": true,
+          "grams": 94
+        },
+        {
+          "id": 65498530316637,
+          "title": "Rosa",
+          "sku": "1671734_7858",
+          "price": "20.90",
+          "compare_at": null,
+          "available": true,
+          "grams": 94
+        },
+        {
+          "id": 65498530349405,
+          "title": "Azul claro",
+          "sku": "1671734_7856",
+          "price": "20.90",
+          "compare_at": null,
+          "available": true,
+          "grams": 94
+        }
+      ]
+    },
+    {
+      "id": 16395159568733,
+      "handle": "taza-te-matcha-vibes",
+      "title": "Taza Te Matcha Vibes",
+      "vendor": "ZENQA LIFE",
+      "type": "MUG",
+      "tags": [],
+      "published": "2026-08-06T16:28:06+02:00",
+      "updated": "2026-10-13T18:46:36+02:00",
+      "bodyText": "Tanto si estás tomando tu primer café del día o el quinto, esta taza es la ideal para ti. Es robusta y brillante con un dibujo vívido que resistirá al microondas y al lavavajillas. • Cerámica • Dimensiones de la taza de 11 oz: Altura de 9,6 cm (3,8″), diámetro de 8,2 cm (3,2″) • Dimensiones de la taza de 15 oz: Altura de 11,9 cm (4,7″), diámetro de 8,5 cm (3,3″) • Dimensiones de la taza de 20 oz: Altura de 10,9 cm (4,3″), diámetro de 9,3 cm (3,7″) • Material sin plomo ni BPA • Apta para su uso en lavavajillas y microondas • Producto base procedente de China",
+      "images": 6,
+      "imageStatus": [],
+      "variants": [
+        {
+          "id": 65498515702109,
+          "title": "11 oz",
+          "sku": "5429980_1320",
+          "price": "13.90",
+          "compare_at": null,
+          "available": true,
+          "grams": 326
+        },
+        {
+          "id": 65498515734877,
+          "title": "15 oz",
+          "sku": "5429980_4830",
+          "price": "15.90",
+          "compare_at": null,
+          "available": true,
+          "grams": 454
+        },
+        {
+          "id": 65498515767645,
+          "title": "20 oz",
+          "sku": "5429980_16586",
+          "price": "17.90",
+          "compare_at": null,
+          "available": true,
+          "grams": 536
+        }
+      ]
+    },
+    {
+      "id": 16394752033117,
+      "handle": "vaso-con-pajita-termico-de-doble-cara-transparente",
+      "title": "Vaso térmico de doble cara transparente con pajita",
+      "vendor": "ZENQA LIFE",
+      "type": "DRINKWARE",
+      "tags": [],
+      "published": "2026-08-06T11:31:14+02:00",
+      "updated": "2026-10-13T18:46:36+02:00",
+      "bodyText": "Disfruta de tus bebidas frías favoritas con este vaso térmico y reutilizable. Ideal para refrescarte en cualquier momento, además incluye tapa y pajita para que pueda acompañarte en tus desplazamientos. ¡Evita los plásticos de un solo uso y pásate al lado de los vasos reutilizables! Sobre todo, si lo puedes hacer con estilo y con este diseño. • Material: plástico acrílico transparente • Capacidad: 590 ml (16 oz) • Altura: 16 cm (6,3″) • Diámetro de la tapa: 10 cm (3,9″) • Diámetro inferior: 6,7 cm (2,6″) • Aislamiento de doble pared • Incluye una pajita de plástico y una tapa de rosca • Producto base procedente de China Avisos: • No apto para lavavajillas ni microondas. Lavar únicamente a mano. • No usar con líquidos calientes. Guía de tallas A (inches) B (inches) C (inches) D (inches) 16 oz 6 ¼ 3 ⅞ 2 ⅝ 6 ⅝ A (cm) B (cm) C (cm) D (cm) 16 oz 16 10 6.6 16.8",
+      "images": 6,
+      "imageStatus": [],
+      "variants": [
+        {
+          "id": 65495524016477,
+          "title": "Default Title",
+          "sku": "4101028_19192",
+          "price": "21.90",
+          "compare_at": null,
+          "available": true,
+          "grams": 214
+        }
+      ]
+    }
+  ],
+  "error": ""
+}

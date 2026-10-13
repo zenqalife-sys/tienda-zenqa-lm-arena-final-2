@@ -1,0 +1,230 @@
+{
+  "home": [
+    {
+      "id": "empty-heading",
+      "impact": "minor",
+      "help": "Headings should not be empty",
+      "n": 1,
+      "sample": [
+        {
+          "target": "#ImudD7",
+          "summary": "Fix any of the following: Element does not have text that is visible to screen readers aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or re"
+        }
+      ]
+    },
+    {
+      "id": "meta-refresh",
+      "impact": "critical",
+      "help": "Delayed refresh under 20 hours must not be used",
+      "n": 1,
+      "sample": [
+        {
+          "target": "meta[http-equiv=\"refresh\"]",
+          "summary": "Fix any of the following: <meta> tag forces timed refresh of page (less than 20 hours)"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "n": 1,
+      "sample": [
+        {
+          "target": "h1",
+          "summary": "Fix any of the following: Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "tienda": [
+    {
+      "id": "empty-heading",
+      "impact": "minor",
+      "help": "Headings should not be empty",
+      "n": 1,
+      "sample": [
+        {
+          "target": "#ImudD7",
+          "summary": "Fix any of the following: Element does not have text that is visible to screen readers aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or re"
+        }
+      ]
+    },
+    {
+      "id": "meta-refresh",
+      "impact": "critical",
+      "help": "Delayed refresh under 20 hours must not be used",
+      "n": 1,
+      "sample": [
+        {
+          "target": "meta[http-equiv=\"refresh\"]",
+          "summary": "Fix any of the following: <meta> tag forces timed refresh of page (less than 20 hours)"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "n": 1,
+      "sample": [
+        {
+          "target": "h1",
+          "summary": "Fix any of the following: Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "matcha": [
+    {
+      "id": "empty-heading",
+      "impact": "minor",
+      "help": "Headings should not be empty",
+      "n": 1,
+      "sample": [
+        {
+          "target": "#ImudD7",
+          "summary": "Fix any of the following: Element does not have text that is visible to screen readers aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or re"
+        }
+      ]
+    },
+    {
+      "id": "meta-refresh",
+      "impact": "critical",
+      "help": "Delayed refresh under 20 hours must not be used",
+      "n": 1,
+      "sample": [
+        {
+          "target": "meta[http-equiv=\"refresh\"]",
+          "summary": "Fix any of the following: <meta> tag forces timed refresh of page (less than 20 hours)"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "n": 1,
+      "sample": [
+        {
+          "target": "h1",
+          "summary": "Fix any of the following: Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "recetas": [
+    {
+      "id": "empty-heading",
+      "impact": "minor",
+      "help": "Headings should not be empty",
+      "n": 1,
+      "sample": [
+        {
+          "target": "#ImudD7",
+          "summary": "Fix any of the following: Element does not have text that is visible to screen readers aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or re"
+        }
+      ]
+    },
+    {
+      "id": "meta-refresh",
+      "impact": "critical",
+      "help": "Delayed refresh under 20 hours must not be used",
+      "n": 1,
+      "sample": [
+        {
+          "target": "meta[http-equiv=\"refresh\"]",
+          "summary": "Fix any of the following: <meta> tag forces timed refresh of page (less than 20 hours)"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "n": 1,
+      "sample": [
+        {
+          "target": "h1",
+          "summary": "Fix any of the following: Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "producto-ceremonial": [
+    {
+      "id": "empty-heading",
+      "impact": "minor",
+      "help": "Headings should not be empty",
+      "n": 1,
+      "sample": [
+        {
+          "target": "#ImudD7",
+          "summary": "Fix any of the following: Element does not have text that is visible to screen readers aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or re"
+        }
+      ]
+    },
+    {
+      "id": "meta-refresh",
+      "impact": "critical",
+      "help": "Delayed refresh under 20 hours must not be used",
+      "n": 1,
+      "sample": [
+        {
+          "target": "meta[http-equiv=\"refresh\"]",
+          "summary": "Fix any of the following: <meta> tag forces timed refresh of page (less than 20 hours)"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "n": 1,
+      "sample": [
+        {
+          "target": "h1",
+          "summary": "Fix any of the following: Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ],
+  "carrito": [
+    {
+      "id": "empty-heading",
+      "impact": "minor",
+      "help": "Headings should not be empty",
+      "n": 1,
+      "sample": [
+        {
+          "target": "#ImudD7",
+          "summary": "Fix any of the following: Element does not have text that is visible to screen readers aria-label attribute does not exist or is empty aria-labelledby attribute does not exist, references elements that do not exist or re"
+        }
+      ]
+    },
+    {
+      "id": "meta-refresh",
+      "impact": "critical",
+      "help": "Delayed refresh under 20 hours must not be used",
+      "n": 1,
+      "sample": [
+        {
+          "target": "meta[http-equiv=\"refresh\"]",
+          "summary": "Fix any of the following: <meta> tag forces timed refresh of page (less than 20 hours)"
+        }
+      ]
+    },
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "n": 1,
+      "sample": [
+        {
+          "target": "h1",
+          "summary": "Fix any of the following: Some page content is not contained by landmarks"
+        }
+      ]
+    }
+  ]
+}

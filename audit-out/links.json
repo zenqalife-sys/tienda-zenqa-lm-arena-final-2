@@ -1,0 +1,1499 @@
+{
+  "https://zenqalife.roadshop.online/.well-known/ucp": {
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "bytes": 4840,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "tienda",
+      "matcha",
+      "recetas",
+      "nosotros",
+      "receta-usucha",
+      "producto-ceremonial",
+      "producto-kit",
+      "producto-sudadera",
+      "carrito",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-ES": {
+    "status": 200,
+    "type": "application/javascript; charset=utf-8",
+    "bytes": 10848,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "tienda",
+      "matcha",
+      "recetas",
+      "nosotros",
+      "producto-ceremonial",
+      "producto-sudadera",
+      "carrito",
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shopifycloud/storefront/assets/storefront/load_feature-1bd60354.js": {
+    "status": 200,
+    "type": "text/javascript",
+    "bytes": 13938,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "tienda",
+      "matcha",
+      "recetas",
+      "nosotros",
+      "receta-usucha",
+      "producto-ceremonial",
+      "producto-kit",
+      "producto-sudadera",
+      "carrito",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shopifycloud/portable-wallets/latest/portable-wallets.es.js": {
+    "status": 200,
+    "type": "text/javascript",
+    "bytes": 396991,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "tienda",
+      "matcha",
+      "recetas",
+      "nosotros",
+      "receta-usucha",
+      "producto-ceremonial",
+      "producto-kit",
+      "producto-sudadera",
+      "carrito",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shopifycloud/privacy-banner/storefront-banner.js": {
+    "status": 200,
+    "type": "text/javascript",
+    "bytes": 109695,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "tienda",
+      "matcha",
+      "recetas",
+      "nosotros",
+      "receta-usucha",
+      "producto-ceremonial",
+      "producto-kit",
+      "producto-sudadera",
+      "carrito",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css": {
+    "status": 200,
+    "type": "text/css",
+    "bytes": 13728,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "tienda",
+      "matcha",
+      "recetas",
+      "nosotros",
+      "receta-usucha",
+      "producto-ceremonial",
+      "producto-kit",
+      "producto-sudadera",
+      "carrito",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-zenqa.css?v=17438752956575459151791909057": {
+    "status": 200,
+    "type": "text/css",
+    "bytes": 57886,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "tienda",
+      "matcha",
+      "recetas",
+      "nosotros",
+      "receta-usucha",
+      "producto-ceremonial",
+      "producto-kit",
+      "producto-sudadera",
+      "carrito",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-data.js?v=109806036042904857411791900318": {
+    "status": 200,
+    "type": "text/javascript",
+    "bytes": 49517,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "tienda",
+      "matcha",
+      "recetas",
+      "nosotros",
+      "receta-usucha",
+      "producto-ceremonial",
+      "producto-kit",
+      "producto-sudadera",
+      "carrito",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-app.js?v=165773604824144651261791908687": {
+    "status": 200,
+    "type": "text/javascript",
+    "bytes": 34478,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "tienda",
+      "matcha",
+      "recetas",
+      "nosotros",
+      "receta-usucha",
+      "producto-ceremonial",
+      "producto-kit",
+      "producto-sudadera",
+      "carrito",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 49237,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.10.1.min.js": {
+    "status": 200,
+    "type": "text/javascript",
+    "bytes": 85366,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "tienda",
+      "matcha",
+      "recetas",
+      "nosotros",
+      "receta-usucha",
+      "producto-ceremonial",
+      "producto-kit",
+      "producto-sudadera",
+      "carrito",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-hero-matcha.jpg?v=15079191781286413491791900318": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 350999,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "matcha"
+    ]
+  },
+  "https://zenqalife.roadshop.online/pages/te-matcha": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 48884,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "matcha"
+    ]
+  },
+  "https://zenqalife.roadshop.online/pages/recetas-y-guias": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 47015,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "matcha",
+      "recetas"
+    ]
+  },
+  "https://zenqalife.roadshop.online/pages/tienda": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 45190,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "tienda",
+      "matcha",
+      "recetas",
+      "carrito"
+    ]
+  },
+  "https://zenqalife.roadshop.online/pages/el-ritual": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 49435,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "nosotros"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-uji-field.jpg?v=38652591351453738941791900318": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 244026,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "home",
+      "nosotros"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-r-iced-latte.jpg?v=5666859717751281531791900318": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 76258,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "recetas"
+    ]
+  },
+  "https://zenqalife.roadshop.online/pages/legal": {
+    "status": 404,
+    "type": "text/html; charset=utf-8",
+    "bytes": 173862,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "nosotros"
+    ]
+  },
+  "https://zenqalife.roadshop.online/checkouts/internal/preloads.js?locale=es-US": {
+    "status": 200,
+    "type": "application/javascript; charset=utf-8",
+    "bytes": 10848,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/t/10/compiled_assets/styles.css?v=50305204793364026761791909061": {
+    "status": 200,
+    "type": "text/css",
+    "bytes": 386872,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/404": {
+    "status": 404,
+    "type": "text/html; charset=utf-8",
+    "bytes": 173862,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/collections/all": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 374027,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/camiseta-clasica-unisex": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 131249,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-classic-tee-forest-green-front-6a749f4f09639.jpg?v=1786027876&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 134693,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-classic-tee-military-green-front-6a749f4f0959c.jpg?v=1786027876&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 144796,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-classic-tee-maroon-front-6a749f4f09564.jpg?v=1786027876&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 124777,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-classic-tee-black-front-6a749f4f08c01.jpg?v=1786027876&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 118128,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-classic-tee-dark-chocolate-front-6a749f4f094af.jpg?v=1786027875&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 134262,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-classic-tee-brown-savana-front-6a749f4f09460.jpg?v=1786027876&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 160036,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-classic-tee-sand-front-6a749f4f09606.jpg?v=1786027876&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 135348,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-classic-tee-natural-front-6a749f4f095d2.jpg?v=1786027876&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 137489,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-classic-tee-light-pink-front-6a749f4f0951f.jpg?v=1786027876&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 174245,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-classic-tee-light-blue-front-6a749f4f094e9.jpg?v=1786027876&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 140809,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-classic-tee-maroon-front-and-back-6a749f4f0b9c1.jpg?v=1786027876&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 139449,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-classic-tee-black-front-and-back-6a749f4f0b773.jpg?v=1786027876&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 124012,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-classic-tee-forest-green-front-and-back-6a749f4f0b8c8.jpg?v=1786027876&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 132219,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/eco-tote-bag": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 61449,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/eco-tote-bag-oyster-front-6a749ca21725a.jpg?v=1786027186&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 212088,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/eco-tote-bag-oyster-front-6a749ca218f2b.jpg?v=1786027186&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 118766,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/eco-tote-bag-oyster-product-details-6a749ca2184e6.jpg?v=1786027186&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 202341,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/gorra-te-matcha-vibes": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 65531,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/classic-dad-hat-spruce-front-6a749a8281c79.jpg?v=1786026643&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 191205,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/classic-dad-hat-spruce-left-front-6a749a8282134.jpg?v=1786026643&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 167427,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/classic-dad-hat-spruce-front-6a749a8282573.jpg?v=1786026643&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 156924,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/classic-dad-hat-stone-front-6a749a8281caf.jpg?v=1786026643&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 292129,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/classic-dad-hat-stone-left-front-6a749a8282164.jpg?v=1786026643&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 255858,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/classic-dad-hat-stone-front-6a749a82825a2.jpg?v=1786026643&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 267414,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/classic-dad-hat-pink-front-6a749a8281c1b.jpg?v=1786026643&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 240738,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/classic-dad-hat-light-blue-front-6a749a8280f8e.jpg?v=1786026643&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 241819,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/sudadera-con-capucha-unisex": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 128732,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "producto-sudadera",
+      "coleccion-all",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-carolina-blue-front-6a74aa7c5c257.jpg?v=1786030751&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 234570,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-light-pink-front-6a74aa7c5c2c8.jpg?v=1786030751&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 215720,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-sand-front-6a74aa7c5c39c.jpg?v=1786030750&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 170309,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-azalea-front-6a74aa7c5c3d0.jpg?v=1786030750&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 215812,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-military-green-front-6a74aa7c5c333.jpg?v=1786030750&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 196106,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-forest-green-front-6a74aa7c5c291.jpg?v=1786030751&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 146265,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-maroon-front-6a74aa7c5c2fe.jpg?v=1786030750&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 150687,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-navy-front-6a74aa7c5c368.jpg?v=1786030750&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 138958,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-black-front-6a74aa7c5c1f8.jpg?v=1786030751&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 124711,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-carolina-blue-front-6a74aa7c5c88f.jpg?v=1786030751&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 293932,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-light-pink-front-6a74aa7c5c908.jpg?v=1786030750&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 292974,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-sand-front-6a74aa7c5c9d9.jpg?v=1786030750&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 285541,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-azalea-front-6a74aa7c5ca0c.jpg?v=1786030751&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 291324,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "receta-usucha",
+      "producto-kit",
+      "coleccion-all",
+      "buscador",
+      "legal",
+      "404"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/te-matcha-ceremonial-organico446.oembed": {
+    "status": 200,
+    "type": "application/json+oembed; charset=utf-8",
+    "bytes": 588,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-ceremonial"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/te-matcha-ceremonial-organico446": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 62748,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-ceremonial",
+      "coleccion-all"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/Captura_de_pantalla_2026-08-06_174529.png?v=1786031687&amp;width=1600": {
+    "status": 200,
+    "type": "image/png",
+    "bytes": 763462,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-ceremonial"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/Captura_de_pantalla_2026-08-06_174529.png?v=1786031687&amp;width=240": {
+    "status": 200,
+    "type": "image/png",
+    "bytes": 763462,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-ceremonial"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/bG9jYWw6Ly9tZWRpYS8xUy9HQy82MFIzMEMxRzZXVDNHQzFTLzA1NzE1M2YyLnBuZw_3dd9bb27-5f14-4183-9c90-33506c5d08c3.jpg?v=1786031449&amp;width=240": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 148062,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-ceremonial"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/bG9jYWw6Ly9tZWRpYS85Ry9HQy82MFIzMEMxRzZXVDNHQzlHL2Q5MzAzZDU0LnBuZw_bf918ca9-955d-486c-b8f8-40569d21137e.jpg?v=1786031450&amp;width=240": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 438883,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-ceremonial"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cart/65498918486365:1?ucp/version=2026-08-25": {
+    "status": 403,
+    "type": "text/html; charset=utf-8",
+    "bytes": 51,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-sudadera"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/sudadera-con-capucha-unisex.oembed": {
+    "status": 200,
+    "type": "application/json+oembed; charset=utf-8",
+    "bytes": 9964,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-sudadera"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-carolina-blue-front-6a74aa7c5c257.jpg?v=1786030751&amp;width=1600": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 234570,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-sudadera"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-carolina-blue-front-6a74aa7c5c257.jpg?v=1786030751&amp;width=240": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 234570,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-sudadera"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-light-pink-front-6a74aa7c5c2c8.jpg?v=1786030751&amp;width=240": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 215720,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-sudadera"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-sand-front-6a74aa7c5c39c.jpg?v=1786030750&amp;width=240": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 170309,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-sudadera"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-azalea-front-6a74aa7c5c3d0.jpg?v=1786030750&amp;width=240": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 215812,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-sudadera"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/unisex-heavy-blend-hoodie-military-green-front-6a74aa7c5c333.jpg?v=1786030750&amp;width=240": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 196106,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "producto-sudadera"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cart": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 52381,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "carrito"
+    ]
+  },
+  "https://zenqalife.roadshop.online/collections/all.atom": {
+    "status": 200,
+    "type": "application/atom+xml; charset=utf-8",
+    "bytes": 51142,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/t/10/compiled_assets/scripts.js?v=47368013396670054441791900328": {
+    "status": 200,
+    "type": "text/javascript",
+    "bytes": 583,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/t/10/assets/results-list.js?v=28346210841421047511791900317": {
+    "status": 200,
+    "type": "text/javascript",
+    "bytes": 1385,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/t/10/assets/facets.js?v=63812518353262248541791900317": {
+    "status": 200,
+    "type": "text/javascript",
+    "bytes": 18072,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/t/10/assets/scrolling.js?v=162288454571026455011791900317": {
+    "status": 200,
+    "type": "text/javascript",
+    "bytes": 5199,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/t/10/assets/overflow-list.css?v=16727044177065489451791900317": {
+    "status": 200,
+    "type": "text/css",
+    "bytes": 1132,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/taza-te-matcha-vibes": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 65040,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/white-glossy-mug-white-11-oz-handle-on-right-6a7499c62b192.jpg?v=1786026484&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 133531,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/white-glossy-mug-white-11-oz-front-view-6a7499c62cc15.jpg?v=1786026484&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 90382,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/white-glossy-mug-white-15-oz-front-view-6a7499c62d692.jpg?v=1786026484&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 88271,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/white-glossy-mug-white-20-oz-front-view-6a7499c62f516.jpg?v=1786026484&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 103181,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/white-glossy-mug-white-11-oz-front-view-6a7499c62e0e4.jpg?v=1786026484&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 123708,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/white-glossy-mug-white-11-oz-handle-on-right-6a7499c62eaae.jpg?v=1786026484&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 145219,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/Captura_de_pantalla_2026-08-06_174529.png?v=1786031687&amp;width=3840": {
+    "status": 200,
+    "type": "image/png",
+    "bytes": 763462,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/bG9jYWw6Ly9tZWRpYS8xUy9HQy82MFIzMEMxRzZXVDNHQzFTLzA1NzE1M2YyLnBuZw_3dd9bb27-5f14-4183-9c90-33506c5d08c3.jpg?v=1786031449&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 148062,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/bG9jYWw6Ly9tZWRpYS85Ry9HQy82MFIzMEMxRzZXVDNHQzlHL2Q5MzAzZDU0LnBuZw_bf918ca9-955d-486c-b8f8-40569d21137e.jpg?v=1786031450&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 438883,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/te-matcha-culinario-organico447": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 62725,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/Captura_de_pantalla_2026-08-06_174645.png?v=1786031570&amp;width=3840": {
+    "status": 200,
+    "type": "image/png",
+    "bytes": 750326,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/bG9jYWw6Ly9tZWRpYS85Ry9HQy82MFIzMEMxRzZXVDNHQzlHL2Q5MzAzZDU0LnBuZw_2759482e-ac29-4ff3-ba8f-c9775f21b887.jpg?v=1786031450&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 438883,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/bG9jYWw6Ly9tZWRpYS8xUy9HQy82MFIzMEMxRzZXVDNHQzFTLzA1NzE1M2YyLnBuZw_47d5a548-30ea-48e0-a5f6-f2cc03b0b1ff.jpg?v=1786031450&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 148062,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all",
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/vaso-con-pajita-termico-de-doble-cara-transparente": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 64254,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/creamy_matcha_latte.webp?v=1786011072&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 91955,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/matcha_cup_handheld.webp?v=1786011072&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 196758,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/double-wall-clear-plastic-tumbler-_16-oz_-16-oz-left-6a74543e34d47.jpg?v=1786008672&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 77221,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/double-wall-clear-plastic-tumbler-_16-oz_-16-oz-right-6a74543e34312.jpg?v=1786008672&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 79437,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/files/double-wall-clear-plastic-tumbler-_16-oz_-16-oz-front-6a74543e35fa7.jpg?v=1786008673&amp;width=3840": {
+    "status": 200,
+    "type": "image/jpeg",
+    "bytes": 132949,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "coleccion-all"
+    ]
+  },
+  "https://zenqalife.roadshop.online/search?q=matcha": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 279210,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/cdn/shop/t/10/assets/search-page-input.js?v=75415526569643471571791900317": {
+    "status": 200,
+    "type": "text/javascript",
+    "bytes": 783,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/search?type=product&q=": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 263851,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/te-matcha-ceremonial-organico446?_pos=1&_sid=848b2f564&_ss=r": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 61607,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/te-matcha-culinario-organico447?_pos=2&_sid=848b2f564&_ss=r": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 61584,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/taza-te-matcha-vibes?_pos=3&_sid=848b2f564&_ss=r": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 65082,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/gorra-te-matcha-vibes?_pos=4&_sid=848b2f564&_ss=r": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 65573,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/eco-tote-bag?_pos=5&_sid=848b2f564&_ss=r": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 61491,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "buscador"
+    ]
+  },
+  "https://zenqalife.roadshop.online/products/sudadera-con-capucha-unisex?_pos=6&_sid=848b2f564&_ss=r": {
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 128774,
+    "err": "",
+    "kind": "enlace",
+    "where": [
+      "buscador"
+    ]
+  }
+}

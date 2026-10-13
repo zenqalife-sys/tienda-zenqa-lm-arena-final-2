@@ -1,0 +1,324 @@
+═══ 1 · PÁGINAS (estado HTTP) ═══
+  404  404                  /pages/pagina-que-no-existe-zenqa              h1:1 h2:0 img:37 sin-alt:0 ld:0 lang:es 
+  200  home                 /                                              h1:1 h2:6 img:2 sin-alt:0 ld:0 lang:es 
+  200  tienda               /pages/tienda                                  h1:1 h2:0 img:0 sin-alt:0 ld:0 lang:es 
+  200  matcha               /pages/te-matcha                               h1:1 h2:6 img:1 sin-alt:0 ld:0 lang:es 
+  200  recetas              /pages/recetas-y-guias                         h1:1 h2:3 img:1 sin-alt:0 ld:0 lang:es 
+  200  nosotros             /pages/el-ritual                               h1:1 h2:3 img:2 sin-alt:0 ld:0 lang:es 
+  404  receta-usucha        /pages/receta-usucha                           h1:1 h2:0 img:37 sin-alt:0 ld:0 lang:es 
+  200  producto-ceremonial  /products/te-matcha-ceremonial-organico446     h1:1 h2:0 img:4 sin-alt:0 ld:0 lang:es 
+  404  producto-kit         /products/kit-completo-matcha-zenqa-life       h1:1 h2:0 img:37 sin-alt:0 ld:0 lang:es 
+  200  producto-sudadera    /products/sudadera-con-capucha-unisex          h1:1 h2:0 img:6 sin-alt:0 ld:0 lang:es 
+  200  carrito              /cart                                          h1:1 h2:1 img:0 sin-alt:0 ld:0 lang:es 
+  200  coleccion-all        /collections/all                               h1:1 h2:1 img:54 sin-alt:0 ld:0 lang:es 
+  200  buscador             /search?q=matcha                               h1:0 h2:1 img:36 sin-alt:0 ld:0 lang:es 
+  404  legal                /pages/legal                                   h1:1 h2:0 img:37 sin-alt:0 ld:0 lang:es 
+
+  Títulos:
+   404                  «404 No encontrado»
+   home                 «ZENQA LIFE»
+   tienda               «Tienda»
+   matcha               «Te Matcha»
+   recetas              «Recetas y Guías»
+   nosotros             «El Ritual»
+   receta-usucha        «404 No encontrado»
+   producto-ceremonial  «Té Matcha Orgánico PREMIUM Grado CEREMONIAL»
+   producto-kit         «404 No encontrado»
+   producto-sudadera    «Sudadera con capucha unisex»
+   carrito              «Tu carrito»
+   coleccion-all        «Productos»
+   buscador             «Búsqueda: 8 resultados encontrados para &quot;matcha&quot;»
+   legal                «404 No encontrado»
+  Canónicas:
+   404                  https://zenqalife.roadshop.online/404
+   home                 https://zenqalife.roadshop.online/
+   tienda               https://zenqalife.roadshop.online/pages/tienda
+   matcha               https://zenqalife.roadshop.online/pages/te-matcha
+   recetas              https://zenqalife.roadshop.online/pages/recetas-y-guias
+   nosotros             https://zenqalife.roadshop.online/pages/el-ritual
+   receta-usucha        https://zenqalife.roadshop.online/404
+   producto-ceremonial  https://zenqalife.roadshop.online/products/te-matcha-ceremonial-organico446
+   producto-kit         https://zenqalife.roadshop.online/404
+   producto-sudadera    https://zenqalife.roadshop.online/products/sudadera-con-capucha-unisex
+   carrito              https://zenqalife.roadshop.online/cart
+   coleccion-all        https://zenqalife.roadshop.online/collections/all
+   buscador             https://zenqalife.roadshop.online/search?q=matcha
+   legal                https://zenqalife.roadshop.online/404
+  JSON-LD:
+
+═══ 2 · ENLACES Y RECURSOS ROTOS ═══  3 de 114
+  404                  https://zenqalife.roadshop.online/pages/legal
+      en: nosotros
+  404                  https://zenqalife.roadshop.online/404
+      en: receta-usucha, producto-kit, legal, 404
+  403                  https://zenqalife.roadshop.online/cart/65498918486365:1?ucp/version=2026-08-25
+      en: producto-sudadera
+
+═══ 3 · CATÁLOGO SHOPIFY (8 productos) ═══
+  disp:NO    Té Matcha Orgánico PREMIUM Grado CEREMONIAL            31.20              var:1   img:3 vendor:AWArtisan Dropship tipo:Tés e Infusiones Artesanales Granel - 50 G
+      ⚠ descripción vacía/corta: «»
+  disp:NO    Té Matcha Orgánico PREMIUM Grado Culinario             19.50              var:1   img:3 vendor:AWArtisan Dropship tipo:Tés e Infusiones Artesanales Granel - 50 G
+      ⚠ descripción vacía/corta: «»
+  disp:sí/NO Sudadera con capucha unisex                            25.50 27.50 29.50 32.00 var:66  img:36 vendor:ZENQA LIFE tipo:T-SHIRT
+  disp:sí    Camiseta clásica unisex                                10.50 13.00 15.00 17.50 var:70  img:30 vendor:ZENQA LIFE tipo:T-SHIRT
+  disp:sí    Eco Tote Bag                                           19.90              var:1   img:3 vendor:ZENQA LIFE tipo:T-SHIRT
+  disp:sí    Gorra Te Matcha Vibes                                  20.90              var:4   img:12 vendor:ZENQA LIFE tipo:EMBROIDERY
+  disp:sí    Taza Te Matcha Vibes                                   13.90 15.90 17.90  var:3   img:6 vendor:ZENQA LIFE tipo:MUG
+  disp:sí    Vaso térmico de doble cara transparente con pajita     21.90              var:1   img:6 vendor:ZENQA LIFE tipo:DRINKWARE
+
+═══ 4 · ANCLAS QUE NO EXISTEN ═══  2
+   - matcha → /pages/tienda#te
+   - nosotros → /pages/legal#privacidad
+
+═══ 5 · NAVEGADOR REAL (por página y viewport) ═══
+  home.movil                     200 alto:8263 desborde:0px rotas:1 táctiles<40:31 errores:2 fallos-red:4 404:3 cab:sticky fuentes:8 cookieBanner:5
+  home.tablet                    304 alto:8451 desborde:0px rotas:1 táctiles<40:35 errores:1 fallos-red:3 404:1 cab:sticky fuentes:8 cookieBanner:5
+  home.escritorio                200 alto:6422 desborde:0px rotas:1 táctiles<40:31 errores:1 fallos-red:3 404:1 cab:sticky fuentes:8 cookieBanner:5
+  tienda.movil                   200 alto:6825 desborde:0px rotas:2 táctiles<40:51 errores:1 fallos-red:3 404:4 cab:sticky fuentes:8 cookieBanner:5
+  tienda.tablet                  200 alto:9322 desborde:0px rotas:2 táctiles<40:59 errores:1 fallos-red:3 404:2 cab:sticky fuentes:8 cookieBanner:5
+  tienda.escritorio              200 alto:6676 desborde:0px rotas:2 táctiles<40:55 errores:1 fallos-red:4 404:3 cab:sticky fuentes:8 cookieBanner:5
+  matcha.movil                   200 alto:7536 desborde:0px rotas:2 táctiles<40:27 errores:1 fallos-red:3 404:2 cab:sticky fuentes:8 cookieBanner:5
+  matcha.tablet                  200 alto:5392 desborde:0px rotas:2 táctiles<40:31 errores:1 fallos-red:3 404:2 cab:sticky fuentes:8 cookieBanner:5
+  matcha.escritorio              200 alto:5377 desborde:0px rotas:2 táctiles<40:27 errores:1 fallos-red:3 404:2 cab:sticky fuentes:8 cookieBanner:5
+  recetas.movil                  200 alto:5630 desborde:0px rotas:0 táctiles<40:31 errores:1 fallos-red:3 404:2 cab:sticky fuentes:8 cookieBanner:5
+  recetas.tablet                 200 alto:5990 desborde:0px rotas:0 táctiles<40:38 errores:1 fallos-red:3 404:2 cab:sticky fuentes:8 cookieBanner:5
+  recetas.escritorio             200 alto:5688 desborde:0px rotas:0 táctiles<40:34 errores:1 fallos-red:3 404:2 cab:sticky fuentes:8 cookieBanner:5
+  nosotros.movil                 200 alto:6216 desborde:0px rotas:0 táctiles<40:31 errores:0 fallos-red:3 404:0 cab:sticky fuentes:8 cookieBanner:5
+  nosotros.escritorio            200 alto:4534 desborde:0px rotas:0 táctiles<40:31 errores:0 fallos-red:3 404:0 cab:sticky fuentes:8 cookieBanner:5
+  receta-usucha.movil            404 alto:1503 desborde:0px rotas:0 táctiles<40:32 errores:1 fallos-red:3 404:1 cab:sticky fuentes:8 cookieBanner:4
+  receta-usucha.escritorio       404 alto:1149 desborde:0px rotas:0 táctiles<40:28 errores:1 fallos-red:3 404:1 cab:sticky fuentes:8 cookieBanner:4
+  producto-ceremonial.movil      200 alto:2253 desborde:0px rotas:0 táctiles<40:22 errores:0 fallos-red:3 404:0 cab:sticky fuentes:8 cookieBanner:4
+  producto-ceremonial.tablet     200 alto:2562 desborde:0px rotas:0 táctiles<40:26 errores:0 fallos-red:3 404:0 cab:sticky fuentes:8 cookieBanner:4
+  producto-ceremonial.escritorio 200 alto:1735 desborde:0px rotas:0 táctiles<40:22 errores:0 fallos-red:3 404:0 cab:sticky fuentes:8 cookieBanner:4
+  producto-kit.movil             404 alto:1503 desborde:0px rotas:0 táctiles<40:32 errores:1 fallos-red:3 404:1 cab:sticky fuentes:8 cookieBanner:4
+  producto-kit.escritorio        404 alto:1149 desborde:0px rotas:0 táctiles<40:28 errores:1 fallos-red:3 404:1 cab:sticky fuentes:8 cookieBanner:4
+  producto-sudadera.movil        200 alto:2735 desborde:0px rotas:0 táctiles<40:22 errores:0 fallos-red:3 404:0 cab:sticky fuentes:8 cookieBanner:4
+  producto-sudadera.escritorio   200 alto:2030 desborde:0px rotas:0 táctiles<40:22 errores:0 fallos-red:3 404:0 cab:sticky fuentes:8 cookieBanner:4
+  carrito.movil                  200 alto:1321 desborde:0px rotas:0 táctiles<40:22 errores:0 fallos-red:3 404:0 cab:sticky fuentes:8 cookieBanner:4
+  carrito.tablet                 304 alto:1401 desborde:0px rotas:0 táctiles<40:26 errores:0 fallos-red:3 404:0 cab:sticky fuentes:8 cookieBanner:4
+  carrito.escritorio             200 alto:1279 desborde:0px rotas:0 táctiles<40:22 errores:0 fallos-red:3 404:0 cab:sticky fuentes:8 cookieBanner:4
+  coleccion-all.movil            200 alto:2230 desborde:0px rotas:0 táctiles<40:36 errores:2 fallos-red:3 404:0 cab:sticky fuentes:8 cookieBanner:4
+  coleccion-all.escritorio       200 alto:1618 desborde:3px rotas:0 táctiles<40:29 errores:2 fallos-red:3 404:0 cab:sticky fuentes:8 cookieBanner:4
+  buscador.movil                 200 alto:1889 desborde:0px rotas:0 táctiles<40:33 errores:3 fallos-red:4 404:0 cab:sticky fuentes:8 cookieBanner:4
+  buscador.escritorio            200 alto:1621 desborde:3px rotas:0 táctiles<40:31 errores:3 fallos-red:3 404:0 cab:sticky fuentes:8 cookieBanner:4
+  legal.movil                    404 alto:1503 desborde:0px rotas:0 táctiles<40:32 errores:1 fallos-red:3 404:1 cab:sticky fuentes:8 cookieBanner:4
+  legal.escritorio               404 alto:1149 desborde:0px rotas:0 táctiles<40:28 errores:1 fallos-red:3 404:1 cab:sticky fuentes:8 cookieBanner:4
+  404.movil                      404 alto:1503 desborde:0px rotas:0 táctiles<40:32 errores:1 fallos-red:3 404:1 cab:sticky fuentes:8 cookieBanner:4
+  404.escritorio                 404 alto:1149 desborde:0px rotas:0 táctiles<40:28 errores:1 fallos-red:3 404:1 cab:sticky fuentes:8 cookieBanner:4
+
+  · Desborde horizontal (detalle):
+   coleccion-all.escritorio: 3px
+      a.skip-to-content-link.button-secondary left:-99999 right:-99780 w:219
+      div.column-options-wrapper left:1290 right:1443 w:153
+      fieldset.column-options left:1290 right:1443 w:153
+      legend.column-options__legend.visually-hidden left:1290 right:1443 w:153
+      slideshow-slide.product-media-container.media-fit left:1410 right:1686 w:276
+      div.product-media left:1410 right:1686 w:276
+   buscador.escritorio: 3px
+      a.skip-to-content-link.button-secondary left:-99999 right:-99780 w:219
+      div.column-options-wrapper left:1290 right:1443 w:153
+      fieldset.column-options left:1290 right:1443 w:153
+      legend.column-options__legend.visually-hidden left:1290 right:1443 w:153
+      slideshow-slide.product-media-container.media-fit left:1410 right:1686 w:276
+      div.product-media left:1410 right:1686 w:276
+  · Imágenes rotas:
+   home.movil: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado CEREMONIAL», 358px)
+   home.tablet: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado CEREMONIAL», 736px)
+   home.escritorio: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado CEREMONIAL», 577px)
+   tienda.movil: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado Culinario», 149px)
+   tienda.movil: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado CEREMONIAL», 149px)
+   tienda.tablet: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado Culinario», 338px)
+   tienda.tablet: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado CEREMONIAL», 338px)
+   tienda.escritorio: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado Culinario», 369px)
+   tienda.escritorio: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado CEREMONIAL», 369px)
+   matcha.movil: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado Culinario», 358px)
+   matcha.movil: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado CEREMONIAL», 358px)
+   matcha.tablet: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado Culinario», 363px)
+   matcha.tablet: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado CEREMONIAL», 363px)
+   matcha.escritorio: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado Culinario», 599px)
+   matcha.escritorio: https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantal (alt «Té Matcha Orgánico PREMIUM Grado CEREMONIAL», 599px)
+  · Errores de consola / JS únicos:
+   - consola: Failed to load resource: the server responded with a status of 404 ()
+   - consola: Framing 'https://shop.app/' violates the following Content Security Policy directive: "frame-ancestors 'self' https://shop.app https://admin.shopify.com". The request has been blocked.
+
+   - js: Failed to resolve module specifier "@theme/utilities". Relative references must start with either "/", "./", or "../".
+   - js: Failed to resolve module specifier "@theme/section-renderer". Relative references must start with either "/", "./", or "../".
+   - js: Failed to resolve module specifier "@theme/component". Relative references must start with either "/", "./", or "../".
+  · Peticiones fallidas:
+   - net::ERR_ABORTED https://zenqalife.roadshop.online/api/collect
+   - net::ERR_ABORTED https://zenqalife.roadshop.online/api/event/collect
+   - net::ERR_ABORTED https://zenqalife.roadshop.online/.well-known/shopify/monorail/unstable/produce_batch
+   - net::ERR_BLOCKED_BY_RESPONSE https://shop.app/pay/hop?analytics_trace_id=7e0a0699-cdba-44d8-a51a-8e8b73f85706&target_origin=https%3A%2F%2Fzenqalife.roadshop.online&clien
+   - net::ERR_ABORTED https://monorail-edge.shopifysvc.com/v1/produce
+  · Respuestas 4xx/5xx:
+   - 404 https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantalla_2026-08-06_174529.png?v=1786031687
+   - 403 https://shop.app/pay/hop?analytics_trace_id=7e0a0699-cdba-44d8-a51a-8e8b73f85706&target_origin=https%3A%2F%2Fzenqalife.roadshop.online&client_handle=vtrqjk-bz.myshopify.com
+   - 404 https://zenqalife.roadshop.online/favicon.ico
+   - 404 https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/Captura_de_pantalla_2026-08-06_174645.png?v=1786031570
+   - 404 https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/creamy_matcha_latte.webp?v=1786011072
+   - 404 https://zenqalife.roadshop.online/cdn/shop/t/10/assets/zq-https://cdn.shopify.com/s/files/1/1095/2415/6765/files/white-glossy-mug-white-11-oz-handle-on-right-6a7499c62b192.jpg?
+   - 404 https://zenqalife.roadshop.online/pages/receta-usucha
+   - 404 https://zenqalife.roadshop.online/products/kit-completo-matcha-zenqa-life
+   - 404 https://zenqalife.roadshop.online/pages/legal
+   - 404 https://zenqalife.roadshop.online/pages/pagina-que-no-existe-zenqa
+  · Elementos táctiles < 40 px (muestra):
+   - home.movil: «ZENQA LIFE» 138x38
+   - home.movil: «Buscar productos» 38x38
+   - home.movil: «Ver el carrito» 38x38
+   - home.movil: «Abrir el menú» 38x38
+   - home.movil: «Compró Té Matcha Orgánico PREMIUM Grado » 282x38
+   - home.movil: «Compró Kit Completo Matcha Zenqa Life» 249x16
+   - tienda.movil: «ZENQA LIFE» 138x38
+   - tienda.movil: «Buscar productos» 38x38
+   - tienda.movil: «Ver el carrito» 38x38
+   - tienda.movil: «Abrir el menú» 38x38
+   - tienda.movil: «TÉ MATCHA» 75x26
+   - tienda.movil: «MÁS VARIEDADES DE TÉ» 134x26
+   - matcha.movil: «ZENQA LIFE» 138x38
+   - matcha.movil: «Buscar productos» 38x38
+   - matcha.movil: «Ver el carrito» 38x38
+   - matcha.movil: «Abrir el menú» 38x38
+   - matcha.movil: «INSTAGRAM @zenqa.life» 178x39
+   - matcha.movil: «TIKTOK @zenqalife» 147x39
+   - recetas.movil: «ZENQA LIFE» 138x38
+   - recetas.movil: «Buscar productos» 38x38
+   - recetas.movil: «Ver el carrito» 38x38
+   - recetas.movil: «Abrir el menú» 38x38
+   - recetas.movil: «Kit Basico Matcha Zenqa Life» 121x35
+   - recetas.movil: «Vasos Matcha Latte Zenqa Life» 107x35
+   - nosotros.movil: «ZENQA LIFE» 138x38
+
+═══ 6 · FLUJOS FUNCIONALES ═══
+  anadir-portada: {"ok":false,"why":"","before":{"items":0,"total":0},"after":{"err":"SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"},"click":{"ok":true,"tag":"BUTTON","cls":"btn btn--pink","href":null,"text":"añadir al carrito"},"drawer":null,"calls":[{"url":"https://zenqalife.roadshop.online/cart.js","status":200,"body":"{\"token\":\"d086b9c5d06f5436985afbdbc6b39af4\",\"note\":null,\"attributes\":{},\"original_total_price\":0,\"total_price\":0,\"total_discount\":0,\"total_weight\":0.0,\"item_count\":0,\"items\":[],\"requires_shipping\":false,\"currency\":\"EUR\",\"items_subtotal_price\":0,\"cart_level_discount_applications\":[],\"discount_codes\":[]}"},{"url":"https://zenqalife.roadshop.online/cart/add","status":422,"body":"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>El artículo &#39;Té Matcha Orgánico PREMIUM Grado CEREMONIAL&#39; ya está agotado.</title>\n  <meta name=\"referrer\" content=\"never\" />\n  <style type=\"text/css\">\n\n    * { border:0; margin:0; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }\n    html,body { height:100%; border:0; mar"},{"url":"https://zenqalife.roadshop.online/cart.js","status":429,"body":"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    
+  persistencia-carrito: {"ok":false,"items":-1}
+  sumar-unidad: {"ok":false,"click":{"ok":false,"why":"no encontrado: +","n":0},"afterPlus":{"err":"SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"},"calls":[{"url":"https://zenqalife.roadshop.online/cart.js","status":429,"body":"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"},{"url":"https://zenqalife.roadshop.online/cart/add","status":429,"body":"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"},{"url":"https://zenqalife.roadshop.online/cart.js","status":429,"body":"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>V
+  envio-gratis-texto: {"matches":[]}
+  ficha-rapida: {"ok":false,"why":"no se abrió ninguna capa","before":{"dialogs":0},"click":{"ok":false,"why":"no encontrado: ver ficha","n":0},"layer":null,"esc":true,"closed":true}
+  buscador: {"ok":false,"why":"no hay campo de búsqueda visible","opened":{"ok":false,"why":"no encontrado: buscar","n":0},"typed":{"ok":false},"results":[]}
+  guia-lead: {"ok":false,"why":"no encontré el botón de descarga","filled":{"ok":false},"submitted":{"ok":false,"why":"no encontrado: descargar la guía","n":0},"after":{"links":[],"msg":[],"stored":[["signInWithShop:cartSyncTransferAttemptedAt","1791909997910"]]},"posts":[{"url":"https://zenqalife.roadshop.online/cdn-cgi/challenge-platform/h/g/fo/2575135020:1791908127:ClcU1XjQOyXAbAajjxl3LpGUvWmprmXOQuT9ifUjLpk/a49fd5b44a0d8627/sczbbhhE8","data":"jdjvU0GkqcYMvrluGXME98ccRsELHQ9xBH9w0Xwl-uXRFfCC04-DPg4jicAP+omCLJtTZl1eEH6oJQ6YpG9TDzjPrMqHknD6d6OLDj5HMRsf6K-Tv7zD6MhQOz6bMudd7mn9-6b0QWM0sdhdCrkOsoVm6tGFBN0wrX6RNfw-VLfU3MGBQBPo4QImLRFwfUNpOwmcNB+lM5juzWuJTOGoFQbw2M6NEI+Oow7-JQwU4MU-Oqclr9zZvsO0VVttiQ3A-2O9oo5OsXfqTrXuIRRuqhGovwtnWo3fQ-mqY$dhVnfG"},{"url":"https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5b5f8f4b625/pDbn2L1NK_","data":"BmGZMZwIgIBdpi+JUgEHdEA0xXuOUDcOhZbdFW6j55Vql7cec4ulHFUMB3OoxvDL84MJ6Yg9NxcUgHF7KkOze0VMiE+SZwonvPgEJAOs7uSZZyNCUk6srLCS5-8nYb-DM+9wuziegFzuw4D3tcdzA51FzGeUB2QvjSLLWtLeSJMvRgmHufYoN7S86uu9V77xMtWI4-FVYjBGEZlnwdHh2UVm$viJewO41I8xoMM-osGidNwjBPOt09AV4dQRQpOLH-KPp89Z-MuxSwlYxfKYDdge30sdaibbwGnf8j$UXcvz"},{"url":"https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5b5f8f4b625/pDbn2L1NK_","data":"
+  newsletter-pie: {"ok":false,"why":"sin formulario de newsletter en el pie","nl":{"ok":false},"nlAfter":{"msg":[],"stored":["signInWithShop:cartSyncTransferAttemptedAt"]},"posts":[{"url":"https://zenqalife.roadshop.online/cdn-cgi/challenge-platform/h/g/fo/2575135020:1791908127:ClcU1XjQOyXAbAajjxl3LpGUvWmprmXOQuT9ifUjLpk/a49fd5b44a0d8627/sczbbhhE8","data":"jdjvU0GkqcYMvrluGXME98ccRsELHQ9xBH9w0Xwl-uXRFfCC04-DPg4jicAP+omCLJtTZl1eEH6oJQ6YpG9TDzjPrMqHknD6d6OLDj5HMRsf6K-Tv7zD6MhQOz6bMudd7mn9-6b0QWM0sdhdCrkOsoVm6tGFBN0wrX6RNfw-VLfU3MGBQBPo4QImLRFwfUNpOwmcNB+lM5juzWuJTOGoFQbw2M6NEI+Oow7-JQwU4MU-Oqclr9zZvsO0VVttiQ3A-2O9oo5OsXfqTrXuIRRuqhGovwtnWo3fQ-mqY$dhVnfG"},{"url":"https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5b5f8f4b625/pDbn2L1NK_","data":"BmGZMZwIgIBdpi+JUgEHdEA0xXuOUDcOhZbdFW6j55Vql7cec4ulHFUMB3OoxvDL84MJ6Yg9NxcUgHF7KkOze0VMiE+SZwonvPgEJAOs7uSZZyNCUk6srLCS5-8nYb-DM+9wuziegFzuw4D3tcdzA51FzGeUB2QvjSLLWtLeSJMvRgmHufYoN7S86uu9V77xMtWI4-FVYjBGEZlnwdHh2UVm$viJewO41I8xoMM-osGidNwjBPOt09AV4dQRQpOLH-KPp89Z-MuxSwlYxfKYDdge30sdaibbwGnf8j$UXcvz"},{"url":"https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5b5f8f4b625/pDbn2L1NK_","data":"BmGZMZwIgIBdpi+JUgEHdEA0xXuOUDcOhZbdFW6j55Vql7cec4ulHFUMB3OoxvDL84MJ6Yg9NxcUgHF7KkOze0VMiE+SZwonv
+  contacto: {"ok":false,"why":"no encontré el botón de enviar","filled":{"email":false,"name":false,"msg":false,"sel":0,"checked":null,"forms":[]},"sent":{"ok":false,"why":"no encontrado: enviar mensaje","n":0},"after":{"msg":[],"url":"https://zenqalife.roadshop.online/pages/el-ritual#contacto"},"posts":[{"url":"https://zenqalife.roadshop.online/cdn-cgi/challenge-platform/h/g/fo/2575135020:1791908127:ClcU1XjQOyXAbAajjxl3LpGUvWmprmXOQuT9ifUjLpk/a49fd5ec98d58627/LoeyiEbBX","data":"G2nGPwnevZFGc+fgQMi8GCLPePeTB-BUUMXtt3XUB0iFlwehmRDRUc9mTjNpfoWmFMonEBZ9iBYOg8IFqqj4aPVK+PTXjXim3mitFtIoxGnZ7qSR6Vvb4eeVa5UHMFvkINiu5NxIE72d1tLAJDIxRaPAEVPngpbhbR92Q8t43uwFu9vnDSq9jBs2JWW1bNftunEOuKOF2HiilQL96crkiPJHoMg4RBsHxvmp90O$t6lW9qhi+6mRouY$EK1hBhx+BMYCDBTwqmwNp5p3u36xdI65ZoNc3SdffAeIobrJdHXWhKoxLiAiUqDhpVIA1SFwuGJIet8a$um9jGBUT2QCwNV9dTJVERmvlx0KOgFgjzmr91JLhLIg8x+TwJRvfuE359n$NkqGevtMg+JX"},{"url":"https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5ee3a93b625/6Ulo1xsYmK","data":"1rp-WwkLtdh5n373EHBQznCfMCKHUZ86EE4UNiCAqnrOmvG3bfXsYDy9mYQpdEytLPVixUFX2d3-PWn9GP6JxYbFEbVibg4y2AcQzqD576xHsirMRGsGWm7WSjq9vodt25kBccobj81K$NveShMc+PP$o542d6+n1j0ULpXuQ6$xsbw9ONO3oO39lYlXMwVvWLgxeDq5+dslKKiUEplvyKXV2SJ08UMaqaj5ZOAQHxcJZ7MWzXnjvIMvq9EWg2kNguNkubku9QRG9cpCz+0SEkNtI2EZ39nbg7BkxInXGls5S5IeDkLtyUt5VdWu2enJslWS9-I9b4Z-Br6evgUxYozRbg$
+  carrito-checkout: {"ok":false,"cart":{"text":"Your connection needs to be verified before you can proceed","empty":false,"items":0,"qtyInputs":0},"click":{"ok":false,"why":"no encontrado: finalizar compra","n":0},"coInfo":{"url":"https://zenqalife.roadshop.online/cart","title":"Un momento…","text":"Your connection needs to be verified before you can proceed"},"calls":[{"url":"https://zenqalife.roadshop.online/cart","status":429}]}
+  anclas-y-estructura: {"anchorsDOM":[],"structure":{"top":[["page",1],["text-container",1],["text-container--main",1],["cf-injected-html",1],["main-wrapper",1],["main-content",1],["kXWP4",1],["amsb2",1],["mSEeZ8",1]],"dataAttrs":{"data-i18n":1},"spots":[]},"jumped":{"before":0,"after":0,"targetTop":null,"headerH":0}}
+
+═══ 7 · ACCESIBILIDAD (axe-core, móvil) ═══
+  home: 3 tipos
+   - [minor] empty-heading (1) Headings should not be empty
+   - [critical] meta-refresh (1) Delayed refresh under 20 hours must not be used
+   - [moderate] region (1) All page content should be contained by landmarks
+  tienda: 3 tipos
+   - [minor] empty-heading (1) Headings should not be empty
+   - [critical] meta-refresh (1) Delayed refresh under 20 hours must not be used
+   - [moderate] region (1) All page content should be contained by landmarks
+  matcha: 3 tipos
+   - [minor] empty-heading (1) Headings should not be empty
+   - [critical] meta-refresh (1) Delayed refresh under 20 hours must not be used
+   - [moderate] region (1) All page content should be contained by landmarks
+  recetas: 3 tipos
+   - [minor] empty-heading (1) Headings should not be empty
+   - [critical] meta-refresh (1) Delayed refresh under 20 hours must not be used
+   - [moderate] region (1) All page content should be contained by landmarks
+  producto-ceremonial: 3 tipos
+   - [minor] empty-heading (1) Headings should not be empty
+   - [critical] meta-refresh (1) Delayed refresh under 20 hours must not be used
+   - [moderate] region (1) All page content should be contained by landmarks
+  carrito: 3 tipos
+   - [minor] empty-heading (1) Headings should not be empty
+   - [critical] meta-refresh (1) Delayed refresh under 20 hours must not be used
+   - [moderate] region (1) All page content should be contained by landmarks
+
+═══ 8 · LIGHTHOUSE ═══
+  home-mobile: perf 62 · a11y 96 · buenas prácticas 75 · SEO 100   (22 auditorías que fallan)
+     {"first-contentful-paint":"2.1 s","largest-contentful-paint":"4.8 s","total-blocking-time":"180 ms","cumulative-layout-shift":"0.321","speed-index":"2.1 s","server-response-time":"Root document took 10 ms","total-byte-weight":"Total size was 2,114 KiB"}
+      - first-contentful-paint: First Contentful Paint 2.1 s
+      - largest-contentful-paint: Largest Contentful Paint 4.8 s
+      - speed-index: Speed Index 2.1 s
+      - total-blocking-time: Total Blocking Time 180 ms
+      - max-potential-fid: Max Potential First Input Delay 270 ms
+      - cumulative-layout-shift: Cumulative Layout Shift 0.321
+      - errors-in-console: Browser errors were logged to the console 
+      - interactive: Time to Interactive 5.6 s
+      - third-party-cookies: Uses third-party cookies 1 cookie found
+      - mainthread-work-breakdown: Minimize main-thread work 3.1 s
+      - largest-contentful-paint-element: Largest Contentful Paint element 4,810 ms
+      - layout-shifts: Avoid large layout shifts 1 layout shift found
+      - color-contrast: Background and foreground colors do not have a sufficient contrast ratio. 
+      - label-content-name-mismatch: Elements with visible text labels do not have matching accessible names. 
+  home-desktop: perf 98 · a11y 96 · buenas prácticas 93 · SEO 100   (12 auditorías que fallan)
+     {"first-contentful-paint":"0.5 s","largest-contentful-paint":"1.0 s","total-blocking-time":"10 ms","cumulative-layout-shift":"0.008","speed-index":"0.5 s","server-response-time":"Root document took 10 ms","total-byte-weight":"Total size was 2,076 KiB"}
+      - first-contentful-paint: First Contentful Paint 0.5 s
+      - largest-contentful-paint: Largest Contentful Paint 1.0 s
+      - errors-in-console: Browser errors were logged to the console 
+      - color-contrast: Background and foreground colors do not have a sufficient contrast ratio. 
+      - label-content-name-mismatch: Elements with visible text labels do not have matching accessible names. 
+      - uses-long-cache-ttl: Serve static assets with an efficient cache policy 1 resource found
+      - unused-javascript: Reduce unused JavaScript Est savings of 37 KiB
+      - uses-responsive-images: Properly size images Est savings of 504 KiB
+      - inspector-issues: Issues were logged in the `Issues` panel in Chrome Devtools 
+      - cache-insight: Use efficient cache lifetimes Est savings of 0 KiB
+      - image-delivery-insight: Improve image delivery Est savings of 504 KiB
+      - network-dependency-tree-insight: Network dependency tree 
+  tienda-mobile: perf 88 · a11y 96 · buenas prácticas 93 · SEO 100   (17 auditorías que fallan)
+     {"first-contentful-paint":"1.9 s","largest-contentful-paint":"2.4 s","total-blocking-time":"370 ms","cumulative-layout-shift":"0","speed-index":"1.9 s","server-response-time":"Root document took 10 ms","total-byte-weight":"Total size was 2,189 KiB"}
+      - first-contentful-paint: First Contentful Paint 1.9 s
+      - largest-contentful-paint: Largest Contentful Paint 2.4 s
+      - total-blocking-time: Total Blocking Time 370 ms
+      - max-potential-fid: Max Potential First Input Delay 300 ms
+      - errors-in-console: Browser errors were logged to the console 
+      - interactive: Time to Interactive 4.0 s
+      - mainthread-work-breakdown: Minimize main-thread work 7.0 s
+      - bootup-time: Reduce JavaScript execution time 4.7 s
+      - color-contrast: Background and foreground colors do not have a sufficient contrast ratio. 
+      - uses-long-cache-ttl: Serve static assets with an efficient cache policy 1 resource found
+      - unused-javascript: Reduce unused JavaScript Est savings of 57 KiB
+      - modern-image-formats: Serve images in next-gen formats Est savings of 61 KiB
+      - uses-responsive-images: Properly size images Est savings of 743 KiB
+      - inspector-issues: Issues were logged in the `Issues` panel in Chrome Devtools 
+  tienda-desktop: perf 95 · a11y 96 · buenas prácticas 93 · SEO 100   (16 auditorías que fallan)
+     {"first-contentful-paint":"0.5 s","largest-contentful-paint":"1.0 s","total-blocking-time":"10 ms","cumulative-layout-shift":"0.111","speed-index":"0.5 s","server-response-time":"Root document took 0 ms","total-byte-weight":"Total size was 2,158 KiB"}
+      - largest-contentful-paint: Largest Contentful Paint 1.0 s
+      - cumulative-layout-shift: Cumulative Layout Shift 0.111
+      - errors-in-console: Browser errors were logged to the console 
+      - lcp-lazy-loaded: Largest Contentful Paint image was lazily loaded 
+      - layout-shifts: Avoid large layout shifts 1 layout shift found
+      - color-contrast: Background and foreground colors do not have a sufficient contrast ratio. 
+      - uses-long-cache-ttl: Serve static assets with an efficient cache policy 1 resource found
+      - unused-javascript: Reduce unused JavaScript Est savings of 37 KiB
+      - modern-image-formats: Serve images in next-gen formats Est savings of 61 KiB
+      - uses-responsive-images: Properly size images Est savings of 747 KiB
+      - inspector-issues: Issues were logged in the `Issues` panel in Chrome Devtools 
+      - cache-insight: Use efficient cache lifetimes Est savings of 0 KiB
+      - cls-culprits-insight: Layout shift culprits 
+      - image-delivery-insight: Improve image delivery Est savings of 754 KiB
+  producto-mobile: perf 91 · a11y 94 · buenas prácticas 96 · SEO 100   (19 auditorías que fallan)
+     {"first-contentful-paint":"1.9 s","largest-contentful-paint":"2.8 s","total-blocking-time":"200 ms","cumulative-layout-shift":"0","speed-index":"1.9 s","server-response-time":"Root document took 10 ms","total-byte-weight":"Total size was 1,454 KiB"}
+      - first-contentful-paint: First Contentful Paint 1.9 s
+      - largest-contentful-paint: Largest Contentful Paint 2.8 s
+      - total-blocking-time: Total Blocking Time 200 ms
+      - max-potential-fid: Max Potential First Input Delay 270 ms
+      - interactive: Time to Interactive 4.6 s
+      - mainthread-work-breakdown: Minimize main-thread work 6.9 s
+      - bootup-time: Reduce JavaScript execution time 4.8 s
+      - largest-contentful-paint-element: Largest Contentful Paint element 2,790 ms
+      - color-contrast: Background and foreground colors do not have a sufficient contrast ratio. 
+      - heading-order: Heading elements are not in a sequentially-descending order 
+      - uses-long-cache-ttl: Serve static assets with an efficient cache policy 1 resource found
+      - unused-javascript: Reduce unused JavaScript Est savings of 54 KiB
+      - uses-responsive-images: Properly size images Est savings of 33 KiB
+      - inspector-issues: Issues were logged in the `Issues` panel in Chrome Devtools 
+  producto-desktop: perf 98 · a11y 94 · buenas prácticas 96 · SEO 100   (14 auditorías que fallan)
+     {"first-contentful-paint":"0.6 s","largest-contentful-paint":"0.6 s","total-blocking-time":"10 ms","cumulative-layout-shift":"0.084","speed-index":"0.6 s","server-response-time":"Root document took 0 ms","total-byte-weight":"Total size was 1,369 KiB"}
+      - first-contentful-paint: First Contentful Paint 0.6 s
+      - largest-contentful-paint: Largest Contentful Paint 0.6 s
+      - max-potential-fid: Max Potential First Input Delay 70 ms
+      - cumulative-layout-shift: Cumulative Layout Shift 0.084
+      - color-contrast: Background and foreground colors do not have a sufficient contrast ratio. 
+      - heading-order: Heading elements are not in a sequentially-descending order 
+      - uses-long-cache-ttl: Serve static assets with an efficient cache policy 1 resource found
+      - unused-javascript: Reduce unused JavaScript Est savings of 36 KiB
+      - uses-responsive-images: Properly size images Est savings of 43 KiB
+      - inspector-issues: Issues were logged in the `Issues` panel in Chrome Devtools 
+      - cache-insight: Use efficient cache lifetimes Est savings of 0 KiB
+      - image-delivery-insight: Improve image delivery Est savings of 47 KiB
+      - lcp-discovery-insight: LCP request discovery 
+      - network-dependency-tree-insight: Network dependency tree 

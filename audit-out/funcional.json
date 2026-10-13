@@ -1,0 +1,296 @@
+{
+  "anadir-portada": {
+    "ok": false,
+    "why": "",
+    "before": {
+      "items": 0,
+      "total": 0
+    },
+    "after": {
+      "err": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+    },
+    "click": {
+      "ok": true,
+      "tag": "BUTTON",
+      "cls": "btn btn--pink",
+      "href": null,
+      "text": "añadir al carrito"
+    },
+    "drawer": null,
+    "calls": [
+      {
+        "url": "https://zenqalife.roadshop.online/cart.js",
+        "status": 200,
+        "body": "{\"token\":\"d086b9c5d06f5436985afbdbc6b39af4\",\"note\":null,\"attributes\":{},\"original_total_price\":0,\"total_price\":0,\"total_discount\":0,\"total_weight\":0.0,\"item_count\":0,\"items\":[],\"requires_shipping\":false,\"currency\":\"EUR\",\"items_subtotal_price\":0,\"cart_level_discount_applications\":[],\"discount_codes\":[]}"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cart/add",
+        "status": 422,
+        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>El artículo &#39;Té Matcha Orgánico PREMIUM Grado CEREMONIAL&#39; ya está agotado.</title>\n  <meta name=\"referrer\" content=\"never\" />\n  <style type=\"text/css\">\n\n    * { border:0; margin:0; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }\n    html,body { height:100%; border:0; mar"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cart.js",
+        "status": 429,
+        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cart/add",
+        "status": 429,
+        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cart.js",
+        "status": 429,
+        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cart.js",
+        "status": 429,
+        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
+      }
+    ],
+    "alerts": [
+      "El artículo 'Té Matcha Orgánico PREMIUM Grado CEREMONIAL' ya está agotado.: El artículo 'Té Matcha Orgánico PREMIUM Grado CEREMONIAL' ya está agotado."
+    ]
+  },
+  "persistencia-carrito": {
+    "ok": false,
+    "items": -1
+  },
+  "sumar-unidad": {
+    "ok": false,
+    "click": {
+      "ok": false,
+      "why": "no encontrado: +",
+      "n": 0
+    },
+    "afterPlus": {
+      "err": "SyntaxError: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+    },
+    "calls": [
+      {
+        "url": "https://zenqalife.roadshop.online/cart.js",
+        "status": 429,
+        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cart/add",
+        "status": 429,
+        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
+      },
+      {
+        "url": "https://zenqalife.roadshop.online/cart.js",
+        "status": 429,
+        "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Verifying your connection...</title>\n\n    <style type=\"text/css\">\n        *{box-sizing:border-box;margin:0;padding:0}html{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;background:#FFF;font-size:62.5%;color:#303030;min-height:100%}bod"
+      }
+    ]
+  },
+  "envio-gratis-texto": {
+    "matches": []
+  },
+  "ficha-rapida": {
+    "ok": false,
+    "why": "no se abrió ninguna capa",
+    "before": {
+      "dialogs": 0
+    },
+    "click": {
+      "ok": false,
+      "why": "no encontrado: ver ficha",
+      "n": 0
+    },
+    "layer": null,
+    "esc": true,
+    "closed": true
+  },
+  "buscador": {
+    "ok": false,
+    "why": "no hay campo de búsqueda visible",
+    "opened": {
+      "ok": false,
+      "why": "no encontrado: buscar",
+      "n": 0
+    },
+    "typed": {
+      "ok": false
+    },
+    "results": []
+  },
+  "guia-lead": {
+    "ok": false,
+    "why": "no encontré el botón de descarga",
+    "filled": {
+      "ok": false
+    },
+    "submitted": {
+      "ok": false,
+      "why": "no encontrado: descargar la guía",
+      "n": 0
+    },
+    "after": {
+      "links": [],
+      "msg": [],
+      "stored": [
+        [
+          "signInWithShop:cartSyncTransferAttemptedAt",
+          "1791909997910"
+        ]
+      ]
+    },
+    "posts": [
+      {
+        "url": "https://zenqalife.roadshop.online/cdn-cgi/challenge-platform/h/g/fo/2575135020:1791908127:ClcU1XjQOyXAbAajjxl3LpGUvWmprmXOQuT9ifUjLpk/a49fd5b44a0d8627/sczbbhhE8",
+        "data": "jdjvU0GkqcYMvrluGXME98ccRsELHQ9xBH9w0Xwl-uXRFfCC04-DPg4jicAP+omCLJtTZl1eEH6oJQ6YpG9TDzjPrMqHknD6d6OLDj5HMRsf6K-Tv7zD6MhQOz6bMudd7mn9-6b0QWM0sdhdCrkOsoVm6tGFBN0wrX6RNfw-VLfU3MGBQBPo4QImLRFwfUNpOwmcNB+lM5juzWuJTOGoFQbw2M6NEI+Oow7-JQwU4MU-Oqclr9zZvsO0VVttiQ3A-2O9oo5OsXfqTrXuIRRuqhGovwtnWo3fQ-mqY$dhVnfG"
+      },
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5b5f8f4b625/pDbn2L1NK_",
+        "data": "BmGZMZwIgIBdpi+JUgEHdEA0xXuOUDcOhZbdFW6j55Vql7cec4ulHFUMB3OoxvDL84MJ6Yg9NxcUgHF7KkOze0VMiE+SZwonvPgEJAOs7uSZZyNCUk6srLCS5-8nYb-DM+9wuziegFzuw4D3tcdzA51FzGeUB2QvjSLLWtLeSJMvRgmHufYoN7S86uu9V77xMtWI4-FVYjBGEZlnwdHh2UVm$viJewO41I8xoMM-osGidNwjBPOt09AV4dQRQpOLH-KPp89Z-MuxSwlYxfKYDdge30sdaibbwGnf8j$UXcvz"
+      },
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5b5f8f4b625/pDbn2L1NK_",
+        "data": "BmGZMZwIgIBdpi+JUgEHdEA0xXuOUDcOhZbdFW6j55Vql7cec4ulHFUMB3OoxvDL84MJ6Yg9NxcUgHF7KkOze0VMiE+SZwonvPgEJAOs7uSZZyNCUk6srLCS5-8nYb-DM+9wuziegFzuw4D3tcdzA51FzGeUB2QvjSLLWtLeSJMV09+BwKpOK3bJIMr8ZzvAMzMzuJig7Spjb8KVjDRzr0UknUZ1a+A7N$tOnQWfNGKZELhLmwH7DvsvUNljS5OgtfmKaSVvbczXAu-zGw7f6ibyKIbft1L0a6Y-CLgDKMQI"
+      }
+    ],
+    "pdf": null
+  },
+  "newsletter-pie": {
+    "ok": false,
+    "why": "sin formulario de newsletter en el pie",
+    "nl": {
+      "ok": false
+    },
+    "nlAfter": {
+      "msg": [],
+      "stored": [
+        "signInWithShop:cartSyncTransferAttemptedAt"
+      ]
+    },
+    "posts": [
+      {
+        "url": "https://zenqalife.roadshop.online/cdn-cgi/challenge-platform/h/g/fo/2575135020:1791908127:ClcU1XjQOyXAbAajjxl3LpGUvWmprmXOQuT9ifUjLpk/a49fd5b44a0d8627/sczbbhhE8",
+        "data": "jdjvU0GkqcYMvrluGXME98ccRsELHQ9xBH9w0Xwl-uXRFfCC04-DPg4jicAP+omCLJtTZl1eEH6oJQ6YpG9TDzjPrMqHknD6d6OLDj5HMRsf6K-Tv7zD6MhQOz6bMudd7mn9-6b0QWM0sdhdCrkOsoVm6tGFBN0wrX6RNfw-VLfU3MGBQBPo4QImLRFwfUNpOwmcNB+lM5juzWuJTOGoFQbw2M6NEI+Oow7-JQwU4MU-Oqclr9zZvsO0VVttiQ3A-2O9oo5OsXfqTrXuIRRuqhGovwtnWo3fQ-mqY$dhVnfG"
+      },
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5b5f8f4b625/pDbn2L1NK_",
+        "data": "BmGZMZwIgIBdpi+JUgEHdEA0xXuOUDcOhZbdFW6j55Vql7cec4ulHFUMB3OoxvDL84MJ6Yg9NxcUgHF7KkOze0VMiE+SZwonvPgEJAOs7uSZZyNCUk6srLCS5-8nYb-DM+9wuziegFzuw4D3tcdzA51FzGeUB2QvjSLLWtLeSJMvRgmHufYoN7S86uu9V77xMtWI4-FVYjBGEZlnwdHh2UVm$viJewO41I8xoMM-osGidNwjBPOt09AV4dQRQpOLH-KPp89Z-MuxSwlYxfKYDdge30sdaibbwGnf8j$UXcvz"
+      },
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5b5f8f4b625/pDbn2L1NK_",
+        "data": "BmGZMZwIgIBdpi+JUgEHdEA0xXuOUDcOhZbdFW6j55Vql7cec4ulHFUMB3OoxvDL84MJ6Yg9NxcUgHF7KkOze0VMiE+SZwonvPgEJAOs7uSZZyNCUk6srLCS5-8nYb-DM+9wuziegFzuw4D3tcdzA51FzGeUB2QvjSLLWtLeSJMV09+BwKpOK3bJIMr8ZzvAMzMzuJig7Spjb8KVjDRzr0UknUZ1a+A7N$tOnQWfNGKZELhLmwH7DvsvUNljS5OgtfmKaSVvbczXAu-zGw7f6ibyKIbft1L0a6Y-CLgDKMQI"
+      }
+    ]
+  },
+  "contacto": {
+    "ok": false,
+    "why": "no encontré el botón de enviar",
+    "filled": {
+      "email": false,
+      "name": false,
+      "msg": false,
+      "sel": 0,
+      "checked": null,
+      "forms": []
+    },
+    "sent": {
+      "ok": false,
+      "why": "no encontrado: enviar mensaje",
+      "n": 0
+    },
+    "after": {
+      "msg": [],
+      "url": "https://zenqalife.roadshop.online/pages/el-ritual#contacto"
+    },
+    "posts": [
+      {
+        "url": "https://zenqalife.roadshop.online/cdn-cgi/challenge-platform/h/g/fo/2575135020:1791908127:ClcU1XjQOyXAbAajjxl3LpGUvWmprmXOQuT9ifUjLpk/a49fd5ec98d58627/LoeyiEbBX",
+        "data": "G2nGPwnevZFGc+fgQMi8GCLPePeTB-BUUMXtt3XUB0iFlwehmRDRUc9mTjNpfoWmFMonEBZ9iBYOg8IFqqj4aPVK+PTXjXim3mitFtIoxGnZ7qSR6Vvb4eeVa5UHMFvkINiu5NxIE72d1tLAJDIxRaPAEVPngpbhbR92Q8t43uwFu9vnDSq9jBs2JWW1bNftunEOuKOF2HiilQL96crkiPJHoMg4RBsHxvmp90O$t6lW9qhi+6mRouY$EK1hBhx+BMYCDBTwqmwNp5p3u36xdI65ZoNc3SdffAeIobrJdHXWhKoxLiAiUqDhpVIA1SFwuGJIet8a$um9jGBUT2QCwNV9dTJVERmvlx0KOgFgjzmr91JLhLIg8x+TwJRvfuE359n$NkqGevtMg+JX"
+      },
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5ee3a93b625/6Ulo1xsYmK",
+        "data": "1rp-WwkLtdh5n373EHBQznCfMCKHUZ86EE4UNiCAqnrOmvG3bfXsYDy9mYQpdEytLPVixUFX2d3-PWn9GP6JxYbFEbVibg4y2AcQzqD576xHsirMRGsGWm7WSjq9vodt25kBccobj81K$NveShMc+PP$o542d6+n1j0ULpXuQ6$xsbw9ONO3oO39lYlXMwVvWLgxeDq5+dslKKiUEplvyKXV2SJ08UMaqaj5ZOAQHxcJZ7MWzXnjvIMvq9EWg2kNguNkubku9QRG9cpCz+0SEkNtI2EZ39nbg7BkxInXGls5S5IeDkLtyUt5VdWu2enJslWS9-I9b4Z-Br6evgUxYozRbg$fQCwav5Dvfk7xk8Pmyp+iqI8ruUc0+iBFUBAVqXGSOIGK-VyxtEYz"
+      },
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/725519567:1791908128:g-ga7qZpwLWnq-SRduJLYd0C_6EjST45sq83JY6Ey8o/a49fd5ee3a93b625/6Ulo1xsYmK",
+        "data": "1rp-WwkLtdh5n373EHBQznCfMCKHUZ86EE4UNiCAqnrOmvG3bfXsYDy9mYQpdEytLPVixUFX2d3-PWn9GP6JxYbFEbVibg4y2AcQzqD576xHsirMRGsGWm7WSjq9vodt25kBccobj81K$NveShMc+PP$o542d6+n1j0ULpXuQ6$pwaAMzObCvw5FWHA$ztVDskmk$pAPKdYKD$QIHAf5k5rtiwu9PWGwkO2BY2ojBGXB4umnhtEnEtN-5RL$grQGvzVcd09AMXDMUgq9mf6Dl8O+t+ho4WYzpO3H+oGyrqeO8IKZQUYJp+2CxtHf86Zgj7DZLO3d5cXDNEPSP8O$2edz74OP0xhFs5tyLowKu3voFUS3Ds4-P-hASUHbKzGdGLfamb0EVcmaOVso"
+      }
+    ]
+  },
+  "carrito-checkout": {
+    "ok": false,
+    "cart": {
+      "text": "Your connection needs to be verified before you can proceed",
+      "empty": false,
+      "items": 0,
+      "qtyInputs": 0
+    },
+    "click": {
+      "ok": false,
+      "why": "no encontrado: finalizar compra",
+      "n": 0
+    },
+    "coInfo": {
+      "url": "https://zenqalife.roadshop.online/cart",
+      "title": "Un momento…",
+      "text": "Your connection needs to be verified before you can proceed"
+    },
+    "calls": [
+      {
+        "url": "https://zenqalife.roadshop.online/cart",
+        "status": 429
+      }
+    ]
+  },
+  "anclas-y-estructura": {
+    "anchorsDOM": [],
+    "structure": {
+      "top": [
+        [
+          "page",
+          1
+        ],
+        [
+          "text-container",
+          1
+        ],
+        [
+          "text-container--main",
+          1
+        ],
+        [
+          "cf-injected-html",
+          1
+        ],
+        [
+          "main-wrapper",
+          1
+        ],
+        [
+          "main-content",
+          1
+        ],
+        [
+          "kXWP4",
+          1
+        ],
+        [
+          "amsb2",
+          1
+        ],
+        [
+          "mSEeZ8",
+          1
+        ]
+      ],
+      "dataAttrs": {
+        "data-i18n": 1
+      },
+      "spots": []
+    },
+    "jumped": {
+      "before": 0,
+      "after": 0,
+      "targetTop": null,
+      "headerH": 0
+    }
+  }
+}
